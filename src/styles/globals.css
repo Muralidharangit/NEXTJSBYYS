@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+/* ✅ Google Fonts (fix &amp; issue → use & instead) */
+/* @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"); */
+
+/* 🌍 Root Variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --color-primary: #0f62fe;
+  --color-secondary: #1f1f25;
+  --color-blue: #0b4df5;
+  --color-sky: #82b440;
+  --color-body: #717383;
+  --color-heading-1: #050d20;
+  --color-heading-2: #0c1018;
+  --color-title: #050d20;
+  --transition: 0.3s;
+  --color-white: #fff;
+  --color-border: #dbe7ff;
+  --border-width: 1px;
+  --radius: 10px;
+
+
+  /* Font weights */
+  --p-light: 300;
+  --p-regular: 400;
+  --p-medium: 500;
+  --p-semi-bold: 600;
+  --p-bold: 700;
+  --p-extra-bold: 800;
+  --p-black: 900;
+
+  /* Fonts */
+  --font-primary: "Inter Tight", sans-serif;
+  --font-secondary: "Inter", sans-serif;
+  --font-3: "fontawesome";
+  --font-4: "Onest", sans-serif;
+  --font-5: "Syne", sans-serif;
+
+  /* Font sizes */
+  --font-size-b1: 16px !important;
+  --font-size-b2: 16px ;
+  --font-size-b3: 22px;
+  --line-height-b1: 26px;
+  --line-height-b2: 26px;
+  --line-height-b3: 1.7;
+
+  /* Headings */
+  --h1: 70px;
+  --h2: 48px;
+  --h3: 30px;
+  --h4: 26px;
+  --h5: 24px;
+  --h6: 20px;
+}
+
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+}
+
+html {
+ 
+  
+
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-b1) ;
+  line-height: var(--line-height-b1);
+  font-weight: var(--p-regular);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  margin: 0;
+
+
+}
+
+body::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 0.05;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  /* color: var(--color-heading-1); */
+  line-height: 1.3;
+  margin: 0 0 20px;
+}
+
+h1 { font-size: var(--h1); font-weight: 700; }
+h2 { font-size: var(--h2); }
+h3 { font-size: var(--h3); }
+h4 { font-size: var(--h4); }
+h5 { font-size: var(--h5); }
+h6 { font-size: var(--h6); }
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  h1,
+  .h1 {
+    font-size: 38px;
+  }
+  h2,
+  .h2 {
+    font-size: 32px;
+  }
+  h3,
+  .h3 {
+    font-size: 28px;
+  }
+  h4,
+  .h4 {
+    font-size: 24px;
+  }
+  h5,
+  .h5 {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  h1,
+  .h1 {
+    font-size: 34px;
+  }
+  h2,
+  .h2 {
+    font-size: 28px;
+  }
+  h3,
+  .h3 {
+    font-size: 24px;
+  }
+  h4,
+  .h4 {
+    font-size: 20px;
+  }
+  h5,
+  .h5 {
+    font-size: 20px;
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  p {
+    margin: 0 0 20px;
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+/* Paragraphs */
+p {
+  line-height: var(--line-height-b2);
+  font-weight: var(--p-regular);
+
+  margin: 0 0 20px;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.smooth-scale {
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+  will-change: transform, opacity;
+}
+
+.smooth-scale.visible {
+  transform: scale(1);
+  opacity: 1;
+}
