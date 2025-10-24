@@ -172,8 +172,6 @@ const brandLogo1 = [
   },
 ];
 
-
-
 export const metadata: Metadata = {
   title: "My Next.js App",
   description: "Static site with custom fonts",
@@ -195,7 +193,6 @@ export default function Home() {
 
   if (loading) return <Loader />;
 
-// ,,,
   return (
     <div>
       <Header />

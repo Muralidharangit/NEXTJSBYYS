@@ -12,6 +12,7 @@ import "aos/dist/aos.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
+import ContactForm from "@/components/ContactForm";
 
 export default function ContactPage() {
   const [loading, setLoading] = useState(true);
@@ -238,7 +239,7 @@ export default function ContactPage() {
             <h3 className="text-3xl font-semibold mb-6 text-[#111827]">
               Send a <span className="text-[#067afe]">Message</span>
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            {/* <form onSubmit={handleSubmit} className="space-y-6">
               <div className="relative" data-aos="fade-up" data-aos-delay="100">
                 <label className="block text-gray-700 font-medium mb-2">
                   Name
@@ -292,7 +293,8 @@ export default function ContactPage() {
               >
                 Send Message
               </button>
-            </form>
+            </form> */}
+            <ContactForm/>
           </div>
         </div>
       </section>
