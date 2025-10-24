@@ -3034,7 +3034,7 @@ export default function Home() {
       <Header />
       <LetterAnimation />
       <VideoBanner />
-      <section id="features" className="py-20 bg-[#eff3fa]">
+      <section id="features" className="py-20  bg-[#eff3fa]">
         <div className="container">
           <div className="grid lg:grid-cols-2 items-center gap-6">
             <div className="flex items-center" data-aos="fade-right">
@@ -3047,11 +3047,7 @@ export default function Home() {
                 unoptimized
               />
             </div>
-            <div
-              className="lg:ms-5 ms-5"
-              data-aos="fade-left"
-              data-aos-delay="200"
-            >
+            <div className="px-3" data-aos="fade-left" data-aos-delay="200">
               <span
                 className="text-xs sm:text-sm text-primary uppercase font-semibold tracking-wider text-default-950"
                 data-aos="fade-up"
@@ -3170,12 +3166,12 @@ export default function Home() {
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between mb-10">
-            <div data-aos="fade-right">
-              <span className="text-sm text-primary uppercase font-semibold tracking-wider text-default-950">
+            <div data-aos="fade-right ">
+              <span className="px-4 text-sm text-primary uppercase font-semibold tracking-wider text-default-950">
                 Our Services
               </span>
               <h2
-                className="animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]"
+                className="px-4 animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
@@ -3271,7 +3267,7 @@ export default function Home() {
       </section>
 
       {/* Cards Section */}
-      <section className="py-16 md:px-4">
+      <section className="py-16 px-3">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Right Description */}
           <div className="space-y-8" data-aos="fade-left" data-aos-delay="200">
@@ -3448,7 +3444,7 @@ export default function Home() {
       <section className="bg-[#eff3fa] mx-auto py-16 px-6">
         {/* Section Header */}
         <div className="mx-auto mb-12 max-w-2xl text-center" data-aos="fade-up">
-          <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
+          <span className="bg-[#067afe] text-white py-1 rounded-full mb-5">
             Product Categories
           </span>
           <h2 className="animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]">
@@ -3509,16 +3505,17 @@ export default function Home() {
 
             <div className="relative space-y-12 md:space-y-16">
               {/* Product 1 - Content Left, Image Right */}
-              <div className="sticky top-32 bg-[#067afeef] rounded-xl p-8 md:flex md:items-center mb-3">
-             <div className="w-full md:w-1/2 text-white md:pr-6">
+              <div className="sticky top-32 bg-[#067afeef] rounded-xl sm:p-8 p-8 md:flex md:items-center mb-3">
+                <div className="w-full md:w-1/2 text-white md:pr-6">
                   {/* <p className="section-tagline">
                     Procurement as a Service (PaaS)
                   </p> */}
                   <h3 className="mb-4 text-xl font-semibold">
-                     Procurement as a Service (PaaS)
+                    Procurement as a Service (PaaS)
                   </h3>
                   <p className="mb-6">
-                     Automate your Source-to-Pay process— for Just <b>*1.5%</b> of Your Spend  
+                    Automate your Source-to-Pay process— for Just <b>*1.5%</b>{" "}
+                    of Your Spend
                   </p>
                   <ul className="mb-6 space-y-4">
                     {[
@@ -3527,7 +3524,6 @@ export default function Home() {
                       "AI-Powered Digital Ecosystem — Automate RFQs, quotes & analytics",
                       "Full Visibility & Control — Track spend, performance, and savings in real time",
                       "Zero Tech Investment — End-to-end procurement support with transparent pricing",
-                     
                     ].map((item) => (
                       <li className="flex items-center gap-x-2" key={item}>
                         <span className="flex h-7 w-7 justify-center items-center rounded-full bg-white">
@@ -3550,11 +3546,10 @@ export default function Home() {
                       More Details
                     </li>
                     <Link href="/contact">
-                     <li className="px-3 py-1 border border-white rounded-full text-white">
-                      Contact us
-                    </li>
+                      <li className="px-3 py-1 border border-white rounded-full text-white">
+                        Contact us
+                      </li>
                     </Link>
-                   
                   </ul>
                 </div>
                 <div className="w-full md:w-1/2 mt-6 md:mt-0">
@@ -3578,10 +3573,10 @@ export default function Home() {
                 <div className="w-full md:w-1/2 text-white md:pl-6">
                   {/* <p className="section-tagline">Source-to-Pay</p> */}
                   <h3 className="mb-4 text-xl font-semibold">
-                    Byyizzy Powered Hardware Store Chain  
+                    Byyizzy Powered Hardware Store Chain
                   </h3>
                   <p className="mb-6">
-                  Building India’s First Hardware Store Chain!  
+                    Building India’s First Hardware Store Chain!
                   </p>
                   <ul className="mb-6 space-y-4">
                     {[
@@ -3611,10 +3606,10 @@ export default function Home() {
                     <li className="px-3 py-1 border border-white rounded-full text-white">
                       More Details
                     </li>
-                     <Link href="/contact">
-                     <li className="px-3 py-1 border border-white rounded-full text-white">
-                      Contact us
-                    </li>
+                    <Link href="/contact">
+                      <li className="px-3 py-1 border border-white rounded-full text-white">
+                        Contact us
+                      </li>
                     </Link>
                   </ul>
                 </div>
@@ -3627,10 +3622,11 @@ export default function Home() {
                     Procurement as a Service (PaaS)
                   </p> */}
                   <h3 className="mb-4 text-xl font-semibold">
-                     Manufacturing as a Service (MaaS)  
+                    Manufacturing as a Service (MaaS)
                   </h3>
                   <p className="mb-6">
-                     Streamline Your Customized and Non-Standard Spare Parts Supply Chain    
+                    Streamline Your Customized and Non-Standard Spare Parts
+                    Supply Chain
                   </p>
                   <ul className="mb-6 space-y-4">
                     {[
@@ -3639,71 +3635,6 @@ export default function Home() {
                       "Real-Time Visibility & Control",
                       "Global Manufacturing Network",
                       "Access to best Production Capabilities",
-                     
-                    ].map((item) => (
-                      <li className="flex items-center gap-x-2" key={item}>
-                        <span className="flex h-7 w-7 justify-center items-center rounded-full bg-white">
-                          <svg
-                            stroke="#067afe"
-                            fill="#067afe"
-                            strokeWidth={0}
-                            viewBox="0 0 512 512"
-                            className="h-4 w-4"
-                          >
-                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
-                          </svg>
-                        </span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <ul className="flex flex-wrap gap-2">
-                    <li className="px-3 py-1 border border-white rounded-full text-white">
-                      More Details
-                    </li>
-                    <Link href="/contact">
-                     <li className="px-3 py-1 border border-white rounded-full text-white">
-                      Contact us
-                    </li>
-                    </Link>
-                   
-                  </ul>
-                </div>
-                <div className="w-full md:w-1/2 mt-6 md:mt-0">
-                  <img
-                    src="https://www.sagesoftware.co.in/wp-content/uploads/2025/05/ERP-Implementation-process.png"
-                    alt="Procurement as a Service"
-                    className="w-full rounded-lg"
-                  />
-                </div>
-              </div>
-
-              {/* Product 4 - Image Left, Content Right Industrial Products Aggregation */}
-              <div className="sticky top-32 bg-[#067afef1] rounded-xl p-8 md:flex md:items-center">
-                <div className="w-full md:w-1/2 md:pr-6">
-                  <img
-                    src="https://cdni.iconscout.com/illustration/premium/thumb/hardware-store-illustration-svg-download-png-3811077.png"
-                    alt="Chain of Hardware Stores"
-                    className="w-full rounded-lg"
-                  />
-                </div>
-                <div className="w-full md:w-1/2 text-white md:pl-6">
-                  {/* <p className="section-tagline"></p> */}
-                  <h3 className="mb-4 text-xl font-semibold">
-                    Industrial Products Aggregation  
-                  </h3>
-                  <p className="mb-6">
-                    Streamline your procurement. Create value. Generate savings from tail-spend.  
-                  </p>
-                  <ul className="mb-6 space-y-4">
-                    {[
-                      "Fastest Delivery – within just 24 hours! (Via Byyizzy-powered hardware stores)  ",
-                      "Transparent Pricing",
-                      "100% Process Visibility",
-                       "Local Business Engagement",
-                      "Integrated B2B & B2C Ecosystem",
-                      "End-to-End Tracking & Catalog-Based Buying",
-                      "Supporting Local, Saving Community Wealth"
                     ].map((item) => (
                       <li className="flex items-center gap-x-2" key={item}>
                         <span className="flex h-7 w-7 justify-center items-center rounded-full bg-white">
@@ -3727,8 +3658,72 @@ export default function Home() {
                     </li>
                     <Link href="/contact">
                       <li className="px-3 py-1 border border-white rounded-full text-white">
-                      Contact us
+                        Contact us
+                      </li>
+                    </Link>
+                  </ul>
+                </div>
+                <div className="w-full md:w-1/2 mt-6 md:mt-0">
+                  <img
+                    src="https://www.sagesoftware.co.in/wp-content/uploads/2025/05/ERP-Implementation-process.png"
+                    alt="Procurement as a Service"
+                    className="w-full rounded-lg"
+                  />
+                </div>
+              </div>
+
+              {/* Product 4 - Image Left, Content Right Industrial Products Aggregation */}
+              <div className="sticky top-32 bg-[#067afef1] rounded-xl p-8 md:flex md:items-center">
+                <div className="w-full md:w-1/2 md:pr-6">
+                  <img
+                    src="https://cdni.iconscout.com/illustration/premium/thumb/hardware-store-illustration-svg-download-png-3811077.png"
+                    alt="Chain of Hardware Stores"
+                    className="w-full rounded-lg"
+                  />
+                </div>
+                <div className="w-full md:w-1/2 text-white md:pl-6">
+                  {/* <p className="section-tagline"></p> */}
+                  <h3 className="mb-4 text-xl font-semibold">
+                    Industrial Products Aggregation
+                  </h3>
+                  <p className="mb-6">
+                    Streamline your procurement. Create value. Generate savings
+                    from tail-spend.
+                  </p>
+                  <ul className="mb-6 space-y-4">
+                    {[
+                      "Fastest Delivery – within just 24 hours! (Via Byyizzy-powered hardware stores)  ",
+                      "Transparent Pricing",
+                      "100% Process Visibility",
+                      "Local Business Engagement",
+                      "Integrated B2B & B2C Ecosystem",
+                      "End-to-End Tracking & Catalog-Based Buying",
+                      "Supporting Local, Saving Community Wealth",
+                    ].map((item) => (
+                      <li className="flex items-center gap-x-2" key={item}>
+                        <span className="flex h-7 w-7 justify-center items-center rounded-full bg-white">
+                          <svg
+                            stroke="#067afe"
+                            fill="#067afe"
+                            strokeWidth={0}
+                            viewBox="0 0 512 512"
+                            className="h-4 w-4"
+                          >
+                            <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                          </svg>
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <ul className="flex flex-wrap gap-2">
+                    <li className="px-3 py-1 border border-white rounded-full text-white">
+                      More Details
                     </li>
+                    <Link href="/contact">
+                      <li className="px-3 py-1 border border-white rounded-full text-white">
+                        Contact us
+                      </li>
                     </Link>
                   </ul>
                 </div>

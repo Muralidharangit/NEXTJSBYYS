@@ -28,7 +28,7 @@ export default function VideoBanner() {
 
   return (
     <section
-      className="relative w-full h-[85vh] overflow-hidden" // changed height to 80vh
+      className="relative w-full h-[25vh] md:h-[50vh] lg:h-[60vh] xl:h-[80vh] overflow-hidden"
       data-aos="fade-up"
     >
       {videos.map((video, index) => (
