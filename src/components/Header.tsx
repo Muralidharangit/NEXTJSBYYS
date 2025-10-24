@@ -35,7 +35,7 @@ export default function Header() {
       <nav className="mx-auto flex container items-center justify-between py-3 lg:px-8">
         {/* Left: Logo - Updated href to '/' */}
         <div className="flex flex-1">
-          <a href="/" className="p-1.5">
+          <a href="#" className="p-1.5">
             <Image
               src={scrolled ? "/images/white.png" : "/images/blue.png"}
               alt="Logo"
