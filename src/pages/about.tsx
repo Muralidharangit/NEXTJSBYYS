@@ -195,7 +195,7 @@ export default function Home() {
 
   if (loading) return <Loader />;
 
-
+// ,,,
   return (
     <div>
       <Header />
