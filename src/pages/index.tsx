@@ -3197,27 +3197,27 @@ export default function Home() {
             {[
               {
                 title: "Procurement as a Service (PaaS)",
-                desc: "A sustainable and efficient procurement model designed to optimize overall costs, improve compliance, and leverage global supplier networks.",
-                tags: ["Procurement", "Optimization", "Compliance"],
-                img: "https://html.themewant.com/digix/assets/images/service/05.webp",
+                desc: "Simplify and digitize your sourcing, procurement, and supply chain management through our AI-powered e-sourcing platform and verified supplier network.",
+                // tags: ["Procurement", "Optimization", "Compliance"],
+                img: "https://pscs.jabil.com/dam/jcr:7730bd3c-24e6-4e3e-8a80-cb2c79bb8123/Procurement--Managed-Services_16x9.jpg",
               },
               {
                 title: "E-Sourcing Platform",
-                desc: "Powerful sourcing and e-auction tools enabling flexible, customizable, and efficient purchasing processes for enterprises.",
-                tags: ["E-Sourcing", "RFQ", "Automation"],
+                desc: "We’re creating India’s first hardware store chain that blends online convenience with a great in-store experience.",
+                // tags: ["E-Sourcing", "RFQ", "Automation"],
                 img: "https://html.themewant.com/digix/assets/images/service/06.webp",
               },
               {
                 title: "Industrial Products Aggregation",
-                desc: "Byyizzy connects multiple hardware stores and manufacturers to offer the widest range of MRO spares and consumables at competitive prices.",
-                tags: ["Hardware", "Aggregation", "Supply Chain"],
-                img: "https://html.themewant.com/digix/assets/images/service/05.webp",
+                desc: "High complexity and low-value transactions have made Industrial MRO supply chain hard to manage well—even as value trickles away.",
+                // tags: ["Hardware", "Aggregation", "Supply Chain"],
+                img: "https://cdn1.expresscomputer.in/wp-content/uploads/2024/03/08132642/ec-smart-industry-robot-arms-digital-factory-production-technology-750.jpg",
               },
               {
                 title: "Manufacturing as a Service (MaaS)",
-                desc: "Supporting industries with on-demand manufacturing and sourcing to ensure flexibility, cost savings, and faster time-to-market.",
-                tags: ["Manufacturing", "On-Demand", "Efficiency"],
-                img: "https://html.themewant.com/digix/assets/images/service/06.webp",
+                desc: "Transform your custom & non-standard spare parts supply chain with our AI-powered manufacturing platform and extensive supplier network. Achieve full visibility, reduce lead times, and enhance quality.",
+                // tags: ["Manufacturing", "On-Demand", "Efficiency"],
+                img: "https://www.capgemini.com/wp-content/uploads/2022/05/Key-Visual-Hannover-Messe-GettyImages-1022892534.jpg",
               },
             ].map((item, idx) => (
               <div
@@ -3244,7 +3244,7 @@ export default function Home() {
                     <p className="text-gray-600 group-hover:text-white transition">
                       {item.desc}
                     </p>
-                    <div className="flex flex-wrap gap-2 mt-3">
+                    {/* <div className="flex flex-wrap gap-2 mt-3">
                       {item.tags.map((tag, i) => (
                         <span
                           key={i}
@@ -3253,7 +3253,7 @@ export default function Home() {
                           {tag}
                         </span>
                       ))}
-                    </div>
+                    </div> */}
                   </div>
                   <div className="ml-6">
                     <a
@@ -3510,21 +3510,24 @@ export default function Home() {
             <div className="relative space-y-12 md:space-y-16">
               {/* Product 1 - Content Left, Image Right */}
               <div className="sticky top-32 bg-[#067afeef] rounded-xl p-8 md:flex md:items-center mb-3">
-                <div className="w-full md:w-1/2 text-white md:pr-6">
-                  <p className="section-tagline">E2E Procurement</p>
+             <div className="w-full md:w-1/2 text-white md:pr-6">
+                  {/* <p className="section-tagline">
+                    Procurement as a Service (PaaS)
+                  </p> */}
                   <h3 className="mb-4 text-xl font-semibold">
-                    Streamline Your Procurement
+                     Procurement as a Service (PaaS)
                   </h3>
                   <p className="mb-6">
-                    End-to-end procurement management with optimized PR-PO lead
-                    times and consolidated supplier base.
+                     Automate your Source-to-Pay process— for Just <b>*1.5%</b> of Your Spend  
                   </p>
                   <ul className="mb-6 space-y-4">
                     {[
-                      "Tail Spend Management",
-                      "One-stop MRO shop",
-                      "Price Standardization / Inflation Savings",
-                      "Optimized PR-PO Lead Time",
+                      "Global Sourcing Expertise — Access verified suppliers worldwide  ",
+                      "Local Fulfillment Network — Fast, reliable, and cost-effective delivery",
+                      "AI-Powered Digital Ecosystem — Automate RFQs, quotes & analytics",
+                      "Full Visibility & Control — Track spend, performance, and savings in real time",
+                      "Zero Tech Investment — End-to-end procurement support with transparent pricing",
+                     
                     ].map((item) => (
                       <li className="flex items-center gap-x-2" key={item}>
                         <span className="flex h-7 w-7 justify-center items-center rounded-full bg-white">
@@ -3546,9 +3549,12 @@ export default function Home() {
                     <li className="px-3 py-1 border border-white rounded-full text-white">
                       More Details
                     </li>
-                    <li className="px-3 py-1 border border-white rounded-full text-white">
+                    <Link href="/contact">
+                     <li className="px-3 py-1 border border-white rounded-full text-white">
                       Contact us
                     </li>
+                    </Link>
+                   
                   </ul>
                 </div>
                 <div className="w-full md:w-1/2 mt-6 md:mt-0">
@@ -3570,20 +3576,20 @@ export default function Home() {
                   />
                 </div>
                 <div className="w-full md:w-1/2 text-white md:pl-6">
-                  <p className="section-tagline">Source-to-Pay</p>
+                  {/* <p className="section-tagline">Source-to-Pay</p> */}
                   <h3 className="mb-4 text-xl font-semibold">
-                    Automate Purchase-to-Pay Process
+                    Byyizzy Powered Hardware Store Chain  
                   </h3>
                   <p className="mb-6">
-                    Simplify RFx, RFI, RFQ, e-auctions, invoicing, and payments
-                    with real-time supplier ratings.
+                  Building India’s First Hardware Store Chain!  
                   </p>
                   <ul className="mb-6 space-y-4">
                     {[
-                      "RFx & e-auction portal",
-                      "Automated PO Workflow",
-                      "Invoice processing & reconciliation",
-                      "Automated Payments",
+                      "Technology-driven chain of Hyperlocal Hardware Stores  ",
+                      "Best Prices, Smarter Technology, Reducing unsold inventory and Higher profits",
+                      "Great In-Store Experience, Online Convenience",
+                      "Integrated B2B & B2C ecosystem",
+                      "Easy credit & EMI Facility to B2C Customer",
                     ].map((item) => (
                       <li className="flex items-center gap-x-2" key={item}>
                         <span className="flex h-7 w-7 justify-center items-center rounded-full bg-white">
@@ -3605,32 +3611,35 @@ export default function Home() {
                     <li className="px-3 py-1 border border-white rounded-full text-white">
                       More Details
                     </li>
-                    <li className="px-3 py-1 border border-white rounded-full text-white">
+                     <Link href="/contact">
+                     <li className="px-3 py-1 border border-white rounded-full text-white">
                       Contact us
                     </li>
+                    </Link>
                   </ul>
                 </div>
               </div>
 
-              {/* Product 3 - Content Left, Image Right */}
+              {/* Product 3 - Content Left, Image Right Manufacturing as a Service (MaaS)   */}
               <div className="sticky top-32 bg-[#067afe] rounded-xl p-8 md:flex md:items-center mb-3">
                 <div className="w-full md:w-1/2 text-white md:pr-6">
-                  <p className="section-tagline">
+                  {/* <p className="section-tagline">
                     Procurement as a Service (PaaS)
-                  </p>
+                  </p> */}
                   <h3 className="mb-4 text-xl font-semibold">
-                    Efficient Sourcing for Enterprises
+                     Manufacturing as a Service (MaaS)  
                   </h3>
                   <p className="mb-6">
-                    Large, medium, and small enterprises can leverage sourcing
-                    tools and expert support for high-value categories.
+                     Streamline Your Customized and Non-Standard Spare Parts Supply Chain    
                   </p>
                   <ul className="mb-6 space-y-4">
                     {[
-                      "Supplier Market Analysis",
-                      "Negotiation Power",
-                      "Efficient Sourcing Tools",
-                      "Consulting Support",
+                      "Bridging SMEs and Large Clients",
+                      "AI-Driven Production Management",
+                      "Real-Time Visibility & Control",
+                      "Global Manufacturing Network",
+                      "Access to best Production Capabilities",
+                     
                     ].map((item) => (
                       <li className="flex items-center gap-x-2" key={item}>
                         <span className="flex h-7 w-7 justify-center items-center rounded-full bg-white">
@@ -3652,9 +3661,12 @@ export default function Home() {
                     <li className="px-3 py-1 border border-white rounded-full text-white">
                       More Details
                     </li>
-                    <li className="px-3 py-1 border border-white rounded-full text-white">
+                    <Link href="/contact">
+                     <li className="px-3 py-1 border border-white rounded-full text-white">
                       Contact us
                     </li>
+                    </Link>
+                   
                   </ul>
                 </div>
                 <div className="w-full md:w-1/2 mt-6 md:mt-0">
@@ -3666,7 +3678,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Product 4 - Image Left, Content Right */}
+              {/* Product 4 - Image Left, Content Right Industrial Products Aggregation */}
               <div className="sticky top-32 bg-[#067afef1] rounded-xl p-8 md:flex md:items-center">
                 <div className="w-full md:w-1/2 md:pr-6">
                   <img
@@ -3676,20 +3688,22 @@ export default function Home() {
                   />
                 </div>
                 <div className="w-full md:w-1/2 text-white md:pl-6">
-                  <p className="section-tagline">Chain of Hardware Stores</p>
+                  {/* <p className="section-tagline"></p> */}
                   <h3 className="mb-4 text-xl font-semibold">
-                    Integrate Local Stores Under One Brand
+                    Industrial Products Aggregation  
                   </h3>
                   <p className="mb-6">
-                    Reduce dead inventory, improve margins, expand business
-                    volume, and support B2B customers.
+                    Streamline your procurement. Create value. Generate savings from tail-spend.  
                   </p>
                   <ul className="mb-6 space-y-4">
                     {[
-                      "Competitive pricing & widest range",
-                      "Online & in-store shopping",
-                      "Optimize sourcing & operations",
-                      "Support B2B growth",
+                      "Fastest Delivery – within just 24 hours! (Via Byyizzy-powered hardware stores)  ",
+                      "Transparent Pricing",
+                      "100% Process Visibility",
+                       "Local Business Engagement",
+                      "Integrated B2B & B2C Ecosystem",
+                      "End-to-End Tracking & Catalog-Based Buying",
+                      "Supporting Local, Saving Community Wealth"
                     ].map((item) => (
                       <li className="flex items-center gap-x-2" key={item}>
                         <span className="flex h-7 w-7 justify-center items-center rounded-full bg-white">
@@ -3711,9 +3725,11 @@ export default function Home() {
                     <li className="px-3 py-1 border border-white rounded-full text-white">
                       More Details
                     </li>
-                    <li className="px-3 py-1 border border-white rounded-full text-white">
+                    <Link href="/contact">
+                      <li className="px-3 py-1 border border-white rounded-full text-white">
                       Contact us
                     </li>
+                    </Link>
                   </ul>
                 </div>
               </div>
