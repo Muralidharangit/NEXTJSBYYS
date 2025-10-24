@@ -180,7 +180,6 @@ const Footer = () => {
               <a href="#" className="text-[#99a1af]  hover:text-white">
                 Terms
               </a>
-              {/* sw */}
               <a href="#" className="text-[#99a1af]  hover:text-white">
                 Privacy
               </a>
