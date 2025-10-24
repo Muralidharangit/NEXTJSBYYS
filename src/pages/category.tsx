@@ -2869,10 +2869,10 @@ export default function Home() {
             data-aos-delay={300}
             className="text-center justify-start text-base-grey text-lg font-normal leading-tight lg:leading-relaxed max-w-[750px] aos-init"
           >
-            Learn what drives our team and how we turn visions into lasting
-            structures.
+            Explore products and services grouped for your needs.
           </p>
         </div>
+        
       </section>
 
       {/* Categories Section */}
@@ -2912,7 +2912,7 @@ export default function Home() {
         </div>
 
         {/* Button */}
-        <div
+        {/* <div
           className="mt-12 text-center"
           data-aos="fade-up"
           data-aos-delay="200"
@@ -2920,7 +2920,7 @@ export default function Home() {
           <button className="rounded-lg border bg-[#067afe] border-white px-6 py-3 text-white transition-all duration-300 hover:bg-white hover:text-[#067afe]">
             Try it for 30 days, no credit card required
           </button>
-        </div>
+        </div> */}
       </section>
 
       <section

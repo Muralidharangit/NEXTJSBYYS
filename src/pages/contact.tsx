@@ -114,8 +114,7 @@ export default function ContactPage() {
             data-aos-delay={300}
             className="text-center justify-start text-base-grey text-lg font-normal leading-tight lg:leading-relaxed max-w-[750px] aos-init"
           >
-            Learn what drives our team and how we turn visions into lasting
-            structures.
+            Let’s solve it together. Reach out and we’ll respond shortly.
           </p>
         </div>
       </section>
