@@ -130,7 +130,7 @@ export default function Header() {
 
             {/* Mobile Login Button - Updated href to '/login' */}
             <a
-              href="/login" // LINK ADDED HERE
+              href="/login"
               className="block rounded-lg bg-[#067afe] px-3 py-2.5 text-base font-semibold text-white text-center shadow-md hover:bg-[#0569dc]"
               onClick={() => setMobileMenuOpen(false)}
             >
