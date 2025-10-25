@@ -33,15 +33,6 @@ export default function ContactPage() {
 
   if (loading) return <Loader />;
 
-  const handleChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("✅ Thank you for contacting us!");
-    setFormData({ name: "", email: "", message: "" });
-  };
-
   return (
     <div>
       <Header />
