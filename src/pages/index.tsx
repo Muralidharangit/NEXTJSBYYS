@@ -443,26 +443,32 @@ export default function Home() {
                 desc: "Simplify and digitize your sourcing, procurement, and supply chain management through our AI-powered e-sourcing platform and verified supplier network.",
                 // tags: ["Procurement", "Optimization", "Compliance"],
                 img: "https://pscs.jabil.com/dam/jcr:7730bd3c-24e6-4e3e-8a80-cb2c79bb8123/Procurement--Managed-Services_16x9.jpg",
+                href:"/services/paas"
               },
               {
-                title: "E-Sourcing Platform",
+                title: "Hardware Store Chain",
                 desc: "We’re creating India’s first hardware store chain that blends online convenience with a great in-store experience.",
                 // tags: ["E-Sourcing", "RFQ", "Automation"],
                 img: "https://html.themewant.com/digix/assets/images/service/06.webp",
+                href:"/services/HardwareStoreChain"
               },
               {
                 title: "Industrial Products Aggregation",
                 desc: "High complexity and low-value transactions have made Industrial MRO supply chain hard to manage well—even as value trickles away.",
                 // tags: ["Hardware", "Aggregation", "Supply Chain"],
                 img: "https://cdn1.expresscomputer.in/wp-content/uploads/2024/03/08132642/ec-smart-industry-robot-arms-digital-factory-production-technology-750.jpg",
+                href:"/services/maas"
               },
               {
                 title: "Manufacturing as a Service (MaaS)",
                 desc: "Transform your custom & non-standard spare parts supply chain with our AI-powered manufacturing platform and extensive supplier network. Achieve full visibility, reduce lead times, and enhance quality.",
                 // tags: ["Manufacturing", "On-Demand", "Efficiency"],
                 img: "https://www.capgemini.com/wp-content/uploads/2022/05/Key-Visual-Hannover-Messe-GettyImages-1022892534.jpg",
+                href:"/services/maas"
               },
             ].map((item, idx) => (
+              <>
+               <Link href={item.href}>
               <div
                 key={idx}
                 className="
@@ -473,6 +479,8 @@ export default function Home() {
                 data-aos="fade-up"
                 data-aos-delay={idx * 150}
               >
+               
+                
                 {/* LEFT SIDE */}
                 <div className="flex items-center gap-6 md:flex-[0_0_48%] w-full">
                   {/* Image */}
@@ -516,7 +524,10 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
+            
               </div>
+                  </Link>
+              </>
             ))}
           </div>
         </div>
