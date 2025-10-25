@@ -64,7 +64,7 @@ export default function Header() {
         {/* Right: Button - Kept as '#' for now, assuming this leads to a separate login page/modal */}
         <div className="hidden lg:flex lg:flex-1 justify-end">
           <a
-            href="/login" // LINK ADDED HERE - Changed to a common '/login' path
+            href="contact" // LINK ADDED HERE - Changed to a common '/login' path
             className={`rounded-lg px-5 py-2 text-sm font-semibold shadow-md transition-all duration-300 ${
               scrolled
                 ? "bg-white text-[#067afe] hover:bg-gray-100"

@@ -1,8 +1,7 @@
-
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Header from "@/components/Header";
+import Header from "@/components/Header copy";
 import LetterAnimation from "@/components/LetterAnimation";
 import Loader from "@/components/Loader";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
@@ -14,7 +13,7 @@ import { CurrencyDollarIcon, CubeIcon, UsersIcon, ClipboardDocumentListIcon, Cha
 import Image from "next/image";
 
 
-export default function IndustrialProductsAggregation() {
+export default function ProcurementService() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

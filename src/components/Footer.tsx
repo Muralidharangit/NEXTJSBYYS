@@ -53,28 +53,28 @@ const Footer = () => {
               className="text-[20px] font-small mb-7 "
               style={{ color: "white" }}
             >
-              Company
+              Quick Links
             </h6>
             <ul className="text-md transition-all  text-[#99a1af] duration-500">
               <li className="mb-6">
-                <a href="#" className="hover:text-white">
+                <Link href="/about" className="hover:text-white">
                   About Us 
-                </a>
+                </Link>
               </li>
               <li className="mb-6">
-                <a href="#" className="hover:text-white">
-                  Our Mission & Vision
-                </a>
+                <Link href="/" className="hover:text-white">
+                  Home
+                </Link>
               </li>
               <li className="mb-6">
-                <a href="#" className="hover:text-white">
-                  Chain of Stores
-                </a>
+                <Link href="/service" className="hover:text-white">
+                  Service
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white">
-                  Careers
-                </a>
+                <Link href="/category" className="hover:text-white">
+                  Products
+                </Link>
               </li>
             </ul>
           </div>
@@ -116,23 +116,19 @@ const Footer = () => {
             <ul className="text-md text-[#99a1af]  transition-all duration-500">
               <li className="mb-6">
                 <a href="#" className="hover:text-white">
-                  FAQ
+                  Teams and Condition
                 </a>
               </li>
               <li className="mb-6">
                 <a href="#" className="hover:text-white">
-                  Shipping & Delivery
+                  Privacy and policy
                 </a>
               </li>
-              <li className="mb-6">
-                <a href="#" className="hover:text-white">
-                  Vendor/Supplier Onboarding
-                </a>
-              </li>
+            
               <li>
-                <a href="#" className="hover:text-white">
+                <Link href="/contact" className="hover:text-white">
                   Contact Support
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
