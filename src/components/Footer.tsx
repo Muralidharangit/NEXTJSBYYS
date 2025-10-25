@@ -8,6 +8,7 @@ import {
 
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -57,7 +58,7 @@ const Footer = () => {
             <ul className="text-md transition-all  text-[#99a1af] duration-500">
               <li className="mb-6">
                 <a href="#" className="hover:text-white">
-                  About Us
+                  About Us 
                 </a>
               </li>
               <li className="mb-6">
@@ -85,22 +86,22 @@ const Footer = () => {
             </h6>
             <ul className="text-md transition-all text-[#99a1af]  duration-500">
               <li className="mb-6">
-                <a href="#" className="hover:text-white">
+                <Link href="/services/paas" className="hover:text-white">
                   Procurement as a Service (PaaS)
+                </Link>
+              </li>
+              <li className="mb-6">
+                <a href="/services/HardwareStoreChain" className="hover:text-white">
+                   Byyizzy Powered Hardware Store Chain
                 </a>
               </li>
               <li className="mb-6">
-                <a href="#" className="hover:text-white">
-                  E-Sourcing Platform
-                </a>
-              </li>
-              <li className="mb-6">
-                <a href="#" className="hover:text-white">
-                  Industrial Products (MRO)
+                <a href="/services/IndustrialProductsAggregation" className="hover:text-white">
+                  Industrial Products Aggregation
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white">
+                <a href="/services/maas" className="hover:text-white">
                   Manufacturing as a Service (MaaS)
                 </a>
               </li>

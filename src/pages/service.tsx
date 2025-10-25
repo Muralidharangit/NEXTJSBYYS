@@ -293,6 +293,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="grid gap-[25px] grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-4">
+             <Link href="/services/IndustrialProductsAggregation"> 
               <div
                 className="bg-white rounded-[20px] py-[50px] px-[35px] border border-[#FAF4F4] hover:bg-[#FAF4F4] transition delay-100 duration-300 ease-in-out aos-init aos-animate"
                 data-aos="fade-up"
@@ -333,6 +334,8 @@ export default function Home() {
                   </svg>
                 </Link>
               </div>
+            </Link>
+             <Link href="/services/HardwareStoreChain">
               <div
                 className="bg-white rounded-[20px] py-[50px] px-[35px] border border-[#FAF4F4] hover:bg-[#FAF4F4] transition delay-100 duration-300 ease-in-out aos-init aos-animate"
                 data-aos="fade-up"
@@ -373,6 +376,8 @@ export default function Home() {
                   </svg>
                 </Link>
               </div>
+              </Link>
+              <Link href="/services/paas">
               <div
                 className="bg-white rounded-[20px] py-[50px] px-[35px] border border-[#FAF4F4] hover:bg-[#FAF4F4] transition delay-100 duration-300 ease-in-out aos-init aos-animate"
                 data-aos="fade-up"
@@ -413,6 +418,8 @@ export default function Home() {
                   </svg>
                 </Link>
               </div>
+              </Link>
+               <Link href="/services/maas"> 
               <div
                 className="bg-white rounded-[20px] py-[50px] px-[35px] border border-[#FAF4F4] hover:bg-[#FAF4F4] transition delay-100 duration-300 ease-in-out aos-init aos-animate"
                 data-aos="fade-up"
@@ -454,6 +461,7 @@ export default function Home() {
                   </svg>
                 </Link>
               </div>
+              </Link>
             </div>
             
           </div>
