@@ -39,7 +39,7 @@ export default function VideoBanner() {
           muted
           loop
           playsInline
-          className={` left-0 w-full h-full object-cover transition-all duration-1000 transform ${
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-all duration-1000 transform ${
             currentVideo === index
               ? "opacity-100 scale-100"
               : "opacity-0 scale-105"
@@ -48,6 +48,5 @@ export default function VideoBanner() {
         />
       ))}
     </section>
-   
   );
 }
