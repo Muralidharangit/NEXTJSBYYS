@@ -267,11 +267,11 @@ export default function Home() {
 
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
-    return () => clearTimeout(timer);
-  }, []);
-  if (loading) return <Loader />;
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setLoading(false), 100);
+  //   return () => clearTimeout(timer);
+  // }, []);
+  // if (loading) return <Loader />;
 
   return (
     <>
@@ -367,9 +367,10 @@ export default function Home() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-xl text-[#050d20] font-semibold">
+                    {/* // Corrected to H3 to follow an assumed H2 main title */}
+                    <h3 className="text-xl text-[#050d20] font-semibold">
                       Integrated Hardware Chain Network
-                    </h4>
+                    </h3>
                     <p className="text-base font-normal text-gray-500 mt-2">
                       Bringing India’s fragmented hardware stores together under
                       one brand — powered by Byyizzy’s expertise, technology,
@@ -403,9 +404,9 @@ export default function Home() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-xl text-[#050d20] font-semibold">
+                    <h3 className="text-xl text-[#050d20] font-semibold">
                       Optimize Procurement & Supply Chain
-                    </h4>
+                    </h3>
                     <p className="text-base font-normal text-gray-500 mt-2">
                       Simplifying Source-to-Pay, improving margins, and enabling
                       sustainable, transparent procurement through advanced
@@ -456,80 +457,87 @@ export default function Home() {
                   desc: "Simplify and digitize your sourcing, procurement, and supply chain management through our AI-powered e-sourcing platform and verified supplier network.",
                   // tags: ["Procurement", "Optimization", "Compliance"],
                   img: "/images/s04.webp",
+                  href: "/services/paas",
                 },
                 {
-                  title: "E-Sourcing Platform",
+                  title: "Hardware Store Chain",
                   desc: "We’re creating India’s first hardware store chain that blends online convenience with a great in-store experience.",
                   // tags: ["E-Sourcing", "RFQ", "Automation"],
                   img: "/images/s02.webp",
+                  href: "/services/HardwareStoreChain",
                 },
                 {
                   title: "Industrial Products Aggregation",
                   desc: "High complexity and low-value transactions have made Industrial MRO supply chain hard to manage well—even as value trickles away.",
                   // tags: ["Hardware", "Aggregation", "Supply Chain"],
                   img: "/images/s03.webp",
+                  href: "/services/IndustrialProductsAggregation",
                 },
                 {
                   title: "Manufacturing as a Service (MaaS)",
                   desc: "Transform your custom & non-standard spare parts supply chain with our AI-powered manufacturing platform and extensive supplier network. Achieve full visibility, reduce lead times, and enhance quality.",
                   // tags: ["Manufacturing", "On-Demand", "Efficiency"],
                   img: "/images/s01.webp",
+                  href: "/services/maas",
                 },
               ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="
+                <>
+                  <Link href={item.href}>
+                    <div
+                      key={idx}
+                      className="
     group flex flex-wrap md:flex-nowrap items-center border-b border-indigo-100 py-8 
     transition-all duration-300 
     lg:hover:bg-[#067afe] lg:hover:px-6
   "
-                  data-aos="fade-up"
-                  data-aos-delay={idx * 150}
-                >
-                  {/* LEFT SIDE */}
-                  <div className="flex items-center gap-6 md:flex-[0_0_48%] w-full">
-                    {/* Image */}
-                    <div className="w-0 overflow-hidden transition-all duration-500 lg:group-hover:w-[273px]">
-                      <img
-                        src={item.img}
-                        alt={item.title}
-                        className="h-auto w-full md:w-auto"
-                      />
-                    </div>
+                      data-aos="fade-up"
+                      data-aos-delay={idx * 150}
+                    >
+                      {/* LEFT SIDE */}
+                      <div className="flex items-center gap-6 md:flex-[0_0_48%] w-full">
+                        {/* Image */}
+                        <div className="w-0 overflow-hidden transition-all duration-500 lg:group-hover:w-[273px]">
+                          <img
+                            src={item.img}
+                            alt={item.title}
+                            className="h-auto w-full md:w-auto"
+                          />
+                        </div>
 
-                    {/* Number + Title */}
-                    <div className="flex items-center gap-4">
-                      {/* Hide number on mobile & tablet */}
-                      <span className="hidden lg:inline-block px-4 py-1 rounded-full border border-indigo-200 text-gray-700 group-hover:text-white group-hover:border-white transition">
-                        {`0${idx + 1}`}
-                      </span>
-                      <h5 className="text-xl md:text-3xl font-semibold text-gray-900 lg:group-hover:text-white transition">
-                        {item.title}
-                      </h5>
-                    </div>
-                  </div>
+                        {/* Number + Title */}
+                        <div className="flex items-center gap-4">
+                          {/* Hide number on mobile & tablet */}
+                          <span className="hidden lg:inline-block px-4 py-1 rounded-full border border-indigo-200 text-gray-700 group-hover:text-white group-hover:border-white transition">
+                            {`0${idx + 1}`}
+                          </span>
+                          <h3 className="text-xl md:text-3xl font-semibold text-gray-900 lg:group-hover:text-white transition">
+                            {item.title}
+                          </h3>
+                        </div>
+                      </div>
 
-                  {/* RIGHT SIDE */}
-                  <div className="flex items-center justify-between md:flex-[0_0_50%] w-full mt-4 md:mt-0">
-                    <div className="max-w-md w-full">
-                      {/* Add mobile paragraph padding */}
-                      <p className="text-gray-600 lg:group-hover:text-white transition px-4 md:px-0">
-                        {item.desc}
-                      </p>
-                    </div>
+                      {/* RIGHT SIDE */}
+                      <div className="flex items-center justify-between md:flex-[0_0_50%] w-full mt-4 md:mt-0">
+                        <div className="max-w-md w-full">
+                          {/* Add mobile paragraph padding */}
+                          <p className="text-gray-600 lg:group-hover:text-white transition px-4 md:px-0">
+                            {item.desc}
+                          </p>
+                        </div>
 
-                    {/* Arrow — hide on mobile & tablet */}
-                    <div className="hidden lg:flex ml-6">
-                      <a
-                        href="#"
-                        className="flex items-center justify-center w-11 h-11 rounded-full border border-gray-900 text-gray-900 
+                        {/* Arrow — hide on mobile & tablet */}
+                        <div className="hidden lg:flex ml-6">
+                          <div
+                            className="flex items-center justify-center w-11 h-11 rounded-full border border-gray-900 text-gray-900 
         transition lg:group-hover:bg-white lg:group-hover:text-indigo-600 lg:group-hover:border-indigo-600"
-                      >
-                        <FaArrowRight className="w-4 h-4 text-black lg:group-hover:text-indigo-600" />
-                      </a>
+                          >
+                            <FaArrowRight className="w-4 h-4 text-black lg:group-hover:text-indigo-600" />
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </Link>
+                </>
               ))}
             </div>
           </div>
@@ -752,7 +760,7 @@ export default function Home() {
                         <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300 mr-3 sm:mr-4 flex-shrink-0 bg-white dark:bg-gray-800">
                           <img
                             src={category.images}
-                            alt={category.title}
+                            alt="Category"
                             className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 object-contain"
                           />
                         </div>
@@ -833,19 +841,35 @@ export default function Home() {
                         </li>
                       ))}
                     </ul>
+
                     <ul className="flex flex-wrap gap-2">
-                      {/* Note: List items inside Link components typically still need a key if they are mapped,
-              but these two are static and not in a map loop, so they don't need a key. */}
-                      <Link href="/services/paas">
-                        <li className="px-3 py-1 border border-white rounded-full text-white">
+                      {/* Buttons can have a final little zoom-in */}
+                      <li
+                        className="px-3 py-1 border border-white rounded-full text-white"
+                        data-aos="zoom-in"
+                        data-aos-delay="500"
+                      >
+                        {/* FIX: Wrapped content in Link for navigation and accessibility */}
+                        <Link
+                          href="/services/paas" // Replace with the actual details URL
+                          className="hover:opacity-80 transition-opacity block"
+                        >
                           More Details
-                        </li>
-                      </Link>
-                      <Link href="/contact">
-                        <li className="px-3 py-1 border border-white rounded-full text-white">
+                        </Link>
+                      </li>
+                      <li
+                        className="px-3 py-1 border border-white rounded-full text-white"
+                        data-aos="zoom-in"
+                        data-aos-delay="600"
+                      >
+                        {/* FIX: Wrapped content in Link for navigation and accessibility */}
+                        <Link
+                          href="/contact"
+                          className="hover:opacity-80 transition-opacity block"
+                        >
                           Contact us
-                        </li>
-                      </Link>
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                   <div className="w-full md:w-1/2 mt-6 md:mt-0 relative">
@@ -908,16 +932,29 @@ export default function Home() {
                       ))}
                     </ul>
                     <ul className="flex flex-wrap gap-2">
-                      <Link href="/services/HardwareStoreChain">
-                        <li className="px-3 py-1 border border-white rounded-full text-white">
+                      {/* Link to More Details */}
+                      {/* FIX: <li> is now the direct child of <ul> */}
+                      <li>
+                        <Link
+                          href="/services/HardwareStoreChain"
+                          // Move classes to Link and add 'block' to make the full area clickable
+                          className="px-3 py-1 border border-white rounded-full text-white block"
+                        >
                           More Details
-                        </li>
-                      </Link>
-                      <Link href="/contact">
-                        <li className="px-3 py-1 border border-white rounded-full text-white">
+                        </Link>
+                      </li>
+
+                      {/* Link to Contact Us */}
+                      {/* FIX: <li> is now the direct child of <ul> */}
+                      <li>
+                        <Link
+                          href="/contact"
+                          // Move classes to Link and add 'block' to make the full area clickable
+                          className="px-3 py-1 border border-white rounded-full text-white block"
+                        >
                           Contact us
-                        </li>
-                      </Link>
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -963,16 +1000,59 @@ export default function Home() {
                       ))}
                     </ul>
                     <ul className="flex flex-wrap gap-2">
-                      <Link href="/services/maas">
-                        <li className="px-3 py-1 border border-white rounded-full text-white">
+                      {/* Link to More Details */}
+                      {/* FIX: <li> is the direct child of <ul> */}
+                      <li>
+                        <Link
+                          href="/services/maas"
+                          // Move classes to Link and add 'block' for full click area
+                          className="px-3 py-1 border border-white rounded-full text-white block"
+                        >
                           More Details
-                        </li>
-                      </Link>
-                      <Link href="/contact">
-                        <li className="px-3 py-1 border border-white rounded-full text-white">
+                        </Link>
+                      </li>
+
+                      {/* Link to Contact Us */}
+                      {/* FIX: <li> is the direct child of <ul> */}
+                      <li>
+                        <Link
+                          href="/contact"
+                          // Move classes to Link and add 'block' for full click area
+                          className="px-3 py-1 border border-white rounded-full text-white block"
+                        >
                           Contact us
-                        </li>
-                      </Link>
+                        </Link>
+                      </li>
+                    </ul>
+
+                    <ul className="flex flex-wrap gap-2">
+                      {/* Buttons can have a final little zoom-in */}
+                      <li
+                        className="px-3 py-1 border border-white rounded-full text-white"
+                        data-aos="zoom-in"
+                        data-aos-delay="500"
+                      >
+                        {/* FIX: Wrapped content in Link for navigation and accessibility */}
+                        <Link
+                          href="/services/paas" // Replace with the actual details URL
+                          className="hover:opacity-80 transition-opacity block"
+                        >
+                          More Details
+                        </Link>
+                      </li>
+                      <li
+                        className="px-3 py-1 border border-white rounded-full text-white"
+                        data-aos="zoom-in"
+                        data-aos-delay="600"
+                      >
+                        {/* FIX: Wrapped content in Link for navigation and accessibility */}
+                        <Link
+                          href="/contact"
+                          className="hover:opacity-80 transition-opacity block"
+                        >
+                          Contact us
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                   <div className="w-full md:w-1/2 mt-6 md:mt-0">
@@ -1038,16 +1118,29 @@ export default function Home() {
                       ))}
                     </ul>
                     <ul className="flex flex-wrap gap-2">
-                      <Link href="/services/IndustrialProductsAggregation">
-                        <li className="px-3 py-1 border border-white rounded-full text-white">
+                      {/* Link to More Details */}
+                      <li>
+                        {" "}
+                        {/* FIX: <li> is now the direct child of <ul> */}
+                        <Link
+                          href="/services/IndustrialProductsAggregation"
+                          className="px-3 py-1 border border-white rounded-full text-white block"
+                        >
                           More Details
-                        </li>
-                      </Link>
-                      <Link href="/contact">
-                        <li className="px-3 py-1 border border-white rounded-full text-white">
+                        </Link>
+                      </li>
+
+                      {/* Link to Contact Us */}
+                      <li>
+                        {" "}
+                        {/* FIX: <li> is now the direct child of <ul> */}
+                        <Link
+                          href="/contact"
+                          className="px-3 py-1 border border-white rounded-full text-white block"
+                        >
                           Contact us
-                        </li>
-                      </Link>
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </div>

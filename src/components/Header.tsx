@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import Link from "next/link"; // Import Link for internal navigation
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,9 +21,11 @@ export default function Header() {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Category", href: "/category" },
-    { name: "Services", href: "/service" }, // Using '/services' path
+    { name: "Services", href: "/service" },
     { name: "Contact", href: "/contact" },
   ];
+
+  const logoSrc = scrolled ? "/images/white.png" : "/images/blue.png";
 
   return (
     <header
@@ -33,46 +36,46 @@ export default function Header() {
       }`}
     >
       <nav className="mx-auto flex container items-center justify-between py-3 lg:px-8">
-        {/* Left: Logo - Updated href to '/' */}
+        {/* Left: Logo - Updated to Link component and added priority */}
         <div className="flex flex-1">
-          <a href="#" className="p-1.5">
+          {/* FIX 1: Use Link component for internal navigation */}
+          <Link href="/" className="p-1.5" aria-label="Go to Homepage">
             <Image
-              src={scrolled ? "/images/white.png" : "/images/blue.png"}
-              alt="Logo"
+              src={logoSrc}
+              alt="Company Logo"
               width={160}
               height={40}
+              // FIX 2: Add priority={true} to disable lazy loading and set fetchpriority=high
+              priority={true}
               className="object-contain transition-all duration-300"
             />
-          </a>
+          </Link>
         </div>
 
-        {/* Center: Menu - Updated href to use path from menuItems */}
+        {/* Center: Menu - Updated to Link component */}
         <div className="hidden lg:flex lg:gap-x-8">
           {menuItems.map((item) => (
-            <a
+            <Link // FIX 3: Use Link component for menu navigation
               key={item.name}
-              href={item.href} // LINK ADDED HERE
+              href={item.href}
               className={`font-semibold transition-colors duration-300 ${
                 scrolled ? "text-white" : "text-[#071431] dark:text-white"
               } hover:text-[#0569dc] dark:hover:text-gray-300`}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
 
-        {/* Right: Button - Kept as '#' for now, assuming this leads to a separate login page/modal */}
+        {/* Right: Button - Updated to Link component and correct href */}
         <div className="hidden lg:flex lg:flex-1 justify-end">
-          <a
-            href="contact" // LINK ADDED HERE - Changed to a common '/login' path
-            className={`rounded-lg px-5 py-2 text-sm font-semibold shadow-md transition-all duration-300 ${
-              scrolled
-                ? "bg-white text-[#067afe] hover:bg-gray-100"
-                : "bg-[#067afe] text-white hover:bg-[#0569dc]"
-            }`}
+          {/* FIX 4: Use Link component and ensure proper contrast */}
+          <Link
+            href="/login" // Assuming this leads to a /login page
+            className="rounded-lg px-5 py-2 text-sm font-semibold shadow-md bg-[#0056D4] text-white hover:bg-[#0047a0] transition"
           >
             Log in →
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -82,6 +85,7 @@ export default function Header() {
             className={`-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 ${
               scrolled ? "text-white" : "text-[#071431] dark:text-gray-400"
             }`}
+            aria-label="Open main menu" // Accessibility improvement
           >
             <Bars3Icon className="h-6 w-6" />
           </button>
@@ -96,46 +100,54 @@ export default function Header() {
       >
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900 dark:sm:ring-gray-100/10">
           <div className="flex items-center justify-between">
-            {/* Logo in Mobile Dialog - Updated href to '/' */}
-            <a href="#">
+            {/* Logo in Mobile Dialog - Use Link component */}
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Go to Homepage"
+            >
               <Image
                 src="/images/blue.png"
-                alt="Logo"
+                alt="Company Logo"
                 width={140}
                 height={40}
+                priority={true} // FIX 2: Add priority={true} here as well
               />
-            </a>
+            </Link>
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-400"
+              aria-label="Close menu" // Accessibility improvement
             >
               <XMarkIcon className="h-6 w-6" />
             </button>
           </div>
 
           <div className="mt-6">
-            {/* Mobile Menu Links - Updated href to use path from menuItems */}
+            {/* Mobile Menu Links - Use Link component */}
             <div className="space-y-2 py-6">
               {menuItems.map((item) => (
-                <a
+                <Link // FIX 3: Use Link component for mobile menu navigation
                   key={item.name}
-                  href={item.href} // LINK ADDED HERE
+                  href={item.href}
                   className="block rounded-lg px-3 py-2 text-base font-semibold text-[#071431] dark:text-white hover:bg-gray-50 dark:hover:bg-white/5"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
 
-            {/* Mobile Login Button - Updated href to '/login' */}
-            <a
-              href="/login"
-              className="block rounded-lg bg-[#067afe] px-3 py-2.5 text-base font-semibold text-white text-center shadow-md hover:bg-[#0569dc]"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Log in →
-            </a>
+            {/* Mobile Login Button - Used Link component and correct href/contrast */}
+            <div>
+              <Link // FIX 4: Use Link component and ensure proper contrast
+                href="/login" // Assuming this leads to a /login page
+                className="block rounded-lg px-5 py-2 text-sm font-semibold shadow-md bg-[#0056D4] text-white hover:bg-[#0047a0] transition"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Log in →
+              </Link>
+            </div>
           </div>
         </DialogPanel>
       </Dialog>
