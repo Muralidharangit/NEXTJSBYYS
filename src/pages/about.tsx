@@ -1,39 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Inter_Tight, Inter, Onest, Syne } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Script from "next/script";
-import { FaArrowRight } from "react-icons/fa";
+// import { FaArrowRight } from "react-icons/fa";
 import LetterAnimation from "@/components/LetterAnimation";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { useEffect, useRef, useState } from "react";
+// import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import VideoBanner from "@/components/VideoBanner";
 import Loader from "@/components/Loader";
-
-const interTight = Inter_Tight({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // choose weights
-  variable: "--font-inter-tight",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const onest = Onest({
-  subsets: ["latin"],
-  variable: "--font-onest",
-});
-
-const syne = Syne({
-  subsets: ["latin"],
-  variable: "--font-syne",
-});
 
 const brandLogo = [
   {

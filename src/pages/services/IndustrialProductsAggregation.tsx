@@ -151,8 +151,8 @@ export default function IndustrialProductsAggregation() {
                                 "⚙️ Automated, Low-Cost Operations",
                                 "💡 Light Asset, Agile Business Model"
                             ].map((feature, idx) => {
-                                const emoji = feature.match(/^[^\s]+/)[0];
-                                const text = feature.replace(emoji, '').trim();
+                                   const [emoji, ...rest] = feature.split(" ");
+                               const text = rest.join(" ").trim();
                                 return (
                                     <li
                                         key={idx}
