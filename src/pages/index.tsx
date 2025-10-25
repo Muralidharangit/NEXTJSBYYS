@@ -263,7 +263,7 @@ export default function Home() {
 
   // Accessible Blue Color Utility: Use a darker blue for high contrast with white text
   // #0057b3 has a contrast ratio of > 4.5:1 against #FFFFFF (WCAG AA compliant)
-  const ACCESSIBLE_BLUE = "bg-[#067afe]";
+  const ACCESSIBLE_BLUE = "bg-[#0057b3]";
 
   const [loading, setLoading] = useState(true);
 
@@ -449,44 +449,6 @@ export default function Home() {
               </div>
             </div>
 
-
-          <div className="space-y-6 bg-[#f1f1f1]">
-            {[
-              {
-                title: "Procurement as a Service (PaaS)",
-                desc: "Simplify and digitize your sourcing, procurement, and supply chain management through our AI-powered e-sourcing platform and verified supplier network.",
-                // tags: ["Procurement", "Optimization", "Compliance"],
-                img: "https://pscs.jabil.com/dam/jcr:7730bd3c-24e6-4e3e-8a80-cb2c79bb8123/Procurement--Managed-Services_16x9.jpg",
-                href:"/services/paas"
-              },
-              {
-                title: "Hardware Store Chain",
-                desc: "We’re creating India’s first hardware store chain that blends online convenience with a great in-store experience.",
-                // tags: ["E-Sourcing", "RFQ", "Automation"],
-                img: "https://html.themewant.com/digix/assets/images/service/06.webp",
-                href:"/services/HardwareStoreChain"
-              },
-              {
-                title: "Industrial Products Aggregation",
-                desc: "High complexity and low-value transactions have made Industrial MRO supply chain hard to manage well—even as value trickles away.",
-                // tags: ["Hardware", "Aggregation", "Supply Chain"],
-                img: "https://cdn1.expresscomputer.in/wp-content/uploads/2024/03/08132642/ec-smart-industry-robot-arms-digital-factory-production-technology-750.jpg",
-                href:"/services/maas"
-              },
-              {
-                title: "Manufacturing as a Service (MaaS)",
-                desc: "Transform your custom & non-standard spare parts supply chain with our AI-powered manufacturing platform and extensive supplier network. Achieve full visibility, reduce lead times, and enhance quality.",
-                // tags: ["Manufacturing", "On-Demand", "Efficiency"],
-                img: "https://www.capgemini.com/wp-content/uploads/2022/05/Key-Visual-Hannover-Messe-GettyImages-1022892534.jpg",
-                href:"/services/maas"
-              },
-            ].map((item, idx) => (
-              <>
-               <Link href={item.href}>
-              <div
-                key={idx}
-                className="
-
             <div className="space-y-6 bg-[#f1f1f1]">
               {[
                 {
@@ -517,28 +479,10 @@ export default function Home() {
                 <div
                   key={idx}
                   className="
-
     group flex flex-wrap md:flex-nowrap items-center border-b border-indigo-100 py-8 
     transition-all duration-300 
     lg:hover:bg-[#067afe] lg:hover:px-6
   "
-
-                data-aos="fade-up"
-                data-aos-delay={idx * 150}
-              >
-               
-                
-                {/* LEFT SIDE */}
-                <div className="flex items-center gap-6 md:flex-[0_0_48%] w-full">
-                  {/* Image */}
-                  <div className="w-0 overflow-hidden transition-all duration-500 lg:group-hover:w-[273px]">
-                    <img
-                      src={item.img}
-                      alt={item.title}
-                      className="h-auto w-full md:w-auto"
-                    />
-                  </div>
-
                   data-aos="fade-up"
                   data-aos-delay={idx * 150}
                 >
@@ -552,7 +496,6 @@ export default function Home() {
                         className="h-auto w-full md:w-auto"
                       />
                     </div>
-
 
                     {/* Number + Title */}
                     <div className="flex items-center gap-4">
@@ -587,16 +530,8 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-
-            
-              </div>
-                  </Link>
-              </>
-            ))}
-
               ))}
             </div>
-
           </div>
         </section>
 
