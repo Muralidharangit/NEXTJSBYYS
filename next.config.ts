@@ -1,18 +1,15 @@
-// import type { NextConfig } from "next";
-
-// const nextConfig: NextConfig = {
-//   /* config options here */
-//   reactStrictMode: true,
-// };
-
-// export default nextConfig;
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Enforce Next.js behavior that checks for common issues (recommended)
+  reactStrictMode: true,
+
   images: {
+    // List of external domains from which Next.js is allowed to optimize images.
     remotePatterns: [
       {
         protocol: "https",
         hostname: "firebasestorage.googleapis.com",
+        // pathname: '/**', // Optional: restrict to a specific path if needed
       },
       {
         protocol: "https",
@@ -23,12 +20,17 @@ const nextConfig = {
         hostname: "tnswp.com",
       },
     ],
-    // formats: ["image/avif", "image/webp"], // enable modern formats if you want smaller images
+
+    // Uncomment this line to explicitly enable modern image formats
+    // formats: ["image/avif", "image/webp"],
   },
 
+  // Configuration for ESLint
   eslint: {
-    ignoreDuringBuilds: true, // optional: lets build pass even with ESLint errors
+    // WARNING: Setting this to 'true' skips linting during next build.
+    // It's recommended to fix all errors and remove this line for production.
+    ignoreDuringBuilds: true,
   },
 };
 
-export default nextConfig; // ✅ required since you're using `.mjs` / ESM
+export default nextConfig;
