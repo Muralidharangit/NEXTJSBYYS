@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 import Loader from "@/components/Loader";
 import { SHOP_BY_CATEGORIES, slugify } from "data/shopBycatlog";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 
 
@@ -34,7 +35,7 @@ export default function Home() {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <LetterAnimation />
 
       <section
@@ -136,7 +137,7 @@ export default function Home() {
             >
               <div className="group relative flex items-center p-4 bg-white  rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 min-h-[5rem] sm:min-h-[6rem] md:min-h-[7rem] lg:min-h-[8rem]">
                 <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300 mr-3 sm:mr-4 flex-shrink-0 bg-white dark:bg-gray-800">
-                  <img
+                  <Image
                     src={category.images}
                     alt={category.title}
                     className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 object-contain"
@@ -199,7 +200,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
       <Script src="/assets/js/scroll-trigger.js" strategy="afterInteractive" />
       <Script src="/assets/js/smooth-scroll.js" strategy="afterInteractive" />
     </div>
