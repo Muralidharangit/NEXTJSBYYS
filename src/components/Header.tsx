@@ -112,6 +112,7 @@ export default function Header() {
                 width={140}
                 height={40}
                 priority={true} // FIX 2: Add priority={true} here as well
+                fetchPriority="high"
               />
             </Link>
             <button
