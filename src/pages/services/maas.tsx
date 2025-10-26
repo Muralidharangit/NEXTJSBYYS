@@ -35,7 +35,7 @@ export default function MaaSPage() {
                 />
             </Head>
 
-            <Header />
+            {/* <Header /> */}
             <LetterAnimation />
             {/* HERO + BREADCRUMB */}
             <section
@@ -415,7 +415,7 @@ export default function MaaSPage() {
                 </button>
             </section>
 
-            <Footer />
+            {/* <Footer /> */}
         </>
     );
 }

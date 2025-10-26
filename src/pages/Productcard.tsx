@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Image from "next/image";
 
 // Define the Product and ShopCategory types (You should put these in a separate types file for production)
 interface Product {
@@ -763,7 +764,7 @@ export default function ShopPage() {
               >
                 {/* 🖼️ IMAGE SECTION */}
                 <div className="relative w-full h-[250px] bg-gray-50 flex items-center justify-center overflow-hidden">
-                  <img
+                  <Image
                     src={product.image}
                     alt={product.materialName}
                     className="w-full h-full object-contain"

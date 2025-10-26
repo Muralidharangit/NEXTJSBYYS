@@ -172,7 +172,7 @@ export default function Home() {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <LetterAnimation />
 
       <section
@@ -677,7 +677,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
       <Script src="/assets/js/scroll-trigger.js" strategy="afterInteractive" />
       <Script src="/assets/js/smooth-scroll.js" strategy="afterInteractive" />
     </div>

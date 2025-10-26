@@ -2,20 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { SHOP_BY_CATEGORIES, slugify } from "data/shopBycatlog";
 
-// Example: slugify function
-const slugify = (text: string) =>
-  text
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w-]+/g, "");
-
-interface Category {
-  id: number;
-  title: string;
-  images: string;
-}
-
-
 
 export default function CategoriesSection() {
   return (
@@ -33,29 +19,31 @@ export default function CategoriesSection() {
 
       {/* Category Grid */}
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {SHOP_BY_CATEGORIES.slice(0, 16).map((category, index) => {
-          const slug = slugify(category.title);
-          return (
-            <>
-              <Link href={`/shop/${slug}?sub=all`}>
-                <div key={category.id} data-aos-delay={index * 100}>
-                  <div className="group relative flex items-center p-4 bg-white  rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 min-h-[5rem] sm:min-h-[6rem] md:min-h-[7rem] lg:min-h-[8rem]">
-                    <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300 mr-3 sm:mr-4 flex-shrink-0 bg-white dark:bg-gray-800">
-                      <img
-                        src={category.images}
-                        alt="Category"
-                        className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 object-contain"
-                      />
-                    </div>
-                    <p className="font-semibold text-gray-600 dark:text-gray-300 transition-colors duration-300 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] truncate w-[200px] !m-0">
-                      {category.title}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </>
-          );
-        })}
+      {SHOP_BY_CATEGORIES.slice(0, 16).map((category, index) => {
+  const slug = slugify(category.title);
+  const key = category.id ?? `${slug}-${index}`; // safe unique key
+
+  return (
+    <Link key={key} href={`/shop/${slug}?sub=all`}>
+      <div data-aos-delay={index * 100}>
+        <div className="group relative flex items-center p-4 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 min-h-[5rem] sm:min-h-[6rem] md:min-h-[7rem] lg:min-h-[8rem]">
+          <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300 mr-3 sm:mr-4 flex-shrink-0 bg-white dark:bg-gray-800">
+            <Image
+              src={category.images}
+              alt={category.title}
+              className="sm:w-8 sm:h-8 md:w-10 md:h-10 object-contain"
+              width={80}
+              height={80}
+            />
+          </div>
+          <p className="font-semibold text-gray-600 dark:text-gray-300 transition-colors duration-300 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] truncate w-[200px] !m-0">
+            {category.title}
+          </p>
+        </div>
+      </div>
+    </Link>
+  );
+})}
       </div>
 
       {/* Button */}
