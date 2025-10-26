@@ -200,10 +200,8 @@ export default function Home() {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <LetterAnimation />
-
-    
 
       <section
         className="self-stretch px-5 lg:px-20 pt-20 pb-20 flex flex-col justify-center items-center gap-2 overflow-hidden bg-[#eff3fa]"
@@ -253,7 +251,7 @@ export default function Home() {
                     href="#"
                     className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
                   >
-                    SERVICE
+                    SERVICE 
                   </a>
                 </span>
               </span>
@@ -638,7 +636,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
       <Script src="/assets/js/scroll-trigger.js" strategy="afterInteractive" />
       <Script src="/assets/js/smooth-scroll.js" strategy="afterInteractive" />
     </div>

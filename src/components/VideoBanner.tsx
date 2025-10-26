@@ -1,4 +1,3 @@
-"use client";
 
 import { useState, useEffect } from "react";
 import AOS from "aos";
@@ -48,6 +47,8 @@ export default function VideoBanner() {
         />
       ))}
     </section>
+
+
    
   );
 }

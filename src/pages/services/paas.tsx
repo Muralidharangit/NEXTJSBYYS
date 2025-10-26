@@ -38,7 +38,7 @@ export default function paas() {
             </Head>
 
             {/* HEADER */}
-            <Header />
+            {/* <Header /> */}
             <LetterAnimation />
 
             {/* HERO + BREADCRUMB */}
@@ -495,7 +495,7 @@ export default function paas() {
                 </div>
             </section>
 
-            <Footer />
+            {/* <Footer /> */}
             <Script src="/assets/js/scroll-trigger.js" strategy="afterInteractive" />
             <Script src="/assets/js/smooth-scroll.js" strategy="afterInteractive" />
         </>

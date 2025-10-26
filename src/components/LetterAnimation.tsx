@@ -1,51 +1,80 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function LetterAnimation() {
-  useEffect(() => {
-    const headings = document.querySelectorAll("h2.animate-letters");
+  const pathname = usePathname();
 
-    headings.forEach((h) => {
-      const el = h as HTMLElement;
-      if (!el.dataset.processed) {
-        const letters = el.textContent?.split("") || [];
-        el.innerHTML = letters
-          .map((l) => {
-            if (l === " ") {
-              // Add non-breaking space for visual spacing
-              return `<span class="inline-block">&nbsp;</span>`;
-            }
-            return `<span class="opacity-0 transform translate-y-3 inline-block transition-all duration-300">${l}</span>`;
-          })
-          .join("");
-        el.dataset.processed = "true";
-      }
+  useEffect(() => {
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const headings = Array.from(
+      document.querySelectorAll<HTMLHeadingElement>("h2.animate-letters")
+    );
+
+    // Build span-wrapped letters once per heading
+    headings.forEach((el) => {
+      if (el.dataset.processed === "true") return;
+
+      const text = el.textContent ?? "";
+      const frag = document.createDocumentFragment();
+
+      // Keep original text for SR; hide visual spans from SR
+      el.setAttribute("aria-label", text);
+
+      [...text].forEach((char, i) => {
+        const span = document.createElement("span");
+        span.className =
+          "inline-block will-change-transform transition-all duration-300 opacity-0 translate-y-3";
+        span.style.transitionDelay = `${i * 50}ms`;
+        span.setAttribute("aria-hidden", "true");
+        span.textContent = char === " " ? "\u00A0" : char;
+        frag.appendChild(span);
+      });
+
+      // Replace content safely
+      el.textContent = "";
+      el.appendChild(frag);
+      el.dataset.processed = "true";
     });
 
-    const revealLetters = () => {
-      const windowHeight = window.innerHeight;
-      headings.forEach((h) => {
-        const spans = h.querySelectorAll("span");
-        const elementTop = h.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 100) {
-          spans.forEach((span, i) => {
-            setTimeout(() => {
-              span.classList.add("opacity-100", "translate-y-0");
-            }, i * 50);
-          });
+    if (prefersReduced) {
+      // If reduced motion, show immediately and bail
+      headings.forEach((h) =>
+        h.querySelectorAll("span").forEach((s) => {
+          s.classList.remove("opacity-0", "translate-y-3");
+          s.classList.add("opacity-100", "translate-y-0");
+          (s as HTMLElement).style.transitionDelay = "0ms";
+        })
+      );
+      return;
+    }
+
+    // Observe visibility; reveal once
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const spans = entry.target.querySelectorAll("span");
+            spans.forEach((s) => {
+              s.classList.add("opacity-100", "translate-y-0");
+              s.classList.remove("opacity-0", "translate-y-3");
+            });
+            io.unobserve(entry.target); // reveal once
+          }
         }
-      });
-    };
+      },
+      { root: null, rootMargin: "0px 0px -100px 0px", threshold: 0 }
+    );
 
-    window.addEventListener("scroll", revealLetters);
-    window.addEventListener("load", revealLetters);
+    headings.forEach((h) => io.observe(h));
 
-    return () => {
-      window.removeEventListener("scroll", revealLetters);
-      window.removeEventListener("load", revealLetters);
-    };
-  }, []);
+    return () => io.disconnect();
+  }, [pathname]);
 
   return null;
 }
