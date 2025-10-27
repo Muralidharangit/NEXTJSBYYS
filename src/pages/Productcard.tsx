@@ -741,7 +741,7 @@ export default function ShopPage() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main>
         {/* 🛠️ SHOP GRID SECTION - TITLE ADDED */}
         <section className="px-5 lg:px-20 py-16">
@@ -764,7 +764,7 @@ export default function ShopPage() {
               >
                 {/* 🖼️ IMAGE SECTION */}
                 <div className="relative w-full h-[250px] bg-gray-50 flex items-center justify-center overflow-hidden">
-                  <Image
+                  <img
                     src={product.image}
                     alt={product.materialName}
                     className="w-full h-full object-contain"
@@ -838,7 +838,7 @@ export default function ShopPage() {
         </section>
         */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
