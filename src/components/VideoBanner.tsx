@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const videos = ["/videos/1.mp4"];
+const videos = ["/videos/1.webm"];
 
 export default function VideoBanner() {
   const [currentVideo, setCurrentVideo] = useState(0);
