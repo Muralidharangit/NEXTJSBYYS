@@ -49,7 +49,7 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 justify-end">
           <Link
             href="/login"
-            className="rounded-lg px-5 py-2 text-sm font-semibold shadow-md bg-[#0056D4] text-white hover:bg-[#0047a0] transition"
+            className="rounded-lg px-5 py-2 text-sm font-semibold shadow-md bg-[#067afe] text-white hover:bg-[#0047a0] transition"
           >
             Log in →
           </Link>
