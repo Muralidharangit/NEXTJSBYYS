@@ -35,7 +35,7 @@ export default function HardwareStoreChain() {
                 <link rel="canonical" href="https://yourdomain.com/services/procurement-service" />
             </Head>
 
-            <Header />
+            {/* <Header /> */}
             <LetterAnimation />
 
             {/* HERO + BREADCRUMB */}
@@ -459,7 +459,7 @@ export default function HardwareStoreChain() {
                 </Link>
             </section>
 
-            <Footer />
+            {/* <Footer /> */}
             <Script src="/assets/js/scroll-trigger.js" strategy="afterInteractive" />
             <Script src="/assets/js/smooth-scroll.js" strategy="afterInteractive" />
         </>

@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Header from "@/components/Header";
 import LetterAnimation from "@/components/LetterAnimation";
+// import Loader from "@/components/Loader";
 import Loader from "@/components/Loader";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import AOS from "aos";
@@ -11,20 +12,20 @@ import Footer from "@/components/Footer";
 import Script from "next/script";
 
 export default function paas() {
-    const [loading, setLoading] = useState(true);
-
-    // Loader effect
-    useEffect(() => {
-        const timer = setTimeout(() => setLoading(false), 1500);
-        return () => clearTimeout(timer);
-    }, []);
-
-    // Initialize animations
-    useEffect(() => {
-        AOS.init({ duration: 800, once: true });
-    }, []);
-
-    if (loading) return <Loader />;
+   const [loading, setLoading] = useState(true);
+   
+       // Loader effect
+       useEffect(() => {
+           const timer = setTimeout(() => setLoading(false), 1200);
+           return () => clearTimeout(timer);
+       }, []);
+   
+       // Initialize AOS animations
+       useEffect(() => {
+           AOS.init({ duration: 800, once: true });
+       }, []);
+   
+       if (loading) return <Loader />;
 
     return (
         <>
@@ -38,7 +39,7 @@ export default function paas() {
             </Head>
 
             {/* HEADER */}
-            <Header />
+            {/* <Header /> */}
             <LetterAnimation />
 
             {/* HERO + BREADCRUMB */}
@@ -116,73 +117,7 @@ export default function paas() {
                 </div>
             </section>
 
-            {/* <section className="py-20" data-aos="fade-up">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="text-center">
-                        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                            Procurement as a Service (PaaS)
-                        </h2>
-
-                        <p className="text-lg sm:text-xl text-gray-700 mb-6">
-                            Automate your Source-to-Pay process — for Just <span className="font-semibold text-yellow-800">1.5% of Your Spend</span>
-                        </p>
-                    </div>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 mt-10">
-                        <li className="flex items-start gap-4 p-4 sm:p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition duration-300">
-                            <span className="text-2xl">🌍</span>
-                            <p className="text-gray-700 text-lg sm:text-xl">
-                                Global Sourcing Expertise — Access verified suppliers worldwide
-                            </p>
-                        </li>
-
-                        <li className="flex items-start gap-4 p-4 sm:p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition duration-300">
-                            <span className="text-2xl">🤖</span>
-                            <p className="text-gray-700 text-lg sm:text-xl">
-                                AI-Powered Digital Ecosystem — Automate RFQs, quotes & analytics
-                            </p>
-                        </li>
-
-                        <li className="flex items-start gap-4 p-4 sm:p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition duration-300">
-                            <span className="text-2xl">💰</span>
-                            <p className="text-gray-700 text-lg sm:text-xl">
-                                Zero Tech Investment — End-to-end procurement support with transparent pricing
-                            </p>
-                        </li>
-
-                        <li className="flex items-start gap-4 p-4 sm:p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition duration-300">
-                            <span className="text-2xl">💡</span>
-                            <p className="text-gray-700 text-lg sm:text-xl">
-                                Full Visibility & Control — Track spend, performance, and savings in real time
-                            </p>
-                        </li>
-
-                        <li className="flex items-start gap-4 p-4 sm:p-6 bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition duration-300">
-                            <span className="text-2xl">🏬</span>
-                            <p className="text-gray-700 text-lg sm:text-xl">
-                                Local Fulfillment Network — Fast, reliable, and cost-effective delivery
-                            </p>
-                        </li>
-                    </ul>
-
-                    <div className="mx-auto p-6 sm:p-8 bg-yellow-50/70 rounded-xl shadow-lg border-l-4 border-yellow-400" data-aos="fade-up">
-                        <p className="text-gray-800 text-lg sm:text-xl mb-6">
-                            End-to-End, Technology-Driven Procurement Model — for Just <span className="font-semibold text-yellow-800">1.5% of Your Spend</span>
-                        </p>
-                        <p className="text-gray-700 text-lg sm:text-xl mb-6">
-                            Simplify and digitize your sourcing, procurement, and supply chain management through our AI-powered e-sourcing platform and verified supplier network. Gain full visibility, reduce costs, and boost efficiency — without any tech investment.
-                        </p>
-                        <div className="text-center">
-                            <a
-                                href="#contact"
-                                className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg sm:text-xl px-6 py-3 rounded-lg transition duration-300"
-                            >
-                                Contact Us
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </section> */}
+         
 
 
 
@@ -495,7 +430,7 @@ export default function paas() {
                 </div>
             </section>
 
-            <Footer />
+            {/* <Footer /> */}
             <Script src="/assets/js/scroll-trigger.js" strategy="afterInteractive" />
             <Script src="/assets/js/smooth-scroll.js" strategy="afterInteractive" />
         </>

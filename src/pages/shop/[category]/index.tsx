@@ -47,7 +47,7 @@ export default function CategoryPage() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
 
     
       
@@ -153,7 +153,7 @@ export default function CategoryPage() {
           productCode={selected?.code}
         />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

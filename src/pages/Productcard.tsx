@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Image from "next/image";
 
 // Define the Product and ShopCategory types (You should put these in a separate types file for production)
 interface Product {
@@ -740,7 +741,7 @@ export default function ShopPage() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main>
         {/* 🛠️ SHOP GRID SECTION - TITLE ADDED */}
         <section className="px-5 lg:px-20 py-16">
@@ -837,7 +838,7 @@ export default function ShopPage() {
         </section>
         */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

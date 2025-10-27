@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 import Loader from "@/components/Loader";
 import { SHOP_BY_CATEGORIES, slugify } from "data/shopBycatlog";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 
 
@@ -26,7 +27,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 100);
     return () => clearTimeout(timer);
   }, []);
 
@@ -34,7 +35,7 @@ export default function Home() {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <LetterAnimation />
 
       <section
@@ -126,30 +127,32 @@ export default function Home() {
         <div className="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {SHOP_BY_CATEGORIES.map((category, index) => {
                       const slug = slugify(category.title);
-                      return(
-          <>
-                      <Link href={`/shop/${slug}?sub=all`}>
-            <div
-              key={category.id}
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div className="group relative flex items-center p-4 bg-white  rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 min-h-[5rem] sm:min-h-[6rem] md:min-h-[7rem] lg:min-h-[8rem]">
-                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300 mr-3 sm:mr-4 flex-shrink-0 bg-white dark:bg-gray-800">
-                  <img
-                    src={category.images}
-                    alt={category.title}
-                    className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 object-contain"
-                  />
-                </div>
-                <p className="font-semibold text-gray-600 dark:text-gray-300 transition-colors duration-300 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] truncate w-[200px] !m-0">
-                  {category.title}
-                </p>
-              </div>
-            </div>
-           </Link>
-            </>
-            )
+                      return (
+                        <>
+                          <Link href={`/shop/${slug}?sub=all`}>
+                            <div
+                              key={category.id}
+                             
+                              data-aos-delay={index * 100}
+                            >
+                              <div className="group relative flex items-center p-4 bg-white  rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 min-h-[5rem] sm:min-h-[6rem] md:min-h-[7rem] lg:min-h-[8rem]">
+                                <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300 mr-3 sm:mr-4 flex-shrink-0 bg-white dark:bg-gray-800">
+                                  <Image
+                                    src={category.images}
+                                    alt={category.title}
+                                    className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 object-contain"
+                                    width={160}
+                                    height={40}
+                                  />
+                                </div>
+                                <p className="font-semibold text-gray-600 dark:text-gray-300 transition-colors duration-300 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] truncate w-[200px] !m-0">
+                                  {category.title}
+                                </p>
+                              </div>
+                            </div>
+                          </Link>
+                        </>
+                      );
             
             
           })}
@@ -199,7 +202,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
       <Script src="/assets/js/scroll-trigger.js" strategy="afterInteractive" />
       <Script src="/assets/js/smooth-scroll.js" strategy="afterInteractive" />
     </div>

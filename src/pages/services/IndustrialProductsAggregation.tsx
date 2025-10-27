@@ -40,7 +40,7 @@ export default function IndustrialProductsAggregation() {
                 <link rel="canonical" href="https://yourdomain.com/services/procurement-service" />
             </Head>
 
-            <Header />
+            {/* <Header /> */}
             <LetterAnimation />
 
             {/* HERO + BREADCRUMB */}
@@ -554,7 +554,7 @@ export default function IndustrialProductsAggregation() {
                 </div>
             </section>
 
-            <Footer />
+            {/* <Footer /> */}
             <Script src="/assets/js/scroll-trigger.js" strategy="afterInteractive" />
             <Script src="/assets/js/smooth-scroll.js" strategy="afterInteractive" />
         </>
