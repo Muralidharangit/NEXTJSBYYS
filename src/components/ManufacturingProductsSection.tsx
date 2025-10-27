@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const ACCESSIBLE_BLUE = "bg-blue-600"; // Replace with your color class
+const ACCESSIBLE_BLUE = "#067afe"; // Replace with your color class
 
 export default function ManufacturingProductsSection() {
   const products = [
@@ -80,7 +80,7 @@ export default function ManufacturingProductsSection() {
             {products.map((product, index) => (
               <div
                 key={index}
-                className={`sticky top-32 ${ACCESSIBLE_BLUE} rounded-xl p-8 md:flex md:items-center mb-3`}
+                className={`sticky top-32 bg-[${ACCESSIBLE_BLUE}] rounded-xl p-8 md:flex md:items-center mb-3`}
               >
                 {/* Content Left / Image Right for odd index */}
                 <div
