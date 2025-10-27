@@ -10,6 +10,7 @@ import Counterpart from "@/components/Counterpart";
 // If your Brand.json is under src/components/Data/Brand.json, use this path:
 import brandsJson from "@/Data/Brand.json";
 import Head from "next/head";
+import Script from "next/script";
 
 // ---------- Types & Guards (no `any`) ----------
 type Brand = {
@@ -55,9 +56,15 @@ export default function Home() {
     <>
       <Head>
         <title>My App Home Page</title>
-        <meta name="description" content="A brief summary for search engines." />
+        <meta
+          name="description"
+          content="A brief summary for search engines."
+        />
         <meta property="og:title" content="My App Home Page" />
-        <meta property="og:description" content="A brief summary for search engines." />
+        <meta
+          property="og:description"
+          content="A brief summary for search engines."
+        />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/assets/images/og-image.jpg" />
       </Head>
@@ -72,6 +79,9 @@ export default function Home() {
         <ClientsSection brands={brands} />
         <CallToActionSection />
       </main>
+
+      <Script src="/assets/js/scroll-trigger.js" strategy="afterInteractive" />
+      <Script src="/assets/js/smooth-scroll.js" strategy="afterInteractive" />
     </>
   );
 }
