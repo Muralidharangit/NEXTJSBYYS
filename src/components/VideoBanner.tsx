@@ -33,22 +33,21 @@ export default function VideoBanner() {
       {videos.map((video, index) => (
         <video
           key={index}
-          src={video}
           autoPlay
           muted
           loop
           playsInline
-          className={` left-0 w-full h-full object-cover transition-all duration-1000 transform ${
+          className={`left-0 w-full h-full object-cover transition-all duration-1000 transform ${
             currentVideo === index
               ? "opacity-100 scale-100"
               : "opacity-0 scale-105"
           }`}
           data-aos={currentVideo === index ? "zoom-in" : ""}
-        />
+        >
+          <source src={video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       ))}
     </section>
-
-
-   
   );
 }

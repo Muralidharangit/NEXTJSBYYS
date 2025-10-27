@@ -35,43 +35,55 @@ export default function ClientServicePage() {
         aria-labelledby="hero-title"
       >
         {/* Breadcrumb */}
-        <p className="bg-[#067afe] px-4 py-1.5 rounded-full mb-4 lg:mb-0 inline-flex justify-center items-center gap-2">
+        <p className=" bg-[#067afe] px-4 py-1.5 rounded-full mb-4 lg:mb-0 inline-flex justify-center items-center gap-2">
           <span className="justify-center text-secondary-navy text-sm font-medium leading-normal">
-            <span className="text-white">
-              <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5 inline-flex items-center gap-2">
-                {/* Use Next Link, not raw <a> */}
-                <Link
-                  href="/"
-                  className="hover:text-white/90 transition-colors duration-300"
-                >
-                  Home
-                </Link>
-
-                <span className="mx-2 inline-flex">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2}
-                    stroke="currentColor"
-                    className="w-4 h-4 inline-block align-middle"
+            <div className="text-center space-y-2">
+              <span
+                data-ns-animate=""
+                data-delay="0.1"
+                className="hero-badge text-tagline-1 inline-block text-secondary dark:text-accent"
+                style={{
+                  opacity: 1,
+                  filter: "blur(0px)",
+                  translate: "none",
+                  rotate: "none",
+                  scale: "none",
+                  transform: "translate(0px, 0px)",
+                }}
+              >
+                <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
+                  {/* Product Categories */}
+                  <a
+                    href="./index.html"
+                    className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                    />
-                  </svg>
+                    Home
+                  </a>
+                  <span className="mx-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2}
+                      stroke="currentColor"
+                      className="w-4 h-4 inline-block align-middle"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </span>
+                  <a
+                    href="#"
+                    className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
+                  >
+                    Service
+                  </a>
                 </span>
-
-                <Link
-                  href="/services"
-                  className="hover:text-white/90 transition-colors duration-300"
-                >
-                  Service
-                </Link>
               </span>
-            </span>
+            </div>
           </span>
         </p>
 
@@ -90,7 +102,8 @@ export default function ClientServicePage() {
           data-aos-delay={300}
           className="max-w-2xl text-base sm:text-lg text-gray-600 leading-relaxed"
         >
-          Explore aggregation, hardware, procurement, and manufacturing solutions tailored for you.
+          Explore aggregation, hardware, procurement, and manufacturing
+          solutions tailored for you.
         </p>
       </section>
 
@@ -102,8 +115,11 @@ export default function ClientServicePage() {
             className="text-center mb-10 sm:mb-16 max-w-2xl mx-auto"
             data-aos="fade-up"
           >
-            <span className="bg-[#067afe] text-white px-4 py-1 rounded-full text-sm sm:text-base">
+            {/* <span className="bg-[#067afe] text-white px-4 py-1 rounded-full text-sm sm:text-base">
               Product Categories
+            </span> */}
+            <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
+              Our Services
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mt-4 text-[#050d20]">
               Our Innovative Products

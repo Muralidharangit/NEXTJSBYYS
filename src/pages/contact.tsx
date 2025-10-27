@@ -26,36 +26,57 @@ export default function ContactPage() {
         aria-labelledby="hero-title"
       >
         {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="mb-4">
-          <ol className="flex items-center gap-2 text-xs sm:text-sm">
-            <li>
-              <Link
-                href="/"
-                className="bg-[#067afe] text-white px-3 sm:px-4 py-1 rounded-full hover:opacity-90 transition"
+        <p className=" bg-[#067afe] px-4 py-1.5 rounded-full mb-4 lg:mb-0 inline-flex justify-center items-center gap-2">
+          <span className="justify-center text-secondary-navy text-sm font-medium leading-normal">
+            <div className="text-center space-y-2">
+              <span
+                data-ns-animate=""
+                data-delay="0.1"
+                className="hero-badge text-tagline-1 inline-block text-secondary dark:text-accent"
+                style={{
+                  opacity: 1,
+                  filter: "blur(0px)",
+                  translate: "none",
+                  rotate: "none",
+                  scale: "none",
+                  transform: "translate(0px, 0px)",
+                }}
               >
-                Home
-              </Link>
-            </li>
-            <li aria-hidden="true" className="mx-2 text-[#067afe]">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-3 h-3 sm:w-4 sm:h-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                strokeWidth={2}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </li>
-            <li className="text-gray-700 font-medium">Contact Us</li>
-          </ol>
-        </nav>
-
+                <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
+                  {/* Product Categories */}
+                  <a
+                    href="./index.html"
+                    className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
+                  >
+                    Home
+                  </a>
+                  <span className="mx-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2}
+                      stroke="currentColor"
+                      className="w-4 h-4 inline-block align-middle"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </span>
+                  <a
+                    href="#"
+                    className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
+                  >
+                    Contact us
+                  </a>
+                </span>
+              </span>
+            </div>
+          </span>
+        </p>
         {/* Title + Subtitle */}
         <div className="text-center space-y-3 max-w-3xl">
           <h2

@@ -99,12 +99,13 @@ export default function ClientsSection({ brands }: Props) {
     >
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
-        <div className="text-center mb-16" data-aos="fade-down" data-aos-delay="100">
-          <span
-            className="inline-block bg-[#067afe] text-white px-4 py-1 rounded-full mb-5"
-            data-aos="zoom-in"
-            data-aos-delay="200"
-          >
+        <div
+          className="text-center mb-16"
+          data-aos="fade-down"
+          data-aos-delay="100"
+        >
+        
+          <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
             Our Clients
           </span>
           <h2
@@ -120,8 +121,8 @@ export default function ClientsSection({ brands }: Props) {
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              We take pride in collaborating with industry-leading clients who trust us for
-              quality, reliability, and innovation.
+              We take pride in collaborating with industry-leading clients who
+              trust us for quality, reliability, and innovation.
             </p>
           </div>
         </div>
