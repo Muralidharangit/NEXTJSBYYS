@@ -62,7 +62,7 @@ export default function ManufacturingProductsSection() {
   ];
 
   return (
-    <section>
+    <section className="position-relative ">
       <div className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -76,11 +76,11 @@ export default function ManufacturingProductsSection() {
             </h2>
           </div>
 
-          <div className="relative space-y-12 md:space-y-16">
+          <div className="relative space-y-12 md:space-y-16 ">
             {products.map((product, index) => (
               <div
                 key={index}
-                className={`sticky top-32 bg-[${ACCESSIBLE_BLUE}] rounded-xl p-8 md:flex md:items-center mb-3`}
+                className={`sticky top-32 bg-[${ACCESSIBLE_BLUE}] rounded-xl p-4 lg:p-8 xl:p-8  md:flex md:items-center mb-3`}
               >
                 {/* Content Left / Image Right for odd index */}
                 <div

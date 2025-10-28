@@ -16,7 +16,7 @@ const menuItems = [
 export default function Header() {
   return (
     <header className="w-full sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 transition-shadow">
-      <nav className="mx-auto container flex items-center justify-between py-3 lg:px-8">
+      <nav className="mx-auto container flex items-center justify-between py-3 lg:px-8 px-2">
         {/* Left: Logo */}
         <div className="flex flex-1">
           <Link href="/" className="p-1.5" aria-label="Go to Homepage">
