@@ -6,7 +6,10 @@ export default function FeaturesSection() {
       <div className="container">
         <div className="grid lg:grid-cols-2 items-center gap-6">
           {/* Image */}
-          <div className="flex items-center" data-aos="fade-right">
+          <div
+            className="flex items-center order-2 lg:order-1"
+            data-aos="fade-right"
+          >
             <Image
               src="/images/pngind.png"
               alt="Byyizzy India Map"
@@ -19,7 +22,11 @@ export default function FeaturesSection() {
           </div>
 
           {/* Text content */}
-          <div className="px-3" data-aos="fade-left" data-aos-delay="200">
+          <div
+            className="px-3 order-1 lg:order-2"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
             <span
               className="text-xs sm:text-sm text-primary uppercase font-semibold tracking-wider text-default-950"
               data-aos="fade-up"
@@ -34,6 +41,7 @@ export default function FeaturesSection() {
             >
               Empowering Businesses with Efficient & Sustainable Procurement
             </h2>
+
             <a
               href="#"
               className="inline-flex items-center justify-center gap-3 text-sm font-medium text-black mt-6"

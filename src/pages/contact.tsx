@@ -98,83 +98,87 @@ export default function ContactPage() {
 
       {/* 🧭 CONTACT INFO CARDS */}
       <section
-        className="py-16 px-5 md:px-10 lg:px-20 text-center"
+        className="py-12 sm:py-16 lg:py-20 bg-[#f8faff]"
         data-aos="fade-up"
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            {
-              icon: (
-                <MapPinIcon className="w-8 h-8 sm:w-10 sm:h-10 text-[#067afe]" />
-              ),
-              title: "Our Location",
-              lines: ["993 Renner Burg, West Rond,", "MT 94251-030"],
-            },
-            {
-              icon: (
-                <EnvelopeIcon className="w-8 h-8 sm:w-10 sm:h-10 text-[#067afe]" />
-              ),
-              title: "Email us",
-              lines: ["support@bexon.com", "info@bexon.com"],
-            },
-            {
-              icon: (
-                <PhoneIcon className="w-8 h-8 sm:w-10 sm:h-10 text-[#067afe]" />
-              ),
-              title: "Call us",
-              lines: ["+1 (009) 544-7818", "+1 (009) 880-1810"],
-            },
-            {
-              icon: (
-                <ChatBubbleLeftRightIcon className="w-8 h-8 sm:w-10 sm:h-10 text-[#067afe]" />
-              ),
-              title: "Live chat",
-              lines: [
-                "livechat@bexon.com",
-                <span
-                  key="help"
-                  className="text-[#067afe] font-medium cursor-pointer hover:underline"
-                >
-                  Need help?
-                </span>,
-              ],
-            },
-          ].map((item, index) => (
-            <div
-              key={item.title}
-              data-aos="fade-up"
-              data-aos-delay={index * 150}
-              className="bg-[#eff3fa] p-8 sm:p-10 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="flex justify-center mb-5">
-                <div className="bg-[#067afe]/10 p-5 sm:p-6 rounded-full flex items-center justify-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+            {[
+              {
+                icon: (
+                  <MapPinIcon className="w-8 h-8 sm:w-9 sm:h-9 text-[#067afe]" />
+                ),
+                title: "Our Location",
+                lines: ["993 Renner Burg, West Rond,", "MT 94251-030"],
+              },
+              {
+                icon: (
+                  <EnvelopeIcon className="w-8 h-8 sm:w-9 sm:h-9 text-[#067afe]" />
+                ),
+                title: "Email us",
+                lines: ["support@bexon.com", "info@bexon.com"],
+              },
+              {
+                icon: (
+                  <PhoneIcon className="w-8 h-8 sm:w-9 sm:h-9 text-[#067afe]" />
+                ),
+                title: "Call us",
+                lines: ["+1 (009) 544-7818", "+1 (009) 880-1810"],
+              },
+              {
+                icon: (
+                  <ChatBubbleLeftRightIcon className="w-8 h-8 sm:w-9 sm:h-9 text-[#067afe]" />
+                ),
+                title: "Live chat",
+                lines: [
+                  "livechat@bexon.com",
+                  <span
+                    key="help"
+                    className="text-[#067afe] font-medium cursor-pointer hover:underline"
+                  >
+                    Need help?
+                  </span>,
+                ],
+              },
+            ].map((item, index) => (
+              <div
+                key={item.title}
+                data-aos="fade-up"
+                data-aos-delay={index * 150}
+                className="bg-white rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center border border-gray-100"
+              >
+                <div className="bg-[#067afe]/10 p-5 sm:p-6 rounded-full flex items-center justify-center mb-5">
                   {item.icon}
                 </div>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">
+                  {item.title}
+                </h3>
+                <div className="space-y-1">
+                  {item.lines.map((line, i) =>
+                    typeof line === "string" ? (
+                      <p
+                        key={i}
+                        className="text-gray-600 text-sm sm:text-base leading-relaxed"
+                      >
+                        {line}
+                      </p>
+                    ) : (
+                      <div
+                        key={i}
+                        className="text-gray-600 text-sm sm:text-base leading-relaxed"
+                      >
+                        {line}
+                      </div>
+                    )
+                  )}
+                </div>
               </div>
-              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">
-                {item.title}
-              </h3>
-              {item.lines.map((line, i) =>
-                typeof line === "string" ? (
-                  <p
-                    key={i}
-                    className="text-gray-600 text-sm sm:text-base leading-relaxed"
-                  >
-                    {line}
-                  </p>
-                ) : (
-                  <div
-                    key={i}
-                    className="text-gray-600 text-sm sm:text-base leading-relaxed"
-                  >
-                    {line}
-                  </div>
-                )
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
+
+    
 
       {/* 📍 MAP + FORM SECTION */}
       {/* 📍 MAP + FORM SECTION */}
