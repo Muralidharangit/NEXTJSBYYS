@@ -1,4 +1,4 @@
-// src/pages/contact.tsx
+// src/pages/contact.tsx  (your file)
 import Head from "next/head";
 import Link from "next/link";
 import {
@@ -8,8 +8,80 @@ import {
   ChatBubbleLeftRightIcon,
 } from "@heroicons/react/24/outline";
 import ContactForm from "@/components/ContactForm";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+
+function ModalPortal({
+  open,
+  title,
+  body,
+  onClose,
+}: {
+  open: boolean;
+  title: string;
+  body: string;
+  onClose: () => void;
+}) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    document.documentElement.classList.toggle("overflow-hidden", open);
+    document.body.classList.toggle("overflow-hidden", open);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.documentElement.classList.remove("overflow-hidden");
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [open, onClose]);
+
+  if (!mounted || !open) return null;
+
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contact-modal-title"
+    >
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
+      <div className="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl">
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          ✕
+        </button>
+        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-blue-100">
+          <span className="text-2xl">✅</span>
+        </div>
+        <h3 id="contact-modal-title" className="mb-2 text-center text-xl font-semibold text-gray-900">
+          {title}
+        </h3>
+        <p className="mb-6 text-center text-gray-600">{body}</p>
+        <div className="flex justify-center">
+          <button
+            onClick={onClose}
+            className="rounded-full bg-[#067afe] px-5 py-2.5 font-semibold text-white hover:bg-[#005fd9] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#067afe]"
+          >
+            OK
+          </button>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 export default function ContactPage() {
+  const [modal, setModal] = useState<{ open: boolean; title: string; body: string }>({
+    open: false,
+    title: "",
+    body: "",
+  });
   return (
     <>
       <Head>
@@ -156,7 +228,6 @@ export default function ContactPage() {
       </section>
 
       {/* 📍 MAP + FORM SECTION */}
-      {/* 📍 MAP + FORM SECTION */}
       <section
         className="relative mx-auto px-5 md:px-10 lg:px-20 py-16 lg:py-20 bg-[#eff3fa] overflow-hidden"
         data-aos="fade-up"
@@ -204,10 +275,25 @@ export default function ContactPage() {
             <h3 className="text-2xl sm:text-3xl font-semibold mb-6 text-[#111827]">
               Send a <span className="text-[#067afe]">Message</span>
             </h3>
-            <ContactForm />
+            {/* <ContactForm /> */}
+              <ContactForm
+            onDone={({ ok, title, body }) => {
+              setModal({ open: true, title, body });
+              // Optional auto-close
+              if (ok) setTimeout(() => setModal((m) => ({ ...m, open: false })), 3000);
+            }}
+          />
           </div>
         </div>
       </section>
+
+      {/* Page-level modal (outside the form card) */}
+      <ModalPortal
+        open={modal.open}
+        title={modal.title}
+        body={modal.body}
+        onClose={() => setModal((m) => ({ ...m, open: false }))}
+      />
     </>
   );
 }
