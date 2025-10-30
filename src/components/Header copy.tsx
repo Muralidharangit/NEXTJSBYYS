@@ -118,8 +118,13 @@ export default function Header() {
               alt="Logo"
               width={160}
               height={40}
+              quality={60} // 🔥 smaller payload for logos
+              sizes="(max-width: 768px) 120px, 160px" // ✅ responsive image size hints
+              priority // ✅ only if this logo is visible above the fold (e.g., in header)
               className="object-contain"
+              fetchPriority="high" // ✅ helps LCP if this logo is part of header/hero
             />
+
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}

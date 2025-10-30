@@ -62,14 +62,15 @@
 /* Global Reset */
 * {
   box-sizing: border-box;
+
 }
 
 html {
- 
-  
-
   scroll-behavior: smooth;
+   
 }
+
+
 
 body {
   background: var(--background);
@@ -80,10 +81,19 @@ body {
   font-weight: var(--p-regular);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
   margin: 0;
+  /* scroll-behavior: smooth; */
+  overflow-x: hidden;
+  
 
 
+}
+/* ✅ Apply only on iPhone/iPad Safari */
+@supports (-webkit-touch-callout: none) {
+  html, body, main {
+    overflow-x: clip; /* Prevents white gaps on Safari */
+    -webkit-overflow-scrolling: touch; /* Enables momentum scrolling */
+  }
 }
 
 body::before {
@@ -206,3 +216,6 @@ p {
   transform: scale(1);
   opacity: 1;
 }
+
+[data-aos] { opacity: 0; transform: translateY(20px); transition: all 0.6s; }
+[data-aos].aos-visible { opacity: 1; transform: translateY(0); }

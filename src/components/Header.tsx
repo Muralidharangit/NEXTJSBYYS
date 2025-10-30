@@ -16,19 +16,23 @@ const menuItems = [
 export default function Header() {
   return (
     <header className="w-full sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 transition-shadow">
-      <nav className="mx-auto container flex items-center justify-between py-3 lg:px-8">
+      <nav className="mx-auto container flex items-center justify-between py-3 lg:px-8 px-2">
         {/* Left: Logo */}
         <div className="flex flex-1">
           <Link href="/" className="p-1.5" aria-label="Go to Homepage">
             {/* Keep exactly one priority image above the fold */}
-            <Image
-              src="/images/blue.png"
-              alt="Company Logo"
-              width={160}
-              height={40}
-              priority
-              className="object-contain"
-            />
+             <Image
+                         src="/images/blue.png"
+                         alt="Logo"
+                         width={160}
+                         height={40}
+                         quality={60} // 🔥 smaller payload for logos
+                         sizes="(max-width: 768px) 120px, 160px" // ✅ responsive image size hints
+                         priority // ✅ only if this logo is visible above the fold (e.g., in header)
+                         className="object-contain"
+                         fetchPriority="high" // ✅ helps LCP if this logo is part of header/hero
+                       />
+           
           </Link>
         </div>
 

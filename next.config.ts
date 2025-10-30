@@ -1,36 +1,49 @@
-/** @type {import('next').NextConfig} */
+import bundleAnalyzer from "@next/bundle-analyzer";
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
+
+
+
 const nextConfig = {
-  // Enforce Next.js behavior that checks for common issues (recommended)
   reactStrictMode: true,
 
+  compress: true, // ✅ Gzip compression for faster load
+  swcMinify: true, // ✅ Faster JS compilation/minification
+  poweredByHeader: false, // ✅ Hide "X-Powered-By: Next.js" header
+
   images: {
-    // List of external domains from which Next.js is allowed to optimize images.
+    formats: ["image/avif", "image/webp"],
+    deviceSizes: [360, 640, 768, 1024, 1200],
+    imageSizes: [220, 348, 450, 600, 800],
+
     remotePatterns: [
       {
         protocol: "https",
         hostname: "firebasestorage.googleapis.com",
-        // pathname: '/**', // Optional: restrict to a specific path if needed
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "i.pinimg.com",
+        pathname: "/**",
       },
       {
         protocol: "https",
         hostname: "tnswp.com",
+        pathname: "/**",
       },
     ],
-
-    // Uncomment this line to explicitly enable modern image formats
-    // formats: ["image/avif", "image/webp"],
   },
 
-  // Configuration for ESLint
+ experimental: {
+  esmExternals: true,
+},
+
   eslint: {
-    // WARNING: Setting this to 'true' skips linting during next build.
-    // It's recommended to fix all errors and remove this line for production.
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true, // ✅ Skip ESLint during build to speed up production
   },
-};
+} satisfies import("next").NextConfig;
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

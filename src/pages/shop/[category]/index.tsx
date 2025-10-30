@@ -49,8 +49,6 @@ export default function CategoryPage() {
     <>
       {/* <Header /> */}
 
-    
-      
       <main className="">
         <section className="mt-30 px-5 lg:px-20 pb-20 flex flex-col lg:flex-row gap-10">
           {/* LEFT GRID */}
@@ -58,50 +56,48 @@ export default function CategoryPage() {
             {products.length === 0 ? (
               <p className="text-gray-500">No products found.</p>
             ) : (
-
               products.map((product, idx) => (
                 <div
                   key={`${product.materialCode ?? idx}`}
-                className="bg-white rounded-3xl border border-gray-100 shadow-md hover:shadow-lg transition-all duration-500 flex flex-col overflow-hidden h-[380px]"
-                data-aos="fade-up"
+                  className="bg-white rounded-3xl border border-gray-100 shadow-md hover:shadow-lg transition-all duration-500 flex flex-col overflow-hidden h-[380px]"
+                  data-aos="fade-up"
                 >
                   {/* Product Image */}
-                 <div className="relative w-full h-[250px] bg-gray-50 flex items-center justify-center overflow-hidden">
+                  <div className="relative w-full h-[250px] bg-gray-50 flex items-center justify-center overflow-hidden">
                     <Image
                       src={product.image}
                       alt={product.materialName || "Product"}
                       width={800}
                       height={900}
-                      className="object-contain"
+                      className="w-full h-full object-contain"
                     />
-                      {/* Category Tag */}
-                  <span className="absolute top-4 left-4 bg-gradient-to-r from-[#067afe] to-[#60a5fa] text-white text-xs px-3 py-1 rounded-full shadow-md">
-                    {product.category}
-                  </span>
-                  </div>
-
-
-
-                   {/* 🧾 CONTENT */}
-                <div className="flex flex-col justify-between p-4 flex-grow">
-                  <div>
-                    <h3 className="text-base font-semibold text-[#0a1529] leading-tight line-clamp-2 mb-2">
-                      {product.materialName}
-                    </h3>
-                    <div className="flex items-center justify-between text-sm">
                    
-                    </div>
+                    <span className="absolute top-4 left-4 bg-gradient-to-r from-[#067afe] to-[#60a5fa] text-white text-xs px-3 py-1 rounded-full shadow-md">
+                      {product.category}
+                    </span>
                   </div>
 
-                  {/* Add Button */}
-                  <button className="mt-3 bg-[#067afe] hover:bg-[#055cd8] text-white text-sm font-medium py-2 rounded-full transition-all" 
-                   onClick={() => openEnquiry(product.materialName, product.materialCode)}
-                  >
-                   Add Enquiry
-                  </button>
-                </div>
+                
 
-                 
+                  {/* 🧾 CONTENT */}
+                  <div className="flex flex-col justify-between p-4 flex-grow">
+                    <div>
+                      <h3 className="text-base font-semibold text-[#0a1529] leading-tight line-clamp-2 mb-2">
+                        {product.materialName}
+                      </h3>
+                      <div className="flex items-center justify-between text-sm"></div>
+                    </div>
+
+                    {/* Add Button */}
+                    <button
+                      className="mt-3 bg-[#067afe] hover:bg-[#055cd8] text-white text-sm font-medium py-2 rounded-full transition-all"
+                      onClick={() =>
+                        openEnquiry(product.materialName, product.materialCode)
+                      }
+                    >
+                      Add Enquiry
+                    </button>
+                  </div>
                 </div>
               ))
             )}
@@ -110,7 +106,9 @@ export default function CategoryPage() {
           {/* RIGHT SIDEBAR (Scrollable categories) */}
           <aside className="w-full lg:w-1/4 h-[100vh] overflow-y-auto">
             <div className="bg-white p-6 rounded-3xl shadow-md border border-gray-100 sticky top-0">
-              <h3 className="text-xl font-semibold text-[#0a1529] mb-4">Product Categories</h3>
+              <h3 className="text-xl font-semibold text-[#0a1529] mb-4">
+                Product Categories
+              </h3>
               <ul className="space-y-2">
                 {tabs.map((t) => {
                   const href =
@@ -120,31 +118,28 @@ export default function CategoryPage() {
                   const active = sub === t.slug;
                   return (
                     <>
-                    <Link
-                        href={href}
-                       className=""
-                      >
-                    <li key={t.slug}  className={`mt-2 px-4 py-2.5 rounded-full text-sm font-medium cursor-pointer border transition-all
+                      <Link href={href} className="">
+                        <li
+                          key={t.slug}
+                          className={`mt-2 px-4 py-2.5 rounded-full text-sm font-medium cursor-pointer border transition-all
                    ${
-                    active 
-                     ? "bg-[#067afe] text-white border-transparent shadow-md"
-                     : "bg-gray-50 text-[#0a1529] border-gray-200 hover:bg-[#f0f6ff]"
-                  }`}>
-                      {t.name}
-                        <i className="ri-arrow-right-s-line text-gray-400" />
-                    </li>
-                     </Link>
+                     active
+                       ? "bg-[#067afe] text-white border-transparent shadow-md"
+                       : "bg-gray-50 text-[#0a1529] border-gray-200 hover:bg-[#f0f6ff]"
+                   }`}
+                        >
+                          {t.name}
+                          <i className="ri-arrow-right-s-line text-gray-400" />
+                        </li>
+                      </Link>
                     </>
                   );
                 })}
               </ul>
-
-            
             </div>
           </aside>
         </section>
 
-        
         {/* Enquiry Dialog */}
         <EnquiryDialog
           open={open}
