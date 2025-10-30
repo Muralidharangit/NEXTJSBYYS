@@ -52,10 +52,16 @@ export default function Header() {
         {/* Right: Login */}
         <div className="hidden lg:flex lg:flex-1 justify-end">
           <Link
-            href="/login"
+            href="/"
             className="rounded-lg px-5 py-2 text-sm font-semibold shadow-md bg-[#067afe] text-white hover:bg-[#0047a0] transition"
           >
-            Log in →
+            Search
+          </Link>
+          <Link
+            href="/"
+            className="rounded-lg px-5  mx-3 py-2 text-sm font-semibold shadow-md bg-[#067afe] text-white hover:bg-[#0047a0] transition"
+          >
+            Supplier Registration 
           </Link>
         </div>
 

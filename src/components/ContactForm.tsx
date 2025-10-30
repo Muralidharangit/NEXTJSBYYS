@@ -1,7 +1,9 @@
+// src/components/ContactForm.tsx
 "use client";
 import { useRef, useState } from "react";
 
-export default function ContactForm() {
+type SubmitResult = { ok: boolean; title: string; body: string };
+export default function ContactForm({ onDone }: { onDone?: (r: SubmitResult) => void }) {
   const formRef = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
 
@@ -9,13 +11,8 @@ export default function ContactForm() {
     e.preventDefault();
     if (loading) return;
 
-    const formEl = e.currentTarget;
-    const form = new FormData(formEl);
-
-    // honeypot (bot trap)
-    if (String(form.get("hp") || "").trim().length > 0) {
-      return; // silently drop
-    }
+    const form = new FormData(e.currentTarget);
+    if (String(form.get("hp") || "").trim().length > 0) return; // bot trap
 
     setLoading(true);
     try {
@@ -33,21 +30,28 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-
       const data = await res.json().catch(() => ({}));
+
       if (!res.ok || !data?.ok) {
         throw new Error(data?.error || "Failed to send message");
       }
 
-      alert("Thanks! We received your message and will contact you soon.");
       formRef.current?.reset();
+      onDone?.({
+        ok: true,
+        title: "Message sent 🎉",
+        body: "Thanks! We received your message and will contact you soon.",
+      });
     } catch (err) {
-      alert(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      onDone?.({
+        ok: false,
+        title: "Something went wrong",
+        body: err instanceof Error ? err.message : "Please try again later.",
+      });
     } finally {
       setLoading(false);
     }
   }
-
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="space-y-6" noValidate>
       {/* Honeypot (hidden) */}
