@@ -1,73 +1,74 @@
+"use client";
 import { useState, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-const videos = ["/videos/1.webm"];
-const poster = "/images/video-poster.webp"; // 🧠 lightweight static image (you can export it from the first frame of your video)
+import Image from "next/image";
+import Head from "next/head";
 
 export default function VideoBanner() {
-  const [currentVideo, setCurrentVideo] = useState(0);
-  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
 
-  // ✅ Delayed AOS init
   useEffect(() => {
-    const timer = setTimeout(() => {
-      AOS.init({ duration: 800, easing: "ease-in-out", once: true });
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // ✅ Rotate video only if more than one
-  useEffect(() => {
-    if (videos.length <= 1) return;
-    const interval = setInterval(() => {
-      setCurrentVideo((prev) => (prev + 1) % videos.length);
-    }, 8000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // ✅ Lazy-load video only after mount
-  useEffect(() => {
-    const timer = setTimeout(() => setVideoLoaded(true), 800);
-    return () => clearTimeout(timer);
+    // 🎯 Load video lazily only after the page is idle
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(() => {
+        const video = document.getElementById("heroVideo") as HTMLVideoElement;
+        if (video) {
+          const handleCanPlay = () => setVideoReady(true);
+          video.addEventListener("canplay", handleCanPlay, { once: true });
+          video.load(); // triggers lazy loading of video
+        }
+      });
+    } else {
+      // fallback
+      const timer = setTimeout(() => setVideoReady(true), 1000);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   return (
-    <section
-      className="relative w-full h-[25vh] md:h-[50vh] lg:h-[60vh] xl:h-[80vh] overflow-hidden"
-      data-aos="fade-up"
-    >
-      {/* 🖼️ Image fallback until video loads */}
-      {!videoLoaded && (
-        <img
-          src={poster}
-          alt="Video preview"
-          className="w-full h-full object-cover transition-opacity duration-700 opacity-100"
+    <>
+      {/* ✅ Preload the hero image for faster LCP */}
+      <Head>
+        <link
+          rel="preload"
+          as="image"
+          href="/videos/poster.webp"
+          fetchPriority="high"
         />
-      )}
+      </Head>
 
-      {/* 🎬 Lazy-loaded video */}
-      {videoLoaded &&
-        videos.map((video, index) => (
-          <video
-            key={index}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster={poster}
-            className={`absolute left-0 top-0 w-full h-full object-cover transition-all duration-1000 transform ${
-              currentVideo === index
-                ? "opacity-100 scale-100"
-                : "opacity-0 scale-105"
-            }`}
-            data-aos={currentVideo === index ? "zoom-in" : ""}
-          >
-            <source src={video} type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
-        ))}
-    </section>
+      <section className="relative w-full h-[25vh] md:h-[50vh] lg:h-[60vh] xl:h-[80vh] overflow-hidden">
+        {/* 🖼️ Poster as LCP image */}
+        <Image
+          src="/videos/poster.webp"
+          alt="Hero preview"
+          priority
+          width={1920}
+          height={1080}
+          sizes="100vw"
+          placeholder="blur"
+          blurDataURL="/videos/poster-blur.webp"
+          className={`absolute inset-0 object-cover transition-opacity duration-700 ease-in-out ${
+            videoReady ? "opacity-0" : "opacity-100"
+          }`}
+        />
+
+        {/* 🎬 Lazy-loaded video */}
+        <video
+          id="heroVideo"
+          muted
+          loop
+          playsInline
+          autoPlay
+          preload="none" // ✅ prevent early loading
+          poster="/videos/poster.webp"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+            videoReady ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <source src="/videos/1.webm" type="video/webm" />
+          <source src="/videos/1.mp4" type="video/mp4" />
+        </video>
+      </section>
+    </>
   );
 }

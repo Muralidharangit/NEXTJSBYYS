@@ -21,14 +21,18 @@ export default function Header() {
         <div className="flex flex-1">
           <Link href="/" className="p-1.5" aria-label="Go to Homepage">
             {/* Keep exactly one priority image above the fold */}
-            <Image
-              src="/images/blue.png"
-              alt="Company Logo"
-              width={160}
-              height={40}
-              priority
-              className="object-contain"
-            />
+             <Image
+                         src="/images/blue.png"
+                         alt="Logo"
+                         width={160}
+                         height={40}
+                         quality={60} // 🔥 smaller payload for logos
+                         sizes="(max-width: 768px) 120px, 160px" // ✅ responsive image size hints
+                         priority // ✅ only if this logo is visible above the fold (e.g., in header)
+                         className="object-contain"
+                         fetchPriority="high" // ✅ helps LCP if this logo is part of header/hero
+                       />
+           
           </Link>
         </div>
 

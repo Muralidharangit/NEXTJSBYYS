@@ -135,11 +135,13 @@ export default function ManufacturingProductsSection() {
                   <Image
                     src={product.img}
                     alt={product.title}
-                    className="w-full rounded-lg"
                     width={1200}
                     height={675}
-                    priority
-                    fetchPriority="high"
+                    quality={60} // 🔥 compress better without visible loss
+                    priority // ✅ only keep if this image is above the fold / hero section
+                    fetchPriority="high" // ✅ helps LCP if it’s a key visual
+                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 60vw, 1200px" // ✅ responsive
+                    className="w-full rounded-lg object-cover"
                   />
                 </div>
               </div>

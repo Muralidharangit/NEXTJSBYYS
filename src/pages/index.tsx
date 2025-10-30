@@ -6,7 +6,7 @@ import brandsJson from "@/Data/Brand.json";
 // ✅ Dynamic imports with lightweight skeletons for above-the-fold sections
 const VideoBanner = dynamic(() => import("@/components/VideoBanner"), {
   ssr: false,
-  loading: () => <div className="h-[320px] bg-gray-200 animate-pulse" />,
+  loading: () => <div className="h-[80vh] bg-gray-200 animate-pulse" />,
 });
 
 const FeaturesSection = dynamic(() => import("@/components/FeaturesSection"), {
