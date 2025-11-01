@@ -90,7 +90,7 @@ export default function Header() {
         {/* ✅ Desktop Right Buttons */}
         <div className="hidden lg:flex items-center gap-3">
           <Link
-            href="/"
+            href="/category"
             className="flex items-center gap-2 rounded-lg px-5 py-2 text-sm font-semibold shadow-md bg-[#067afe] text-white hover:bg-[#0047a0] transition"
           >
             <svg
