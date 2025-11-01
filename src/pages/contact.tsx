@@ -173,29 +173,31 @@ export default function ContactPage() {
         className="py-12 sm:py-16 lg:py-20 bg-[#f8faff]"
         data-aos="fade-up"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 text-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 xl:px-16 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-5">
             {[
               {
                 icon: (
                   <MapPinIcon className="w-8 h-8 sm:w-9 sm:h-9 text-[#067afe]" />
                 ),
                 title: "Our Location",
-                lines: ["993 Renner Burg, West Rond,", "MT 94251-030"],
+                lines: [
+                  "no:45, VANIDASAN STREET Saram(Py) Pondicherry Pondicherry India 605013",
+                ],
               },
               {
                 icon: (
                   <EnvelopeIcon className="w-8 h-8 sm:w-9 sm:h-9 text-[#067afe]" />
                 ),
                 title: "Email us",
-                lines: ["support@bexon.com", "info@bexon.com"],
+                lines: ["Support@byyizzy.com", "Care@byyizzy.com"],
               },
               {
                 icon: (
                   <PhoneIcon className="w-8 h-8 sm:w-9 sm:h-9 text-[#067afe]" />
                 ),
                 title: "Call us",
-                lines: ["+1 (009) 544-7818", "+1 (009) 880-1810"],
+                lines: ["96989 03089", "88701 36317"],
               },
               {
                 icon: (
@@ -250,8 +252,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-    
-
       {/* 📍 MAP + FORM SECTION */}
       <section
         className="relative mx-auto px-5 md:px-10 lg:px-20 py-16 lg:py-20 bg-[#eff3fa] overflow-hidden"
@@ -281,13 +281,13 @@ export default function ContactPage() {
               className="w-full h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden rounded-2xl shadow-md"
             >
               <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.533989022593!2d79.81105377587788!3d11.937484936704328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53617bec6fc11b%3A0xeadcf892be11fbef!2sVanidasan%20St%2C%20Puducherry!5e0!3m2!1sen!2sin!4v1761915257107!5m2!1sen!2sin"
                 title="Map to our office"
                 className="w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2182048956074!2d106.72185077580569!3d10.794265058844698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528ab40b36f07%3A0x70b70867c50b6b0c!2sNext.js%20Office!5e0!3m2!1sen!2sin!4v1683912458669!5m2!1sen!2sin"
-              />
+              ></iframe>
             </div>
           </div>
 
@@ -301,13 +301,17 @@ export default function ContactPage() {
               Send a <span className="text-[#067afe]">Message</span>
             </h3>
             {/* <ContactForm /> */}
-              <ContactForm
-            onDone={({ ok, title, body }) => {
-              setModal({ open: true, title, body });
-              // Optional auto-close
-              if (ok) setTimeout(() => setModal((m) => ({ ...m, open: false })), 3000);
-            }}
-          />
+            <ContactForm
+              onDone={({ ok, title, body }) => {
+                setModal({ open: true, title, body });
+                // Optional auto-close
+                if (ok)
+                  setTimeout(
+                    () => setModal((m) => ({ ...m, open: false })),
+                    3000
+                  );
+              }}
+            />
           </div>
         </div>
       </section>

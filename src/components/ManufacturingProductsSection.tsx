@@ -62,14 +62,14 @@ export default function ManufacturingProductsSection() {
   ];
 
   return (
-    <section className="position-relative ">
+    <section className="position-relative bg-[#eff3fa]">
       <div className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             {/* <span className="text-sm text-primary uppercase font-semibold tracking-wider text-default-950"></span> */}
 
             <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full mb-3">
-              Our Services
+              Why Choose us?
             </span>
             <h2 className="animate-letters text-4xl sm:text-5xl font-semibold leading-tight text-[#050d20]">
               Manufacturing Products
