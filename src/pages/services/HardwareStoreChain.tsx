@@ -61,12 +61,12 @@ export default function HardwareStoreChain() {
                             >
                                 <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
                                     {/* Product Categories */}
-                                    <a
-                                        href="../"
-                                        className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-                                    >
-                                        Home
-                                    </a>
+                                    <Link
+        href="/"
+        className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
+      >
+        Home
+      </Link>
                                     <span className="mx-2">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
