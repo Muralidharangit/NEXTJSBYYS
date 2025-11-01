@@ -92,81 +92,56 @@ export default function ContactPage() {
         />
       </Head>
 
-      {/* 🌤 HERO SECTION */}
-      <section
-        className="self-stretch px-5 md:px-10 lg:px-20 pt-20 pb-16 flex flex-col justify-center items-center gap-4 bg-[#eff3fa]"
-        aria-labelledby="hero-title"
-      >
-        {/* Breadcrumb */}
-        <p className=" bg-[#067afe] px-4 py-1.5 rounded-full mb-4 lg:mb-0 inline-flex justify-center items-center gap-2">
-          <span className="justify-center text-secondary-navy text-sm font-medium leading-normal">
-            <div className="text-center space-y-2">
-              <span
-                data-ns-animate=""
-                data-delay="0.1"
-                className="hero-badge text-tagline-1 inline-block text-secondary dark:text-accent"
-                style={{
-                  opacity: 1,
-                  filter: "blur(0px)",
-                  translate: "none",
-                  rotate: "none",
-                  scale: "none",
-                  transform: "translate(0px, 0px)",
-                }}
-              >
-                <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
-                  {/* Product Categories */}
-                  <a
-                    href="./index.html"
-                    className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-                  >
-                    Home
-                  </a>
-                  <span className="mx-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                      stroke="currentColor"
-                      className="w-4 h-4 inline-block align-middle"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                      />
-                    </svg>
-                  </span>
-                  <a
-                    href="#"
-                    className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
-                  >
-                    Contact us
-                  </a>
-                </span>
-              </span>
-            </div>
-          </span>
-        </p>
-        {/* Title + Subtitle */}
-        <div className="text-center space-y-3 max-w-3xl">
-          <h2
-            id="hero-title"
-            data-aos="fade"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-semibold text-[#111827] leading-tight"
-          >
-            CONTACT US
-          </h2>
-          <p
-            data-aos="fade"
-            data-aos-delay={300}
-            className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed"
-          >
-            Let’s solve it together. Reach out and we’ll respond shortly.
-          </p>
-        </div>
-      </section>
+  {/* 🌤 HERO SECTION */}
+<section
+  className="self-stretch px-5 md:px-10 lg:px-20 pt-20 pb-16 flex flex-col justify-center items-center gap-4 bg-[#eff3fa]"
+  aria-labelledby="hero-title"
+>
+  {/* Breadcrumb (semantic, no invalid nesting) */}
+  <nav aria-label="Breadcrumb" className="mb-4 lg:mb-0" data-aos="fade-up">
+    <ol className="inline-flex items-center bg-[#067afe] text-white px-4 py-1.5 rounded-full gap-2">
+      <li>
+        <Link href="/" className="text-sm font-medium hover:opacity-90">
+          Home
+        </Link>
+      </li>
+      <li aria-hidden="true" className="mx-1 opacity-80">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          className="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </li>
+      <li aria-current="page" className="text-sm font-medium">
+        Contact us
+      </li>
+    </ol>
+  </nav>
+
+  {/* Title + Subtitle */}
+  <div className="text-center space-y-3 max-w-3xl">
+    <h2
+      id="hero-title"
+      data-aos="fade"
+      className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-semibold text-[#111827] leading-tight"
+    >
+      CONTACT US
+    </h2>
+    <p
+      data-aos="fade"
+      data-aos-delay={300}
+      className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed"
+    >
+      Let’s solve it together. Reach out and we’ll respond shortly.
+    </p>
+  </div>
+</section>
+
 
       {/* 🧭 CONTACT INFO CARDS */}
       <section
