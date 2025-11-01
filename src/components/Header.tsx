@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -35,7 +36,7 @@ const menuItems = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null); // ✅ fixed type
 
   return (
     <header className="w-full sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-sm transition-all">
@@ -150,7 +151,11 @@ export default function Header() {
                 {item.subCategories ? (
                   <>
                     <button
-                      onClick={() => setOpenDropdown(openDropdown === item.name ? null : item.name)}
+                      onClick={() =>
+                        setOpenDropdown(
+                          openDropdown === item.name ? null : item.name
+                        )
+                      }
                       className="w-full flex justify-between items-center py-2 px-2 font-medium text-left text-gray-800 dark:text-gray-200 hover:text-[#067afe]"
                     >
                       {item.name}
@@ -159,7 +164,8 @@ export default function Header() {
                           openDropdown === item.name ? "rotate-180" : ""
                         }`}
                       />
-                    </button>         -
+                    </button>
+
                     {openDropdown === item.name && (
                       <div className="pl-5 mt-1 flex flex-col gap-2">
                         {item.subCategories.map((sub) => (
