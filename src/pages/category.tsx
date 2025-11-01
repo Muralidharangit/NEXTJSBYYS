@@ -11,6 +11,7 @@ import Loader from "@/components/Loader";
 import { SHOP_BY_CATEGORIES, slugify } from "data/shopBycatlog";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import EnquiryDialog from "@/components/EnquiryDialog";
 
 
 
@@ -20,6 +21,13 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  // UI state
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState<{
+    name?: string;
+    code?: string;
+  } | null>(null);
+
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
@@ -32,7 +40,10 @@ export default function Home() {
   }, []);
 
   if (loading) return <Loader />;
-
+  function openEnquiry(name?: string, code?: string) {
+    setSelected({ name, code });
+    setOpen(true);
+  }
   return (
     <div>
       {/* <Header /> */}
@@ -123,7 +134,7 @@ export default function Home() {
           </span>
 
           <h2 className="animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]">
-            Our Innovative Products
+            Our Innovative Product
           </h2>
         </div>
 
@@ -133,24 +144,29 @@ export default function Home() {
             const slug = slugify(category.title);
             return (
               <>
-                <Link href={`/shop/${slug}?sub=all`}>
-                  <div key={category.id} data-aos-delay={index * 100}>
-                    <div className="group relative flex items-center p-4 bg-white  rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 min-h-[5rem] sm:min-h-[6rem] md:min-h-[7rem] lg:min-h-[8rem] hover:bg-[#067afe]">
-                      <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300 mr-3 sm:mr-4 flex-shrink-0 bg-white dark:bg-gray-800">
-                        <Image
-                          src={category.images}
-                          alt={category.title}
-                          className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 object-contain"
-                          width={160}
-                          height={40}
-                        />
-                      </div>
-                      <p className="font-semibold text-gray-600 dark:text-gray-300 transition-colors duration-300 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] truncate w-[200px] !m-0 group-hover:text-white">
-                        {category.title}
-                      </p>
+                {/* <Link href={`/shop/${slug}?sub=all`}> */}
+                <div
+                  key={category.id}
+                  data-aos-delay={index * 100}
+                  onClick={() => openEnquiry(category.title)}
+                >
+                  <div className="group relative flex items-center p-4 bg-white  rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 min-h-[5rem] sm:min-h-[6rem] md:min-h-[7rem] lg:min-h-[8rem] hover:bg-[#067afe]">
+                    <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300 mr-3 sm:mr-4 flex-shrink-0 bg-white dark:bg-gray-800">
+                      <Image
+                        src={category.images}
+                        alt={category.title}
+                        className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 object-contain"
+                        width={160}
+                        height={40}
+                      />
                     </div>
+                    <p className="font-semibold text-gray-600 dark:text-gray-300 transition-colors duration-300 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] truncate w-[200px] !m-0 group-hover:text-white">
+                      {category.title}
+                    </p>
                   </div>
-                </Link>
+                </div>
+
+                {/* </Link> */}
               </>
             );
           })}
@@ -199,6 +215,14 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Enquiry Dialog */}
+      <EnquiryDialog
+        open={open}
+        onOpenChange={setOpen}
+        productName={selected?.name}
+        productCode={selected?.code}
+      />
 
       {/* <Footer /> */}
       <Script src="/assets/js/scroll-trigger.js" strategy="afterInteractive" />
