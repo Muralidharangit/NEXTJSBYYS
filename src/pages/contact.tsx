@@ -1,4 +1,4 @@
-// src/pages/contact.tsx
+// src/pages/contact.tsx  (your file)
 import Head from "next/head";
 import Link from "next/link";
 import {
@@ -8,8 +8,80 @@ import {
   ChatBubbleLeftRightIcon,
 } from "@heroicons/react/24/outline";
 import ContactForm from "@/components/ContactForm";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+
+function ModalPortal({
+  open,
+  title,
+  body,
+  onClose,
+}: {
+  open: boolean;
+  title: string;
+  body: string;
+  onClose: () => void;
+}) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    document.documentElement.classList.toggle("overflow-hidden", open);
+    document.body.classList.toggle("overflow-hidden", open);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.documentElement.classList.remove("overflow-hidden");
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [open, onClose]);
+
+  if (!mounted || !open) return null;
+
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contact-modal-title"
+    >
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
+      <div className="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl">
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          ✕
+        </button>
+        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-blue-100">
+          <span className="text-2xl">✅</span>
+        </div>
+        <h3 id="contact-modal-title" className="mb-2 text-center text-xl font-semibold text-gray-900">
+          {title}
+        </h3>
+        <p className="mb-6 text-center text-gray-600">{body}</p>
+        <div className="flex justify-center">
+          <button
+            onClick={onClose}
+            className="rounded-full bg-[#067afe] px-5 py-2.5 font-semibold text-white hover:bg-[#005fd9] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#067afe]"
+          >
+            OK
+          </button>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
 
 export default function ContactPage() {
+  const [modal, setModal] = useState<{ open: boolean; title: string; body: string }>({
+    open: false,
+    title: "",
+    body: "",
+  });
   return (
     <>
       <Head>
@@ -101,29 +173,31 @@ export default function ContactPage() {
         className="py-12 sm:py-16 lg:py-20 bg-[#f8faff]"
         data-aos="fade-up"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-16 text-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 xl:px-16 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-5">
             {[
               {
                 icon: (
                   <MapPinIcon className="w-8 h-8 sm:w-9 sm:h-9 text-[#067afe]" />
                 ),
                 title: "Our Location",
-                lines: ["993 Renner Burg, West Rond,", "MT 94251-030"],
+                lines: [
+                  "no:45, VANIDASAN STREET Saram(Py) Pondicherry Pondicherry India 605013",
+                ],
               },
               {
                 icon: (
                   <EnvelopeIcon className="w-8 h-8 sm:w-9 sm:h-9 text-[#067afe]" />
                 ),
                 title: "Email us",
-                lines: ["support@bexon.com", "info@bexon.com"],
+                lines: ["Support@byyizzy.com", "Care@byyizzy.com"],
               },
               {
                 icon: (
                   <PhoneIcon className="w-8 h-8 sm:w-9 sm:h-9 text-[#067afe]" />
                 ),
                 title: "Call us",
-                lines: ["+1 (009) 544-7818", "+1 (009) 880-1810"],
+                lines: ["96989 03089", "88701 36317"],
               },
               {
                 icon: (
@@ -178,9 +252,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-    
-
-      {/* 📍 MAP + FORM SECTION */}
       {/* 📍 MAP + FORM SECTION */}
       <section
         className="relative mx-auto px-5 md:px-10 lg:px-20 py-16 lg:py-20 bg-[#eff3fa] overflow-hidden"
@@ -210,13 +281,13 @@ export default function ContactPage() {
               className="w-full h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden rounded-2xl shadow-md"
             >
               <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.533989022593!2d79.81105377587788!3d11.937484936704328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53617bec6fc11b%3A0xeadcf892be11fbef!2sVanidasan%20St%2C%20Puducherry!5e0!3m2!1sen!2sin!4v1761915257107!5m2!1sen!2sin"
                 title="Map to our office"
                 className="w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2182048956074!2d106.72185077580569!3d10.794265058844698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528ab40b36f07%3A0x70b70867c50b6b0c!2sNext.js%20Office!5e0!3m2!1sen!2sin!4v1683912458669!5m2!1sen!2sin"
-              />
+              ></iframe>
             </div>
           </div>
 
@@ -229,10 +300,29 @@ export default function ContactPage() {
             <h3 className="text-2xl sm:text-3xl font-semibold mb-6 text-[#111827]">
               Send a <span className="text-[#067afe]">Message</span>
             </h3>
-            <ContactForm />
+            {/* <ContactForm /> */}
+            <ContactForm
+              onDone={({ ok, title, body }) => {
+                setModal({ open: true, title, body });
+                // Optional auto-close
+                if (ok)
+                  setTimeout(
+                    () => setModal((m) => ({ ...m, open: false })),
+                    3000
+                  );
+              }}
+            />
           </div>
         </div>
       </section>
+
+      {/* Page-level modal (outside the form card) */}
+      <ModalPortal
+        open={modal.open}
+        title={modal.title}
+        body={modal.body}
+        onClose={() => setModal((m) => ({ ...m, open: false }))}
+      />
     </>
   );
 }

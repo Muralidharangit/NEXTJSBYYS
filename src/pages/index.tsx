@@ -2,11 +2,15 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import Script from "next/script";
 import brandsJson from "@/Data/Brand.json";
+import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Loader from "@/components/Loader";
 
 // ✅ Dynamic imports with lightweight skeletons for above-the-fold sections
 const VideoBanner = dynamic(() => import("@/components/VideoBanner"), {
   ssr: false,
-  loading: () => <div className="h-[320px] bg-gray-200 animate-pulse" />,
+  loading: () => <div className="h-[80vh] bg-gray-200 animate-pulse" />,
 });
 
 const FeaturesSection = dynamic(() => import("@/components/FeaturesSection"), {
@@ -66,8 +70,21 @@ function normalizeBrands(data: unknown): Brand[] {
   return [];
 }
 
+ 
+
 export default function Home() {
   const brands = normalizeBrands(brandsJson as unknown as BrandsFile);
+
+
+
+   const [loading, setLoading] = useState(true);
+
+   useEffect(() => {
+     const timer = setTimeout(() => setLoading(false), 100);
+     return () => clearTimeout(timer);
+   }, []);
+
+   if (loading) return <Loader />;
 
   return (
     <>
@@ -77,7 +94,10 @@ export default function Home() {
           name="description"
           content="A fast and modern Next.js site optimized for all devices."
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
 
         <meta property="og:title" content="My App Home Page" />
         <meta
@@ -98,10 +118,10 @@ export default function Home() {
         <VideoBanner />
         <FeaturesSection />
         <ServicesSection />
-        <Counterpart />
 
         {/* ✅ Below-the-fold lazy */}
         <CategoriesSection />
+        <Counterpart />
         <ManufacturingProductsSection />
         <ClientsSection brands={brands} />
         <CallToActionSection />

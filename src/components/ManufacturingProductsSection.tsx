@@ -62,14 +62,14 @@ export default function ManufacturingProductsSection() {
   ];
 
   return (
-    <section className="position-relative ">
+    <section className="position-relative bg-[#eff3fa]">
       <div className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             {/* <span className="text-sm text-primary uppercase font-semibold tracking-wider text-default-950"></span> */}
 
             <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full mb-3">
-              Our Services
+              Why Choose us?
             </span>
             <h2 className="animate-letters text-4xl sm:text-5xl font-semibold leading-tight text-[#050d20]">
               Manufacturing Products
@@ -135,11 +135,13 @@ export default function ManufacturingProductsSection() {
                   <Image
                     src={product.img}
                     alt={product.title}
-                    className="w-full rounded-lg"
                     width={1200}
                     height={675}
-                    priority
-                    fetchPriority="high"
+                    quality={60} // 🔥 compress better without visible loss
+                    priority // ✅ only keep if this image is above the fold / hero section
+                    fetchPriority="high" // ✅ helps LCP if it’s a key visual
+                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 60vw, 1200px" // ✅ responsive
+                    className="w-full rounded-lg object-cover"
                   />
                 </div>
               </div>

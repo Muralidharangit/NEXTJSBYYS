@@ -73,7 +73,7 @@ export default function ClientsSection({ brands }: Props) {
     return (
       <div
         key={key}
-        className="flex items-center justify-center bg-gray-100 dark:bg-gray-800 w-32 h-24 rounded-xl"
+        className="flex items-center justify-center bg-white dark:bg-gray-800 w-32 h-24 rounded-xl"
         title={item.name ?? ""}
       >
         {item?.logo ? (
