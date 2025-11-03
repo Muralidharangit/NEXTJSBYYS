@@ -71,12 +71,12 @@ export default function Home() {
               >
                 <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
                   {/* Product Categories */}
-                  <a
-                    href="./index.html"
+                  <Link
+                    href="/"
                     className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
                   >
                     Home
-                  </a>
+                  </Link>
                   <span className="mx-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

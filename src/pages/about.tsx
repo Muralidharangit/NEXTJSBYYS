@@ -63,12 +63,12 @@ export default function Home() {
               >
                 <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
                   {/* Product Categories */}
-                  <a
-                    href="./index.html"
+                  <Link
+                    href="/"
                     className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
                   >
                     Home
-                  </a>
+                  </Link>
                   <span className="mx-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +109,8 @@ export default function Home() {
             data-aos-delay={300}
             className="text-center justify-start text-base-grey text-lg font-normal leading-tight lg:leading-relaxed max-w-[750px] aos-init"
           >
-             From sourcing to shop-floor, we build reliable, end-to-end solutions.
+            From sourcing to shop-floor, we build reliable, end-to-end
+            solutions.
           </p>
         </div>
       </section>
@@ -149,7 +150,7 @@ export default function Home() {
               >
                 Empowering Each Other to Succeed
               </h2>
-            
+
               <hr className="border-gray-200 my-6" />
 
               <div
@@ -305,11 +306,11 @@ export default function Home() {
             </span> */}
 
             <h3 className="mt-4 text-3xl md:text-4xl font-semibold text-[#050d20] leading-tight">
-                Why Choose <span className="text-[#067afe]"> Byyizzy?</span>
+              Why Choose <span className="text-[#067afe]"> Byyizzy?</span>
             </h3>
 
             <p className="mt-4 text-gray-700 leading-relaxed">
-            Discover the benefits that make Byyizzy stand out from the rest.
+              Discover the benefits that make Byyizzy stand out from the rest.
             </p>
           </div>
 
@@ -373,8 +374,7 @@ export default function Home() {
         </div>
       </section>
 
-       
-       <ClientsSection />
+      <ClientsSection />
       <section
         className="relative bg-[#067afe] py-20 overflow-hidden"
         data-aos="fade-up"
