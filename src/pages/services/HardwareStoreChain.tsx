@@ -9,6 +9,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "@/components/Footer";
 import Script from "next/script";
+import CallToActionSection from "@/components/CallToActionSection";
 
 export default function HardwareStoreChain() {
     const [loading, setLoading] = useState(true);
@@ -130,15 +131,15 @@ export default function HardwareStoreChain() {
                     {/* Left Side Content */}
                     <div className="text-center lg:text-left" data-aos="fade-right" data-aos-delay="200">
 
-                        <p className="text-lg sm:text-xl text-gray-700 mb-6">
+                        <p className="text-lg sm:text-xl text-gray-700 mb-6 text-justify">
                             Building India’s First Integrated Industrial and Hardware Network for B2B and B2C. We’re creating India’s first hardware store chain that blends online convenience with a great in-store experience.
                         </p>
 
-                        <p className="text-base sm:text-lg text-gray-600 mb-6">
+                        <p className="text-base sm:text-lg text-gray-600 mb-6 text-justify">
                             India’s hardware market is valued at ₹1 lakh crore, yet most local hardware shops struggle as large corporate players expand. Byyizzy empowers local hardware stores with technology, strong buying power, and supply chain integration, enabling them to reduce costs, avoid dead inventory, increase profits, and tap into high-volume B2B demand, beyond just walk-in B2C customers.
                         </p>
 
-                        <p className="text-base sm:text-lg text-gray-600 mb-10">
+                        <p className="text-base sm:text-lg text-gray-600 mb-10 text-justify">
                             Transforming local stores into Byyizzy powered hardware stores. Our mission is to unify the fragmented hardware supply chain and create a smarter, faster, and more inclusive marketplace for everyone.
                         </p>
 
@@ -444,20 +445,10 @@ export default function HardwareStoreChain() {
             </section>
 
 
+        
 
-            {/* PARTNER CTA */}
-            <section className="py-20 bg-blue-600 text-white text-center" data-aos="fade-up">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-6">🤝 Partner With Us</h2>
-                <p className="mx-auto mb-8 px-20">
-                    Join our mission to redefine India’s hardware ecosystem. Whether you are a manufacturer, distributor, or local store owner, Byyizzy helps you scale with technology, visibility, and growth support.
-                </p>
-                <Link
-                    href="/contact"
-                    className="inline-flex items-center bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition"
-                >
-                    Become a Partner <ArrowRightIcon className="ml-2 w-5 h-5" />
-                </Link>
-            </section>
+            {/* Contact Us */}
+            <CallToActionSection/>
 
             {/* <Footer /> */}
             <Script src="/assets/js/scroll-trigger.js" strategy="afterInteractive" />

@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 import Script from "next/script";
 import { CurrencyDollarIcon, CubeIcon, UsersIcon, ClipboardDocumentListIcon, ChatBubbleLeftRightIcon, TruckIcon, SparklesIcon, MapIcon, HeartIcon, UserGroupIcon } from '@heroicons/react/24/outline';
 import Image from "next/image";
+import CallToActionSection from "@/components/CallToActionSection";
 
 
 export default function IndustrialProductsAggregation() {
@@ -258,7 +259,6 @@ export default function IndustrialProductsAggregation() {
         </section>
 
         {/* What We Do */}
-
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-6">
             {/* Section Heading */}
@@ -589,6 +589,9 @@ export default function IndustrialProductsAggregation() {
             </p>
           </div>
         </section>
+
+        {/* Contact Us */}
+        <CallToActionSection/>
 
         {/* <Footer /> */}
         <Script

@@ -10,6 +10,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "@/components/Footer";
 import Script from "next/script";
+import CallToActionSection from "@/components/CallToActionSection";
 
 export default function paas() {
    const [loading, setLoading] = useState(true);
@@ -509,27 +510,10 @@ export default function paas() {
           </div>
         </section>
 
-        {/* FINAL CTA */}
-        <section
-          className="bg-[#067afe] from-indigo-600 to-blue-700 text-white py-16"
-          data-aos="zoom-in"
-        >
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold mb-4">
-              Start Smarter Procurement Today
-            </h2>
-            <p className="text-lg mb-8">
-              Digitize your procurement, cut costs, and gain full visibility —
-              all while boosting efficiency and compliance.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition"
-            >
-              Get Started <ArrowRightIcon className="ml-2 w-5 h-5" />
-            </Link>
-          </div>
-        </section>
+        
+
+        {/* Contact Us */}
+        <CallToActionSection/>
 
         {/* <Footer /> */}
         <Script
