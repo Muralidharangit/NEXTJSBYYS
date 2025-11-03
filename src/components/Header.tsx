@@ -1,42 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  DevicePhoneMobileIcon,
-  HomeModernIcon,
-  ShoppingBagIcon,
-  BookOpenIcon,
   ChevronDownIcon,
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-
-const menuItems = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  {
-    name: "Category",
-    href: "/category",
-    subCategories: [
-      {
-        name: "Electronics",
-        icon: DevicePhoneMobileIcon,
-        href: "/category/electronics",
-      },
-      { name: "Furniture", icon: HomeModernIcon, href: "/category/furniture" },
-      { name: "Clothing", icon: ShoppingBagIcon, href: "/category/clothing" },
-      { name: "Books", icon: BookOpenIcon, href: "/category/books" },
-    ],
-  },
-  { name: "Services", href: "/service" },
-  { name: "Contact", href: "/contact" },
-];
+import { SHOP_BY_CATEGORIES, slugify } from "data/shopBycatlog";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null); // ✅ fixed type
+  const [categoryOpen, setCategoryOpen] = useState(false);
+  const [mobileCategoryOpen, setMobileCategoryOpen] = useState(false);
+  const categoryRef = useRef<HTMLDivElement>(null);
+
+  // ✅ Close desktop category menu when clicking outside
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        categoryRef.current &&
+        !categoryRef.current.contains(e.target as Node)
+      ) {
+        setCategoryOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <header className="w-full sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-sm transition-all">
@@ -54,38 +46,94 @@ export default function Header() {
         </Link>
 
         {/* ✅ Desktop Menu */}
-        <div className="hidden lg:flex lg:gap-x-8">
-          {menuItems.map((item) => (
-            <div key={item.name} className="relative group">
-              <Link
-                href={item.href}
-                className="flex items-center gap-1 font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
-              >
-                {item.name}
-                {item.subCategories && (
-                  <ChevronDownIcon className="w-4 h-4 transition-transform group-hover:rotate-180" />
-                )}
-              </Link>
+        <div className="hidden lg:flex lg:gap-x-8 items-center">
+          {/* Home */}
+          <Link
+            href="/"
+            className="font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
+          >
+            Home
+          </Link>
 
-              {/* ✅ Mega Dropdown */}
-              {item.subCategories && (
-                <div className="absolute left-0 mt-3 hidden group-hover:grid grid-cols-2 gap-4 w-96 p-5 bg-white dark:bg-gray-800 rounded-xl shadow-xl">
-                  {item.subCategories.map((sub) => (
-                    <Link
-                      key={sub.name}
-                      href={sub.href}
-                      className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                    >
-                      <sub.icon className="w-5 h-5 text-[#067afe]" />
-                      <span className="font-medium text-gray-800 dark:text-gray-200">
-                        {sub.name}
-                      </span>
-                    </Link>
-                  ))}
+          {/* About */}
+          <Link
+            href="/about"
+            className="font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
+          >
+            About
+          </Link>
+
+          {/* ✅ Category Dropdown (Desktop) */}
+          <div className="relative" ref={categoryRef}>
+            <button
+              onClick={() => setCategoryOpen((prev) => !prev)}
+              className="flex items-center gap-1 font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
+            >
+              Categories
+              <ChevronDownIcon
+                className={`w-4 h-4 transition-transform ${
+                  categoryOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {categoryOpen && (
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 flex flex-col items-center bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-2xl z-50 w-[800px] p-6 animate-fadeIn">
+                {/* Category Grid */}
+                <div className="grid grid-cols-4 gap-5 w-full">
+                  {SHOP_BY_CATEGORIES.slice(0, 12).map((category) => {
+                    const slug = slugify(category.title);
+                    return (
+                      <Link
+                        key={category.id}
+                        href={`/shop/${slug}?sub=all`}
+                        className="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-[#067afe]/10 transition text-center"
+                      >
+                        <div className="w-14 h-14 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full mb-2">
+                          <Image
+                            src={category.images}
+                            alt={category.title}
+                            width={48}
+                            height={48}
+                            className="object-contain"
+                          />
+                        </div>
+                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                          {category.title}
+                        </span>
+                      </Link>
+                    );
+                  })}
                 </div>
-              )}
-            </div>
-          ))}
+
+                {/* ✅ Show All Button */}
+                <div className="mt-6">
+                  <Link
+                    href="/categories"
+                    className="px-6 py-2 text-sm font-semibold text-white bg-[#067afe] hover:bg-[#046be0] rounded-full shadow-md transition"
+                  >
+                    Show All Categories
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Services */}
+          <Link
+            href="/service"
+            className="font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
+          >
+            Services
+          </Link>
+
+          {/* Contact */}
+          <Link
+            href="/contact"
+            className="font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
+          >
+            Contact
+          </Link>
         </div>
 
         {/* ✅ Desktop Right Buttons */}
@@ -94,18 +142,6 @@ export default function Header() {
             href="/category"
             className="flex items-center gap-2 rounded-lg px-5 py-2 text-sm font-semibold shadow-md bg-[#067afe] text-white hover:bg-[#0047a0] transition"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              className="w-5 h-5"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-                clipRule="evenodd"
-              />
-            </svg>
             Search
           </Link>
 
@@ -113,18 +149,6 @@ export default function Header() {
             href="/"
             className="flex items-center gap-2 rounded-lg px-5 py-2 text-sm font-semibold shadow-md bg-[#067afe] text-white hover:bg-[#0047a0] transition"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              className="w-5 h-5"
-            >
-              <path
-                fillRule="evenodd"
-                d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
-                clipRule="evenodd"
-              />
-            </svg>
             Supplier Registration
           </Link>
         </div>
@@ -146,51 +170,94 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 px-4 pb-4">
           <ul className="flex flex-col gap-2 py-3">
-            {menuItems.map((item) => (
-              <li key={item.name}>
-                {item.subCategories ? (
-                  <>
-                    <button
-                      onClick={() =>
-                        setOpenDropdown(
-                          openDropdown === item.name ? null : item.name
-                        )
-                      }
-                      className="w-full flex justify-between items-center py-2 px-2 font-medium text-left text-gray-800 dark:text-gray-200 hover:text-[#067afe]"
-                    >
-                      {item.name}
-                      <ChevronDownIcon
-                        className={`w-4 h-4 transition-transform ${
-                          openDropdown === item.name ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
+            <li>
+              <Link
+                href="/"
+                className="block py-2 px-2 text-gray-800 dark:text-gray-200 hover:text-[#067afe]"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/about"
+                className="block py-2 px-2 text-gray-800 dark:text-gray-200 hover:text-[#067afe]"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/service"
+                className="block py-2 px-2 text-gray-800 dark:text-gray-200 hover:text-[#067afe]"
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/contact"
+                className="block py-2 px-2 text-gray-800 dark:text-gray-200 hover:text-[#067afe]"
+              >
+                Contact
+              </Link>
+            </li>
 
-                    {openDropdown === item.name && (
-                      <div className="pl-5 mt-1 flex flex-col gap-2">
-                        {item.subCategories.map((sub) => (
-                          <Link
-                            key={sub.name}
-                            href={sub.href}
-                            className="flex items-center gap-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:text-[#067afe]"
-                          >
-                            <sub.icon className="w-4 h-4 text-[#067afe]" />
-                            {sub.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="block py-2 px-2 text-gray-800 dark:text-gray-200 hover:text-[#067afe]"
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </li>
-            ))}
+            {/* ✅ Mobile Category Dropdown */}
+            <li>
+              <button
+                onClick={() => setMobileCategoryOpen((prev) => !prev)}
+                className="flex items-center justify-between w-full py-2 px-2 text-gray-800 dark:text-gray-200 font-semibold hover:text-[#067afe]"
+              >
+                Categories
+                <ChevronDownIcon
+                  className={`w-5 h-5 transition-transform ${
+                    mobileCategoryOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {mobileCategoryOpen && (
+                <div className="mt-2 border-l border-gray-200 dark:border-gray-700 pl-3">
+                  {SHOP_BY_CATEGORIES.slice(0, 12).map((category) => {
+                    const slug = slugify(category.title);
+                    return (
+                      <Link
+                        key={category.id}
+                        href={`/shop/${slug}?sub=all`}
+                        className="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-[#067afe]/10 transition"
+                      >
+                        {/* Left icon */}
+                        <div className="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full">
+                          <Image
+                            src={category.images}
+                            alt={category.title}
+                            width={32}
+                            height={32}
+                            className="object-contain"
+                          />
+                        </div>
+
+                        {/* Right content */}
+                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200 truncate w-[200px]">
+                          {category.title}
+                        </span>
+                      </Link>
+                    );
+                  })}
+
+                  {/* ✅ Show All Button */}
+                  <div className="mt-3">
+                    <Link
+                      href="/categories"
+                      className="block text-center text-sm font-semibold text-white bg-[#067afe] hover:bg-[#046be0] rounded-full py-2 px-4 transition"
+                    >
+                      Show All Categories
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </li>
           </ul>
         </div>
       )}
