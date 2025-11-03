@@ -5,6 +5,21 @@ const ACCESSIBLE_BLUE = "#067afe"; // Replace with your color class
 
 export default function ManufacturingProductsSection() {
   const products = [
+      {
+      title: "Industrial Products Aggregation",
+      desc: "Streamline your procurement. Create value. Generate savings from tail-spend.",
+      features: [
+        "Fastest Delivery – within just 24 hours! (Via Byyizzy-powered hardware stores)",
+        "Transparent Pricing",
+        "100% Process Visibility",
+        "Local Business Engagement",
+        "Integrated B2B & B2C Ecosystem",
+        "End-to-End Tracking & Catalog-Based Buying",
+        "Supporting Local, Saving Community Wealth",
+      ],
+      img: "/images/s4.webp",
+      moreLink: "/services/IndustrialProductsAggregation",
+    },
     {
       title: "Procurement as a Service (PaaS)",
       desc: "Automate your Source-to-Pay process— for Just 1.5% of Your Spend",
@@ -44,21 +59,7 @@ export default function ManufacturingProductsSection() {
       img: "/images/s3.png",
       moreLink: "/services/maas",
     },
-    {
-      title: "Industrial Products Aggregation",
-      desc: "Streamline your procurement. Create value. Generate savings from tail-spend.",
-      features: [
-        "Fastest Delivery – within just 24 hours! (Via Byyizzy-powered hardware stores)",
-        "Transparent Pricing",
-        "100% Process Visibility",
-        "Local Business Engagement",
-        "Integrated B2B & B2C Ecosystem",
-        "End-to-End Tracking & Catalog-Based Buying",
-        "Supporting Local, Saving Community Wealth",
-      ],
-      img: "/images/s4.webp",
-      moreLink: "/services/IndustrialProductsAggregation",
-    },
+  
   ];
 
   return (

@@ -121,18 +121,18 @@ const Footer = () => {
             {/* FIX: Replaced inline style with Tailwind class text-white */}
             <h6 className="text-lg font-medium mb-7 text-white">Support</h6>
             <ul className="text-md text-[#99a1af] transition-all duration-500">
-              <li className="mb-6">
-                {/* FIX: Using Link and assumed path for internal T&C page */}
+              {/* <li className="mb-6">
+               
                 <Link href="/terms" className="hover:text-white">
                   Terms and Conditions
                 </Link>
               </li>
               <li className="mb-6">
-                {/* FIX: Using Link and assumed path for internal Privacy Policy page */}
+               
                 <Link href="/privacy" className="hover:text-white">
                   Privacy Policy
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/contact" className="hover:text-white">
                   Contact Support

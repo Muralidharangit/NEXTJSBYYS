@@ -28,7 +28,7 @@ const CallToActionSection = () => {
               className="inline-flex items-center gap-2 bg-white text-[#067afe] px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-200 transition"
             >
               <span>Let’s talk now</span>
-              <span className="flex items-center gap-1">➝ ➝</span>
+              <span className="flex items-center gap-1">➝</span>
             </Link>
           </div>
         </div>

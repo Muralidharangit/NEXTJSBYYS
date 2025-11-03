@@ -193,9 +193,9 @@ function ServiceCard({
             {icon}
           </div>
         </div>
-        <h3 className="text-lg sm:text-xl font-semibold mb-3 text-center">
+        <h6 className="text-lg sm:text-xl font-semibold mb-3 text-center">
           {title}
-        </h3>
+        </h6>
         <p className="text-gray-600 text-sm sm:text-base text-center mb-4">
           {description}
         </p>

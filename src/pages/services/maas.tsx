@@ -1,43 +1,54 @@
-// pages/maas.js
+
 import { useEffect, useState } from "react";
 import Head from "next/head";
+import Link from "next/link";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import LetterAnimation from "@/components/LetterAnimation";
 import Loader from "@/components/Loader";
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import LetterAnimation from "@/components/LetterAnimation";
-import { Link } from "lucide-react";
+import Footer from "@/components/Footer";
+import Script from "next/script";
+import { CurrencyDollarIcon, CubeIcon, UsersIcon, ClipboardDocumentListIcon, ChatBubbleLeftRightIcon, TruckIcon, SparklesIcon, MapIcon, HeartIcon, UserGroupIcon } from '@heroicons/react/24/outline';
+import Image from "next/image";
+import CallToActionSection from "@/components/CallToActionSection";
 
 
-export default function MaaSPage() {
+export default function IndustrialProductsAggregation() {
     const [loading, setLoading] = useState(true);
 
-    // Loader effect
     useEffect(() => {
-        const timer = setTimeout(() => setLoading(false), 1200);
+        const timer = setTimeout(() => setLoading(false), 1500);
         return () => clearTimeout(timer);
     }, []);
 
-    // Initialize AOS animations
     useEffect(() => {
         AOS.init({ duration: 800, once: true });
     }, []);
 
     if (loading) return <Loader />;
 
+
     return (
       <>
         <Head>
-          <title>Manufacturing as a Service (MaaS) | Byyizzy</title>
+          <title>
+            Byyizzy Hardware Network | Industrial Products Aggregation
+          </title>
           <meta
             name="description"
-            content="Transform your custom & non-standard spare parts supply chain with our AI-powered manufacturing platform and extensive supplier network."
+            content="Byyizzy empowers local hardware stores with technology, supply chain integration, and strong buying power for B2B and B2C."
+          />
+          <link
+            rel="canonical"
+            href="https://yourdomain.com/services/procurement-service"
           />
         </Head>
 
         {/* <Header /> */}
         <LetterAnimation />
+
         {/* HERO + BREADCRUMB */}
         <section
           className="self-stretch px-5 lg:px-20 pt-20 pb-20 flex flex-col justify-center items-center gap-2 overflow-hidden bg-[#eff3fa]"
@@ -100,7 +111,7 @@ export default function MaaSPage() {
               id="hero-title"
               className=" text-center justify-start text-secondary-navy text-4xl lg:text-[50px] font-medium leading-tight lg:leading-[50px] max-w-7xl mx-auto aos-init aos-animate w-full"
             >
-              Manufacturing Service
+             Manufacturing as a Service (MaaS)
             </h2>
             <p
               data-aos="fade"
@@ -113,65 +124,52 @@ export default function MaaSPage() {
           </div>
         </section>
 
+
+
+
+
         {/* HERO SECTION */}
-        <section className="py-28 px-6 sm:px-12">
-          {/* First Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-            {/* Left: Content */}
-            <div data-aos="fade-right">
-              <h2 className="animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]">
-                Manufacturing as a Service (MaaS)
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-700 mb-6">
+      
+
+        {/* HERO */}
+        <section className="py-20 bg-white">
+          {/* Section Heading */}
+          <h2 className="animate-letters text-3xl sm:text-4xl font-bold text-gray-900 mb-12 text-center">
+           What We Do
+          </h2>
+
+          <div className="max-w-7xl mx-auto px-6 lg:flex lg:items-start lg:gap-12 mt-15">
+            {/* Left: Text Content */}
+            <div className="lg:w-1/2 mb-10 lg:mb-0">
+              <p className="text-gray-700 mb-4">
                 Technology-Driven Manufacturing Model for Customized &
                 Non-Standard Spare Parts Transform your custom & non-standard
                 spare parts supply chain with our AI-powered manufacturing
                 platform and extensive supplier network. Achieve full
                 visibility, reduce lead times, and enhance quality.
               </p>
-            </div>
-
-            {/* Right: Image */}
-            <div className="flex justify-center" data-aos="fade-left">
-              <img
-                src="https://static.vecteezy.com/ti/vetor-gratis/t1/8258670-homem-controlador-fabrica-robo-com-laptop-gratis-vetor.jpg"
-                alt="MaaS Illustration"
-                className="w-full max-w-md rounded-xl"
-              />
-            </div>
-          </div>
-
-          {/* Second Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Image */}
-            <div
-              className="flex justify-center order-last lg:order-first"
-              data-aos="fade-right"
-            >
-              <img
-                src="https://img.freepik.com/free-vector/brand-concept-landing-page-illustration_52683-18232.jpg?semt=ais_hybrid&w=740&q=80"
-                alt="What We Do Illustration"
-                className="w-full max-w-md rounded-xl"
-              />
-            </div>
-
-            {/* Right: Content */}
-            <div data-aos="fade-left">
-              <h2 className="animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]">
-                What We Do
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-700 mb-4">
+              
+              <p className="text-gray-700 mb-4">
                 We bridge the gap between urgent needs and complex
                 manufacturing. Our MaaS platform connects your requirements with
                 a curated network of verified machine shops, foundries,
                 fabricators, and 3D printing partners across the world.
               </p>
-              <p className="text-lg sm:text-xl text-gray-700">
+                <p className="text-gray-700 mb-4">
                 Whether you need a single precision component or a complete
                 mechanical assembly, we deliver fast, accurate, and traceable
                 manufacturing solutions — without the overhead of managing
                 suppliers.
               </p>
+            </div>
+
+            {/* Right: Features */}
+            <div className="lg:w-1/2">
+              <img
+                src="https://static.vecteezy.com/ti/vetor-gratis/t1/8258670-homem-controlador-fabrica-robo-com-laptop-gratis-vetor.jpg"
+                alt="MaaS Illustration"
+                className="w-full max-w-md rounded-xl"
+              />
             </div>
           </div>
         </section>
@@ -328,7 +326,100 @@ export default function MaaSPage() {
           </div>
         </section>
 
-        {/* HOW IT WORKS */}
+        {/* What We Do */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-6">
+            {/* Section Heading */}
+            <h2 className="animate-letters text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-14">
+              What We Do
+            </h2>
+
+            {/* Card Grid */}
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-10">
+              {/* 1️⃣ */}
+              <div className="bg-white rounded-2xl shadow-sm p-6 ">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  1.Consolidation of Fragmented Spend
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  For large manufacturing companies, 80% of the suppliers
+                  contribute only 20% of the supply value (spend) – illustrating
+                  the Pareto analysis (80:20 rule) A high number of transactions
+                  (due to numerous suppliers) & repeated PR-PO process create
+                  inefficiencies in the supply chain Need to unlock time spent
+                  on operational activities and focus more on strategic category
+                  management At Byyizzy, we aggregate the highly fragment MRO
+                  purchases into a single managed platform to bring more
+                  efficiency and to create value in the MRO supply chain
+                </p>
+              </div>
+
+              {/* 2️⃣ */}
+              <div className="bg-white rounded-2xl shadow-sm p-6 ">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  2.Hyperlocal Fulfillment Network
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Our integrated tech-powered local hardware hubs deliver
+                  faster, verified, cost-effective supplies. Inventory
+                  optimization through our Byyizzy Powered Hardware Stores
+                </p>
+              </div>
+
+              {/* 3️⃣ */}
+              <div className="bg-white rounded-2xl shadow-sm p-6 ">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  3.Digital Procurement Platform
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  AI automates sourcing, quotes, approvals, POs, and tracking —
+                  boosting speed, compliance, and control.
+                </p>
+              </div>
+
+              {/* 4️⃣ */}
+              <div className="bg-white rounded-2xl shadow-sm p-6 ">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  4.Transparent Pricing & Strategic Sourcing
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  We negotiate better rates through aggregated buying power and
+                  pass every saving directly to you.
+                </p>
+              </div>
+
+              {/* 5️⃣ */}
+              <div className="bg-white rounded-2xl shadow-sm p-6 ">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  5.Catalog-Based Buying
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>
+                      Pre-approved product catalogs streamline ordering — no
+                      repetitive RFQs, just click and order.
+                    </li>
+                    <li>Easy & intuitive e-commerce like buying experience</li>
+                    <li>SKU price & quality standardization</li>
+                  </ul>
+                </p>
+              </div>
+
+              {/* 6️⃣ */}
+              <div className="bg-white rounded-2xl shadow-sm p-6 ">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  6.Tail-Spend Intelligence & Reporting
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Gain real-time analytics, control leakage, and identify new
+                  savings opportunities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+   {/* HOW IT WORKS */}
         <section className="py-16 px-6 sm:px-12 ">
           <h2 className="animate-letters text-3xl font-bold mb-10 text-center flex items-center justify-center">
             <svg
@@ -444,33 +535,15 @@ export default function MaaSPage() {
           </div>
         </section>
 
-        {/* PARTNER CTA */}
-        <section className="py-20 px-6 sm:px-12 bg-[#067afe] text-white text-center">
-          <h2
-            className="text-3xl sm:text-4xl font-bold mb-6"
-            data-aos="fade-up"
-          >
-            🤝 Partner with Us
-          </h2>
-          <p
-            className="mx-auto mb-8 text-lg sm:text-xl"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Focus on your operations — we’ll handle the complexity of
-            manufacturing and sourcing. Get reliable, high-quality spare parts
-            made on demand, with complete digital transparency.
-          </p>
-          <button
-            className="bg-white text-blue-600 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            Talk to our Team
-          </button>
-        </section>
+        {/* Contact Us */}
+        <CallToActionSection/>
 
         {/* <Footer /> */}
+        <Script
+          src="/assets/js/scroll-trigger.js"
+          strategy="afterInteractive"
+        />
+        <Script src="/assets/js/smooth-scroll.js" strategy="afterInteractive" />
       </>
     );
 }

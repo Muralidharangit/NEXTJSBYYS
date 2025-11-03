@@ -64,11 +64,12 @@ const Counterpart = () => {
               </div>
             ))}
           </div>
+          {/* dgchngd */}
 
           {/* CTA Button */}
-          <button className="px-6 py-3 bg-[#067afeef] text-white font-semibold rounded shadow-lg transition duration-300 hover:bg-[#056ae0] hover:shadow-xl mt-6">
+          {/* <button className="px-6 py-3 bg-[#067afeef] text-white font-semibold rounded shadow-lg transition duration-300 hover:bg-[#056ae0] hover:shadow-xl mt-6">
             JOIN THE NETWORK →
-          </button>
+          </button> */}
         </div>
         {/* Left Cards */}
         <div className="space-y-8" data-aos="fade-left" data-aos-delay="200">
