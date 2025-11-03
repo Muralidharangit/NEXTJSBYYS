@@ -180,16 +180,16 @@ const Footer = () => {
 
         {/* Footer Bottom (Updated Copyright) */}
         <div className="py-7 border-t border-gray-700">
-          <div className="flex items-center justify-center flex-col lg:justify-between lg:flex-row">
+          <div className="flex items-center justify-center flex-col lg:justify-center lg:flex-row">
             <span className="text-md text-[#99a1af] ">
               © 2025 {/* FIX: Using Link for internal navigation */}
-              <Link href="/" className="hover:text-white">
+              <Link href="/" className="hover:text-white ">
                 Byyizzy.com
               </Link>
               . All rights reserved.
             </span>
-            <div className="flex mt-4 space-x-4 sm:justify-center lg:mt-0">
-              {/* FIX: Using Link for internal navigation and assumed paths */}
+            {/* <div className="flex mt-4 space-x-4 sm:justify-center lg:mt-0">
+             
               <Link href="/terms" className="text-[#99a1af] hover:text-white">
                 Terms
               </Link>
@@ -199,7 +199,7 @@ const Footer = () => {
               <Link href="/cookies" className="text-[#99a1af] hover:text-white">
                 Cookies
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
