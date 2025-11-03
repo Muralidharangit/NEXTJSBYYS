@@ -8,25 +8,29 @@ type Errors = Partial<Record<"name" | "email" | "phone" | "message", string>>;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 // ✅ Keep only THIS phone regex (Indian 10-digit)
 const phoneRegex = /^[6-9]\d{9}$/;
+// Allow letters (incl. accents), spaces, dot, apostrophe, hyphen. Length 2–50
+const nameRegex = /^[\p{L}\p{M}][\p{L}\p{M} .'-]{1,49}$/u;
 
 export default function ContactForm({ onDone }: { onDone?: (r: SubmitResult) => void }) {
   const formRef = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
 
-  function validate(fields: { name: string; email: string; phone: string; message: string }): Errors {
-    const e: Errors = {};
-    if (!fields.name.trim()) e.name = "Please enter your name.";
-    if (!emailRegex.test(fields.email.trim())) e.email = "Enter a valid email address.";
-    if (!phoneRegex.test(fields.phone.trim())) {
-      e.phone = "Enter a valid 10-digit Indian mobile number starting with 6–9.";
-    }
-    if (fields.message.trim().length < 5) e.message = "Message must be at least 5 characters.";
-    return e;
+function validate(fields: { name: string; email: string; phone: string; message: string }): Errors {
+  const e: Errors = {};
+  if (!nameRegex.test(fields.name.trim())) {
+    e.name = "Name can include letters, spaces, ., ' and - (2–50 chars).";
   }
-// single-field validator
+  if (!emailRegex.test(fields.email.trim())) e.email = "Enter a valid email address.";
+  if (!phoneRegex.test(fields.phone.trim())) {
+    e.phone = "Enter a valid 10-digit Indian mobile number starting with 6–9.";
+  }
+  if (fields.message.trim().length < 5) e.message = "Message must be at least 5 characters.";
+  return e;
+}
+
 function validateField(name: "name" | "email" | "phone" | "message", value: string) {
-  if (name === "name") return value.trim() ? "" : "Please enter your name.";
+  if (name === "name") return nameRegex.test(value.trim()) ? "" : "Name can include letters, spaces, ., ' and - (2–50 chars).";
   if (name === "email") return emailRegex.test(value.trim()) ? "" : "Enter a valid email address.";
   if (name === "phone") return phoneRegex.test(value.trim()) ? "" : "Enter a valid 10-digit Indian mobile number starting with 6–9.";
   if (name === "message") return value.trim().length >= 5 ? "" : "Message must be at least 5 characters.";
@@ -104,15 +108,30 @@ function handleFieldBlur(name: "name"|"email"|"phone"|"message", value: string) 
 
       <div className="relative" data-aos="fade-up" data-aos-delay="100">
         <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Name</label>
-       <input
+      <input
   id="name"
   name="name"
   autoComplete="name"
+  autoCapitalize="words"
+  inputMode="text"
+  maxLength={50}
   placeholder="Your Name"
+  // Optional HTML pattern (fallback; JS regex above is the source of truth)
+  pattern="[A-Za-z][A-Za-z .'-]{1,49}"
+  title="Name can include letters, spaces, ., ' and - (2–50 chars)."
   className={`${baseInput} ${errors.name ? ringErr : ringOk}`}
   aria-invalid={!!errors.name}
   aria-describedby={errors.name ? "name-error" : undefined}
-  onInput={(e) => handleFieldInput("name", e.currentTarget.value)}
+  onInput={(e) => {
+    const el = e.currentTarget;
+    // Remove everything except letters, spaces, dot, apostrophe, hyphen
+    // (Unicode-aware version below; pick ONE)
+    // el.value = el.value.replace(/[^\p{L}\p{M} .'-]/gu, "");
+    el.value = el.value.replace(/[^A-Za-z .'-]/g, ""); // ASCII-only fallback
+    // collapse multiple spaces
+    el.value = el.value.replace(/\s{2,}/g, " ");
+    handleFieldInput("name", el.value);
+  }}
   onBlur={(e) => handleFieldBlur("name", e.currentTarget.value)}
 />
         {errors.name && <p id="name-error" className="mt-2 text-sm text-red-600">{errors.name}</p>}
