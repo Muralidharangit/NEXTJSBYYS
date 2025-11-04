@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FeaturesSection() {
   return (
@@ -42,8 +43,8 @@ export default function FeaturesSection() {
               Empowering Businesses with Efficient & Sustainable Procurement
             </h2>
 
-            <a
-              href="#"
+            <Link
+              href="/service"
               className="inline-flex items-center justify-center gap-3 text-sm font-medium text-black mt-6"
               data-aos="fade-up"
               data-aos-delay="500"
@@ -64,7 +65,7 @@ export default function FeaturesSection() {
                 <path d="M18 8L22 12L18 16" />
                 <path d="M2 12H22" />
               </svg>
-            </a>
+            </Link>
 
             <hr className="border-gray-200 my-6" />
 

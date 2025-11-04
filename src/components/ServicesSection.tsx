@@ -48,12 +48,12 @@ export default function ServicesSection() {
             </h2>
           </div>
           <div data-aos="fade-left" data-aos-delay={300}>
-            <a
-              href="#"
+            <Link
+              href="/service"
               className="inline-flex items-center gap-2 text-[#067afe] font-medium hover:underline"
             >
               All Services <i className="fa-solid fa-chevron-right" />
-            </a>
+            </Link>
           </div>
         </div>
 

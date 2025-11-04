@@ -149,7 +149,7 @@ export default function ContactPage() {
         data-aos="fade-up"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 xl:px-16 text-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-5">
             {[
               {
                 icon: (
@@ -174,21 +174,21 @@ export default function ContactPage() {
                 title: "Call us",
                 lines: ["96989 03089", "88701 36317"],
               },
-              {
-                icon: (
-                  <ChatBubbleLeftRightIcon className="w-8 h-8 sm:w-9 sm:h-9 text-[#067afe]" />
-                ),
-                title: "Live chat",
-                lines: [
-                  "livechat@bexon.com",
-                  <span
-                    key="help"
-                    className="text-[#067afe] font-medium cursor-pointer hover:underline"
-                  >
-                    Need help?
-                  </span>,
-                ],
-              },
+              // {
+              //   icon: (
+              //     <ChatBubbleLeftRightIcon className="w-8 h-8 sm:w-9 sm:h-9 text-[#067afe]" />
+              //   ),
+              //   title: "Live chat",
+              //   lines: [
+              //     "livechat@bexon.com",
+              //     <span
+              //       key="help"
+              //       className="text-[#067afe] font-medium cursor-pointer hover:underline"
+              //     >
+              //       Need help?
+              //     </span>,
+              //   ],
+              // },
             ].map((item, index) => (
               <div
                 key={item.title}
