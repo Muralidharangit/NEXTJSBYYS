@@ -251,7 +251,8 @@ const cancelClose = () => { if (closeTimer.current) { clearTimeout(closeTimer.cu
                     return (
                       <Link
                         key={category.id}
-                        href={`/shop/${slug}?sub=all`}
+                        // href={`/shop/${slug}?sub=all`}
+                        href="/category"
                         onClick={closeAllMenus}
                         className="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-[#067afe]/10 transition"
                       >

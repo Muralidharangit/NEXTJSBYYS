@@ -104,20 +104,32 @@ function validate(form: HTMLFormElement): { ok: boolean; values?: Record<string,
   }
 
   // 6) Agree
-  if (!agree) {
-    // This will show a bubble near the checkbox
+  // if (!agree) {
+  //   // This will show a bubble near the checkbox
+  //   agreeEl.setCustomValidity("You must agree to continue.");
+  //   agreeEl.reportValidity();
+  //   // Clear after showing so future changes revalidate correctly
+  //   agreeEl.addEventListener(
+  //     "input",
+  //     () => agreeEl.setCustomValidity(""),
+  //     { once: true }
+  //   );
+  //   return { ok: false };
+  // } else {
+  //   agreeEl.setCustomValidity("");
+  // }
+
+  // 6) Agree (only enforce if the element exists)
+if (agreeEl) {
+  if (!agreeEl.checked) {
     agreeEl.setCustomValidity("You must agree to continue.");
     agreeEl.reportValidity();
-    // Clear after showing so future changes revalidate correctly
-    agreeEl.addEventListener(
-      "input",
-      () => agreeEl.setCustomValidity(""),
-      { once: true }
-    );
+    agreeEl.addEventListener("input", () => agreeEl.setCustomValidity(""), { once: true });
     return { ok: false };
   } else {
     agreeEl.setCustomValidity("");
   }
+}
 
   const hp = (getField(form, "hp")?.value ?? "").trim();
   const material_code = (getField(form, "material_code")?.value ?? "").trim();
@@ -190,7 +202,14 @@ export default function EnquiryDialog({
     productName || productCode
       ? `Hi, I’m interested in ${productName}. Please share a quote.`
       : "";
+// Unicode-friendly name: letters (any script) + spaces . ' -
+// Email: RFC-lite, practical
+const EMAIL_REGEX = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$/;
 
+// ✅ Use ONE name regex. Unicode-friendly (letters in any script) + marks, space, . ' -
+const NAME_REGEX = /^[\p{L}\p{M}][\p{L}\p{M} .'-]{1,}$/u;
+// If you only want English letters, instead use:
+// const NAME_REGEX = /^[A-Za-z][A-Za-z.\-\s]{1,}$/;
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md bg-white">
@@ -211,13 +230,34 @@ export default function EnquiryDialog({
           <div className="grid gap-2">
             <Label htmlFor="name">Your Name</Label>
             <Input
-              id="name"
-              name="name"
-              placeholder="User Name"
-              required
-              pattern="[A-Za-z][A-Za-z.\-\s]{1,}" // keeps native validity in sync
-              onInput={(e) => (e.currentTarget as HTMLInputElement).setCustomValidity("")}
-            />
+  id="name"
+  name="name"
+  placeholder="User Name"
+  required
+  autoCapitalize="words"
+  inputMode="text"
+  maxLength={50}
+  pattern="[A-Za-z][A-Za-z.\-\s]{1,}" // keeps native validity in sync
+  title="Please enter your full name (letters, spaces, . or -)"
+  onInput={(e) => {
+    const el = e.currentTarget;
+    // Unicode version (keeps Indian scripts, accents, etc.)
+    // el.value = el.value.replace(/[^\p{L}\p{M} .'-]/gu, "").replace(/\s{2,}/g, " ");
+
+    // ASCII-only fallback (English letters):
+    el.value = el.value.replace(/[^A-Za-z .'-]/g, "").replace(/\s{2,}/g, " ");
+
+    el.setCustomValidity("");
+  }}
+  onBlur={(e) => {
+    // Optional: enforce at least 2 visible characters
+    if (e.currentTarget.value.replace(/\s+/g, "").length < 2) {
+      e.currentTarget.setCustomValidity("Please enter at least 2 letters.");
+    } else {
+      e.currentTarget.setCustomValidity("");
+    }
+  }}
+/>
           </div>
 
           <div className="grid gap-2">
@@ -244,15 +284,28 @@ export default function EnquiryDialog({
           <div className="grid gap-2">
             <Label htmlFor="phone">Phone Number</Label>
             <Input
-              id="phone"
-              name="phone"
-              inputMode="tel"
-              placeholder="+91 9XXXXXXXXX"
-              required
-              pattern="^[0-9+\-\s()]{10,}$"
-              title="Enter a valid phone number (10–15 digits; digits, +, -, spaces, () allowed)"
-              onInput={(e) => (e.currentTarget as HTMLInputElement).setCustomValidity("")}
-            />
+  id="phone"
+  name="phone"
+  inputMode="tel"
+  placeholder="+91 9XXXXXXXXX"
+  required
+  // pattern below only checks characters, not digit count — we will check digit count in JS
+  pattern="^[0-9+\-\s()]{10,}$"
+  title="Enter a valid phone number (10–15 digits; digits, +, -, spaces, () allowed)"
+  maxLength={20}
+  onInput={(e) => {
+    const el = e.currentTarget;
+    // Allow only digits and + - ( ) space
+    el.value = el.value.replace(/[^0-9+\-\s()]/g, "");
+    // Validate digits count live
+    const digits = el.value.replace(/\D/g, "");
+    if (digits.length < 10 || digits.length > 15) {
+      el.setCustomValidity("Enter a valid phone number (10–15 digits).");
+    } else {
+      el.setCustomValidity("");
+    }
+  }}
+/>
           </div>
 
           <div className="grid gap-2">
@@ -270,7 +323,7 @@ export default function EnquiryDialog({
             />
           </div>
 
-          <div className="flex items-start gap-2">
+          {/* <div className="flex items-start gap-2">
             <input
               id="agree"
               name="agree"
@@ -290,7 +343,7 @@ export default function EnquiryDialog({
               </Link>
               .
             </Label>
-          </div>
+          </div> */}
 
           <DialogFooter>
             <Button

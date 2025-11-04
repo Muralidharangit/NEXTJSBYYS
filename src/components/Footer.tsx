@@ -41,11 +41,11 @@ const Footer = () => {
               <p className="text-white font-medium mb-1">Contact Us</p>
               <p className="text-[#99a1af]">
                 Email:{" "}
-                <a href="mailto:info@byyizzy.com" className="hover:text-white">
-                  info@byyizzy.com
+                <a href="mailto:Support@byyizzy.com" className="hover:text-white">
+                  Support@byyizzy.com
                 </a>
               </p>
-              <p className="text-[#99a1af]">Phone: +91 XXXX XXXXX</p>
+              <p className="text-[#99a1af]">Phone: +91 96989 03089</p>
             </div>
           </div>
 
