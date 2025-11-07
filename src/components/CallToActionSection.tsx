@@ -13,12 +13,11 @@ const CallToActionSection = () => {
       >
         <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
           <div data-aos="fade-right">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Build Tomorrow, Today
-            </h2>
+            <h4 className="text-3xl md:text-4xl font-bold text-white">
+             Byyizzy – Shaping the Future of Industrial & Hardware Solutions!
+            </h4>
             <p className="mt-3 text-lg text-white/80 max-w-2xl">
-              We provide advanced manufacturing solutions with precision,
-              quality, and innovation.
+              Get started with Byyizzy.com — Supporting Local, Saving Community Wealth
             </p>
           </div>
 

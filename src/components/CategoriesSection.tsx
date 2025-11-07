@@ -13,11 +13,12 @@ export default function CategoriesSection() {
           Product Categories
         </span> */}
         <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
-          Product Categories
+          Shop By Product Categories
         </span>
-        <h2 className="animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]">
-          Our Innovative Products
-        </h2>
+        <h5 className="animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]">
+         Ordering sequence as per the old website starting from Fabrication & customized Products
+        </h5>
+        {/* <p>Ordering sequence as per the old website starting from Fabrication & customized Products</p> */}
       </div>
 
       {/* Category Grid */}

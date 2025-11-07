@@ -109,11 +109,123 @@ export default function Home() {
             data-aos-delay={300}
             className="text-center justify-start text-base-grey text-lg font-normal leading-tight lg:leading-relaxed max-w-[750px] aos-init"
           >
-            From sourcing to shop-floor, we build reliable, end-to-end
-            solutions.
+           Building India’s most trusted supply network for Industrial & Hardware products — blending local accessibility with digital intelligence.
           </p>
         </div>
       </section>
+  {/* Cards Section */}
+      <section className="relative py-20  overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          {/* Heading Section */}
+          <div data-aos="fade-up" className="max-w-4xl mx-auto mb-12">
+            {/* <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
+        
+            </span> */}
+
+            <h3 className="mt-4 text-3xl md:text-4xl font-semibold text-[#050d20] leading-tight">
+              Why Choose <span className="text-[#067afe]"> Byyizzy?</span>
+            </h3>
+
+            <p className="mt-4 text-gray-700 leading-relaxed">
+              Discover the benefits that make Byyizzy stand out from the rest.
+            </p>
+          </div>
+
+          {/* Feature Cards */}
+          <div
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            {[
+              {
+                title: "Overview",
+                desc: "We are a B2B & B2C Integrated Marketplace provider for Standard and Customized MRO Spares, Consumables, and Hardware Products.",
+                icon: "🔎",
+                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
+              },
+              {
+                title: "Established",
+                desc: "Founded in 2018, we aim to revolutionize the fragmented Industrial and Hardware supply chain through Hyper-Local Stores and an E-commerce Platform powered by Proven Algorithms, AI, and Machine Learning.",
+                icon: "📜",
+                // gradient: "from-[#00c6ff]/10 to-[#067afe]/20",
+              },
+              {
+                title: "Integration",
+                desc: "We integrate hardware stores, which face significant market competition, under our brand Byyizzy, leveraging our expertise and technology.",
+                icon: "🔁",
+                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
+              },
+              {
+                title: "Chain of Hardware Stores",
+                desc: "Own and franchise hardware chain model—integrating shops in the online marketplace for a seamless shopping experience (both online & in-store).",
+                icon: "🔗",
+                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
+              },
+              {
+                title: "E2E Ordering Service",
+                desc: "We provide best-in-class end-to-end ordering services along with free e-sourcing tools.",
+                icon: "📦",
+                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
+              },
+            ].map((feature, i) => (
+              <div
+                key={i}
+                className={`relative group p-8 rounded-2xl border border-white/40 bg-gradient-to-br  backdrop-blur-md shadow-[0_8px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(6,122,254,0.3)] transition-all duration-500 hover:-translate-y-1`}
+              >
+                <div className="text-4xl mb-4">{feature.icon}</div>
+                <h3 className="text-lg font-semibold text-[#050d20] mb-2 group-hover:text-[#067afe] transition-colors duration-300">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+
+                {/* Glow line animation */}
+                <div className="absolute left-0 top-0 w-[3px] h-full bg-gradient-to-b from-[#067afe] to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-l-2xl"></div>
+              </div>
+            ))}
+          </div>
+
+          {/* <button className="mt-6 px-6 py-3 bg-[#067afe] text-white font-semibold rounded-xl shadow-lg hover:bg-[#056ae0] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(6,122,254,0.4)]">
+            Join the Network →
+          </button> */}
+        </div>
+      </section>
+  {/* Our Strategy */}
+            <section className="py-20 bg-[#f0f4fb]">
+                <h2 className="animate-letters text-3xl sm:text-4xl font-bold text-center mb-16">Our Strategy</h2>
+                <div className="grid md:grid-cols-1 gap-12 max-w-6xl mx-auto mt-10">
+                    <div className=" bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition" data-aos="fade-right">
+                        {/* <h3 className="text-2xl font-semibold mb-4">Retail & Home Builders (B2C)</h3> */}
+
+                        <ul className="space-y-12 text-gray-700 text-lg">
+                            {[
+                                " Total cost of ownership optimization through the integration of the B2B and B2C business ecosystem",
+                                " Reducing ordering costs with the support of our own S2P platform & bring 100% process visibility to the customers",
+                                "	Operating in low-cost regions",
+                                "	Creating a chain of hardware stores under the Byyizzy brand",
+                                "	Mitigating the Business transaction risk at Flat/Minimal margin (Material supply and advance risks that Traders are doing with higher margin)"
+                            ].map((item, index) => (
+                                <li key={index} className="flex items-start my-3">
+                                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-[#067afe] mt-1">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="h-4 w-4 text-white"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            strokeWidth={3}
+                                        >
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                    <span className="px-2">{" "} {item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
 
       <section id="features" className="py-20 ">
         <div className="container">
@@ -228,151 +340,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        className="section-white bg-[#eff3fa]"
-        aria-labelledby="metrics-title"
-      >
-        <div className="wrapper self-stretch px-5 pt-20 lg:p-20 flex flex-col justify-start items-start gap-20">
-          <header className="self-stretch flex flex-col justify-center items-center gap-10">
-            {/* <span
-              className="label label-solid-orange"
-              aria-label="Our Lucky Numbers"
-            >
-              Our Lucky Numbers
-            </span> */}
-            <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
-              Our Counts
-            </span>
-            <h2
-              id="metrics-title"
-              data-aos="fade"
-              className="container text-center justify-start text-secondary-navy text-3xl lg:text-4xl font-medium leading-tight aos-init aos-animate"
-            >
-              Our track record and experiences reflect
-              <span className="text-primary-orange">our commitment </span>
-              to quality, safety, and client satisfaction
-            </h2>
-          </header>
-          <ul
-            className="flex flex-col lg:flex-row justify-center items-center w-full mx-auto list-none p-0 m-0"
-            aria-label="Key metrics and statistics"
-          >
-            <li
-              data-aos="fade-up"
-              className="py-6 lg:px-10 flex flex-col lg:flex-row w-full lg:w-auto justify-start items-center lg:items-end gap-6 lg:border-l-[0.80px] lg:border-l-base-grey-stroke lg:border-b-0 first:border-l-0 border-b-[0.80px] border-b-base-grey-stroke last:border-b-0 aos-init aos-animate"
-            >
-              <strong className="text-center justify-start text-secondary-navy text-7xl lg:text-6xl font-medium leading-tight">
-                35+
-              </strong>
-              <span className="text-center lg:text-left w-full lg:w-24 justify-start text-base-grey text-lg lg:text-base font-medium lg:font-normal leading-relaxed">
-                Industry Awards
-              </span>
-            </li>
-            <li
-              data-aos="fade-up"
-              data-aos-delay={100}
-              className="py-6 lg:px-10 flex flex-col lg:flex-row w-full lg:w-auto justify-start items-center lg:items-end gap-6 lg:border-l-[0.80px] lg:border-l-base-grey-stroke lg:border-b-0 first:border-l-0 border-b-[0.80px] border-b-base-grey-stroke last:border-b-0 aos-init aos-animate"
-            >
-              <strong className="text-center justify-start text-secondary-navy text-7xl lg:text-6xl font-medium leading-tight">
-                1500+
-              </strong>
-              <span className="text-center lg:text-left w-full lg:w-24 justify-start text-base-grey text-lg lg:text-base font-medium lg:font-normal leading-relaxed">
-                Projects Delivered
-              </span>
-            </li>
-            <li
-              data-aos="fade-up"
-              data-aos-delay={200}
-              className="py-6 lg:px-10 flex flex-col lg:flex-row w-full lg:w-auto justify-start items-center lg:items-end gap-6 lg:border-l-[0.80px] lg:border-l-base-grey-stroke lg:border-b-0 first:border-l-0 border-b-[0.80px] border-b-base-grey-stroke last:border-b-0 aos-init aos-animate"
-            >
-              <strong className="text-center justify-start text-secondary-navy text-7xl lg:text-6xl font-medium leading-tight">
-                98%
-              </strong>
-              <span className="text-center lg:text-left w-full lg:w-24 justify-start text-base-grey text-lg lg:text-base font-medium lg:font-normal leading-relaxed">
-                Client Satisfaction
-              </span>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      {/* Cards Section */}
-      <section className="relative py-20  overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          {/* Heading Section */}
-          <div data-aos="fade-up" className="max-w-4xl mx-auto mb-12">
-            {/* <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
-        
-            </span> */}
 
-            <h3 className="mt-4 text-3xl md:text-4xl font-semibold text-[#050d20] leading-tight">
-              Why Choose <span className="text-[#067afe]"> Byyizzy?</span>
-            </h3>
 
-            <p className="mt-4 text-gray-700 leading-relaxed">
-              Discover the benefits that make Byyizzy stand out from the rest.
-            </p>
-          </div>
 
-          {/* Feature Cards */}
-          <div
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            {[
-              {
-                title: "Overview",
-                desc: "We are a B2B & B2C Integrated Marketplace provider for Standard and Customized MRO Spares, Consumables, and Hardware Products.",
-                icon: "🔎",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-              {
-                title: "Established",
-                desc: "Founded in 2018, we aim to revolutionize the fragmented Industrial and Hardware supply chain through Hyper-Local Stores and an E-commerce Platform powered by Proven Algorithms, AI, and Machine Learning.",
-                icon: "📜",
-                // gradient: "from-[#00c6ff]/10 to-[#067afe]/20",
-              },
-              {
-                title: "Integration",
-                desc: "We integrate hardware stores, which face significant market competition, under our brand Byyizzy, leveraging our expertise and technology.",
-                icon: "🔁",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-              {
-                title: "Chain of Hardware Stores",
-                desc: "Own and franchise hardware chain model—integrating shops in the online marketplace for a seamless shopping experience (both online & in-store).",
-                icon: "🔗",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-              {
-                title: "E2E Ordering Service",
-                desc: "We provide best-in-class end-to-end ordering services along with free e-sourcing tools.",
-                icon: "📦",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-            ].map((feature, i) => (
-              <div
-                key={i}
-                className={`relative group p-8 rounded-2xl border border-white/40 bg-gradient-to-br  backdrop-blur-md shadow-[0_8px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(6,122,254,0.3)] transition-all duration-500 hover:-translate-y-1`}
-              >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-lg font-semibold text-[#050d20] mb-2 group-hover:text-[#067afe] transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
 
-                {/* Glow line animation */}
-                <div className="absolute left-0 top-0 w-[3px] h-full bg-gradient-to-b from-[#067afe] to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-l-2xl"></div>
-              </div>
-            ))}
-          </div>
-
-          {/* <button className="mt-6 px-6 py-3 bg-[#067afe] text-white font-semibold rounded-xl shadow-lg hover:bg-[#056ae0] transition-all duration-300 hover:shadow-[0_8px_30px_rgba(6,122,254,0.4)]">
-            Join the Network →
-          </button> */}
-        </div>
-      </section>
+    
 
       <ClientsSection />
       <section

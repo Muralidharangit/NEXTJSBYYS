@@ -4,26 +4,27 @@ import { FaArrowRight } from "react-icons/fa";
 
 const services = [
   {
+    title: "Industrial Products Aggregation",
+    desc: "Transforming industrial MRO procurement through supplier consolidation, rationalized sourcing, lowest ordering costs, transparent pricing, hyperlocal fulfillment, catalog-driven buying, and strong local business partnerships.",
+    img: "/images/s03.webp",
+    href: "/services/IndustrialProductsAggregation",
+  },
+  {
     title: "Procurement as a Service (PaaS)",
-    desc: "Simplify and digitize your sourcing, procurement, and supply chain management through our AI-powered e-sourcing platform and verified supplier network.",
+    desc: "End-to-end, tech-driven procurement model for just 1.5% of your spend—automate the Source-to-Pay process with our AI-powered e-sourcing platform, global sourcing expertise, local fulfillment, and full visibility.",
     img: "/images/s04.webp",
     href: "/services/paas",
   },
   {
     title: "Hardware Store Chain",
-    desc: "We’re creating India’s first hardware store chain that blends online convenience with a great in-store experience.",
+    desc: "We are building India’s first tech-driven hyperlocal hardware store chain, blending online convenience with in-store experience, offering best prices, smart inventory, integrated B2B & B2C services, and easy credit options.",
     img: "/images/s02.webp",
     href: "/services/HardwareStoreChain",
   },
-  {
-    title: "Industrial Products Aggregation",
-    desc: "High complexity and low-value transactions have made Industrial MRO supply chain hard to manage well—even as value trickles away.",
-    img: "/images/s03.webp",
-    href: "/services/IndustrialProductsAggregation",
-  },
+  
   {
     title: "Manufacturing as a Service (MaaS)",
-    desc: "Transform your custom & non-standard spare parts supply chain with our AI-powered manufacturing platform and extensive supplier network. Achieve full visibility, reduce lead times, and enhance quality.",
+    desc: "Streamline your customized and non-standard spare parts supply chain with our AI-powered platform and extensive manufacturing network—achieve full visibility, shorter lead times, and superior quality.",
     img: "/images/s01.webp",
     href: "/services/maas",
   },
@@ -37,14 +38,14 @@ export default function ServicesSection() {
         <div className="flex flex-col md:flex-row items-center justify-between mb-10">
           <div data-aos="fade-right">
             <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
-              Our Services
+              Our Solutions
             </span>
             <h2
               className="px-4 animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]"
               data-aos="fade-up"
               data-aos-delay={200}
             >
-              Our Services with Quality & Trust
+              Our Solutions, Committed to Quality and Trust
             </h2>
           </div>
           <div data-aos="fade-left" data-aos-delay={300}>
@@ -102,7 +103,9 @@ export default function ServicesSection() {
                       <FaArrowRight className="w-4 h-4 text-black lg:group-hover:text-indigo-600" />
                     </div>
                   </div>
+
                 </div>
+                
               </div>
             </Link>
           ))}

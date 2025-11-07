@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="py-20 bg-[#eff3fa]">
+    <section id="features" className="py-15 bg-[#eff3fa]">
       <div className="container">
         <div className="grid lg:grid-cols-2 items-center gap-6">
           {/* Image */}
@@ -28,22 +28,21 @@ export default function FeaturesSection() {
             data-aos="fade-left"
             data-aos-delay="200"
           >
-            <span
-              className="text-xs sm:text-sm text-primary uppercase font-semibold tracking-wider text-default-950"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              India’s Fast-Growing Hardware & Procurement Platform
+            <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
+              Building India’s Most Trusted Industrial & Hardware Supply Network
             </span>
-            <h2
+           
+
+            
+            <h3
               className="animate-letters text-xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold mt-2 sm:mt-4 text-[#050d20] leading-snug sm:leading-normal"
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              Empowering Businesses with Efficient & Sustainable Procurement
-            </h2>
+              Transforming the supply chain with AI-driven technology and local hardware stores for a lean and sustainable business model
+            </h3>
 
-            <Link
+            {/* <Link
               href="/service"
               className="inline-flex items-center justify-center gap-3 text-sm font-medium text-black mt-6"
               data-aos="fade-up"
@@ -65,7 +64,7 @@ export default function FeaturesSection() {
                 <path d="M18 8L22 12L18 16" />
                 <path d="M2 12H22" />
               </svg>
-            </Link>
+            </Link> */}
 
             <hr className="border-gray-200 my-6" />
 
@@ -94,13 +93,13 @@ export default function FeaturesSection() {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl text-[#050d20] font-semibold">
-                  Integrated Hardware Chain Network
-                </h3>
+                <h5 className="text-xl text-[#050d20] font-semibold">
+                Integrated Industrial & Hardware Chain Network 
+                </h5>
                 <p className="text-base font-normal text-gray-500 mt-2">
-                  Bringing India’s fragmented hardware stores together under one
-                  brand — powered by Byyizzy’s expertise, technology, and
-                  hyper-local model.
+                TCO optimization through a seamlessly integrated B2B & B2C business ecosystem
+Connecting India’s fragmented hardware stores under one trusted brand-Byyizzy- powered by cutting-edge technology, procurement expertise, and a hyper-local fulfillment model
+
                 </p>
               </div>
             </div>
@@ -131,13 +130,13 @@ export default function FeaturesSection() {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl text-[#050d20] font-semibold">
-                  Optimize Procurement & Supply Chain
-                </h3>
+                <h5 className="text-xl text-[#050d20] font-semibold">
+                 Optimize Procurement & Supply Chain
+                </h5>
                 <p className="text-base font-normal text-gray-500 mt-2">
-                  Simplifying Source-to-Pay, improving margins, and enabling
-                  sustainable, transparent procurement through advanced digital
-                  solutions.
+               Digitize the Source-to-Pay process with full transparency, improved cost control, and technology-driven tail-spend optimization
+Empowering Businesses with Smart, Sustainable Procurement and SCM Solutions
+
                 </p>
               </div>
             </div>

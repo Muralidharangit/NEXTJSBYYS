@@ -17,25 +17,21 @@ const Counterpart = () => {
           </span>
 
           {/* Heading */}
-          <h2
+          <h3
             className="animate-letters text-3xl md:text-4xl/tight font-semibold mt-2 text-[#050d20]"
             data-aos="fade-up"
             data-aos-delay="400"
           >
-            Integrating India’s Hardware Ecosystem
-          </h2>
+           Integrating India’s Industrial & Hardware Ecosystem
+          </h3>
 
           {/* Description */}
           <p className="text-gray-700" data-aos="fade-up" data-aos-delay="500">
-            Byyizzy connects suppliers, manufacturers, and local hardware stores
-            to create a transparent and scalable procurement network that drives
-            efficiency and growth.
+           Byyizzy connects suppliers, manufacturers, and local hardware stores through an integrated business network that drives efficiency and growth.   Leveraging AI-driven sourcing, a light-asset business model, global sourcing expertise, and hyperlocal delivery, we simplify complex industrial supply chains and deliver measurable value.
           </p>
-          <p className="text-gray-700" data-aos="fade-up" data-aos-delay="600">
-            With AI-driven sourcing, e-auction platforms, and hyper-local
-            delivery, we simplify complex industrial supply chains and deliver
-            measurable value.
-          </p>
+          {/* <p className="text-gray-700" data-aos="fade-up" data-aos-delay="600">
+           Leveraging AI-driven sourcing, a light-asset business model, global sourcing expertise, and hyperlocal delivery, we simplify complex industrial supply chains and deliver measurable value.
+          </p> */}
 
           {/* Counters Section */}
           <div
@@ -44,8 +40,8 @@ const Counterpart = () => {
             data-aos-delay="700"
           >
             {[
-              { value: 2500, label: "Suppliers Onboarded", icon: "🏭" },
-              { value: 50000, label: "Products Delivered", icon: "📦" },
+              { value: 4500, label: "Suppliers Onboarded", icon: "🏭" },
+              { value: 500000, label: "Products across 50+ Categories", icon: "📦" },
               { value: 120, label: "Cities Connected", icon: "🌆" },
             ].map((item, index) => (
               <div
@@ -77,7 +73,7 @@ const Counterpart = () => {
             {
               title: "Fastest Delivery of Industrial Products",
               description:
-                "Byyizzy ensures on-time and in-full delivery (OTIF) through optimized inventory and hyper-local fulfillment centers.",
+                "Byyizzy achieves superior on-time and in-full delivery (OTIF) performance through demand forecasting, inventory optimization, and hyper-local stores located near key industrial clusters.",
               icon: (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +96,7 @@ const Counterpart = () => {
             {
               title: "Easy Credit & EMI Facility",
               description:
-                "Providing flexible payment solutions for B2C customers to simplify industrial product purchases.",
+                "Flexible Credit & EMI options for B2B and B2C customers, making purchases simple and convenient",
               icon: (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -118,26 +114,26 @@ const Counterpart = () => {
                 </svg>
               ),
             },
-            {
-              title: "Optimized Inventory Model",
-              description:
-                "Reducing dead inventory and improving margins with data-driven demand forecasting and local engagement.",
-              icon: (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={22}
-                  height={22}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-package"
-                >
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4-7 4A2 2 0 0 0 5 8v8a2 2 0 0 0 1 1.73l7 4 7-4A2 2 0 0 0 21 16z" />
-                </svg>
-              ),
-            },
+            // {
+            //  title: "Fastest Delivery of Industrial Products",
+            //   description:
+            //     "Byyizzy achieves superior on-time and in-full delivery (OTIF) performance through demand forecasting, inventory optimization, and hyper-local stores located near key industrial clusters.",
+            //   icon: (
+            //     <svg
+            //       xmlns="http://www.w3.org/2000/svg"
+            //       width={22}
+            //       height={22}
+            //       fill="none"
+            //       stroke="currentColor"
+            //       strokeWidth={2}
+            //       strokeLinecap="round"
+            //       strokeLinejoin="round"
+            //       className="lucide lucide-package"
+            //     >
+            //       <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4-7 4A2 2 0 0 0 5 8v8a2 2 0 0 0 1 1.73l7 4 7-4A2 2 0 0 0 21 16z" />
+            //     </svg>
+            //   ),
+            // },
           ].map((card, index) => (
             <div
               key={index}
@@ -157,9 +153,9 @@ const Counterpart = () => {
 
               {/* Text Content */}
               <div className="relative z-10">
-                <h3 className="text-lg font-semibold text-[#050d20] group-hover:text-[#067afe] transition-colors duration-300">
+                <h4 className="text-lg font-semibold text-[#050d20] group-hover:text-[#067afe] transition-colors duration-300">
                   {card.title}
-                </h3>
+                </h4>
                 <p className="mt-2 text-gray-600 dark:text-gray-400 leading-relaxed">
                   {card.description}
                 </p>
