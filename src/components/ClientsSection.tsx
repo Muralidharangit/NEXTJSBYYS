@@ -106,7 +106,7 @@ export default function ClientsSection({ brands }: Props) {
         >
         
           <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
-            Our Clients
+           Our Business Partners
           </span>
           <h2
             className="animate-letters text-4xl sm:text-5xl font-semibold leading-tight text-[#050d20]"
@@ -121,8 +121,7 @@ export default function ClientsSection({ brands }: Props) {
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              We take pride in collaborating with industry-leading clients who
-              trust us for quality, reliability, and innovation.
+              We take pride in collaborating with industry-leading clients and trusted partners who rely on us for quality, reliability, and innovation
             </p>
           </div>
         </div>

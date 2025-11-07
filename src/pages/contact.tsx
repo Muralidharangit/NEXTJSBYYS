@@ -157,7 +157,7 @@ export default function ContactPage() {
                 ),
                 title: "Our Location",
                 lines: [
-                  "no:45, VANIDASAN STREET Saram(Py) Pondicherry Pondicherry India 605013",
+                  "No:45, Vanidasan Street Saram(Py) Pondicherry Pondicherry India 605013",
                 ],
               },
               {
@@ -172,7 +172,7 @@ export default function ContactPage() {
                   <PhoneIcon className="w-8 h-8 sm:w-9 sm:h-9 text-[#067afe]" />
                 ),
                 title: "Call us",
-                lines: ["96989 03089", "88701 36317"],
+                lines: ["+91 96989 03089", "+91 88701 36317"],
               },
               // {
               //   icon: (
@@ -207,7 +207,7 @@ export default function ContactPage() {
                     typeof line === "string" ? (
                       <p
                         key={i}
-                        className="text-gray-600 text-sm sm:text-base leading-relaxed"
+                        className="text-gray-600 text-sm sm:text-base leading-relaxed mb-0"
                       >
                         {line}
                       </p>

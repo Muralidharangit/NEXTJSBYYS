@@ -10,6 +10,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { SHOP_BY_CATEGORIES, slugify } from "data/shopBycatlog";
+import { Search } from "lucide-react";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -70,6 +71,25 @@ const cancelClose = () => { if (closeTimer.current) { clearTimeout(closeTimer.cu
           />
         </Link>
 
+ {/* search (desktop only) */}
+          {/* <div className="hidden lg:col-span-5 lg:block">
+            <form className="relative mx-auto w-full max-w-md">
+              <input
+                type="text"
+                placeholder="Search Products..."
+                className="h-[45px] w-full rounded border border-[#067afd] px-3 pr-24 focus:outline-none"
+              />
+              <Search className="h-4 w-4" /> 
+              <button
+                type="submit"
+                className="absolute right-1 top-1 -translate-y-1/2 flex items-center gap-2 rounded bg-[#1c90f2] px-4 py-2 text-white hover:bg-blue-700"
+              >
+                <Search className="h-4 w-4" /> 
+              </button>
+            </form>
+          </div> */}
+       
+
         {/* Desktop Menu */}
         <div className="hidden lg:flex lg:gap-x-8 items-center">
           <Link
@@ -80,15 +100,7 @@ const cancelClose = () => { if (closeTimer.current) { clearTimeout(closeTimer.cu
             Home
           </Link>
 
-          <Link
-            href="/about"
-            onClick={closeAllMenus}
-            className="font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
-          >
-            About
-          </Link>
-
-          {/* Category Dropdown (Desktop) */}
+             {/* Category Dropdown (Desktop) */}
          <div className="relative" ref={categoryRef}>
   <button
     onClick={() => setCategoryOpen((prev) => !prev)}
@@ -96,7 +108,7 @@ const cancelClose = () => { if (closeTimer.current) { clearTimeout(closeTimer.cu
     aria-expanded={categoryOpen}
     aria-haspopup="menu"
   >
-    Categories
+   Product Categories                  
     <ChevronDownIcon className={`w-4 h-4 transition-transform ${categoryOpen ? "rotate-180" : ""}`} />
   </button>
 
@@ -144,21 +156,31 @@ const cancelClose = () => { if (closeTimer.current) { clearTimeout(closeTimer.cu
             onClick={closeAllMenus}
             className="font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
           >
-            Services
+           Solutions 
           </Link>
+          <Link
+            href="/about"
+            onClick={closeAllMenus}
+            className="font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
+          >
+            About Us
+          </Link>
+
+       
+
 
           <Link
             href="/contact"
             onClick={closeAllMenus}
             className="font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
           >
-            Contact
+            Contact Us
           </Link>
         </div>
 
         {/* Desktop Right Buttons */}
         <div className="hidden lg:flex items-center gap-3">
-          <Link
+           <Link
             href="/category"
             onClick={closeAllMenus}
             className="flex items-center gap-2 rounded-lg px-5 py-2 text-sm font-semibold shadow-md bg-[#067afe] text-white hover:bg-[#0047a0] transition"
@@ -171,7 +193,7 @@ const cancelClose = () => { if (closeTimer.current) { clearTimeout(closeTimer.cu
             onClick={closeAllMenus}
             className="flex items-center gap-2 rounded-lg px-5 py-2 text-sm font-semibold shadow-md bg-[#067afe] text-white hover:bg-[#0047a0] transition"
           >
-            Supplier Registration
+           Become a Partner
           </Link>
         </div>
 
@@ -208,7 +230,7 @@ const cancelClose = () => { if (closeTimer.current) { clearTimeout(closeTimer.cu
                 onClick={closeAllMenus}
                 className="block py-2 px-2 text-gray-800 dark:text-gray-200 hover:text-[#067afe]"
               >
-                About
+                About Us
               </Link>
             </li>
             <li>
@@ -217,7 +239,7 @@ const cancelClose = () => { if (closeTimer.current) { clearTimeout(closeTimer.cu
                 onClick={closeAllMenus}
                 className="block py-2 px-2 text-gray-800 dark:text-gray-200 hover:text-[#067afe]"
               >
-                Services
+                Solutions 
               </Link>
             </li>
             <li>
@@ -226,7 +248,7 @@ const cancelClose = () => { if (closeTimer.current) { clearTimeout(closeTimer.cu
                 onClick={closeAllMenus}
                 className="block py-2 px-2 text-gray-800 dark:text-gray-200 hover:text-[#067afe]"
               >
-                Contact
+                Contact Us
               </Link>
             </li>
 
@@ -238,7 +260,7 @@ const cancelClose = () => { if (closeTimer.current) { clearTimeout(closeTimer.cu
                 aria-expanded={mobileCategoryOpen}
                 aria-controls="mobile-categories"
               >
-                Categories
+               Product Categories                  
                 <ChevronDownIcon
                   className={`w-5 h-5 transition-transform ${mobileCategoryOpen ? "rotate-180" : ""}`}
                 />

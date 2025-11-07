@@ -178,28 +178,41 @@ function ServiceCard({
   description,
 }: {
   href: string;
-  icon: ReactNode; // ✅ no JSX namespace issue
+  icon: React.ReactNode;
   title: string;
   description: string;
 }) {
   return (
-    <Link href={href} className="block">
+    <Link href={href} className="block h-full">
       <div
-        className="bg-white border border-[#eff3fa] rounded-2xl p-6 sm:p-8 lg:p-10 hover:bg-[#eff3fa] transition duration-300 ease-in-out shadow-sm"
+        className="
+          bg-white border border-[#eff3fa] rounded-2xl 
+          p-6 sm:p-8 lg:p-10 
+          hover:bg-[#eff3fa] 
+          transition duration-300 ease-in-out shadow-sm
+          flex flex-col h-full
+        "
         data-aos="fade-up"
       >
+        {/* Icon */}
         <div className="flex justify-center items-center mb-4">
           <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-gray-100 text-[#067afe] shadow">
             {icon}
           </div>
         </div>
+
+        {/* Title */}
         <h6 className="text-lg sm:text-xl font-semibold mb-3 text-center">
           {title}
         </h6>
-        <p className="text-gray-600 text-sm sm:text-base text-center mb-4">
+
+        {/* Description */}
+        <p className="text-gray-600 text-sm sm:text-base text-center">
           {description}
         </p>
-        <div className="text-center">
+
+        {/* Push read-more to bottom */}
+        <div className="mt-auto pt-4 text-center">
           <span className="text-[#067afe] text-sm font-medium uppercase hover:underline inline-flex items-center gap-1">
             Read More
             <svg

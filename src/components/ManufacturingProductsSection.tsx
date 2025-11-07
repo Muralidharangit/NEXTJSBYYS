@@ -43,7 +43,7 @@ export default function ManufacturingProductsSection() {
         "Integrated B2B & B2C ecosystem",
         "Easy credit & EMI Facility to B2C Customer",
       ],
-      img: "/images/s2.webp",
+      img: "/images/1.svg",
       moreLink: "/services/HardwareStoreChain",
     },
     {
