@@ -44,57 +44,7 @@ export default function HardwareStoreChain() {
                 className="self-stretch px-5 lg:px-20 pt-20 pb-20 flex flex-col justify-center items-center gap-2 overflow-hidden bg-[#eff3fa]"
                 aria-labelledby="hero-title"
             >
-                <p className=" bg-[#067afe] px-4 py-1.5 rounded-full mb-4 lg:mb-0 inline-flex justify-center items-center gap-2">
-                    <span className="justify-center text-secondary-navy text-sm font-medium leading-normal">
-                        <div className="text-center space-y-2">
-                            <span
-                                data-ns-animate=""
-                                data-delay="0.1"
-                                className="hero-badge text-tagline-1 inline-block text-secondary dark:text-accent"
-                                style={{
-                                    opacity: 1,
-                                    filter: "blur(0px)",
-                                    translate: "none",
-                                    rotate: "none",
-                                    scale: "none",
-                                    transform: "translate(0px, 0px)",
-                                }}
-                            >
-                                <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
-                                    {/* Product Categories */}
-                                    <Link
-        href="/"
-        className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-      >
-        Home
-      </Link>
-                                    <span className="mx-2">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            strokeWidth={2}
-                                            stroke="currentColor"
-                                            className="w-4 h-4 inline-block align-middle"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                                            />
-                                        </svg>
-                                    </span>
-                                    <a
-                                        href="#"
-                                        className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
-                                    >
-                                        SERVICE
-                                    </a>
-                                </span>
-                            </span>
-                        </div>
-                    </span>
-                </p>
+               
                 <div className="self-stretch flex flex-col justify-center items-center gap-2 mb-4 lg:mb-0">
                     <h2
                         data-aos="fade"
@@ -108,11 +58,36 @@ export default function HardwareStoreChain() {
                         data-aos-delay={300}
                         className="text-center justify-start text-base-grey text-lg font-normal leading-tight lg:leading-relaxed max-w-[750px] aos-init"
                     >
-                        Learn what drives our team and how we turn visions into lasting
-                        structures.
+                       Building India’s First Hardware Store Chain! 
                     </p>
                 </div>
             </section>
+
+   {/* Left: Text Content */}
+       <div className="max-w-7xl mx-auto mt-10">
+          <ul className="my-0 pb-3">
+   <li className="mb-3">•	🏪 Technology-driven chain of Hyperlocal Hardware Stores</li>
+  <li className="mb-3">
+    •	💰 Best Prices, Smarter Technology, Reducing unsold inventory and Higher profits
+
+
+  </li>
+  <li className="mb-3">
+    •	🛍️ Great In-Store Experience, 
+  </li>
+ <li className="mb-3">
+    
+•	🔗 Integrated B2B & B2C ecosystem
+  </li>
+   <li className="mb-3">
+    
+•	💳 Easy credit & EMI Facility to B2C Customerb
+
+  </li>
+</ul>
+</div>
+
+
 
             {/* HERO */}
             <section className="py-20 px-6">

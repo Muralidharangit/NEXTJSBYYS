@@ -1,5 +1,52 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
+/** Reusable inline ReadMore toggle */
+function ReadMore({
+  id,
+  lead,
+  rest,
+  className = "text-base font-normal text-gray-500 mt-2",
+}: {
+  id: string;
+  lead: string;
+  rest: string;
+  className?: string;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <p className={className}>
+      {lead}{" "}
+      {!open ? (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="font-semibold text-[#0569dc] underline underline-offset-4 hover:no-underline"
+          aria-expanded={open}
+          aria-controls={id}
+        >
+          Learn more
+        </button>
+      ) : (
+        <>
+          <span id={id} className="inline">
+            {rest}
+          </span>{" "}
+          <button
+            type="button"
+            onClick={() => setOpen(false)}
+            className="font-semibold text-[#0569dc] underline underline-offset-4 hover:no-underline"
+            aria-expanded={open}
+            aria-controls={id}
+          >
+            Show less
+          </button>
+        </>
+      )}
+    </p>
+  );
+}
 
 export default function FeaturesSection() {
   return (
@@ -28,43 +75,19 @@ export default function FeaturesSection() {
             data-aos="fade-left"
             data-aos-delay="200"
           >
-            <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
-              Building India’s Most Trusted Industrial & Hardware Supply Network
-            </span>
-           
-
-            
             <h3
               className="animate-letters text-xl sm:text-3xl md:text-3xl lg:text-4xl font-semibold mt-2 sm:mt-4 text-[#050d20] leading-snug sm:leading-normal"
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              Transforming the supply chain with AI-driven technology and local hardware stores for a lean and sustainable business model
+              Building India’s Most Trusted Industrial & Hardware Supply Network
             </h3>
 
-            {/* <Link
-              href="/service"
-              className="inline-flex items-center justify-center gap-3 text-sm font-medium text-black mt-6"
-              data-aos="fade-up"
-              data-aos-delay="500"
-            >
-              Learn More
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width={24}
-                height={24}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-move-right"
-              >
-                <path d="M18 8L22 12L18 16" />
-                <path d="M2 12H22" />
-              </svg>
-            </Link> */}
+            <p className="text-base text-gray-700 mt-2">
+              Transforming the supply chain with AI technology, Strategic
+              Sourcing and Byyizzy-powered hardware stores for a lean,
+              sustainable model
+            </p>
 
             <hr className="border-gray-200 my-6" />
 
@@ -94,17 +117,18 @@ export default function FeaturesSection() {
               </div>
               <div>
                 <h5 className="text-xl text-[#050d20] font-semibold">
-                Integrated Industrial & Hardware Chain Network 
+                  Integrated Industrial & Hardware Chain Network
                 </h5>
-                <p className="text-base font-normal text-gray-500 mt-2">
-                TCO optimization through a seamlessly integrated B2B & B2C business ecosystem
-Connecting India’s fragmented hardware stores under one trusted brand-Byyizzy- powered by cutting-edge technology, procurement expertise, and a hyper-local fulfillment model
 
-                </p>
+                <ReadMore
+                  id="f1-more"
+                  lead="TCO optimization through a seamlessly integrated B2B & B2C business ecosystem"
+                  rest=" Connecting India’s fragmented hardware stores under one trusted brand — Byyizzy — powered by cutting-edge technology, procurement expertise, and a hyper-local fulfillment model."
+                />
               </div>
             </div>
 
-            {/* Feature 2 */}
+            {/* Feature 2 (optional: also use ReadMore the same way) */}
             <div
               className="flex items-start gap-5 mt-5"
               data-aos="fade-up"
@@ -130,14 +154,37 @@ Connecting India’s fragmented hardware stores under one trusted brand-Byyizzy-
                 </div>
               </div>
               <div>
+                {/* <h5 className="text-xl text-[#050d20] font-semibold">
+                  Optimize Procurement & Supply Chain
+                </h5> */}
+
+                {/* Keep full text, or convert to ReadMore like Feature 1 */}
+                {/* Example:
+                <ReadMore
+                  id="f2-more"
+                  lead="Digitize the Source-to-Pay process with full transparency, improved cost control, and technology-driven tail-spend optimization"
+                  rest=" Empowering businesses with smart, sustainable procurement and SCM solutions."
+                />
+                */}
+                {/* <p className="text-base font-normal text-gray-500 mt-2">
+                  Digitize the Source-to-Pay process with full transparency,
+                  improved cost control, and technology-driven tail-spend
+                  optimization. Empowering businesses with smart, sustainable
+                  procurement and SCM solutions.
+                </p> */}
+
+                <div>
                 <h5 className="text-xl text-[#050d20] font-semibold">
                  Optimize Procurement & Supply Chain
                 </h5>
-                <p className="text-base font-normal text-gray-500 mt-2">
-               Digitize the Source-to-Pay process with full transparency, improved cost control, and technology-driven tail-spend optimization
-Empowering Businesses with Smart, Sustainable Procurement and SCM Solutions
 
-                </p>
+
+                <ReadMore
+                  id="f1-more"
+                  lead="Digitize the Source-to-Pay process with full transparency, improved cost control, and technology-driven tail-spend optimization."
+                  rest="Empowering businesses with smart, sustainable procurement and SCM solutions."
+                />
+              </div>
               </div>
             </div>
           </div>

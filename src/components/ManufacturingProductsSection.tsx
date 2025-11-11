@@ -69,12 +69,13 @@ export default function ManufacturingProductsSection() {
           <div className="text-center mb-16">
             {/* <span className="text-sm text-primary uppercase font-semibold tracking-wider text-default-950"></span> */}
 
-            <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full mb-3">
+            {/* <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full mb-3">
               Why Choose us?
-            </span>
+            </span> */}
             <h2 className="animate-letters text-4xl sm:text-5xl font-semibold leading-tight text-[#050d20]">
-              Manufacturing Products
+             Why byyizzy?  
             </h2>
+            <p>Sourcing Success, Delivering Values</p>
           </div>
 
           <div className="relative space-y-12 md:space-y-16 ">

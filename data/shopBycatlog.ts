@@ -21,6 +21,884 @@ export type ShopCategory = {
 // uuu
 
 export const SHOP_BY_CATEGORIES: ShopCategory[] = [
+
+  {
+    id: "8",
+    title: "Fabrication & Customized Products",
+    images:
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FFabrication.png?alt=media&token=99131e98-21ed-450b-9b0b-ebaeed34ab97",
+    path: "/Fabrication_Customized_Products",
+    categories: [
+      "Metal Fabrication",
+      "Custom Furniture",
+      "Welding Services",
+      "Sheet Metal Work",
+      "Customized Industrial Solutions",
+      "All",
+    ],
+    product: [
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FFabrication_Customized_Products%2Fimage-540x600%20(4).jpg?alt=media&token=c4336aa8-8c8a-4e93-a8ab-a95b1fe34f4b", // Add the image URL here
+        popularity: "240",
+        price: "500",
+        materialName: "Custom Steel Frame",
+        materialCode: "FAB001",
+        details: "type: steel, dimensions: 200x100cm, thickness: 5mm",
+        category: "Metal Fabrication",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FFabrication_Customized_Products%2Fimage-540x600%20(3).jpg?alt=media&token=d2a74d96-0df2-4f31-b462-ff591e7a3572", // Add the image URL here
+        popularity: "190",
+        price: "1200",
+        materialName: "Custom Wooden Desk",
+        materialCode: "CST001",
+        details: "type: oak wood, size: 120x60cm, finish: varnished",
+        category: "Custom Furniture",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FFabrication_Customized_Products%2Fimage-540x600%20(2).jpg?alt=media&token=b3ddc724-9c85-48ec-8573-54bb92ebb792",
+        popularity: "220",
+        price: "300",
+        materialName: "Aluminum Sheet Welding",
+        materialCode: "WLD001",
+        details: "type: aluminum, thickness: 3mm, service: welding",
+        category: "Welding Services",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FFabrication_Customized_Products%2Fimage-540x600%20(1).jpg?alt=media&token=d9073dee-d1f7-4d91-b8d5-57288f955be0", // Add the image URL here
+        popularity: "180",
+        price: "400",
+        materialName: "Stainless Steel Sheet",
+        materialCode: "SHT001",
+        details: "size: 100x100cm, thickness: 2mm, grade: 304",
+        category: "Sheet Metal Work",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FFabrication_Customized_Products%2Fimage-540x600.jpg?alt=media&token=666cf721-83b1-49a8-a2d2-96e2e411bcab", // Add the image URL here
+        popularity: "250",
+        price: "1500",
+        materialName: "Custom Industrial Conveyor",
+        materialCode: "IND001",
+        details: "type: conveyor system, length: 10m, material: stainless steel",
+        category: "Customized Industrial Solutions",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FFabrication_Customized_Products%2Fimage-540x600%20(5).jpg?alt=media&token=603f0610-81c5-4d8a-b525-f769f040a113",
+        popularity: "300",
+        price: "700",
+        materialName: "Metal Staircase",
+        materialCode: "FAB002",
+        details: "material: mild steel, dimensions: custom, finish: powder coated",
+        category: "Metal Fabrication",
+      },
+    ],
+  },
+   {
+    id: "33",
+    title: "Wire Meshes & Perforated Sheets",
+    images:
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FWire.png?alt=media&token=141d561e-1740-4246-9e88-ec1d117198ec",
+    path: "/Wire_Meshes_Perforated_Sheets",
+    categories: [
+      "Welded Wire Mesh",
+      "Chain Link Fencing",
+      "Expanded Metal Mesh",
+      "Perforated Sheets",
+      "Woven Wire Mesh",
+      "All",
+    ],
+    product: [
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWire%20Meshes%20%26%20Perforated%20Sheets%2FWoven%20Wire%20Mesh.jpg?alt=media&token=71fec911-aa03-4c53-8f6d-cd67a8cf5c8b", // Add the image URL here
+        popularity: "380",
+        price: "1500",
+        materialName: "Welded Wire Mesh",
+        materialCode: "WM001",
+        details: "wire diameter: 2.5mm, mesh size: 50x50mm, sheet size: 4ft x 8ft",
+        category: "Welded Wire Mesh",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWire%20Meshes%20%26%20Perforated%20Sheets%2FChain%20Link%20Fencing.jpg?alt=media&token=f89a86c8-4adf-4b6d-845a-d9c31abf4ea5", // Add the image URL here
+        popularity: "340",
+        price: "1200",
+        materialName: "Chain Link Fencing",
+        materialCode: "WM002",
+        details: "wire diameter: 3mm, height: 6ft, length: 25m",
+        category: "Chain Link Fencing",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWire%20Meshes%20%26%20Perforated%20Sheets%2FExpanded%20Metal%20Mesh.jpg?alt=media&token=78f7feb3-7895-4594-9d72-a7432ab4dca7", // Add the image URL here
+        popularity: "300",
+        price: "1800",
+        materialName: "Expanded Metal Mesh",
+        materialCode: "WM003",
+        details: "thickness: 1.5mm, mesh size: 25x50mm, sheet size: 4ft x 8ft",
+        category: "Expanded Metal Mesh",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWire%20Meshes%20%26%20Perforated%20Sheets%2FPerforated%20Sheet.jpg?alt=media&token=7f387184-ef2f-424e-8ee7-68c09a816af5", // Add the image URL here
+        popularity: "320",
+        price: "2500",
+        materialName: "Perforated Sheet",
+        materialCode: "WM004",
+        details: "thickness: 2mm, hole size: 5mm, sheet size: 4ft x 8ft",
+        category: "Perforated Sheets",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWire%20Meshes%20%26%20Perforated%20Sheets%2FWoven%20Wire%20Mesh.jpg?alt=media&token=71fec911-aa03-4c53-8f6d-cd67a8cf5c8b", // Add the image URL here
+        popularity: "310",
+        price: "1600",
+        materialName: "Woven Wire Mesh",
+        materialCode: "WM005",
+        details: "wire diameter: 1.2mm, mesh size: 10x10mm, material: stainless steel",
+        category: "Woven Wire Mesh",
+      },
+    ],
+  },
+  {
+    id: "25",
+    title: "Roofing Sheets",
+    images:
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FRoofing.png?alt=media&token=b8807994-81d7-4373-b8ea-46af66ca1d4a",
+    path: "/Roofing_Sheets",
+    categories: [
+      "Corrugated Sheets",
+      "Polycarbonate Sheets",
+      "Metal Roofing Sheets",
+      "Asphalt Sheets",
+      "Fiber Cement Sheets",
+      "All",
+    ],
+    product: [
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRoofing_Sheets%2FCorrugated%20Sheet.jpg?alt=media&token=e5be93ee-7cf2-4256-b7d3-d7fa79cf5c9e", // Add the image URL here
+        popularity: "310",
+        price: "900",
+        materialName: "Corrugated Sheet",
+        materialCode: "CRS001",
+        details: "material: galvanized steel, thickness: 0.5mm, length: 3m",
+        category: "Corrugated Sheets",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRoofing_Sheets%2FPolycarbonate%20Sheet.jpg?alt=media&token=ec7befad-f2a9-4e7c-8485-a9148f525abf",
+        popularity: "280",
+        price: "1200",
+        materialName: "Polycarbonate Sheet",
+        materialCode: "PCS001",
+        details: "material: polycarbonate, thickness: 6mm, length: 2.5m",
+        category: "Polycarbonate Sheets",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRoofing_Sheets%2FMetal%20Roofing%20Sheet.jpg?alt=media&token=70ab89da-509b-47de-a3bc-10e83feca154",
+        popularity: "350",
+        price: "1500",
+        materialName: "Metal Roofing Sheet",
+        materialCode: "MRS001",
+        details: "material: aluminum, thickness: 0.7mm, length: 4m",
+        category: "Metal Roofing Sheets",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRoofing_Sheets%2FAsphalt%20Sheet.jpg?alt=media&token=d120d07a-e8a0-4ffe-b8e3-921cf4945736",
+        popularity: "270",
+        price: "800",
+        materialName: "Asphalt Sheet",
+        materialCode: "ASP001",
+        details: "material: bitumen, thickness: 2mm, length: 2m",
+        category: "Asphalt Sheets",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRoofing_Sheets%2FFiber%20Cement%20Sheet.jpg?alt=media&token=618f2b21-cd84-4f4e-90e7-1a791e57a8ee", // Add the image URL here
+        popularity: "290",
+        price: "1000",
+        materialName: "Fiber Cement Sheet",
+        materialCode: "FCS001",
+        details: "material: fiber cement, thickness: 6mm, length: 3.5m",
+        category: "Fiber Cement Sheets",
+      },
+    ],
+  },
+ {
+    id: "16",
+    title: "Mild Steel",
+    images:
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FMildSteel.png?alt=media&token=6f4bae50-bdc6-41b5-97a3-d4d76daa957b",
+    path: "/Mild_Steel",
+    categories: [
+      "Mild Steel Plates",
+      "Mild Steel Pipes",
+      "Mild Steel Angles",
+      "Mild Steel Rods",
+      "Mild Steel Sheets",
+      "All",
+    ],
+    product: [
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FMild_Steel%2FMild%20Steel%20Plate.jpg?alt=media&token=2476682e-6932-4a68-8dba-ca361ec2a875", // Add the image URL here
+        popularity: "340",
+        price: "500",
+        materialName: "Mild Steel Plate",
+        materialCode: "MS001",
+        details: "thickness: 6mm, size: 2500x1250mm",
+        category: "Mild Steel Plates",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FMild_Steel%2FMild%20Steel%20Pipe.jpg?alt=media&token=27b57caf-f7df-4537-b43e-19f48988e90a", // Add the image URL here
+        popularity: "280",
+        price: "100",
+        materialName: "Mild Steel Pipe",
+        materialCode: "MS002",
+        details: "diameter: 50mm, length: 6m, thickness: 2.5mm",
+        category: "Mild Steel Pipes",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FMild_Steel%2FMild%20Steel%20Angle.jpg?alt=media&token=f8c62dcc-10d6-446a-ba04-86ddfefa5832", // Add the image URL here
+        popularity: "320",
+        price: "200",
+        materialName: "Mild Steel Angle",
+        materialCode: "MS003",
+        details: "size: 50x50mm, thickness: 5mm, length: 6m",
+        category: "Mild Steel Angles",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FMild_Steel%2FMild%20Steel%20Rod.jpg?alt=media&token=04889ab9-aec7-481f-aa1d-ca5f56e51530", // Add the image URL here
+        popularity: "260",
+        price: "150",
+        materialName: "Mild Steel Rod",
+        materialCode: "MS004",
+        details: "diameter: 16mm, length: 6m",
+        category: "Mild Steel Rods",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FMild_Steel%2FMild%20Steel%20Sheet.jpg?alt=media&token=fc4d6975-b5d5-4f23-9063-f0ad82f3d640", // Add the image URL here
+        popularity: "300",
+        price: "400",
+        materialName: "Mild Steel Sheet",
+        materialCode: "MS005",
+        details: "thickness: 4mm, size: 2500x1250mm",
+        category: "Mild Steel Sheets",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FMild_Steel%2FMild%20Steel%20Hollow%20Section.jpg?alt=media&token=a4a64b9e-cf6e-4ba6-8414-7651871b0ddc", // Add the image URL here
+        popularity: "310",
+        price: "120",
+        materialName: "Mild Steel Hollow Section",
+        materialCode: "MS006",
+        details: "size: 40x40mm, thickness: 2.5mm, length: 6m",
+        category: "Mild Steel Pipes",
+      },
+    ],
+  },
+    {
+    id: "29",
+    title: "Stainless Steel Products",
+    images:
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FStainless.png?alt=media&token=c8a5796f-98f9-4f94-a543-9f57b95c98fd",
+    path: "/Stainless_Steel_Products",
+    categories: [
+      "Stainless Steel Sheets",
+      "Stainless Steel Pipes",
+      "Stainless Steel Rods",
+      "Stainless Steel Plates",
+      "Stainless Steel Coils",
+      "All",
+    ],
+    product: [
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FStainless_Steel_Products%2FStainless%20Steel%20Sheet.jpg?alt=media&token=a6b7290a-6cb4-4b44-9de4-df4117b12c88", // Add the image URL here
+        popularity: "350",
+        price: "2000",
+        materialName: "Stainless Steel Sheet",
+        materialCode: "SSS001",
+        details: "grade: 304, thickness: 2mm, size: 4ft x 8ft",
+        category: "Stainless Steel Sheets",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FStainless_Steel_Products%2FStainless%20Steel%20Pipe.jpg?alt=media&token=3129dd2a-9e30-4037-8b81-b435751e9d95", // Add the image URL here
+        popularity: "300",
+        price: "1500",
+        materialName: "Stainless Steel Pipe",
+        materialCode: "SSP001",
+        details: "grade: 316, diameter: 50mm, length: 6m",
+        category: "Stainless Steel Pipes",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FStainless_Steel_Products%2FStainless%20Steel%20Rod.jpg?alt=media&token=26a254bd-5ec5-4035-8e9f-969570aae0fa", // Add the image URL here
+        popularity: "320",
+        price: "1800",
+        materialName: "Stainless Steel Rod",
+        materialCode: "SSR001",
+        details: "grade: 304, diameter: 25mm, length: 3m",
+        category: "Stainless Steel Rods",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FStainless_Steel_Products%2FStainless%20Steel%20Plate.jpg?alt=media&token=2b9dda97-c0cb-4e5e-b337-0f9c62eede32", // Add the image URL here
+        popularity: "290",
+        price: "2200",
+        materialName: "Stainless Steel Plate",
+        materialCode: "SSP002",
+        details: "grade: 316, thickness: 5mm, size: 5ft x 10ft",
+        category: "Stainless Steel Plates",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FStainless_Steel_Products%2FStainless%20Steel%20Coil.jpg?alt=media&token=dcf72af1-6b59-4d13-84df-e522c921c726", // Add the image URL here
+        popularity: "310",
+        price: "2500",
+        materialName: "Stainless Steel Coil",
+        materialCode: "SSC001",
+        details: "grade: 304, thickness: 1.2mm, width: 1000mm",
+        category: "Stainless Steel Coils",
+      },
+    ],
+  },
+ {
+    id: "21",
+    title: "Plates, Sheets, Coils & Rounds",
+    images:
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FPlates.png?alt=media&token=438b9164-ff7b-4001-8902-5bde091f712d",
+    path: "/Plates_Sheets_Coils_Rounds",
+    categories: [
+      "Steel Plates",
+      "Aluminium Sheets",
+      "Copper Coils",
+      "Stainless Steel Rounds",
+      "Brass Sheets",
+      "All",
+    ],
+    product: [
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlates_Sheets_Coils_Rounds%2FSteel%20Plate.jpg?alt=media&token=9c91509a-a62d-4901-8f0e-ebbf17062ed9", // Add the image URL here
+        popularity: "240",
+        price: "1000",
+        materialName: "Steel Plate",
+        materialCode: "STP001",
+        details: "thickness: 10mm, width: 1500mm, length: 3000mm",
+        category: "Steel Plates",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlates_Sheets_Coils_Rounds%2FAluminium%20Sheet.jpg?alt=media&token=19196f7e-affc-4baf-91f9-f0d6757a8427", // Add the image URL here
+        popularity: "300",
+        price: "600",
+        materialName: "Aluminium Sheet",
+        materialCode: "ALS001",
+        details: "thickness: 2mm, width: 1000mm, length: 2000mm",
+        category: "Aluminium Sheets",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlates_Sheets_Coils_Rounds%2FCopper%20Coil.jpg?alt=media&token=fec8f439-5a9c-424a-a970-755901591745", // Add the image URL here
+        popularity: "280",
+        price: "1200",
+        materialName: "Copper Coil",
+        materialCode: "CPC001",
+        details: "thickness: 1mm, width: 500mm, length: 100m",
+        category: "Copper Coils",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlates_Sheets_Coils_Rounds%2FStainless%20Steel%20Round.jpg?alt=media&token=d873439b-8447-4d38-9c62-1a3dc6b94c33", // Add the image URL here
+        popularity: "270",
+        price: "900",
+        materialName: "Stainless Steel Round",
+        materialCode: "SSR001",
+        details: "diameter: 50mm, length: 6m, grade: 304",
+        category: "Stainless Steel Rounds",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlates_Sheets_Coils_Rounds%2FBrass%20Sheet.jpg?alt=media&token=9eb35a95-203d-470d-b438-5ff1a5d0e4ff", // Add the image URL here
+        popularity: "260",
+        price: "750",
+        materialName: "Brass Sheet",
+        materialCode: "BRS001",
+        details: "thickness: 1.5mm, width: 1200mm, length: 2400mm",
+        category: "Brass Sheets",
+      },
+    ],
+  },
+  {
+    id: "18",
+    title: "Non Ferrous Products",
+    images:
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FNonFerrousProducts.png?alt=media&token=06eccb48-4d87-4f89-8893-02318113e8b2",
+    path: "/Non_Ferrous_Products",
+    categories: [
+      "Aluminium Sheets",
+      "Copper Rods",
+      "Brass Tubes",
+      "Zinc Ingots",
+      "Lead Plates",
+      "All",
+    ],
+    product: [
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FNon_Ferrous_Products%2FAluminium%20Sheet.jpg?alt=media&token=e4e99a31-9f60-4240-981f-bf24d711e4ae", // Add the image URL here
+        popularity: "250",
+        price: "500",
+        materialName: "Aluminium Sheet",
+        materialCode: "ALU001",
+        details: "thickness: 2mm, width: 1000mm, length: 2000mm",
+        category: "Aluminium Sheets",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FNon_Ferrous_Products%2FCopper%20Rod.jpg?alt=media&token=61d684b8-9051-4afd-a1d6-a89a4980845e", // Add the image URL here
+        popularity: "320",
+        price: "700",
+        materialName: "Copper Rod",
+        materialCode: "COP001",
+        details: "diameter: 10mm, length: 3m, purity: 99.9%",
+        category: "Copper Rods",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FNon_Ferrous_Products%2FBrass%20Tube.jpg?alt=media&token=ee1240f7-ec10-4fab-b4cf-1a4f4141acbe", // Add the image URL here
+        popularity: "290",
+        price: "600",
+        materialName: "Brass Tube",
+        materialCode: "BRS001",
+        details: "diameter: 25mm, wall thickness: 1.5mm, length: 2m",
+        category: "Brass Tubes",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FNon_Ferrous_Products%2FZinc%20Ingot.jpg?alt=media&token=a3ec23c9-299f-4e1a-b44d-bbea93366441", // Add the image URL here
+        popularity: "340",
+        price: "800",
+        materialName: "Zinc Ingot",
+        materialCode: "ZNC001",
+        details: "weight: 1kg, purity: 99.995%",
+        category: "Zinc Ingots",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FNon_Ferrous_Products%2FLead%20Plate.jpg?alt=media&token=33e2c570-8f5e-4d59-b82d-0aa01d1635ee", // Add the image URL here
+        popularity: "270",
+        price: "900",
+        materialName: "Lead Plate",
+        materialCode: "LED001",
+        details: "thickness: 3mm, width: 500mm, length: 1000mm",
+        category: "Lead Plates",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FNon_Ferrous_Products%2FAluminium%20Sheets.jpg?alt=media&token=b41b5adb-d853-4987-8cc4-6be06dcdd812", // Add the image URL here
+        popularity: "300",
+        price: "650",
+        materialName: "Aluminium Sheet",
+        materialCode: "ALU002",
+        details: "thickness: 3mm, width: 1200mm, length: 2500mm",
+        category: "Aluminium Sheets",
+      },
+    ],
+  },
+  {
+    id: "22",
+    title: "Plumbing, Pipes & Fittings",
+    images:
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FPlumbing.png?alt=media&token=6918b001-a061-491a-97b8-fbfd9b58c172",
+    path: "/Plumbing_Pipes_Fittings",
+    categories: [
+      "PVC Pipes",
+      "Copper Fittings",
+      "Steel Pipes",
+      "Brass Valves",
+      "Plastic Fittings",
+      "All",
+    ],
+    product: [
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlumbing_Pipes_Fittings%2FPVC%20Pipe.jpg?alt=media&token=635f61cc-9548-4572-afb8-429e99ff6972", // Add the image URL here
+        popularity: "220",
+        price: "300",
+        materialName: "PVC Pipe",
+        materialCode: "PVC001",
+        details: "diameter: 50mm, length: 6m, type: Schedule 40",
+        category: "PVC Pipes",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlumbing_Pipes_Fittings%2FCopper%20Elbow%20Fitting.jpg?alt=media&token=49c56e9d-1ebf-49bc-8b00-9d7d6b619d36", // Add the image URL here
+        popularity: "260",
+        price: "150",
+        materialName: "Copper Elbow Fitting",
+        materialCode: "CPF001",
+        details: "diameter: 20mm, angle: 90°, type: press fit",
+        category: "Copper Fittings",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlumbing_Pipes_Fittings%2FSteel%20Pipe.jpg?alt=media&token=ab2e134a-dcdc-434c-9a16-921c449b9aa6",
+        popularity: "300",
+        price: "500",
+        materialName: "Steel Pipe",
+        materialCode: "STL001",
+        details: "diameter: 100mm, length: 12m, type: seamless",
+        category: "Steel Pipes",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlumbing_Pipes_Fittings%2FBrass%20Ball%20Valve.jpg?alt=media&token=74b6c5c3-42ab-4484-972d-26716ef4d4ac",
+        popularity: "280",
+        price: "400",
+        materialName: "Brass Ball Valve",
+        materialCode: "BBV001",
+        details: "size: 25mm, type: full bore, pressure rating: PN16",
+        category: "Brass Valves",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlumbing_Pipes_Fittings%2FPlastic%20Tee%20Fitting.jpg?alt=media&token=67906428-268f-4712-b558-821be99c7948", // Add the image URL here
+        popularity: "240",
+        price: "100",
+        materialName: "Plastic Tee Fitting",
+        materialCode: "PLT001",
+        details: "diameter: 32mm, type: compression",
+        category: "Plastic Fittings",
+      },
+    ],
+  },
+  {
+    id: "24",
+    title: "Railway Spares & Equipment",
+    images:
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FRailway.png?alt=media&token=a7ca7172-4d5a-426a-ba66-a193a89c55c8",
+    path: "/Railway_Spares_Equipment",
+    categories: [
+      "Brake Blocks",
+      "Rail Clips",
+      "Fish Plates",
+      "Railway Axles",
+      "Track Bolts",
+      "All",
+    ],
+    product: [
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRailway_Spares_Equipment%2FBrake%20Block.jpg?alt=media&token=68c4710b-2cc3-4536-904a-04927cdb128a", // Add the image URL here
+        popularity: "320",
+        price: "1500",
+        materialName: "Brake Block",
+        materialCode: "BRB001",
+        details: "material: cast iron, type: 6-hole, weight: 8kg",
+        category: "Brake Blocks",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRailway_Spares_Equipment%2FRail%20Clip.jpg?alt=media&token=1287adea-cd07-4f41-bbab-2dd776725f1d", // Add the image URL here
+        popularity: "280",
+        price: "800",
+        materialName: "Rail Clip",
+        materialCode: "RCL001",
+        details: "material: forged steel, size: standard, type: E-clips",
+        category: "Rail Clips",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRailway_Spares_Equipment%2FFish%20Plate.jpg?alt=media&token=ee8c5fbe-ae02-407d-b157-2f7b6c5129a7", // Add the image URL here
+        popularity: "300",
+        price: "1200",
+        materialName: "Fish Plate",
+        materialCode: "FPL001",
+        details: "material: carbon steel, length: 650mm, weight: 7.5kg",
+        category: "Fish Plates",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRailway_Spares_Equipment%2FRailway%20Axle.jpg?alt=media&token=4807e577-2aad-47b5-b259-6c46f8dd3e86", // Add the image URL here
+        popularity: "350",
+        price: "5000",
+        materialName: "Railway Axle",
+        materialCode: "RAX001",
+        details: "material: forged steel, length: 2200mm, weight: 900kg",
+        category: "Railway Axles",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRailway_Spares_Equipment%2FTrack%20Bolt.jpg?alt=media&token=91ea0090-1dc8-4443-88ea-d0b36c21eec4", // Add the image URL here
+        popularity: "270",
+        price: "400",
+        materialName: "Track Bolt",
+        materialCode: "TRB001",
+        details: "material: high tensile steel, size: M22, length: 100mm",
+        category: "Track Bolts",
+      },
+    ],
+  },
+  {
+    id: "32",
+    title: "Welding & Accessories",
+    images:
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2Fwelder.png?alt=media&token=02c8f65a-8ec0-4c38-b998-73df823dd149",
+    path: "/Welding_Accessories",
+    categories: [
+      "Welding Machines",
+      "Electrodes",
+      "Welding Helmets",
+      "Welding Cables",
+      "Welding Rods",
+      "All",
+    ],
+    product: [
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWelding_Accessories%2FWelding%20Cable.jpg?alt=media&token=129b8102-6ac7-4872-8287-a60d03a9fc83", // Add the image URL here
+        popularity: "400",
+        price: "7500",
+        materialName: "Inverter Welding Machine",
+        materialCode: "WEL001",
+        details: "power: 200A, input voltage: 220V, type: arc welding",
+        category: "Welding Machines",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWelding_Accessories%2FWelding%20Electrode.jpg?alt=media&token=7b0f49ce-c4b8-42e0-ab4a-8633e809beaa", // Add the image URL here
+        popularity: "350",
+        price: "1200",
+        materialName: "Welding Electrode",
+        materialCode: "WEL002",
+        details: "diameter: 3.2mm, length: 350mm, material: mild steel",
+        category: "Electrodes",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWelding_Accessories%2FAuto-Darkening%20Welding%20Helmet.jpg?alt=media&token=943bd108-9b70-4f65-b33a-49d0d05b9507", // Add the image URL here
+        popularity: "320",
+        price: "1500",
+        materialName: "Auto-Darkening Welding Helmet",
+        materialCode: "WEL003",
+        details: "viewing area: 100x50mm, response time: 1/10000 sec, adjustable shade",
+        category: "Welding Helmets",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWelding_Accessories%2FWelding%20Cable.jpg?alt=media&token=129b8102-6ac7-4872-8287-a60d03a9fc83", // Add the image URL here
+        popularity: "310",
+        price: "500",
+        materialName: "Welding Cable",
+        materialCode: "WEL004",
+        details: "length: 10m, thickness: 25mm², material: copper",
+        category: "Welding Cables",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWelding_Accessories%2FWelding%20Rod.jpg?alt=media&token=693afbb3-9cd5-4b58-98ff-68f1df767afc", // Add the image URL here
+        popularity: "330",
+        price: "800",
+        materialName: "Welding Rod",
+        materialCode: "WEL005",
+        details: "diameter: 2.5mm, length: 300mm, material: stainless steel",
+        category: "Welding Rods",
+      },
+    ],
+  },
+  {
+    id: "5",
+    title: "Building & Construction Supplies",
+    images:
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FBuilding.png?alt=media&token=cc2b1c5b-3fc6-475b-90f2-94b0aa18f0b6",
+    path: "/Building_and_Construction_Supplies",
+    categories: ["Cement", "Bricks", "Steel", "Pipes", "All"],
+    product: [
+      {
+        image: "/assets/images/products/Building_and_Construction_Supplies/Cement01.jpg",
+        popularity: "300",
+        price: "120",
+        materialName: "Portland Cement",
+        materialCode: "CEM001",
+        details: "type: OPC, grade: 43",
+        category: "Cement",
+      },
+      {
+        // image: "/assets/images/products/Building_and_Construction_Supplies/Brick01.jpg",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FBrick01.jpg?alt=media&token=6b0c9a72-1f49-4588-b4a7-2f57063e8f73",
+        popularity: "180",
+        price: "50",
+        materialName: "Clay Brick",
+        materialCode: "BRK001",
+        details: "type: solid, size: standard",
+        category: "Bricks",
+      },
+      {
+        // image: "/assets/images/products/Building_and_Construction_Supplies/Steel01.jpg",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FSteel01.jpg?alt=media&token=cc2685d3-f5ab-40ce-b8fc-dcb514e5e0e8",
+        popularity: "220",
+        price: "200",
+        materialName: "Steel Rebar",
+        materialCode: "STL001",
+        details: "type: TMT, diameter: 12mm",
+        category: "Steel",
+      },
+      {
+        // image: "/assets/images/products/Building_and_Construction_Supplies/Pipe01.jpg",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FPipe01.jpg?alt=media&token=a6c56e00-3033-4772-8f54-7212982e1455",
+        popularity: "250",
+        price: "100",
+        materialName: "PVC Pipe",
+        materialCode: "PIP001",
+        details: "type: schedule 40, diameter: 2 inches",
+        category: "Pipes",
+      },
+      {
+        // image: "/assets/images/products/Building_and_Construction_Supplies/Brick02.jpg",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FBrick02.jpg?alt=media&token=a1efcbb0-d5a1-4258-8944-12386604f0a1",
+        popularity: "210",
+        price: "60",
+        materialName: "Fly Ash Brick",
+        materialCode: "BRK002",
+        details: "type: hollow, size: standard",
+        category: "Bricks",
+      },
+      {
+        // image: "/assets/images/products/Building_and_Construction_Supplies/Cement02.jpg",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FCement02.jpg?alt=media&token=e4c258df-219d-498e-9ac7-c8637744b6fe",
+        popularity: "320",
+        price: "130",
+        materialName: "Pozzolana Cement",
+        materialCode: "CEM002",
+        details: "type: PPC, grade: 53",
+        category: "Cement",
+      },
+      {
+        // image: "/assets/images/products/Building_and_Construction_Supplies/Steel02.jpg",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FSteel02.jpg?alt=media&token=de8a6c6c-89ea-4be2-85b7-c12512396ce9",
+        popularity: "270",
+        price: "250",
+        materialName: "Mild Steel Bar",
+        materialCode: "STL002",
+        details: "type: MS, diameter: 10mm",
+        category: "Steel",
+      },
+      {
+        // image: "/assets/images/products/Building_and_Construction_Supplies/Pipe02.jpg",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FPipe02.jpg?alt=media&token=5cab8d33-7caa-4128-9989-8872ecdc9d0f",
+        popularity: "230",
+        price: "120",
+        materialName: "Galvanized Steel Pipe",
+        materialCode: "PIP002",
+        details: "type: GI, diameter: 3 inches",
+        category: "Pipes",
+      },
+      {
+        // image: "/assets/images/products/Building_and_Construction_Supplies/Brick03.jpg",
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FBrick03.jpg?alt=media&token=780379c7-523a-4ef3-ac74-3e099c70d061",
+        popularity: "260",
+        price: "70",
+        materialName: "Concrete Block",
+        materialCode: "BRK003",
+        details: "type: hollow, size: 8x8x16 inches",
+        category: "Bricks",
+      },
+    ],
+  },
+  {
+    id: "26",
+    title: "Safety & PPE Supplies",
+    images:
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FSafety.png?alt=media&token=ae79946e-ab21-4413-ba1a-63decc9cbde6",
+    path: "/Safety_PPE_Supplies",
+    categories: [
+      "Safety Helmets",
+      "Gloves",
+      "Safety Glasses",
+      "Hearing Protection",
+      "Respirators",
+      "All",
+    ],
+    product: [
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FSafety_PPE_Supplies%2FSafety%20Helmet.jpg?alt=media&token=a36ccee8-b25a-4598-8f0e-23bdd52cce0d", // Add the image URL here
+        popularity: "330",
+        price: "500",
+        materialName: "Safety Helmet",
+        materialCode: "SFT001",
+        details: "material: ABS, type: with chin strap, color: white",
+        category: "Safety Helmets",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FSafety_PPE_Supplies%2FProtective%20Gloves.jpg?alt=media&token=82e963fb-6485-4e6e-876d-7b2ec68e3edf", // Add the image URL here
+        popularity: "290",
+        price: "100",
+        materialName: "Protective Gloves",
+        materialCode: "GLV001",
+        details: "material: nitrile, size: large, type: chemical resistant",
+        category: "Gloves",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FSafety_PPE_Supplies%2FSafety%20Glasses.jpg?alt=media&token=bf8ae6d0-291c-44b2-b62a-841c4c405049", // Add the image URL here
+        popularity: "300",
+        price: "200",
+        materialName: "Safety Glasses",
+        materialCode: "SGS001",
+        details: "material: polycarbonate, type: anti-fog, UV protection",
+        category: "Safety Glasses",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FSafety_PPE_Supplies%2FEar%20Muffs.jpg?alt=media&token=e6370f16-b7d5-49cd-8f4e-8bb9640e2977", // Add the image URL here
+        popularity: "270",
+        price: "150",
+        materialName: "Ear Muffs",
+        materialCode: "EAR001",
+        details: "material: foam, noise reduction rating: 30dB, type: over-ear",
+        category: "Hearing Protection",
+      },
+      {
+        image:
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FSafety_PPE_Supplies%2FRespirator%20Mask.jpg?alt=media&token=81f6ef70-1325-431c-87ad-54de815cb3aa", // Add the image URL here
+        popularity: "310",
+        price: "400",
+        materialName: "Respirator Mask",
+        materialCode: "RSP001",
+        details: "material: silicone, type: half-mask, filter: P100",
+        category: "Respirators",
+      },
+    ],
+  },
+
+// ghtg
+
   {
     id: "1",
     title: "Agriculture Garden & Landscaping",
@@ -524,113 +1402,6 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
   },
 
   {
-    id: "5",
-    title: "Building & Construction Supplies",
-    images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FBuilding.png?alt=media&token=cc2b1c5b-3fc6-475b-90f2-94b0aa18f0b6",
-    path: "/Building_and_Construction_Supplies",
-    categories: ["Cement", "Bricks", "Steel", "Pipes", "All"],
-    product: [
-      {
-        image: "/assets/images/products/Building_and_Construction_Supplies/Cement01.jpg",
-        popularity: "300",
-        price: "120",
-        materialName: "Portland Cement",
-        materialCode: "CEM001",
-        details: "type: OPC, grade: 43",
-        category: "Cement",
-      },
-      {
-        // image: "/assets/images/products/Building_and_Construction_Supplies/Brick01.jpg",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FBrick01.jpg?alt=media&token=6b0c9a72-1f49-4588-b4a7-2f57063e8f73",
-        popularity: "180",
-        price: "50",
-        materialName: "Clay Brick",
-        materialCode: "BRK001",
-        details: "type: solid, size: standard",
-        category: "Bricks",
-      },
-      {
-        // image: "/assets/images/products/Building_and_Construction_Supplies/Steel01.jpg",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FSteel01.jpg?alt=media&token=cc2685d3-f5ab-40ce-b8fc-dcb514e5e0e8",
-        popularity: "220",
-        price: "200",
-        materialName: "Steel Rebar",
-        materialCode: "STL001",
-        details: "type: TMT, diameter: 12mm",
-        category: "Steel",
-      },
-      {
-        // image: "/assets/images/products/Building_and_Construction_Supplies/Pipe01.jpg",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FPipe01.jpg?alt=media&token=a6c56e00-3033-4772-8f54-7212982e1455",
-        popularity: "250",
-        price: "100",
-        materialName: "PVC Pipe",
-        materialCode: "PIP001",
-        details: "type: schedule 40, diameter: 2 inches",
-        category: "Pipes",
-      },
-      {
-        // image: "/assets/images/products/Building_and_Construction_Supplies/Brick02.jpg",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FBrick02.jpg?alt=media&token=a1efcbb0-d5a1-4258-8944-12386604f0a1",
-        popularity: "210",
-        price: "60",
-        materialName: "Fly Ash Brick",
-        materialCode: "BRK002",
-        details: "type: hollow, size: standard",
-        category: "Bricks",
-      },
-      {
-        // image: "/assets/images/products/Building_and_Construction_Supplies/Cement02.jpg",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FCement02.jpg?alt=media&token=e4c258df-219d-498e-9ac7-c8637744b6fe",
-        popularity: "320",
-        price: "130",
-        materialName: "Pozzolana Cement",
-        materialCode: "CEM002",
-        details: "type: PPC, grade: 53",
-        category: "Cement",
-      },
-      {
-        // image: "/assets/images/products/Building_and_Construction_Supplies/Steel02.jpg",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FSteel02.jpg?alt=media&token=de8a6c6c-89ea-4be2-85b7-c12512396ce9",
-        popularity: "270",
-        price: "250",
-        materialName: "Mild Steel Bar",
-        materialCode: "STL002",
-        details: "type: MS, diameter: 10mm",
-        category: "Steel",
-      },
-      {
-        // image: "/assets/images/products/Building_and_Construction_Supplies/Pipe02.jpg",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FPipe02.jpg?alt=media&token=5cab8d33-7caa-4128-9989-8872ecdc9d0f",
-        popularity: "230",
-        price: "120",
-        materialName: "Galvanized Steel Pipe",
-        materialCode: "PIP002",
-        details: "type: GI, diameter: 3 inches",
-        category: "Pipes",
-      },
-      {
-        // image: "/assets/images/products/Building_and_Construction_Supplies/Brick03.jpg",
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FBuilding_and_Construction_Supplies%2FBrick03.jpg?alt=media&token=780379c7-523a-4ef3-ac74-3e099c70d061",
-        popularity: "260",
-        price: "70",
-        materialName: "Concrete Block",
-        materialCode: "BRK003",
-        details: "type: hollow, size: 8x8x16 inches",
-        category: "Bricks",
-      },
-    ],
-  },
-  {
     id: "6",
     title: "Cleaning Equipment",
     images:
@@ -870,83 +1641,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
       },
     ],
   },
-  {
-    id: "8",
-    title: "Fabrication & Customized Products",
-    images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FFabrication.png?alt=media&token=99131e98-21ed-450b-9b0b-ebaeed34ab97",
-    path: "/Fabrication_Customized_Products",
-    categories: [
-      "Metal Fabrication",
-      "Custom Furniture",
-      "Welding Services",
-      "Sheet Metal Work",
-      "Customized Industrial Solutions",
-      "All",
-    ],
-    product: [
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FFabrication_Customized_Products%2Fimage-540x600%20(4).jpg?alt=media&token=c4336aa8-8c8a-4e93-a8ab-a95b1fe34f4b", // Add the image URL here
-        popularity: "240",
-        price: "500",
-        materialName: "Custom Steel Frame",
-        materialCode: "FAB001",
-        details: "type: steel, dimensions: 200x100cm, thickness: 5mm",
-        category: "Metal Fabrication",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FFabrication_Customized_Products%2Fimage-540x600%20(3).jpg?alt=media&token=d2a74d96-0df2-4f31-b462-ff591e7a3572", // Add the image URL here
-        popularity: "190",
-        price: "1200",
-        materialName: "Custom Wooden Desk",
-        materialCode: "CST001",
-        details: "type: oak wood, size: 120x60cm, finish: varnished",
-        category: "Custom Furniture",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FFabrication_Customized_Products%2Fimage-540x600%20(2).jpg?alt=media&token=b3ddc724-9c85-48ec-8573-54bb92ebb792",
-        popularity: "220",
-        price: "300",
-        materialName: "Aluminum Sheet Welding",
-        materialCode: "WLD001",
-        details: "type: aluminum, thickness: 3mm, service: welding",
-        category: "Welding Services",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FFabrication_Customized_Products%2Fimage-540x600%20(1).jpg?alt=media&token=d9073dee-d1f7-4d91-b8d5-57288f955be0", // Add the image URL here
-        popularity: "180",
-        price: "400",
-        materialName: "Stainless Steel Sheet",
-        materialCode: "SHT001",
-        details: "size: 100x100cm, thickness: 2mm, grade: 304",
-        category: "Sheet Metal Work",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FFabrication_Customized_Products%2Fimage-540x600.jpg?alt=media&token=666cf721-83b1-49a8-a2d2-96e2e411bcab", // Add the image URL here
-        popularity: "250",
-        price: "1500",
-        materialName: "Custom Industrial Conveyor",
-        materialCode: "IND001",
-        details: "type: conveyor system, length: 10m, material: stainless steel",
-        category: "Customized Industrial Solutions",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FFabrication_Customized_Products%2Fimage-540x600%20(5).jpg?alt=media&token=603f0610-81c5-4d8a-b525-f769f040a113",
-        popularity: "300",
-        price: "700",
-        materialName: "Metal Staircase",
-        materialCode: "FAB002",
-        details: "material: mild steel, dimensions: custom, finish: powder coated",
-        category: "Metal Fabrication",
-      },
-    ],
-  },
+
   {
     id: "9",
     title: "Fasteners",
@@ -1459,83 +2154,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
       },
     ],
   },
-  {
-    id: "16",
-    title: "Mild Steel",
-    images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FMildSteel.png?alt=media&token=6f4bae50-bdc6-41b5-97a3-d4d76daa957b",
-    path: "/Mild_Steel",
-    categories: [
-      "Mild Steel Plates",
-      "Mild Steel Pipes",
-      "Mild Steel Angles",
-      "Mild Steel Rods",
-      "Mild Steel Sheets",
-      "All",
-    ],
-    product: [
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FMild_Steel%2FMild%20Steel%20Plate.jpg?alt=media&token=2476682e-6932-4a68-8dba-ca361ec2a875", // Add the image URL here
-        popularity: "340",
-        price: "500",
-        materialName: "Mild Steel Plate",
-        materialCode: "MS001",
-        details: "thickness: 6mm, size: 2500x1250mm",
-        category: "Mild Steel Plates",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FMild_Steel%2FMild%20Steel%20Pipe.jpg?alt=media&token=27b57caf-f7df-4537-b43e-19f48988e90a", // Add the image URL here
-        popularity: "280",
-        price: "100",
-        materialName: "Mild Steel Pipe",
-        materialCode: "MS002",
-        details: "diameter: 50mm, length: 6m, thickness: 2.5mm",
-        category: "Mild Steel Pipes",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FMild_Steel%2FMild%20Steel%20Angle.jpg?alt=media&token=f8c62dcc-10d6-446a-ba04-86ddfefa5832", // Add the image URL here
-        popularity: "320",
-        price: "200",
-        materialName: "Mild Steel Angle",
-        materialCode: "MS003",
-        details: "size: 50x50mm, thickness: 5mm, length: 6m",
-        category: "Mild Steel Angles",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FMild_Steel%2FMild%20Steel%20Rod.jpg?alt=media&token=04889ab9-aec7-481f-aa1d-ca5f56e51530", // Add the image URL here
-        popularity: "260",
-        price: "150",
-        materialName: "Mild Steel Rod",
-        materialCode: "MS004",
-        details: "diameter: 16mm, length: 6m",
-        category: "Mild Steel Rods",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FMild_Steel%2FMild%20Steel%20Sheet.jpg?alt=media&token=fc4d6975-b5d5-4f23-9063-f0ad82f3d640", // Add the image URL here
-        popularity: "300",
-        price: "400",
-        materialName: "Mild Steel Sheet",
-        materialCode: "MS005",
-        details: "thickness: 4mm, size: 2500x1250mm",
-        category: "Mild Steel Sheets",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FMild_Steel%2FMild%20Steel%20Hollow%20Section.jpg?alt=media&token=a4a64b9e-cf6e-4ba6-8414-7651871b0ddc", // Add the image URL here
-        popularity: "310",
-        price: "120",
-        materialName: "Mild Steel Hollow Section",
-        materialCode: "MS006",
-        details: "size: 40x40mm, thickness: 2.5mm, length: 6m",
-        category: "Mild Steel Pipes",
-      },
-    ],
-  },
+ 
   {
     id: "17",
     title: "Motors & Pumps",
@@ -1613,83 +2232,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
       },
     ],
   },
-  {
-    id: "18",
-    title: "Non Ferrous Products",
-    images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FNonFerrousProducts.png?alt=media&token=06eccb48-4d87-4f89-8893-02318113e8b2",
-    path: "/Non_Ferrous_Products",
-    categories: [
-      "Aluminium Sheets",
-      "Copper Rods",
-      "Brass Tubes",
-      "Zinc Ingots",
-      "Lead Plates",
-      "All",
-    ],
-    product: [
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FNon_Ferrous_Products%2FAluminium%20Sheet.jpg?alt=media&token=e4e99a31-9f60-4240-981f-bf24d711e4ae", // Add the image URL here
-        popularity: "250",
-        price: "500",
-        materialName: "Aluminium Sheet",
-        materialCode: "ALU001",
-        details: "thickness: 2mm, width: 1000mm, length: 2000mm",
-        category: "Aluminium Sheets",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FNon_Ferrous_Products%2FCopper%20Rod.jpg?alt=media&token=61d684b8-9051-4afd-a1d6-a89a4980845e", // Add the image URL here
-        popularity: "320",
-        price: "700",
-        materialName: "Copper Rod",
-        materialCode: "COP001",
-        details: "diameter: 10mm, length: 3m, purity: 99.9%",
-        category: "Copper Rods",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FNon_Ferrous_Products%2FBrass%20Tube.jpg?alt=media&token=ee1240f7-ec10-4fab-b4cf-1a4f4141acbe", // Add the image URL here
-        popularity: "290",
-        price: "600",
-        materialName: "Brass Tube",
-        materialCode: "BRS001",
-        details: "diameter: 25mm, wall thickness: 1.5mm, length: 2m",
-        category: "Brass Tubes",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FNon_Ferrous_Products%2FZinc%20Ingot.jpg?alt=media&token=a3ec23c9-299f-4e1a-b44d-bbea93366441", // Add the image URL here
-        popularity: "340",
-        price: "800",
-        materialName: "Zinc Ingot",
-        materialCode: "ZNC001",
-        details: "weight: 1kg, purity: 99.995%",
-        category: "Zinc Ingots",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FNon_Ferrous_Products%2FLead%20Plate.jpg?alt=media&token=33e2c570-8f5e-4d59-b82d-0aa01d1635ee", // Add the image URL here
-        popularity: "270",
-        price: "900",
-        materialName: "Lead Plate",
-        materialCode: "LED001",
-        details: "thickness: 3mm, width: 500mm, length: 1000mm",
-        category: "Lead Plates",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FNon_Ferrous_Products%2FAluminium%20Sheets.jpg?alt=media&token=b41b5adb-d853-4987-8cc4-6be06dcdd812", // Add the image URL here
-        popularity: "300",
-        price: "650",
-        materialName: "Aluminium Sheet",
-        materialCode: "ALU002",
-        details: "thickness: 3mm, width: 1200mm, length: 2500mm",
-        category: "Aluminium Sheets",
-      },
-    ],
-  },
+
 
   {
     id: "19",
@@ -1818,140 +2361,8 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
       },
     ],
   },
-  {
-    id: "21",
-    title: "Plates, Sheets, Coils & Rounds",
-    images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FPlates.png?alt=media&token=438b9164-ff7b-4001-8902-5bde091f712d",
-    path: "/Plates_Sheets_Coils_Rounds",
-    categories: [
-      "Steel Plates",
-      "Aluminium Sheets",
-      "Copper Coils",
-      "Stainless Steel Rounds",
-      "Brass Sheets",
-      "All",
-    ],
-    product: [
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlates_Sheets_Coils_Rounds%2FSteel%20Plate.jpg?alt=media&token=9c91509a-a62d-4901-8f0e-ebbf17062ed9", // Add the image URL here
-        popularity: "240",
-        price: "1000",
-        materialName: "Steel Plate",
-        materialCode: "STP001",
-        details: "thickness: 10mm, width: 1500mm, length: 3000mm",
-        category: "Steel Plates",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlates_Sheets_Coils_Rounds%2FAluminium%20Sheet.jpg?alt=media&token=19196f7e-affc-4baf-91f9-f0d6757a8427", // Add the image URL here
-        popularity: "300",
-        price: "600",
-        materialName: "Aluminium Sheet",
-        materialCode: "ALS001",
-        details: "thickness: 2mm, width: 1000mm, length: 2000mm",
-        category: "Aluminium Sheets",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlates_Sheets_Coils_Rounds%2FCopper%20Coil.jpg?alt=media&token=fec8f439-5a9c-424a-a970-755901591745", // Add the image URL here
-        popularity: "280",
-        price: "1200",
-        materialName: "Copper Coil",
-        materialCode: "CPC001",
-        details: "thickness: 1mm, width: 500mm, length: 100m",
-        category: "Copper Coils",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlates_Sheets_Coils_Rounds%2FStainless%20Steel%20Round.jpg?alt=media&token=d873439b-8447-4d38-9c62-1a3dc6b94c33", // Add the image URL here
-        popularity: "270",
-        price: "900",
-        materialName: "Stainless Steel Round",
-        materialCode: "SSR001",
-        details: "diameter: 50mm, length: 6m, grade: 304",
-        category: "Stainless Steel Rounds",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlates_Sheets_Coils_Rounds%2FBrass%20Sheet.jpg?alt=media&token=9eb35a95-203d-470d-b438-5ff1a5d0e4ff", // Add the image URL here
-        popularity: "260",
-        price: "750",
-        materialName: "Brass Sheet",
-        materialCode: "BRS001",
-        details: "thickness: 1.5mm, width: 1200mm, length: 2400mm",
-        category: "Brass Sheets",
-      },
-    ],
-  },
-  {
-    id: "22",
-    title: "Plumbing, Pipes & Fittings",
-    images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FPlumbing.png?alt=media&token=6918b001-a061-491a-97b8-fbfd9b58c172",
-    path: "/Plumbing_Pipes_Fittings",
-    categories: [
-      "PVC Pipes",
-      "Copper Fittings",
-      "Steel Pipes",
-      "Brass Valves",
-      "Plastic Fittings",
-      "All",
-    ],
-    product: [
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlumbing_Pipes_Fittings%2FPVC%20Pipe.jpg?alt=media&token=635f61cc-9548-4572-afb8-429e99ff6972", // Add the image URL here
-        popularity: "220",
-        price: "300",
-        materialName: "PVC Pipe",
-        materialCode: "PVC001",
-        details: "diameter: 50mm, length: 6m, type: Schedule 40",
-        category: "PVC Pipes",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlumbing_Pipes_Fittings%2FCopper%20Elbow%20Fitting.jpg?alt=media&token=49c56e9d-1ebf-49bc-8b00-9d7d6b619d36", // Add the image URL here
-        popularity: "260",
-        price: "150",
-        materialName: "Copper Elbow Fitting",
-        materialCode: "CPF001",
-        details: "diameter: 20mm, angle: 90°, type: press fit",
-        category: "Copper Fittings",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlumbing_Pipes_Fittings%2FSteel%20Pipe.jpg?alt=media&token=ab2e134a-dcdc-434c-9a16-921c449b9aa6",
-        popularity: "300",
-        price: "500",
-        materialName: "Steel Pipe",
-        materialCode: "STL001",
-        details: "diameter: 100mm, length: 12m, type: seamless",
-        category: "Steel Pipes",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlumbing_Pipes_Fittings%2FBrass%20Ball%20Valve.jpg?alt=media&token=74b6c5c3-42ab-4484-972d-26716ef4d4ac",
-        popularity: "280",
-        price: "400",
-        materialName: "Brass Ball Valve",
-        materialCode: "BBV001",
-        details: "size: 25mm, type: full bore, pressure rating: PN16",
-        category: "Brass Valves",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FPlumbing_Pipes_Fittings%2FPlastic%20Tee%20Fitting.jpg?alt=media&token=67906428-268f-4712-b558-821be99c7948", // Add the image URL here
-        popularity: "240",
-        price: "100",
-        materialName: "Plastic Tee Fitting",
-        materialCode: "PLT001",
-        details: "diameter: 32mm, type: compression",
-        category: "Plastic Fittings",
-      },
-    ],
-  },
+ 
+
   {
     id: "23",
     title: "Power Tools",
@@ -2012,208 +2423,10 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
       },
     ],
   },
-  {
-    id: "24",
-    title: "Railway Spares & Equipment",
-    images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FRailway.png?alt=media&token=a7ca7172-4d5a-426a-ba66-a193a89c55c8",
-    path: "/Railway_Spares_Equipment",
-    categories: [
-      "Brake Blocks",
-      "Rail Clips",
-      "Fish Plates",
-      "Railway Axles",
-      "Track Bolts",
-      "All",
-    ],
-    product: [
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRailway_Spares_Equipment%2FBrake%20Block.jpg?alt=media&token=68c4710b-2cc3-4536-904a-04927cdb128a", // Add the image URL here
-        popularity: "320",
-        price: "1500",
-        materialName: "Brake Block",
-        materialCode: "BRB001",
-        details: "material: cast iron, type: 6-hole, weight: 8kg",
-        category: "Brake Blocks",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRailway_Spares_Equipment%2FRail%20Clip.jpg?alt=media&token=1287adea-cd07-4f41-bbab-2dd776725f1d", // Add the image URL here
-        popularity: "280",
-        price: "800",
-        materialName: "Rail Clip",
-        materialCode: "RCL001",
-        details: "material: forged steel, size: standard, type: E-clips",
-        category: "Rail Clips",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRailway_Spares_Equipment%2FFish%20Plate.jpg?alt=media&token=ee8c5fbe-ae02-407d-b157-2f7b6c5129a7", // Add the image URL here
-        popularity: "300",
-        price: "1200",
-        materialName: "Fish Plate",
-        materialCode: "FPL001",
-        details: "material: carbon steel, length: 650mm, weight: 7.5kg",
-        category: "Fish Plates",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRailway_Spares_Equipment%2FRailway%20Axle.jpg?alt=media&token=4807e577-2aad-47b5-b259-6c46f8dd3e86", // Add the image URL here
-        popularity: "350",
-        price: "5000",
-        materialName: "Railway Axle",
-        materialCode: "RAX001",
-        details: "material: forged steel, length: 2200mm, weight: 900kg",
-        category: "Railway Axles",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRailway_Spares_Equipment%2FTrack%20Bolt.jpg?alt=media&token=91ea0090-1dc8-4443-88ea-d0b36c21eec4", // Add the image URL here
-        popularity: "270",
-        price: "400",
-        materialName: "Track Bolt",
-        materialCode: "TRB001",
-        details: "material: high tensile steel, size: M22, length: 100mm",
-        category: "Track Bolts",
-      },
-    ],
-  },
-  {
-    id: "25",
-    title: "Roofing Sheets",
-    images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FRoofing.png?alt=media&token=b8807994-81d7-4373-b8ea-46af66ca1d4a",
-    path: "/Roofing_Sheets",
-    categories: [
-      "Corrugated Sheets",
-      "Polycarbonate Sheets",
-      "Metal Roofing Sheets",
-      "Asphalt Sheets",
-      "Fiber Cement Sheets",
-      "All",
-    ],
-    product: [
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRoofing_Sheets%2FCorrugated%20Sheet.jpg?alt=media&token=e5be93ee-7cf2-4256-b7d3-d7fa79cf5c9e", // Add the image URL here
-        popularity: "310",
-        price: "900",
-        materialName: "Corrugated Sheet",
-        materialCode: "CRS001",
-        details: "material: galvanized steel, thickness: 0.5mm, length: 3m",
-        category: "Corrugated Sheets",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRoofing_Sheets%2FPolycarbonate%20Sheet.jpg?alt=media&token=ec7befad-f2a9-4e7c-8485-a9148f525abf",
-        popularity: "280",
-        price: "1200",
-        materialName: "Polycarbonate Sheet",
-        materialCode: "PCS001",
-        details: "material: polycarbonate, thickness: 6mm, length: 2.5m",
-        category: "Polycarbonate Sheets",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRoofing_Sheets%2FMetal%20Roofing%20Sheet.jpg?alt=media&token=70ab89da-509b-47de-a3bc-10e83feca154",
-        popularity: "350",
-        price: "1500",
-        materialName: "Metal Roofing Sheet",
-        materialCode: "MRS001",
-        details: "material: aluminum, thickness: 0.7mm, length: 4m",
-        category: "Metal Roofing Sheets",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRoofing_Sheets%2FAsphalt%20Sheet.jpg?alt=media&token=d120d07a-e8a0-4ffe-b8e3-921cf4945736",
-        popularity: "270",
-        price: "800",
-        materialName: "Asphalt Sheet",
-        materialCode: "ASP001",
-        details: "material: bitumen, thickness: 2mm, length: 2m",
-        category: "Asphalt Sheets",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FRoofing_Sheets%2FFiber%20Cement%20Sheet.jpg?alt=media&token=618f2b21-cd84-4f4e-90e7-1a791e57a8ee", // Add the image URL here
-        popularity: "290",
-        price: "1000",
-        materialName: "Fiber Cement Sheet",
-        materialCode: "FCS001",
-        details: "material: fiber cement, thickness: 6mm, length: 3.5m",
-        category: "Fiber Cement Sheets",
-      },
-    ],
-  },
 
-  {
-    id: "26",
-    title: "Safety & PPE Supplies",
-    images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FSafety.png?alt=media&token=ae79946e-ab21-4413-ba1a-63decc9cbde6",
-    path: "/Safety_PPE_Supplies",
-    categories: [
-      "Safety Helmets",
-      "Gloves",
-      "Safety Glasses",
-      "Hearing Protection",
-      "Respirators",
-      "All",
-    ],
-    product: [
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FSafety_PPE_Supplies%2FSafety%20Helmet.jpg?alt=media&token=a36ccee8-b25a-4598-8f0e-23bdd52cce0d", // Add the image URL here
-        popularity: "330",
-        price: "500",
-        materialName: "Safety Helmet",
-        materialCode: "SFT001",
-        details: "material: ABS, type: with chin strap, color: white",
-        category: "Safety Helmets",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FSafety_PPE_Supplies%2FProtective%20Gloves.jpg?alt=media&token=82e963fb-6485-4e6e-876d-7b2ec68e3edf", // Add the image URL here
-        popularity: "290",
-        price: "100",
-        materialName: "Protective Gloves",
-        materialCode: "GLV001",
-        details: "material: nitrile, size: large, type: chemical resistant",
-        category: "Gloves",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FSafety_PPE_Supplies%2FSafety%20Glasses.jpg?alt=media&token=bf8ae6d0-291c-44b2-b62a-841c4c405049", // Add the image URL here
-        popularity: "300",
-        price: "200",
-        materialName: "Safety Glasses",
-        materialCode: "SGS001",
-        details: "material: polycarbonate, type: anti-fog, UV protection",
-        category: "Safety Glasses",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FSafety_PPE_Supplies%2FEar%20Muffs.jpg?alt=media&token=e6370f16-b7d5-49cd-8f4e-8bb9640e2977", // Add the image URL here
-        popularity: "270",
-        price: "150",
-        materialName: "Ear Muffs",
-        materialCode: "EAR001",
-        details: "material: foam, noise reduction rating: 30dB, type: over-ear",
-        category: "Hearing Protection",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FSafety_PPE_Supplies%2FRespirator%20Mask.jpg?alt=media&token=81f6ef70-1325-431c-87ad-54de815cb3aa", // Add the image URL here
-        popularity: "310",
-        price: "400",
-        materialName: "Respirator Mask",
-        materialCode: "RSP001",
-        details: "material: silicone, type: half-mask, filter: P100",
-        category: "Respirators",
-      },
-    ],
-  },
+ 
+
+
 
   {
     id: "27",
@@ -2349,73 +2562,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
       },
     ],
   },
-  {
-    id: "29",
-    title: "Stainless Steel Products",
-    images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FStainless.png?alt=media&token=c8a5796f-98f9-4f94-a543-9f57b95c98fd",
-    path: "/Stainless_Steel_Products",
-    categories: [
-      "Stainless Steel Sheets",
-      "Stainless Steel Pipes",
-      "Stainless Steel Rods",
-      "Stainless Steel Plates",
-      "Stainless Steel Coils",
-      "All",
-    ],
-    product: [
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FStainless_Steel_Products%2FStainless%20Steel%20Sheet.jpg?alt=media&token=a6b7290a-6cb4-4b44-9de4-df4117b12c88", // Add the image URL here
-        popularity: "350",
-        price: "2000",
-        materialName: "Stainless Steel Sheet",
-        materialCode: "SSS001",
-        details: "grade: 304, thickness: 2mm, size: 4ft x 8ft",
-        category: "Stainless Steel Sheets",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FStainless_Steel_Products%2FStainless%20Steel%20Pipe.jpg?alt=media&token=3129dd2a-9e30-4037-8b81-b435751e9d95", // Add the image URL here
-        popularity: "300",
-        price: "1500",
-        materialName: "Stainless Steel Pipe",
-        materialCode: "SSP001",
-        details: "grade: 316, diameter: 50mm, length: 6m",
-        category: "Stainless Steel Pipes",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FStainless_Steel_Products%2FStainless%20Steel%20Rod.jpg?alt=media&token=26a254bd-5ec5-4035-8e9f-969570aae0fa", // Add the image URL here
-        popularity: "320",
-        price: "1800",
-        materialName: "Stainless Steel Rod",
-        materialCode: "SSR001",
-        details: "grade: 304, diameter: 25mm, length: 3m",
-        category: "Stainless Steel Rods",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FStainless_Steel_Products%2FStainless%20Steel%20Plate.jpg?alt=media&token=2b9dda97-c0cb-4e5e-b337-0f9c62eede32", // Add the image URL here
-        popularity: "290",
-        price: "2200",
-        materialName: "Stainless Steel Plate",
-        materialCode: "SSP002",
-        details: "grade: 316, thickness: 5mm, size: 5ft x 10ft",
-        category: "Stainless Steel Plates",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FStainless_Steel_Products%2FStainless%20Steel%20Coil.jpg?alt=media&token=dcf72af1-6b59-4d13-84df-e522c921c726", // Add the image URL here
-        popularity: "310",
-        price: "2500",
-        materialName: "Stainless Steel Coil",
-        materialCode: "SSC001",
-        details: "grade: 304, thickness: 1.2mm, width: 1000mm",
-        category: "Stainless Steel Coils",
-      },
-    ],
-  },
+
   {
     id: "30",
     title: "Testing & Measuring Instruments",
@@ -2543,140 +2690,8 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
       },
     ],
   },
-  {
-    id: "32",
-    title: "Welding & Accessories",
-    images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2Fwelder.png?alt=media&token=02c8f65a-8ec0-4c38-b998-73df823dd149",
-    path: "/Welding_Accessories",
-    categories: [
-      "Welding Machines",
-      "Electrodes",
-      "Welding Helmets",
-      "Welding Cables",
-      "Welding Rods",
-      "All",
-    ],
-    product: [
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWelding_Accessories%2FWelding%20Cable.jpg?alt=media&token=129b8102-6ac7-4872-8287-a60d03a9fc83", // Add the image URL here
-        popularity: "400",
-        price: "7500",
-        materialName: "Inverter Welding Machine",
-        materialCode: "WEL001",
-        details: "power: 200A, input voltage: 220V, type: arc welding",
-        category: "Welding Machines",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWelding_Accessories%2FWelding%20Electrode.jpg?alt=media&token=7b0f49ce-c4b8-42e0-ab4a-8633e809beaa", // Add the image URL here
-        popularity: "350",
-        price: "1200",
-        materialName: "Welding Electrode",
-        materialCode: "WEL002",
-        details: "diameter: 3.2mm, length: 350mm, material: mild steel",
-        category: "Electrodes",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWelding_Accessories%2FAuto-Darkening%20Welding%20Helmet.jpg?alt=media&token=943bd108-9b70-4f65-b33a-49d0d05b9507", // Add the image URL here
-        popularity: "320",
-        price: "1500",
-        materialName: "Auto-Darkening Welding Helmet",
-        materialCode: "WEL003",
-        details: "viewing area: 100x50mm, response time: 1/10000 sec, adjustable shade",
-        category: "Welding Helmets",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWelding_Accessories%2FWelding%20Cable.jpg?alt=media&token=129b8102-6ac7-4872-8287-a60d03a9fc83", // Add the image URL here
-        popularity: "310",
-        price: "500",
-        materialName: "Welding Cable",
-        materialCode: "WEL004",
-        details: "length: 10m, thickness: 25mm², material: copper",
-        category: "Welding Cables",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWelding_Accessories%2FWelding%20Rod.jpg?alt=media&token=693afbb3-9cd5-4b58-98ff-68f1df767afc", // Add the image URL here
-        popularity: "330",
-        price: "800",
-        materialName: "Welding Rod",
-        materialCode: "WEL005",
-        details: "diameter: 2.5mm, length: 300mm, material: stainless steel",
-        category: "Welding Rods",
-      },
-    ],
-  },
-  {
-    id: "33",
-    title: "Wire Meshes & Perforated Sheets",
-    images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FWire.png?alt=media&token=141d561e-1740-4246-9e88-ec1d117198ec",
-    path: "/Wire_Meshes_Perforated_Sheets",
-    categories: [
-      "Welded Wire Mesh",
-      "Chain Link Fencing",
-      "Expanded Metal Mesh",
-      "Perforated Sheets",
-      "Woven Wire Mesh",
-      "All",
-    ],
-    product: [
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWire%20Meshes%20%26%20Perforated%20Sheets%2FWoven%20Wire%20Mesh.jpg?alt=media&token=71fec911-aa03-4c53-8f6d-cd67a8cf5c8b", // Add the image URL here
-        popularity: "380",
-        price: "1500",
-        materialName: "Welded Wire Mesh",
-        materialCode: "WM001",
-        details: "wire diameter: 2.5mm, mesh size: 50x50mm, sheet size: 4ft x 8ft",
-        category: "Welded Wire Mesh",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWire%20Meshes%20%26%20Perforated%20Sheets%2FChain%20Link%20Fencing.jpg?alt=media&token=f89a86c8-4adf-4b6d-845a-d9c31abf4ea5", // Add the image URL here
-        popularity: "340",
-        price: "1200",
-        materialName: "Chain Link Fencing",
-        materialCode: "WM002",
-        details: "wire diameter: 3mm, height: 6ft, length: 25m",
-        category: "Chain Link Fencing",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWire%20Meshes%20%26%20Perforated%20Sheets%2FExpanded%20Metal%20Mesh.jpg?alt=media&token=78f7feb3-7895-4594-9d72-a7432ab4dca7", // Add the image URL here
-        popularity: "300",
-        price: "1800",
-        materialName: "Expanded Metal Mesh",
-        materialCode: "WM003",
-        details: "thickness: 1.5mm, mesh size: 25x50mm, sheet size: 4ft x 8ft",
-        category: "Expanded Metal Mesh",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWire%20Meshes%20%26%20Perforated%20Sheets%2FPerforated%20Sheet.jpg?alt=media&token=7f387184-ef2f-424e-8ee7-68c09a816af5", // Add the image URL here
-        popularity: "320",
-        price: "2500",
-        materialName: "Perforated Sheet",
-        materialCode: "WM004",
-        details: "thickness: 2mm, hole size: 5mm, sheet size: 4ft x 8ft",
-        category: "Perforated Sheets",
-      },
-      {
-        image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWire%20Meshes%20%26%20Perforated%20Sheets%2FWoven%20Wire%20Mesh.jpg?alt=media&token=71fec911-aa03-4c53-8f6d-cd67a8cf5c8b", // Add the image URL here
-        popularity: "310",
-        price: "1600",
-        materialName: "Woven Wire Mesh",
-        materialCode: "WM005",
-        details: "wire diameter: 1.2mm, mesh size: 10x10mm, material: stainless steel",
-        category: "Woven Wire Mesh",
-      },
-    ],
-  },
+
+ 
 ] as const;
 
 // --- helpers ---

@@ -37,9 +37,9 @@ export default function ServicesSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-10">
           <div data-aos="fade-right">
-            <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
+            {/* <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
               Our Solutions
-            </span>
+            </span> */}
             <h2
               className="px-4 animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]"
               data-aos="fade-up"
