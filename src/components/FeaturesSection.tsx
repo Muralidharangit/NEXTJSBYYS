@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-import { useState } from "react";
+// import { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid"; // ✅ Heroicons
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -101,7 +101,7 @@ export default function FeaturesSection() {
               data-aos-delay="400"
             >
               Transforming the supply chain with AI-driven technology and local
-              hardware stores for a lean and sustainable business model.
+              hardware stores for a lean and sustainable business model.</p>
 
             <p className="text-base text-gray-700 mt-2">
               Transforming the supply chain with AI technology, Strategic
@@ -267,6 +267,7 @@ export default function FeaturesSection() {
                       showSecond ? "rotate-180" : "rotate-0"
                     }`}
                   />
+                  </button>
 
 
                 <ReadMore
@@ -279,8 +280,8 @@ export default function FeaturesSection() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+       
+     
     </section>
   );
 }
