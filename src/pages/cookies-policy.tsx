@@ -316,23 +316,24 @@ Cookies Policy for Byyizzy E-Commerce Marketplace <br/>Effective Date: 01/11/202
 </div>
 
 {/* 6. Contact Us */}
-<div className="my-3">
+<div className="my-3 mb-20">
   <h3 className="text-lg font-semibold text-gray-900 mb-3">
     6. Contact Us
   </h3>
+  <p className="text-gray-700 font-semibold">If you have any questions or concerns about this Cookies Policy or our use of cookies, please contact us at:</p>
   <p className="text-gray-700 font-semibold">
     Byyizzy Business Solutions Private Limited
   </p>
-  <p className="text-gray-700">
+  <p className="text-gray-700 mb-0">
     45, VANIDASAN STREET, Saram(Py), Pondicherry, India, 605013
   </p>
-  <p className="text-gray-700">
+  <p className="text-gray-700 mb-0">
     Email:{" "}
-    <a href="mailto:support@byyizzy.com" className="text-blue-600 hover:underline">
+    <a href="mailto:support@byyizzy.com mb-0" className="text-blue-600 hover:underline">
       support@byyizzy.com
     </a>
     {", "}
-    <a href="mailto:care@byyizzy.com" className="text-blue-600 hover:underline">
+    <a href="mailto:care@byyizzy.com mb-0" className="text-blue-600 hover:underline">
       care@byyizzy.com
     </a>
   </p>
@@ -399,7 +400,7 @@ Cookies Policy for Byyizzy E-Commerce Marketplace <br/>Effective Date: 01/11/202
 
 
         {/* Contact Us */}
-        <CallToActionSection/>
+        {/* <CallToActionSection/> */}
 
         {/* <Footer /> */}
         <Script
