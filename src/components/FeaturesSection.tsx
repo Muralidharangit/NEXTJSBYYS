@@ -1,9 +1,60 @@
 "use client";
 import Image from "next/image";
+
 import { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid"; // ✅ Heroicons
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+import Link from "next/link";
+import { useState } from "react";
+
+/** Reusable inline ReadMore toggle */
+function ReadMore({
+  id,
+  lead,
+  rest,
+  className = "text-base font-normal text-gray-500 mt-2",
+}: {
+  id: string;
+  lead: string;
+  rest: string;
+  className?: string;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <p className={className}>
+      {lead}{" "}
+      {!open ? (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="font-semibold text-[#0569dc] underline underline-offset-4 hover:no-underline"
+          aria-expanded={open}
+          aria-controls={id}
+        >
+          Learn more
+        </button>
+      ) : (
+        <>
+          <span id={id} className="inline">
+            {rest}
+          </span>{" "}
+          <button
+            type="button"
+            onClick={() => setOpen(false)}
+            className="font-semibold text-[#0569dc] underline underline-offset-4 hover:no-underline"
+            aria-expanded={open}
+            aria-controls={id}
+          >
+            Show less
+          </button>
+        </>
+      )}
+    </p>
+  );
+}
+
 
 export default function FeaturesSection() {
   const [showMore, setShowMore] = useState(false);
@@ -43,6 +94,7 @@ export default function FeaturesSection() {
               Building India’s Most Trusted Industrial & Hardware Supply Network
             </h3>
 
+
             <p
               className="animate-letters text-base font-normal text-gray-500 mt-2 sm:mt-4 text-[#050d20]"
               data-aos="fade-up"
@@ -50,6 +102,12 @@ export default function FeaturesSection() {
             >
               Transforming the supply chain with AI-driven technology and local
               hardware stores for a lean and sustainable business model.
+
+            <p className="text-base text-gray-700 mt-2">
+              Transforming the supply chain with AI technology, Strategic
+              Sourcing and Byyizzy-powered hardware stores for a lean,
+              sustainable model
+
             </p>
 
             <hr className="border-gray-200 my-6" />
@@ -86,6 +144,7 @@ export default function FeaturesSection() {
                   Integrated Industrial & Hardware Chain Network
                 </h5>
 
+
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
                     showMore ? "max-h-[300px]" : "max-h-[30px]"
@@ -118,6 +177,17 @@ export default function FeaturesSection() {
             </div>
 
             {/* ---------- Feature 2 ---------- */}
+
+                <ReadMore
+                  id="f1-more"
+                  lead="TCO optimization through a seamlessly integrated B2B & B2C business ecosystem"
+                  rest=" Connecting India’s fragmented hardware stores under one trusted brand — Byyizzy — powered by cutting-edge technology, procurement expertise, and a hyper-local fulfillment model."
+                />
+              </div>
+            </div>
+
+            {/* Feature 2 (optional: also use ReadMore the same way) */}
+
             <div
               className="flex items-start gap-5 mt-6"
               data-aos="fade-up"
@@ -146,9 +216,30 @@ export default function FeaturesSection() {
 
               {/* Text */}
               <div>
+                {/* <h5 className="text-xl text-[#050d20] font-semibold">
+                  Optimize Procurement & Supply Chain
+                </h5> */}
+
+                {/* Keep full text, or convert to ReadMore like Feature 1 */}
+                {/* Example:
+                <ReadMore
+                  id="f2-more"
+                  lead="Digitize the Source-to-Pay process with full transparency, improved cost control, and technology-driven tail-spend optimization"
+                  rest=" Empowering businesses with smart, sustainable procurement and SCM solutions."
+                />
+                */}
+                {/* <p className="text-base font-normal text-gray-500 mt-2">
+                  Digitize the Source-to-Pay process with full transparency,
+                  improved cost control, and technology-driven tail-spend
+                  optimization. Empowering businesses with smart, sustainable
+                  procurement and SCM solutions.
+                </p> */}
+
+                <div>
                 <h5 className="text-xl text-[#050d20] font-semibold">
                   Optimize Procurement & Supply Chain
                 </h5>
+
 
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
@@ -176,7 +267,15 @@ export default function FeaturesSection() {
                       showSecond ? "rotate-180" : "rotate-0"
                     }`}
                   />
-                </button>
+
+
+                <ReadMore
+                  id="f1-more"
+                  lead="Digitize the Source-to-Pay process with full transparency, improved cost control, and technology-driven tail-spend optimization."
+                  rest="Empowering businesses with smart, sustainable procurement and SCM solutions."
+                />
+              </div>
+
               </div>
             </div>
           </div>

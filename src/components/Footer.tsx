@@ -51,6 +51,7 @@ const Footer = () => {
           </p>
           <p>Phone: +91 96989 03089</p>
         </div>
+       
       </div>
 
       {/* Company */}
@@ -188,6 +189,120 @@ const Footer = () => {
           </Link>
         </div>
       </div>
+
+ {/* Support */}
+<div className="lg:col-span-2">
+  <h6 className="text-base font-semibold mb-4 text-white">Support</h6>
+
+  <ul className="space-y-2 text-sm text-gray-300">
+    <li>
+      <Link href="/contact" className="hover:text-white transition-colors duration-200">
+        Contact Us
+      </Link>
+    </li>
+    <li>
+      <Link href="/help-center" className="hover:text-white transition-colors duration-200">
+        Help Center
+      </Link>
+    </li>
+    <li>
+      <Link href="/terms-and-conditions" className="hover:text-white transition-colors duration-200">
+        Terms &amp; Conditions
+      </Link>
+    </li>
+    <li>
+      <Link href="/privacy-policy" className="hover:text-white transition-colors duration-200">
+        Privacy Policy
+      </Link>
+    </li>
+  </ul>
+
+  {/* Social */}
+  <div className="mt-5">
+  {/* <h6 className="text-base font-semibold mb-4 text-white">Follow us</h6> */}
+  <p className="text-white font-semibold mb-0">Follow us</p>
+    <div className="flex items-center gap-3">
+      <Link
+        href="https://instagram.com/byyizzy" // update your handle
+        aria-label="Instagram"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-2 rounded-xl border border-gray-700 hover:border-white hover:text-white text-gray-300 transition"
+      >
+        <FaInstagram className="h-5 w-5" />
+      </Link>
+
+      <Link
+        href="https://facebook.com/byyizzy"
+        aria-label="Facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-2 rounded-xl border border-gray-700 hover:border-white hover:text-white text-gray-300 transition"
+      >
+        <FaFacebookF className="h-5 w-5" />
+      </Link>
+
+      <Link
+        href="https://x.com/byyizzy"
+        aria-label="X (Twitter)"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-2 rounded-xl border border-gray-700 hover:border-white hover:text-white text-gray-300 transition"
+      >
+        <FaTwitter className="h-5 w-5" />
+      </Link>
+
+      <Link
+        href="https://www.linkedin.com/company/byyizzy"
+        aria-label="LinkedIn"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-2 rounded-xl border border-gray-700 hover:border-white hover:text-white text-gray-300 transition"
+      >
+        <FaLinkedinIn className="h-5 w-5" />
+      </Link>
+
+    
+    </div>
+  </div>
+</div>
+    </div>
+
+ {/* Bottom Bar */}
+<div className="border-t border-gray-800 py-4">
+  <div className="container mx-auto px-3 flex flex-col sm:flex-row items-center justify-between gap-3">
+    {/* Left */}
+    <p className="text-center sm:text-left text-xs sm:text-sm text-[#6b7280]">
+      © 2025{" "}
+      <Link href="/" className="hover:text-white transition-colors duration-200">
+        Byyizzy.com
+      </Link>{" "}
+      . All rights reserved.
+    </p>
+
+    {/* Right */}
+    <nav aria-label="Legal" className="text-xs sm:text-sm text-[#6b7280]">
+      <ul className="flex items-center gap-4">
+        <li>
+          <Link href="/terms-and-conditions" className="hover:text-white transition-colors duration-200">
+            Terms
+          </Link>
+        </li>
+        <li>
+          <Link href="/privacy-policy" className="hover:text-white transition-colors duration-200">
+            Privacy
+          </Link>
+        </li>
+        <li>
+          <Link href="/cookies-policy" className="hover:text-white transition-colors duration-200">
+            Cookies
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
   </div>
 </footer>
       </div>

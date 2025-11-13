@@ -51,79 +51,67 @@ export default function paas() {
           className="self-stretch px-5 lg:px-20 pt-20 pb-20 flex flex-col justify-center items-center gap-2 overflow-hidden bg-[#eff3fa]"
           aria-labelledby="hero-title"
         >
-          <p className=" bg-[#067afe] px-4 py-1.5 rounded-full mb-4 lg:mb-0 inline-flex justify-center items-center gap-2">
-            <span className="justify-center text-secondary-navy text-sm font-medium leading-normal">
-              <div className="text-center space-y-2">
-                <span
-                  data-ns-animate=""
-                  data-delay="0.1"
-                  className="hero-badge text-tagline-1 inline-block text-secondary dark:text-accent"
-                  style={{
-                    opacity: 1,
-                    filter: "blur(0px)",
-                    translate: "none",
-                    rotate: "none",
-                    scale: "none",
-                    transform: "translate(0px, 0px)",
-                  }}
-                >
-                  <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
-                    {/* Product Categories */}
-                    <Link
-                      href="/"
-                      className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-                    >
-                      Home
-                    </Link>
-                    <span className="mx-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                        className="w-4 h-4 inline-block align-middle"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                        />
-                      </svg>
-                    </span>
-                    <a
-                      href="#"
-                      className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
-                    >
-                      SERVICE
-                    </a>
-                  </span>
-                </span>
-              </div>
-            </span>
-          </p>
+       
           <div className="self-stretch flex flex-col justify-center items-center gap-2 mb-4 lg:mb-0">
             <h2
               data-aos="fade"
               id="hero-title"
               className=" text-center justify-start text-secondary-navy text-4xl lg:text-[50px] font-medium leading-tight lg:leading-[50px] max-w-7xl mx-auto aos-init aos-animate w-full"
             >
-              Procurement Service
+              Procurement as a Service (PaaS) 
             </h2>
             <p
               data-aos="fade"
               data-aos-delay={300}
               className="text-center justify-start text-base-grey text-lg font-normal leading-tight lg:leading-relaxed max-w-[750px] aos-init"
             >
-              Learn what drives our team and how we turn visions into lasting
-              structures.
+Automate your Source-to-Pay process— for Just 1.5% of Your Spend 
+
             </p>
           </div>
         </section>
 
+
+
+
+
+
+
         {/* CHALLENGES SECTION */}
         <section className="py-20" id="challenges">
           <div className="max-w-7xl mx-auto px-6">
+
+
+
+ <ul className="space-y-4 text-gray-700 text-lg">
+                  {[
+                    "Global Sourcing Expertise — Access verified suppliers worldwide",
+                    "Local Fulfillment Network — Fast, reliable, and cost-effective delivery",
+                    "Zero Tech Investment — End-to-end procurement support with transparent pricing",
+                    "Missed savings and inefficiencies",
+                    "Zero Tech Investment — End-to-end procurement support with transparent pricing"
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-center space-x-3">
+                      <div className="w-6 h-6 flex items-center justify-center rounded-full bg-[#067afe] flex-shrink-0">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-4 w-4 text-white"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={3}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
             {/* Section Heading */}
             <h2 className="animate-letters text-3xl sm:text-4xl font-bold text-center mb-16 text-gray-900">
               Procurement Challenges We Solve
