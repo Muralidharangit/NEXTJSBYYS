@@ -100,15 +100,9 @@ export default function FeaturesSection() {
               data-aos="fade-up"
               data-aos-delay="400"
             >
-              Transforming the supply chain with AI-driven technology and local
-              hardware stores for a lean and sustainable business model.</p>
+             Transforming the supply chain with AI technology, Strategic Sourcing and Byyizzy-powered hardware stores for a lean, sustainable model </p>
 
-            <p className="text-base text-gray-700 mt-2">
-              Transforming the supply chain with AI technology, Strategic
-              Sourcing and Byyizzy-powered hardware stores for a lean,
-              sustainable model
-
-            </p>
+ 
 
             <hr className="border-gray-200 my-6" />
 
@@ -164,7 +158,7 @@ export default function FeaturesSection() {
                 {/* Learn More Button */}
                 <button
                   onClick={() => setShowMore(!showMore)}
-                  className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-full text-[#067afe] font-medium border border-[#067afe] hover:bg-[#067afe] hover:text-white transition-all duration-300"
+                  className="mt-3 inline-flex items-center gap-2 px-4 py-1 rounded-full text-[#067afe] font-medium border border-[#067afe] hover:bg-[#067afe] hover:text-white transition-all duration-300"
                 >
                   {showMore ? "Show Less" : "Learn More"}
                   <ChevronDownIcon
@@ -174,20 +168,19 @@ export default function FeaturesSection() {
                   />
                 </button>
               </div>
+
+              
             </div>
 
             {/* ---------- Feature 2 ---------- */}
 
-                <ReadMore
+                {/* <ReadMore
                   id="f1-more"
                   lead="TCO optimization through a seamlessly integrated B2B & B2C business ecosystem"
                   rest=" Connecting India’s fragmented hardware stores under one trusted brand — Byyizzy — powered by cutting-edge technology, procurement expertise, and a hyper-local fulfillment model."
-                />
-              </div>
-            </div>
+                /> */}
 
-            {/* Feature 2 (optional: also use ReadMore the same way) */}
-
+                
             <div
               className="flex items-start gap-5 mt-6"
               data-aos="fade-up"
@@ -259,7 +252,7 @@ export default function FeaturesSection() {
                 {/* Learn More Button */}
                 <button
                   onClick={() => setShowSecond(!showSecond)}
-                  className="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-full text-[#067afe] font-medium border border-[#067afe] hover:bg-[#067afe] hover:text-white transition-all duration-300"
+                  className="mt-3 inline-flex items-center gap-2 px-4 py-1 rounded-full text-[#067afe] font-medium border border-[#067afe] hover:bg-[#067afe] hover:text-white transition-all duration-300"
                 >
                   {showSecond ? "Show Less" : "Learn More"}
                   <ChevronDownIcon
@@ -270,15 +263,19 @@ export default function FeaturesSection() {
                   </button>
 
 
-                <ReadMore
+                {/* <ReadMore
                   id="f1-more"
                   lead="Digitize the Source-to-Pay process with full transparency, improved cost control, and technology-driven tail-spend optimization."
                   rest="Empowering businesses with smart, sustainable procurement and SCM solutions."
-                />
+                /> */}
               </div>
 
               </div>
             </div>
+              </div>
+            </div>
+
+            
           </div>
        
      
