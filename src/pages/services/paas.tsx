@@ -11,6 +11,7 @@ import "aos/dist/aos.css";
 import Footer from "@/components/Footer";
 import Script from "next/script";
 import CallToActionSection from "@/components/CallToActionSection";
+import Image from "next/image";
 
 export default function paas() {
    const [loading, setLoading] = useState(true);
@@ -46,6 +47,13 @@ export default function paas() {
         {/* <Header /> */}
         <LetterAnimation />
 
+
+
+
+
+
+
+
         {/* HERO + BREADCRUMB */}
         <section
           className="self-stretch px-5 lg:px-20 pt-20 pb-20 flex flex-col justify-center items-center gap-2 overflow-hidden bg-[#eff3fa]"
@@ -72,149 +80,47 @@ Automate your Source-to-Pay process— for Just 1.5% of Your Spend
         </section>
 
 
-
-
-
-
-
-        {/* CHALLENGES SECTION */}
-        <section className="py-20" id="challenges">
-          <div className="max-w-7xl mx-auto px-6">
-
-
-
- <ul className="space-y-4 text-gray-700 text-lg">
-                  {[
-                    "Global Sourcing Expertise — Access verified suppliers worldwide",
-                    "Local Fulfillment Network — Fast, reliable, and cost-effective delivery",
-                    "Zero Tech Investment — End-to-end procurement support with transparent pricing",
-                    "Missed savings and inefficiencies",
-                    "Zero Tech Investment — End-to-end procurement support with transparent pricing"
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center space-x-3">
-                      <div className="w-6 h-6 flex items-center justify-center rounded-full bg-[#067afe] flex-shrink-0">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-4 w-4 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={3}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      </div>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-            {/* Section Heading */}
-            <h2 className="animate-letters text-3xl sm:text-4xl font-bold text-center mb-16 text-gray-900">
-              Procurement Challenges We Solve
-            </h2>
-
-            {/* SMEs */}
-            <div className="grid md:grid-cols-2 items-center gap-12 mb-20 mt-10">
-              <div
-                data-aos="fade-right"
-                className="rounded-xl overflow-hidden transition"
-              >
-                <img
-                  src="https://images.cnbctv18.com/uploads/2024/12/sme-2024-12-7f732f0b3d302c8ae9079a606fc7a7d6.jpg"
-                  alt="SME Challenges"
-                  className="w-full h-80 object-cover"
-                />
+{/* HERO */}
+            <section className="py-20 pt-0 bg-white">
+              <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+                {/* Left: Text */}
+                <div className="md:order-1">
+                  <ul className="my-0 pb-3 list-disc pl-5 space-y-3">
+                    <li>Global Sourcing Expertise — Access verified suppliers worldwide</li>
+                    <li>Local Fulfillment Network — Fast, reliable, and cost-effective delivery</li>
+                    <li>AI-Powered Digital Ecosystem — Automate RFQs, quotes & analytics</li>
+                    <li>Full Visibility & Control — Track spend, performance, and savings in real time</li>
+                    <li>Zero Tech Investment — End-to-end procurement support with transparent pricing</li>
+                  </ul>
+                </div>
+            
+                {/* Right: Image */}
+                <div className="md:order-2">
+                  <Image
+                    src="/images/1.svg"
+                    alt="Industrial Products Aggregation"
+                    width={1000}
+                    height={700}
+                    quality={60}
+                    priority
+                    fetchPriority="high"
+                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 600px"
+                    className="w-full rounded-lg object-cover"
+                  />
+                </div>
               </div>
-              <div data-aos="fade-left" className="space-y-6">
-                <h3 className="text-2xl font-bold">For SMEs</h3>
-                <ul className="space-y-4 text-gray-700 text-lg">
-                  {[
-                    "High ordering costs",
-                    "Limited procurement expertise",
-                    "Lack of real-time visibility",
-                    "Missed savings and inefficiencies",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center space-x-3">
-                      <div className="w-6 h-6 flex items-center justify-center rounded-full bg-[#067afe] flex-shrink-0">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-4 w-4 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={3}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      </div>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            </section>
 
-            {/* Large Corporations */}
-            <div className="grid md:grid-cols-2 items-center gap-12">
-              <div
-                className="md:order-2 rounded-xl overflow-hidden transition"
-                data-aos="fade-left"
-              >
-                <img
-                  src="https://img.freepik.com/premium-photo/adult-learners-education-concept_269655-92692.jpg?semt=ais_hybrid&w=740&q=80"
-                  alt="Large Corporation Challenges"
-                  className="w-full h-80 object-cover"
-                />
-              </div>
-              <div data-aos="fade-right" className="md:order-1 space-y-6">
-                <h3 className="text-2xl font-bold">For Large Corporations</h3>
-                <ul className="space-y-4 text-gray-700 text-lg">
-                  {[
-                    "Slow-moving, First Time or bottleneck category sourcing",
-                    "Market linked materials to establish long-term contracts",
-                    "High volume of low-value transactions",
-                    "Stockouts and supply disruptions",
-                    "Procurement delays and inefficiencies",
-                    "Utilizing expert Buyers in transactional activities",
-                    "Delivery expediting & follow-ups",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <div className="flex items-center justify-center w-6 h-6 rounded-full bg-[#067afe] mt-1 flex-shrink-0">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-4 w-4 text-white"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={3}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      </div>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+
+
+
+
+
+      
 
         {/* SOLUTION SECTION */}
-        <section className="bg-[#eff3fa]">
-          <div className="py-[50px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
+        <section className="bg-[#eff3fa] ">
+          <div className="py-[50px] md:py-[60px] lg:py-[80px] xl:py-[100px] pt-0">
             <div className="container mx-auto">
               {/* Our Solution */}
               <div className="max-w-5xl mx-auto text-center mb-16 p-10">
@@ -501,7 +407,43 @@ Automate your Source-to-Pay process— for Just 1.5% of Your Spend
         
 
         {/* Contact Us */}
-        <CallToActionSection/>
+        {/* <CallToActionSection/> */}
+
+                   <section
+      className="relative bg-[#067afe] py-20 overflow-hidden"
+      data-aos="fade-up"
+    >
+      <div
+        className="container mx-auto px-4"
+        data-aos="fade-right"
+        data-aos-delay="200"
+      >
+        <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
+          <div data-aos="fade-right">
+            <h4 className="text-3xl md:text-4xl font-bold text-white">
+             Start Smarter Procurement Today! 
+            </h4>
+              <p className="mt-3 text-lg text-white/80 ">
+              Digitize your procurement, cut costs, and gain full visibility — all while boosting efficiency and compliance.
+            </p>
+            <p className="mt-3 text-lg text-white/80 max-w-2xl">
+              Get started with Byyizzy.com — Transforming procurement, empowering growth.
+            </p>
+            
+          </div>
+
+          <div data-aos="fade-left" data-aos-delay="300">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-white text-[#067afe] px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-200 transition"
+            >
+              <span>Let’s talk now</span>
+              <span className="flex items-center gap-1">➝</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
 
         {/* <Footer /> */}
         <Script

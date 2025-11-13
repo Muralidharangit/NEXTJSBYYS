@@ -75,38 +75,37 @@ export default function IndustrialProductsAggregation() {
 
 
 
-    {/* HERO */}
-        <section className="py-20 bg-white">
-          {/* Section Heading */}
-       
+      {/* HERO */}
+      <section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+    {/* Left: Text */}
+    <div className="md:order-1">
+      <ul className="my-0 pb-3 list-disc pl-5 space-y-3">
+        <li>⚡ Fastest Delivery – within just 24 hours! (Via Byyizzy-powered hardware stores)</li>
+        <li>💎 Transparent Pricing</li>
+        <li>🤝 Local Business Engagement</li>
+        <li>👁️ 100% Process Visibility</li>
+        <li>🌐 Integrated B2B & B2C Ecosystem</li>
+        <li>🔍 End-to-End Tracking & Catalog-Based Buying</li>
+      </ul>
+    </div>
 
-          <div className="max-w-7xl mx-auto">
-            {/* Left: Text Content */}
-          <ul className="my-0 pb-3">
-   <li className="mb-3">•	⚡ Fastest Delivery – within just 24 hours! (Via Byyizzy-powered hardware stores)</li>
-  <li className="mb-3">
-    •	💎 Transparent Pricing
-
-
-  </li>
-  <li className="mb-3">
-    •	🤝 Local Business Engagement
-  </li>
- <li className="mb-3">
-    
-•	👁️ 100% Process Visibility
-  </li>
-   <li className="mb-3">
-    
-•	🌐 Integrated B2B & B2C Ecosystem
-
-  </li>
-
- <li className="mb-3">•	🔍 End-to-End Tracking & Catalog-Based Buying</li>
-</ul>
-
-          </div>
-        </section>
+    {/* Right: Image */}
+    <div className="md:order-2">
+      <Image
+        src="/images/s4.webp"
+        alt="Industrial Products Aggregation"
+        width={1000}
+        height={700}
+        quality={60}
+        priority
+        fetchPriority="high"
+        sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 600px"
+        className="w-full rounded-lg object-cover"
+      />
+    </div>
+  </div>
+      </section>
 
 
         {/* HERO */}

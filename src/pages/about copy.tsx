@@ -115,9 +115,12 @@ export default function Home() {
 
 
             <h3 className="mt-4 text-3xl md:text-4xl font-semibold text-[#050d20] leading-tight">
-             What Makes Us <span className="text-[#067afe]">Unique?</span>
+              Why Choose <span className="text-[#067afe]"> Byyizzy?</span>
             </h3>
 
+            <p className="mt-4 text-gray-700 leading-relaxed">
+              Discover the benefits that make Byyizzy stand out from the rest.
+            </p>
 
               
 
@@ -132,56 +135,32 @@ export default function Home() {
           >
             {[
               {
-                title: "Expertise in Procurement",
-                desc: "Built by procurement leaders with 15–20 years of strong MRO experience, addressing real market gaps.",
+                title: "Overview",
+                desc: "We are a B2B & B2C Integrated Marketplace provider for Standard and Customized MRO Spares, Consumables, and Hardware Products.",
                 icon: "🔎",
                 // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
               },
               {
-                title: "AI-Driven S2P Platform",
-                desc: "Automates RFQs and repetitive procurement activities for greater efficiency.",
+                title: "Established",
+                desc: "Founded in 2018, we aim to revolutionize the fragmented Industrial and Hardware supply chain through Hyper-Local Stores and an E-commerce Platform powered by Proven Algorithms, AI, and Machine Learning.",
                 icon: "📜",
                 // gradient: "from-[#00c6ff]/10 to-[#067afe]/20",
               },
               {
-                title: "Efficient Sourcing",
-                desc: "Sourcing from OEMs, OPMs, and manufacturers, complemented by drop-shipping via local hardware stores for a trustworthy integrated ecosystem.",
+                title: "Integration",
+                desc: "We integrate hardware stores, which face significant market competition, under our brand Byyizzy, leveraging our expertise and technology.",
                 icon: "🔁",
                 // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
               },
               {
-                title: "Fastest Delivery",
-                desc: "Commitment to delivering products within 24 hours through hyperlocal stores.",
+                title: "Chain of Hardware Stores",
+                desc: "Own and franchise hardware chain model—integrating shops in the online marketplace for a seamless shopping experience (both online & in-store).",
                 icon: "🔗",
                 // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
               },
               {
-                title: "Lowest Ordering Costs",
-                desc: "Operating at a 1.5% margin for risk-free transactions, with a maximum margin capped at 7%.",
-                icon: "📈",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-              {
-                title: "Price Transparency",
-                desc: "Clear and transparent pricing, enabling informed purchasing decisions without hidden costs.",
-                icon: "🤝",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-              {
-                title: "Local Business Engagement",
-                desc: "Actively engaging with partner stores to foster community collaboration and support local economies.",
-                icon: "🏬",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-               {
-                title: "Integrated Digital Ecosystem",
-                desc: "A seamless AI-Based platform combining B2B and B2C functionalities for efficient interactions and transactions.",
-                icon: "⛓️",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-               {
-                title: "Supplier Diversity",
-                desc: "Promoting diversity in our supply chain by partnering with minority-owned and women-owned businesses, supporting diverse entrepreneurs.",
+                title: "E2E Ordering Service",
+                desc: "We provide best-in-class end-to-end ordering services along with free e-sourcing tools.",
                 icon: "📦",
                 // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
               },
@@ -379,10 +358,11 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
             <div data-aos="fade-right">
               <h2 className="text-4xl md:text-5xl font-bold text-white m-0">
-                Join Us on Our Journey
+                Build Tomorrow, Today
               </h2>
               <p className="mt-2 text-lg md:text-xl text-white/80 max-w-2xl">
-            Got questions? Need more information? Have feedback for us? Just drop us a line. We would love to hear from you
+                We provide advanced manufacturing solutions with precision,
+                quality, and innovation.
               </p>
             </div>
             <div data-aos="fade-left" data-aos-delay="300">
@@ -390,7 +370,7 @@ export default function Home() {
                 href="/contact"
                 className="inline-flex items-center gap-3 bg-white text-black px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-200 transition"
               >
-                <span>Join Us on Our Journey</span>
+                <span>Let’s talk now</span>
                 <span className="flex items-center gap-1">➝ ➝</span>
               </Link>
             </div>

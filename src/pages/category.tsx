@@ -108,10 +108,10 @@ export default function Home() {
       {/* Categories Section */}
       <section className=" mx-auto py-16 px-6">
         {/* Section Header */}
-        <div className="mx-auto mb-12 max-w-2xl text-center" data-aos="fade-up">
-          {/* <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
+        {/* <div className="mx-auto mb-12 max-w-2xl text-center" data-aos="fade-up">
+          <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
             Product Categories
-          </span> */}
+          </span>
           <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
             Product Categories
           </span>
@@ -119,7 +119,7 @@ export default function Home() {
           <h2 className="animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]">
             Our Innovative Product
           </h2>
-        </div>
+        </div> */}
 
         {/* Category Grid */}
         <div className="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
