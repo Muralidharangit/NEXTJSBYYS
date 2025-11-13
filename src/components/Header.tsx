@@ -8,18 +8,70 @@ import {
   ChevronDownIcon,
   Bars3Icon,
   XMarkIcon,
+  EnvelopeIcon,
+  PhoneIcon,
+  UserCircleIcon,
+  Squares2X2Icon,
+  ArrowRightIcon,
 } from "@heroicons/react/24/outline";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { SHOP_BY_CATEGORIES, slugify } from "data/shopBycatlog";
-import { Search } from "lucide-react";
+
+// 🔹 Category Dropdown (single column list with icons/images)
+const CategoryDropdownContent = ({ closeMenu }) => (
+  <div
+    role="menu"
+    className="absolute left-0 right-0 top-full mt-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl z-50 w-full max-w-2xl p-3 animate-fadeIn"
+  >
+    <ul className="flex flex-col divide-y divide-gray-100 dark:divide-gray-800">
+      {SHOP_BY_CATEGORIES.slice(0, 10).map((category) => (
+        <li key={category.id}>
+          <Link
+            href={`/products/${slugify(category.title)}`}
+            onClick={closeMenu}
+            // Standardized text-sm for a consistent look
+            className="flex items-center justify-between px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-[#067afe]/10 rounded-lg transition group"
+          >
+            <div className="flex items-center gap-3">
+              {/* Category Image/Icon */}
+              <div className="min-w-8 h-8 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full">
+                {/* Ensure your SHOP_BY_CATEGORIES data has valid `images` keys */}
+                <Image
+                  src={category.images}
+                  alt={category.title}
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+              </div>
+              <span>{category.title}</span>
+            </div>
+            {/* Using a clear right-arrow icon for navigation */}
+            <ArrowRightIcon className="w-4 h-4 text-gray-400 group-hover:text-[#067afe]" />
+          </Link>
+        </li>
+      ))}
+    </ul>
+    <Link
+      href="/categories"
+      onClick={closeMenu}
+      // Standardized text-sm
+      className="block text-center text-sm font-semibold text-[#067afe] mt-3 pt-3 border-t border-gray-100 dark:border-gray-800 hover:text-[#0569dc] transition"
+    >
+      View All Categories
+    </Link>
+  </div>
+);
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [categoryOpen, setCategoryOpen] = useState(false);
   const [mobileCategoryOpen, setMobileCategoryOpen] = useState(false);
-  const categoryRef = useRef<HTMLDivElement>(null);
+  const categoryButtonRef = useRef(null);
+  const searchBarContainerRef = useRef(null);
   const router = useRouter();
 
-  // Close all menus on any route change (Pages Router)
+  // Close all menus on route change
   useEffect(() => {
     const close = () => {
       setCategoryOpen(false);
@@ -36,10 +88,13 @@ export default function Header() {
     };
   }, [router.events]);
 
-  // Close desktop category when clicking outside
+  // Close dropdown when clicking outside
   useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (categoryRef.current && !categoryRef.current.contains(e.target as Node)) {
+    function handleClickOutside(e) {
+      if (
+        searchBarContainerRef.current &&
+        !searchBarContainerRef.current.contains(e.target)
+      ) {
         setCategoryOpen(false);
       }
     }
@@ -52,263 +107,290 @@ export default function Header() {
     setMobileCategoryOpen(false);
     setMobileMenuOpen(false);
   };
-const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-const scheduleClose = () => { closeTimer.current = setTimeout(() => setCategoryOpen(false), 150); };
-const cancelClose = () => { if (closeTimer.current) { clearTimeout(closeTimer.current); closeTimer.current = null; } };
+
+  // 💡 NavLink component now uses a uniform text size (text-base or text-sm as appropriate)
+  // text-base for main nav links for good prominence
+  const NavLink = ({ href, children }) => (
+    <Link
+      href={href}
+      onClick={closeAllMenus}
+      // Increased size to text-base for better visibility and consistency with 'semibold' style
+      className="text-base font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition whitespace-nowrap"
+    >
+      {children}
+    </Link>
+  );
+
+  // 💡 Top Link component for the top header (using text-sm for smaller text)
+  const TopLink = ({ href, icon: Icon, children }) => (
+    <Link
+      href={href}
+      className="flex items-center gap-1 text-sm font-medium text-white hover:text-[#4ba3ff] transition"
+    >
+      <Icon className="w-4 h-4" />
+      {children}
+    </Link>
+  );
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-sm transition-all">
-      <nav className="container mx-auto flex items-center justify-between py-3 px-3 lg:px-8">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2" onClick={closeAllMenus}>
-          <Image
-            src="/images/blue.png"
-            alt="Logo"
-            width={160}
-            height={40}
-            className="object-contain"
-            priority
-          />
-        </Link>
+    <header className="w-full sticky top-0 z-50">
+      {/* 🔹 Top Header (Links Only, Standardized Font Size) */}
+      {/* Uniform text-sm for contact info */}
+       <div className="w-full h-[44px] bg-[#067afe] text-white text-sm px-3 lg:px-8">
+      <div className="container flex items-center justify-between h-full">
 
- {/* search (desktop only) */}
-          {/* <div className="hidden lg:col-span-5 lg:block">
-            <form className="relative mx-auto w-full max-w-md">
-              <input
-                type="text"
-                placeholder="Search Products..."
-                className="h-[45px] w-full rounded border border-[#067afd] px-3 pr-24 focus:outline-none"
-              />
-              <Search className="h-4 w-4" /> 
-              <button
-                type="submit"
-                className="absolute right-1 top-1 -translate-y-1/2 flex items-center gap-2 rounded bg-[#1c90f2] px-4 py-2 text-white hover:bg-blue-700"
-              >
-                <Search className="h-4 w-4" /> 
-              </button>
-            </form>
-          </div> */}
-       
-
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex lg:gap-x-8 items-center">
-          <Link
-            href="/"
-            onClick={closeAllMenus}
-            className="font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
+        {/* Contact Info */}
+        <div className="hidden md:flex items-center gap-4 text-gray-200 font-bold">
+          {/* Mail */}
+          <a
+            href="mailto:support@byyizzy.com"
+            className="flex items-center gap-1 text-sm hover:text-[#4ba3ff] transition"
           >
-            Home
+            <Image
+              src="/images/icons/mail.png"
+              alt="Mail Icon"
+              width={16}
+              height={16}
+              className="object-contain"
+            />
+            support@byyizzy.com
+          </a>
+
+          {/* Phone */}
+          <a
+            href="tel:+919876543210"
+            className="flex items-center gap-1 text-sm hover:text-[#4ba3ff] transition"
+          >
+            <Image
+              src="/images/icons/phone.png"
+              alt="Phone Icon"
+              width={16}
+              height={16}
+              className="object-contain"
+            />
+            +91 98765 43210
+          </a>
+        </div>
+
+        {/* Right Side Links */}
+        <div className="flex items-center gap-4 mx-auto md:mx-0 font-bold">
+          {/* Sign Up */}
+          <Link
+            href="/signup"
+            className="flex items-center gap-1 text-sm hover:text-[#4ba3ff] transition"
+          >
+            <Image
+              src="/images/icons/sign.png"
+              alt="Sign Icon"
+              width={18}
+              height={18}
+              className="object-contain"
+            />
+            Sign Up
           </Link>
 
-             {/* Category Dropdown (Desktop) */}
-         <div className="relative" ref={categoryRef}>
-  <button
-    onClick={() => setCategoryOpen((prev) => !prev)}
-    className="flex items-center gap-1 font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
-    aria-expanded={categoryOpen}
-    aria-haspopup="menu"
-  >
-   Product Categories                  
-    <ChevronDownIcon className={`w-4 h-4 transition-transform ${categoryOpen ? "rotate-180" : ""}`} />
-  </button>
-
-  {categoryOpen && (
-    <div
-      role="menu"
-      // add a tiny hover bridge so moving down doesn't flicker
-      className="absolute left-1/2 -translate-x-1/2 top-full
-                 mt-3 before:content-[''] before:absolute before:top-[-12px] before:left-0 before:right-0 before:h-3
-                 flex flex-col items-center bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700
-                 rounded-2xl shadow-2xl z-50 w-[800px] p-6 animate-fadeIn"
-    >
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
-        {SHOP_BY_CATEGORIES.slice(0, 12).map((category) => (
+          {/* Become a Partner */}
           <Link
-            key={category.id}
-            href="/category"
-            onClick={() => setCategoryOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-xl hover:bg-[#067afe]/10 transition"
+            href="/partner"
+            className="flex items-center gap-1 text-sm hover:text-[#4ba3ff] transition"
           >
-            <div className="min-w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full">
-              <Image src={category.images} alt={category.title} width={40} height={40} className="object-contain" />
-            </div>
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-200">{category.title}</span>
+            <Image
+              src="/images/icons/team.png"
+              alt="Team Icon"
+              width={18}
+              height={18}
+              className="object-contain"
+            />
+            Become a Partner
           </Link>
-        ))}
-      </div>
-
-      <div className="mt-6">
-        <Link
-          href="/category"
-          onClick={() => setCategoryOpen(false)}
-          className="px-6 py-2 text-sm font-semibold text-white bg-[#067afe] hover:bg-[#046be0] rounded-full shadow-md transition"
-        >
-          Show All Categories
-        </Link>
+        </div>
       </div>
     </div>
-  )}
-</div>
-
-
-          <Link
-            href="/service"
-            onClick={closeAllMenus}
-            className="font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
-          >
-           Solutions 
-          </Link>
-          <Link
-            href="/about"
-            onClick={closeAllMenus}
-            className="font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
-          >
-            About Us
-          </Link>
-
-       
-
-
-          <Link
-            href="/contact"
-            onClick={closeAllMenus}
-            className="font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition"
-          >
-            Contact Us
-          </Link>
-        </div>
-
-        {/* Desktop Right Buttons */}
-        <div className="hidden lg:flex items-center gap-3">
-           <Link
-            href="/category"
-            onClick={closeAllMenus}
-            className="flex items-center gap-2 rounded-lg px-5 py-2 text-sm font-semibold shadow-md bg-[#067afe] text-white hover:bg-[#0047a0] transition"
-          >
-            Search
-          </Link>
-
+      {/* 🔹 Main Navbar */}
+      <nav className="w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-md transition-all">
+        <div className="container mx-auto flex items-center justify-between py-3 px-3 lg:px-8">
+          {/* Logo */}
           <Link
             href="/"
+            className="flex items-center gap-2 min-w-max"
             onClick={closeAllMenus}
-            className="flex items-center gap-2 rounded-lg px-5 py-2 text-sm font-semibold shadow-md bg-[#067afe] text-white hover:bg-[#0047a0] transition"
           >
-           Become a Partner
+            <Image
+              src="/images/blue.png"
+              alt="Logo"
+              width={160}
+              height={40}
+              className="object-contain"
+              priority
+            />
           </Link>
-        </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-          aria-expanded={mobileMenuOpen}
-          aria-controls="mobile-menu"
-        >
-          {mobileMenuOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
-        </button>
-      </nav>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div
-          id="mobile-menu"
-          className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 px-4 pb-4"
-        >
-          <ul className="flex flex-col gap-2 py-3">
-            <li>
-              <Link
-                href="/"
-                onClick={closeAllMenus}
-                className="block py-2 px-2 text-gray-800 dark:text-gray-200 hover:text-[#067afe]"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                onClick={closeAllMenus}
-                className="block py-2 px-2 text-gray-800 dark:text-gray-200 hover:text-[#067afe]"
-              >
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/service"
-                onClick={closeAllMenus}
-                className="block py-2 px-2 text-gray-800 dark:text-gray-200 hover:text-[#067afe]"
-              >
-                Solutions 
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                onClick={closeAllMenus}
-                className="block py-2 px-2 text-gray-800 dark:text-gray-200 hover:text-[#067afe]"
-              >
-                Contact Us
-              </Link>
-            </li>
-
-            {/* Mobile Category Dropdown */}
-            <li>
+          {/* Search Bar + Dropdown */}
+          <div
+            className="hidden lg:block relative flex-1 mx-8 max-w-2xl z-50"
+            ref={searchBarContainerRef}
+          >
+            <div className="flex w-full border border-gray-300 rounded-xl shadow-inner items-center">
+              {/* Category Button (text-sm) */}
               <button
-                onClick={() => setMobileCategoryOpen((prev) => !prev)}
-                className="flex items-center justify-between w-full py-2 px-2 text-gray-800 dark:text-gray-200 font-semibold hover:text-[#067afe]"
-                aria-expanded={mobileCategoryOpen}
-                aria-controls="mobile-categories"
+                onClick={() => setCategoryOpen((prev) => !prev)}
+                // Standardized text-sm
+                className="flex items-center gap-1 px-2 py-2 font-semibold text-sm text-gray-700 bg-gray-50 rounded-l-xl hover:bg-gray-100 transition"
+                aria-expanded={categoryOpen}
               >
-               Product Categories                  
+                Categories
                 <ChevronDownIcon
-                  className={`w-5 h-5 transition-transform ${mobileCategoryOpen ? "rotate-180" : ""}`}
+                  className={`w-4 h-4 transition-transform ${
+                    categoryOpen ? "rotate-180" : ""
+                  }`}
                 />
               </button>
 
-              {mobileCategoryOpen && (
-                <div id="mobile-categories" className="mt-2 border-l border-gray-200 dark:border-gray-700 pl-3">
-                  {SHOP_BY_CATEGORIES.slice(0, 12).map((category) => {
-                    const slug = slugify(category.title);
-                    return (
-                      <Link
-                        key={category.id}
-                        // href={`/shop/${slug}?sub=all`}
-                        href="/category"
-                        onClick={closeAllMenus}
-                        className="flex items-center gap-3 py-2 px-2 rounded-lg hover:bg-[#067afe]/10 transition"
-                      >
-                        <div className="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full">
-                          <Image
-                            src={category.images}
-                            alt={category.title}
-                            width={32}
-                            height={32}
-                            className="object-contain"
-                          />
-                        </div>
-                        <span className="text-sm font-medium text-gray-700 dark:text-gray-200 truncate w-[200px]">
-                          {category.title}
-                        </span>
-                      </Link>
-                    );
-                  })}
+              {/* Search Input (text-sm) */}
+              <input
+                type="search"
+                placeholder="Search products, brands..."
+                onClick={() => setCategoryOpen(true)}
+                onFocus={() => setCategoryOpen(true)}
+                 disabled={false}
+                  readOnly
+                // Standardized text-sm
+                className="flex-1 px-4 py-2 text-sm text-gray-700 focus:outline-none placeholder:text-gray-400 cursor-pointer"
+              />
 
-                  <div className="mt-3">
-                    <Link
-                      href="/categories"
-                      onClick={closeAllMenus}
-                      className="block text-center text-sm font-semibold text-white bg-[#067afe] hover:bg-[#046be0] rounded-full py-2 px-4 transition"
-                    >
-                      Show All Categories
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </li>
-          </ul>
+              {/* Search Button */}
+              <div className="px-2">
+  <MagnifyingGlassIcon className="w-5 h-5" />
+              </div>
+             
+              
+           
+            </div>
+
+            {/* Dropdown List */}
+            {categoryOpen && (
+              <CategoryDropdownContent closeMenu={() => setCategoryOpen(false)} />
+            )}
+          </div>
+
+          {/* Nav Links (Attractive, text-base) */}
+          <div className="hidden lg:flex lg:gap-x-8 items-center min-w-max">
+            {/* Added Service for 'Home, About, Service, Contact Us' structure */}
+            <NavLink href="/">Home</NavLink>
+             <NavLink href="/about">About Us</NavLink>
+            <NavLink href="/solutions">Service</NavLink> {/* Retained Solutions, can be renamed to Services */}
+           
+           
+            <NavLink href="/contact">Contact Us</NavLink>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 ml-4 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+            aria-label="Toggle mobile menu"
+          >
+            {mobileMenuOpen ? (
+              <XMarkIcon className="w-6 h-6" />
+            ) : (
+              <Bars3Icon className="w-6 h-6" />
+            )}
+          </button>
         </div>
-      )}
+      </nav>
+      {/* Mobile Menu JSX (Omitted for brevity, assuming it will be updated separately) */}
+
+      {/* Mobile Menu (Responsive Drawer) */}
+{mobileMenuOpen && (
+  <div className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-md animate-fadeIn">
+    <div className="flex flex-col px-4 py-3 space-y-3">
+
+      {/* 🔹 Search bar (simplified for mobile) */}
+      <div className="flex w-full border border-gray-300 rounded-lg items-center px-2 py-1 shadow-inner">
+        <MagnifyingGlassIcon className="w-5 h-5 text-gray-500" />
+        <input
+          type="text"
+          placeholder="Search..."
+          className="flex-grow px-2 py-1 text-sm text-gray-700 focus:outline-none"
+        />
+      </div>
+
+      {/* 🔹 Nav links */}
+      <div className="flex flex-col gap-3 mt-2">
+        <NavLink href="/">Home</NavLink>
+        <NavLink href="/about">About Us</NavLink>
+        <NavLink href="/solutions">Service</NavLink>
+        <NavLink href="/contact">Contact Us</NavLink>
+      </div>
+
+      {/* 🔹 Categories dropdown (toggle) */}
+      <div className="mt-3">
+        <button
+          onClick={() => setMobileCategoryOpen(!mobileCategoryOpen)}
+          className="flex items-center justify-between w-full px-2 py-2 text-base font-semibold text-gray-700 dark:text-gray-200 bg-gray-50 rounded-lg hover:bg-gray-100 transition"
+        >
+          Categories
+          <ChevronDownIcon
+            className={`w-5 h-5 transition-transform ${
+              mobileCategoryOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+
+        {mobileCategoryOpen && (
+          <div className="mt-2 border border-gray-200 dark:border-gray-700 rounded-lg p-2 space-y-1 bg-white dark:bg-gray-900">
+            {SHOP_BY_CATEGORIES.slice(0, 6).map((category) => (
+              <Link
+                key={category.id}
+                href={`/products/${slugify(category.title)}`}
+                onClick={closeAllMenus}
+                className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition"
+              >
+                <Image
+                  src={category.images}
+                  alt={category.title}
+                  width={24}
+                  height={24}
+                  className="rounded-full"
+                />
+                {category.title}
+              </Link>
+            ))}
+            <Link
+              href="/categories"
+              onClick={closeAllMenus}
+              className="block text-center text-sm font-semibold text-[#067afe] hover:text-[#0569dc] mt-2 transition"
+            >
+              View All Categories
+            </Link>
+          </div>
+        )}
+      </div>
+
+      {/* 🔹 Signup / Partner Buttons */}
+      <div className="flex flex-col gap-2 mt-4">
+        <Link
+          href="/signup"
+          onClick={closeAllMenus}
+          className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold text-[#071431] bg-gray-100 rounded-lg hover:bg-gray-200 transition"
+        >
+          <UserCircleIcon className="w-5 h-5" />
+          Sign Up
+        </Link>
+
+        <Link
+          href="/partner"
+          onClick={closeAllMenus}
+          className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold text-[#071431] bg-gray-100 rounded-lg hover:bg-gray-200 transition"
+        >
+          <Squares2X2Icon className="w-5 h-5" />
+          Become a Partner
+        </Link>
+      </div>
+    </div>
+  </div>
+)}
+
     </header>
   );
 }
