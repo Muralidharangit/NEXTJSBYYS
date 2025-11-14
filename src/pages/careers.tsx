@@ -58,11 +58,11 @@ export default function Careers() {
        <div className="self-stretch flex flex-col justify-center items-center gap-2 mb-4 lg:mb-0">
                     <h2 data-aos="fade" id="hero-title"
                         className=" text-center justify-start text-secondary-navy text-4xl lg:text-[50px] font-medium leading-tight lg:leading-[50px] max-w-7xl mx-auto aos-init aos-animate w-full"
-                    >Careers
+                    >Let`s connect 
                     </h2>
                     <p data-aos="fade" data-aos-delay={300}
                         className="text-center justify-start text-base-grey text-lg font-normal leading-tight lg:leading-relaxed max-w-[750px] aos-init"
-                    >Help us build India’s most trusted industrial and hardware supply network. 
+                    >Got questions? Need more information? Have feedback for us? Just drop us a line. We would love to hear from you
                     </p>
                 </div>
         </section>
