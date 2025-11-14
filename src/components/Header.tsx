@@ -67,7 +67,7 @@ const CategoryDropdownContent: React.FC<{ closeMenu: CloseMenuFn }> = ({ closeMe
       ))}
     </ul>
     <Link
-      href="/categories"
+      href="/category"
       onClick={closeMenu}
       className="block text-center text-sm font-semibold text-[#067afe] mt-3 pt-3 border-t border-gray-100 dark:border-gray-800 hover:text-[#0569dc] transition"
     >
