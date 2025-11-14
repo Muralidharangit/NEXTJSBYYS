@@ -134,7 +134,7 @@ export default function Header() {
   );
 
   return (
-    <header className="w-full sticky top-0 z-50">
+    <header className="w-full sticky top-0 z-50 ">
       {/* 🔹 Top Header (Links Only, Standardized Font Size) */}
       {/* Uniform text-sm for contact info */}
        <div className="w-full h-[44px] bg-[#067afe] text-white text-sm px-3 lg:px-8">
