@@ -29,7 +29,7 @@ const Counterpart = () => {
           <p className="text-gray-700" data-aos="fade-up" data-aos-delay="500">
            Byyizzy connects suppliers, manufacturers, and local hardware stores through an integrated business network that drives efficiency and growth.  
           </p>
-          <p>
+          <p className="text-gray-700" data-aos="fade-up" data-aos-delay="500">
              Leveraging AI-driven sourcing, a light-asset business model, global sourcing expertise, and hyperlocal delivery, we simplify complex industrial supply chains and deliver measurable value.
           </p>
           {/* <p className="text-gray-700" data-aos="fade-up" data-aos-delay="600">

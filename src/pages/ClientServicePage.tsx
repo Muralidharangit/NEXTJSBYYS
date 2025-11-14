@@ -13,6 +13,7 @@ import LetterAnimation from "@/components/LetterAnimation";
 import Loader from "@/components/Loader";
 import ClientsSection from "@/components/ClientsSection";
 import CallToActionSection from "@/components/CallToActionSection";
+import ManufacturingProductsSection from "@/components/ManufacturingProductsSection";
 
 export default function ClientServicePage() {
   const [loading, setLoading] = useState(true);
@@ -52,18 +53,18 @@ export default function ClientServicePage() {
           data-aos-delay={300}
           className="max-w-6xl text-base sm:text-lg text-gray-600 leading-relaxed"
         >
-         We offer Industrial Products Aggregation with the Fastest delivery through hyperlocal stores, Paas (procurement as-a-service) to provide best-in-class ordering cost, focusing on reducing inventory costs and optimizing supply chain efficiency, all while supporting local businesses.
+         We offer <b>Industrial Products Aggregation</b> with the Fastest delivery through hyperlocal stores,Industrial Products Aggregation <b>Paas (procurement as-a-service) </b>to provide best-in-class ordering cost, focusing on reducing inventory costs and optimizing supply chain efficiency, all while supporting local businesses.
         </p>
          <p
           data-aos="fade"
           data-aos-delay={300}
           className="max-w-6xl text-base sm:text-lg text-gray-600 leading-relaxed"
-        >Our model ensures the fastest delivery of industrial hardware by turning local hardware shops into micro-warehouses, fostering a sustainable local business ecosystem. </p>
+        >Our model ensures the fastest delivery of industrial hardware by <b>turning local hardware shops into micro-warehouses</b> , fostering a sustainable local business ecosystem. </p>
          <p
           data-aos="fade"
           data-aos-delay={300}
           className="max-w-6xl text-base sm:text-lg text-gray-600 leading-relaxed"
-        > Additionally, we connect SMEs and large enterprises to develop customized and non-standard products through our Manufacturing-as-a-Service (MaaS) platform.</p>
+        > Additionally, we connect SMEs and large enterprises <b>to develop </b> customized and non-standard products through our <b>Manufacturing-as-a-Service (MaaS) platform.</b></p>
        
       </section>
 
@@ -119,6 +120,8 @@ export default function ClientServicePage() {
           </div>
         </div>
       </section>
+
+      <ManufacturingProductsSection />
 
       {/* Clients & CTA */}
       {/* <ClientsSection /> */}
@@ -196,5 +199,7 @@ function ServiceCard({
         </div>
       </div>
     </Link>
+
+  
   );
 }
