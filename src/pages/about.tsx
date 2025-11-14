@@ -72,8 +72,11 @@ export default function Home() {
         
             </span> */}
 
-            <p>
-              Founded in 2018, we aim to revolutionize the fragmented Industrial and Hardware supply chain through Hyper-Local Stores and an E-commerce Platform powered by Proven Algorithms, AI, and Machine Learning.
+            <p className="font-semibold">
+              <b>
+  Founded in 2018, we aim to revolutionize the fragmented Industrial and Hardware supply chain through Hyper-Local Stores and an E-commerce Platform powered by Proven Algorithms, AI, and Machine Learning.
+              </b>
+            
             </p>
 
             <section className="py-16 bg-white dark:bg-gray-950">

@@ -17,6 +17,7 @@ import {
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { SHOP_BY_CATEGORIES, slugify } from "data/shopBycatlog";
 
+
 // 🔹 Category Dropdown (single column list with icons/images)
 const CategoryDropdownContent = ({ closeMenu }) => (
   <div
@@ -27,7 +28,7 @@ const CategoryDropdownContent = ({ closeMenu }) => (
       {SHOP_BY_CATEGORIES.slice(0, 10).map((category) => (
         <li key={category.id}>
           <Link
-            href={`/products/${slugify(category.title)}`}
+            href={`/category`}
             onClick={closeMenu}
             // Standardized text-sm for a consistent look
             className="flex items-center justify-between px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-[#067afe]/10 rounded-lg transition group"
@@ -141,6 +142,20 @@ export default function Header() {
 
         {/* Contact Info */}
         <div className="hidden md:flex items-center gap-4 text-gray-200 font-bold">
+           {/* Phone */}
+          <a
+            href="tel:+919876543210"
+            className="flex items-center gap-1 text-sm hover:text-[#4ba3ff] transition"
+          >
+            <Image
+              src="/images/icons/phone.png"
+              alt="Phone Icon"
+              width={16}
+              height={16}
+              className="object-contain"
+            />
+            +91 98765 43210
+          </a>
           {/* Mail */}
           <a
             href="mailto:support@byyizzy.com"
@@ -156,38 +171,12 @@ export default function Header() {
             support@byyizzy.com
           </a>
 
-          {/* Phone */}
-          <a
-            href="tel:+919876543210"
-            className="flex items-center gap-1 text-sm hover:text-[#4ba3ff] transition"
-          >
-            <Image
-              src="/images/icons/phone.png"
-              alt="Phone Icon"
-              width={16}
-              height={16}
-              className="object-contain"
-            />
-            +91 98765 43210
-          </a>
+         
         </div>
 
         {/* Right Side Links */}
         <div className="flex items-center gap-4 mx-auto md:mx-0 font-bold">
-          {/* Sign Up */}
-          <Link
-            href="/signup"
-            className="flex items-center gap-1 text-sm hover:text-[#4ba3ff] transition"
-          >
-            <Image
-              src="/images/icons/sign.png"
-              alt="Sign Icon"
-              width={18}
-              height={18}
-              className="object-contain"
-            />
-            Sign Up
-          </Link>
+         
 
           {/* Become a Partner */}
           <Link
@@ -203,12 +192,42 @@ export default function Header() {
             />
             Become a Partner
           </Link>
+
+           {/* Sign Up */}
+          <Link
+            href="/signup"
+            className="flex items-center gap-1 text-sm hover:text-[#4ba3ff] transition"
+          >
+            <Image
+              src="/images/icons/comment.png"
+              alt="Sign Icon"
+              width={18}
+              height={18}
+              className="object-contain"
+            />
+            Get Quates
+          </Link>
+
+           {/* Sign Up */}
+          <Link
+            href="/signup"
+            className="flex items-center gap-1 text-sm hover:text-[#4ba3ff] transition"
+          >
+            <Image
+              src="/images/icons/sign.png"
+              alt="Sign Icon"
+              width={18}
+              height={18}
+              className="object-contain"
+            />
+            Sign Up
+          </Link>
         </div>
       </div>
     </div>
       {/* 🔹 Main Navbar */}
-      <nav className="w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-md transition-all">
-        <div className="container mx-auto flex items-center justify-between py-3 px-3 lg:px-8">
+      <nav className="w-full bg-white dark:bg-gray-900/80 backdrop-blur-lg shadow-md transition-all">
+        <div className="container  flex items-center justify-between py-3 px-3 ">
           {/* Logo */}
           <Link
             href="/"
@@ -266,7 +285,7 @@ export default function Header() {
               
            
             </div>
-
+  
             {/* Dropdown List */}
             {categoryOpen && (
               <CategoryDropdownContent closeMenu={() => setCategoryOpen(false)} />
@@ -278,10 +297,30 @@ export default function Header() {
             {/* Added Service for 'Home, About, Service, Contact Us' structure */}
             <NavLink href="/">Home</NavLink>
              <NavLink href="/about">About Us</NavLink>
-            <NavLink href="/solutions">Service</NavLink> {/* Retained Solutions, can be renamed to Services */}
+            <NavLink href="/service">Solution</NavLink> {/* Retained Solutions, can be renamed to Services */}
            
            
             <NavLink href="/contact">Contact Us</NavLink>
+
+         {/* <div className="w-10 h-10 flex items-center justify-center rounded-full  bg-[#067afe] hover:bg-[#067afe] transition" >
+  <Image
+    src="/images/icons/cart.png"
+    width={22}
+    height={22}
+    alt="Cart"
+  />
+</div> */}
+
+<div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-[#067afe] shadow">
+  <Image
+    src="/images/icons/cartblue.png"
+    width={22}
+    height={22}
+    alt="Cart"
+  />
+  </div>
+
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -319,7 +358,7 @@ export default function Header() {
       <div className="flex flex-col gap-3 mt-2">
         <NavLink href="/">Home</NavLink>
         <NavLink href="/about">About Us</NavLink>
-        <NavLink href="/solutions">Service</NavLink>
+        <NavLink href="/service">Solution</NavLink>
         <NavLink href="/contact">Contact Us</NavLink>
       </div>
 
