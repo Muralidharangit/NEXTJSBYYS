@@ -113,7 +113,7 @@ export default function Home() {
         />
       </Head>
 
-      <main className="">
+      <main >
         {/* ✅ Above-the-fold first */}
         <VideoBanner />
         <FeaturesSection />
