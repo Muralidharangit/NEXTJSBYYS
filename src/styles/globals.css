@@ -57,6 +57,10 @@
   --h6: 20px;
 }
 
+/* [data-aos] {
+  overflow-x: hidden;
+} */
+
 /* Global Reset */
 * {
   box-sizing: border-box;
