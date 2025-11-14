@@ -61,7 +61,7 @@ export default function FeaturesSection() {
   const [showSecond, setShowSecond] = useState(false);
 
   return (
-    <section id="features" className="py-15 bg-[#eff3fa]">
+    <section id="features" className="py-15 bg-[#eff3fa] overflow-hidden">
       <div className="container">
         <div className="grid lg:grid-cols-2 items-center gap-6">
           {/* ---------- Image ---------- */}
