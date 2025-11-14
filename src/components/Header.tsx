@@ -8,8 +8,6 @@ import {
   ChevronDownIcon,
   Bars3Icon,
   XMarkIcon,
-  UserCircleIcon,
-  Squares2X2Icon,
   ArrowRightIcon,
 } from "@heroicons/react/24/outline";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
@@ -285,7 +283,7 @@ export default function Header() {
             </div>
 
             {/* Mobile Categories */}
-            <div className="mt-3">
+            <div className="mt-0">
               <button
                 onClick={() => setMobileCategoryOpen((v) => !v)}
                 className="flex items-center justify-between w-full px-2 py-2 text-base font-semibold text-gray-700 dark:text-gray-200 bg-gray-50 rounded-lg hover:bg-gray-100 transition"
@@ -319,9 +317,9 @@ export default function Header() {
             </div>
 
             {/* CTA buttons */}
-            <div className="flex flex-col gap-2 mt-4">
+            {/* <div className="flex flex-col gap-2 mt-4">
               <Link
-                href="/signup"
+                href="/"
                 onClick={closeAllMenus}
                 className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold text-[#071431] bg-gray-100 rounded-lg hover:bg-gray-200 transition"
               >
@@ -330,14 +328,14 @@ export default function Header() {
               </Link>
 
               <Link
-                href="/partner"
+                href="/"
                 onClick={closeAllMenus}
                 className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold text-[#071431] bg-gray-100 rounded-lg hover:bg-gray-200 transition"
               >
                 <Squares2X2Icon className="w-5 h-5" />
                 Become a Partner
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       )}
