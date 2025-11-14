@@ -297,7 +297,7 @@ export default function Header() {
                   {CATEGORIES.slice(0, 6).map((category: ShopCategory) => (
                     <Link
                       key={category.id}
-                      href={`/products/${slugify(category.title)}`}
+                      href={`/category`}
                       onClick={closeAllMenus}
                       className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition"
                     >
@@ -306,7 +306,7 @@ export default function Header() {
                     </Link>
                   ))}
                   <Link
-                    href="/categories"
+                    href="/category"
                     onClick={closeAllMenus}
                     className="block text-center text-sm font-semibold text-[#067afe] hover:text-[#0569dc] mt-2 transition"
                   >
