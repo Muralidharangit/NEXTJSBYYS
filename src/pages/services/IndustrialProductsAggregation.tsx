@@ -494,7 +494,7 @@ export default function IndustrialProductsAggregation() {
           </div>
         </section>
         {/* Section 1 */}
-        <section className="py-20 bg-white">
+        {/* <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="animate-letters text-3xl sm:text-4xl font-bold text-gray-900 mb-14">
               Byyizzy’s Value Proposition
@@ -509,10 +509,10 @@ export default function IndustrialProductsAggregation() {
               />
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Section 2 */}
-        <section className="py-20 bg-[#f0f4fb]">
+        {/* <section className="py-20 bg-[#f0f4fb]">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="animate-letters text-3xl sm:text-4xl font-bold text-gray-900 mb-14">
               Product Supply Chain
@@ -527,10 +527,10 @@ export default function IndustrialProductsAggregation() {
               />
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Section 3 */}
-        <section className="py-20 bg-white">
+        {/* <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="animate-letters text-3xl sm:text-4xl font-bold text-gray-900 mb-14">
               MRO Supply Chain
@@ -545,35 +545,10 @@ export default function IndustrialProductsAggregation() {
               />
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Section 4 */}
-        <section className="py-20 bg-[#f0f4fb]">
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="animate-letters text-3xl sm:text-4xl font-bold text-gray-900 mb-14">
-              MRO spend is fragment
-              {/* 20% of the MRO spend is fragmented with 80% of the suppliers (Pareto Rule) */}
-            </h2>
-            <div className="relative w-full max-w-4xl mx-auto mt-10 mb-10">
-              <Image
-                src="/images/service/fourth-4.png"
-                alt="Pareto Rule"
-                width={700}
-                height={500}
-                className="rounded-xl shadow-lg mx-auto"
-              />
-            </div>
-            {/* Text below image */}
-            <h4 className="text-xl font-semibold text-gray-800 mb-3">
-              20% of the MRO spend is fragmented with 80% of the suppliers
-            </h4>
-            <p className="text-gray-700">
-              80-20 rule: 80% of your procurement effort often goes into
-              managing 20% of low-value.
-            </p>
-          </div>
-        </section>
-
+       
         {/* Contact Us */}
         {/* <CallToActionSection/> */}
 
