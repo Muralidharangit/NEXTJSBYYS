@@ -12,18 +12,18 @@ export default function CategoriesSection() {
         {/* <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full mb-3">
           Product Categories
         </span> */}
-        <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
+        {/* <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
           Shop By Product Categories
-        </span>
+        </span> */}
         <h5 className="animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]">
-         Ordering sequence as per the old website starting from Fabrication & customized Products
+            Shop By Product Categories
         </h5>
-        {/* <p>Ordering sequence as per the old website starting from Fabrication & customized Products</p> */}
+        <p>Standard and customized MRO spares, Consumables and Hardware Products</p>
       </div>
 
       {/* Category Grid */}
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {SHOP_BY_CATEGORIES.slice(0, 16).map((category, index) => {
+        {SHOP_BY_CATEGORIES.slice(0, 12).map((category, index) => {
           const slug = slugify(category.title);
           const key = category.id ?? `${slug}-${index}`; // safe unique key
 
@@ -80,15 +80,17 @@ export default function CategoriesSection() {
       </div>
 
       {/* Button */}
-      {/* <div
-                  className="mt-12 text-center"
+              <Link  href="/category">
+               <div className="mt-12 text-center"
                   data-aos="fade-up"
                   data-aos-delay="200"
                 >
                   <button className="rounded-lg border bg-[#067afe] border-white px-6 py-3 text-white transition-all duration-300 hover:bg-white hover:text-[#067afe]">
-                    Try it for 30 days, no credit card required
+                   See all categories
                   </button>
-                </div> */}
+                  
+                </div>
+              </Link>
     </section>
   );
 }

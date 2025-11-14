@@ -27,7 +27,10 @@ const Counterpart = () => {
 
           {/* Description */}
           <p className="text-gray-700" data-aos="fade-up" data-aos-delay="500">
-           Byyizzy connects suppliers, manufacturers, and local hardware stores through an integrated business network that drives efficiency and growth.   Leveraging AI-driven sourcing, a light-asset business model, global sourcing expertise, and hyperlocal delivery, we simplify complex industrial supply chains and deliver measurable value.
+           Byyizzy connects suppliers, manufacturers, and local hardware stores through an integrated business network that drives efficiency and growth.  
+          </p>
+          <p className="text-gray-700" data-aos="fade-up" data-aos-delay="500">
+             Leveraging AI-driven sourcing, a light-asset business model, global sourcing expertise, and hyperlocal delivery, we simplify complex industrial supply chains and deliver measurable value.
           </p>
           {/* <p className="text-gray-700" data-aos="fade-up" data-aos-delay="600">
            Leveraging AI-driven sourcing, a light-asset business model, global sourcing expertise, and hyperlocal delivery, we simplify complex industrial supply chains and deliver measurable value.
@@ -63,9 +66,11 @@ const Counterpart = () => {
           {/* dgchngd */}
 
           {/* CTA Button */}
-          {/* <button className="px-6 py-3 bg-[#067afeef] text-white font-semibold rounded shadow-lg transition duration-300 hover:bg-[#056ae0] hover:shadow-xl mt-6">
+          <Link href="/category">
+          <button className="px-6 py-3 bg-[#067afeef] text-white font-semibold rounded shadow-lg transition duration-300 hover:bg-[#056ae0] hover:shadow-xl mt-6">
             JOIN THE NETWORK →
-          </button> */}
+          </button>
+          </Link>
         </div>
         {/* Left Cards */}
         <div className="space-y-8" data-aos="fade-left" data-aos-delay="200">
@@ -114,26 +119,26 @@ const Counterpart = () => {
                 </svg>
               ),
             },
-            // {
-            //  title: "Fastest Delivery of Industrial Products",
-            //   description:
-            //     "Byyizzy achieves superior on-time and in-full delivery (OTIF) performance through demand forecasting, inventory optimization, and hyper-local stores located near key industrial clusters.",
-            //   icon: (
-            //     <svg
-            //       xmlns="http://www.w3.org/2000/svg"
-            //       width={22}
-            //       height={22}
-            //       fill="none"
-            //       stroke="currentColor"
-            //       strokeWidth={2}
-            //       strokeLinecap="round"
-            //       strokeLinejoin="round"
-            //       className="lucide lucide-package"
-            //     >
-            //       <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4-7 4A2 2 0 0 0 5 8v8a2 2 0 0 0 1 1.73l7 4 7-4A2 2 0 0 0 21 16z" />
-            //     </svg>
-            //   ),
-            // },
+            {
+             title: "Optimized Inventory Model",
+              description:
+                "Reducing dead inventory and improving margins with data-driven demand forecasting and local engagement.",
+              icon: (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={22}
+                  height={22}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-package"
+                >
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4-7 4A2 2 0 0 0 5 8v8a2 2 0 0 0 1 1.73l7 4 7-4A2 2 0 0 0 21 16z" />
+                </svg>
+              ),
+            },
           ].map((card, index) => (
             <div
               key={index}

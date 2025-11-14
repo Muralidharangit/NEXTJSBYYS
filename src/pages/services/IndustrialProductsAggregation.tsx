@@ -54,57 +54,7 @@ export default function IndustrialProductsAggregation() {
           className="self-stretch px-5 lg:px-20 pt-20 pb-20 flex flex-col justify-center items-center gap-2 overflow-hidden bg-[#eff3fa]"
           aria-labelledby="hero-title"
         >
-          <p className=" bg-[#067afe] px-4 py-1.5 rounded-full mb-4 lg:mb-0 inline-flex justify-center items-center gap-2">
-            <span className="justify-center text-secondary-navy text-sm font-medium leading-normal">
-              <div className="text-center space-y-2">
-                <span
-                  data-ns-animate=""
-                  data-delay="0.1"
-                  className="hero-badge text-tagline-1 inline-block text-secondary dark:text-accent"
-                  style={{
-                    opacity: 1,
-                    filter: "blur(0px)",
-                    translate: "none",
-                    rotate: "none",
-                    scale: "none",
-                    transform: "translate(0px, 0px)",
-                  }}
-                >
-                  <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
-                    {/* Product Categories */}
-                    <Link
-                      href="/"
-                      className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-                    >
-                      Home
-                    </Link>
-                    <span className="mx-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                        className="w-4 h-4 inline-block align-middle"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                        />
-                      </svg>
-                    </span>
-                    <a
-                      href="#"
-                      className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
-                    >
-                      SERVICE
-                    </a>
-                  </span>
-                </span>
-              </div>
-            </span>
-          </p>
+          
           <div className="self-stretch flex flex-col justify-center items-center gap-2 mb-4 lg:mb-0">
             <h2
               data-aos="fade"
@@ -118,14 +68,48 @@ export default function IndustrialProductsAggregation() {
               data-aos-delay={300}
               className="text-center justify-start text-base-grey text-lg font-normal leading-tight lg:leading-relaxed max-w-[750px] aos-init"
             >
-              Learn what drives our team and how we turn visions into lasting
-              structures.
+             Streamline your procurement. Create value. Generate savings from tail-spend 
             </p>
           </div>
         </section>
 
+
+
+      {/* HERO */}
+      <section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+    {/* Left: Text */}
+    <div className="md:order-1">
+      <ul className="my-0 pb-3 list-disc pl-5 space-y-3">
+        <li>⚡ Fastest Delivery – within just 24 hours! (Via Byyizzy-powered hardware stores)</li>
+        <li>💎 Transparent Pricing</li>
+        <li>🤝 Local Business Engagement</li>
+        <li>👁️ 100% Process Visibility</li>
+        <li>🌐 Integrated B2B & B2C Ecosystem</li>
+        <li>🔍 End-to-End Tracking & Catalog-Based Buying</li>
+      </ul>
+    </div>
+
+    {/* Right: Image */}
+    <div className="md:order-2">
+      <Image
+        src="/images/s4.webp"
+        alt="Industrial Products Aggregation"
+        width={1000}
+        height={700}
+        quality={60}
+        priority
+        fetchPriority="high"
+        sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 600px"
+        className="w-full rounded-lg object-cover"
+      />
+    </div>
+  </div>
+      </section>
+
+
         {/* HERO */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white pt-0">
           {/* Section Heading */}
           <h2 className="animate-letters text-3xl sm:text-4xl font-bold text-gray-900 mb-12 text-center">
             MRO Tail-Spend Aggregation
@@ -591,7 +575,41 @@ export default function IndustrialProductsAggregation() {
         </section>
 
         {/* Contact Us */}
-        <CallToActionSection/>
+        {/* <CallToActionSection/> */}
+
+
+
+           <section
+      className="relative bg-[#067afe] py-20 overflow-hidden"
+      data-aos="fade-up"
+    >
+      <div
+        className="container mx-auto px-4"
+        data-aos="fade-right"
+        data-aos-delay="200"
+      >
+        <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
+          <div data-aos="fade-right">
+            <h4 className="text-3xl md:text-4xl font-bold text-white">
+             Let Byyizzy help you save time, cut costs, and strengthen your local suppy chain.
+            </h4>
+            <p className="mt-3 text-lg text-white/80 max-w-2xl">
+              Get started with Byyizzy.com — Supporting Local, Saving Community Wealth
+            </p>
+          </div>
+
+          <div data-aos="fade-left" data-aos-delay="300">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-white text-[#067afe] px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-200 transition"
+            >
+              <span>Let’s talk now</span>
+              <span className="flex items-center gap-1">➝</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
 
         {/* <Footer /> */}
         <Script

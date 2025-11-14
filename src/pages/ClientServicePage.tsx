@@ -13,6 +13,7 @@ import LetterAnimation from "@/components/LetterAnimation";
 import Loader from "@/components/Loader";
 import ClientsSection from "@/components/ClientsSection";
 import CallToActionSection from "@/components/CallToActionSection";
+import ManufacturingProductsSection from "@/components/ManufacturingProductsSection";
 
 export default function ClientServicePage() {
   const [loading, setLoading] = useState(true);
@@ -31,80 +32,40 @@ export default function ClientServicePage() {
       <LetterAnimation />
 
       <section
-        className="bg-[#eff3fa] py-16 sm:py-20 lg:py-28 px-5 sm:px-8 lg:px-20 flex flex-col justify-center items-center text-center"
+        className="bg-[#eff3fa] py-16 sm:py-10 lg:py-18 px-5 sm:px-8 lg:px-20 flex flex-col justify-center items-center text-center"
         aria-labelledby="hero-title"
       >
         {/* Breadcrumb */}
-        <p className=" bg-[#067afe] px-4 py-1.5 rounded-full mb-4 lg:mb-0 inline-flex justify-center items-center gap-2">
-          <span className="justify-center text-secondary-navy text-sm font-medium leading-normal">
-            <div className="text-center space-y-2">
-              <span
-                data-ns-animate=""
-                data-delay="0.1"
-                className="hero-badge text-tagline-1 inline-block text-secondary dark:text-accent"
-                style={{
-                  opacity: 1,
-                  filter: "blur(0px)",
-                  translate: "none",
-                  rotate: "none",
-                  scale: "none",
-                  transform: "translate(0px, 0px)",
-                }}
-              >
-                <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
-                  {/* Product Categories */}
-                  <Link
-                    href="/"
-                    className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-                  >
-                    Home
-                  </Link>
-                  <span className="mx-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                      stroke="currentColor"
-                      className="w-4 h-4 inline-block align-middle"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                      />
-                    </svg>
-                  </span>
-                  <a
-                    href="#"
-                    className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
-                  >
-                    Service
-                  </a>
-                </span>
-              </span>
-            </div>
-          </span>
-        </p>
+        
 
         {/* Title */}
-        <h2
+        <h3
           id="hero-title"
           data-aos="fade"
           className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#050d20] leading-snug mb-4"
         >
-          SERVICE
-        </h2>
+      Our Solutions, Committed to Quality and Trust 
+        </h3>
 
         {/* Subtitle */}
         <p
           data-aos="fade"
           data-aos-delay={300}
-          className="max-w-2xl text-base sm:text-lg text-gray-600 leading-relaxed"
+          className="max-w-6xl text-base sm:text-lg text-gray-600 leading-relaxed"
         >
-          Explore aggregation, hardware, procurement, and manufacturing
-          solutions tailored for you.
+         We offer <b>Industrial Products Aggregation</b> with the Fastest delivery through hyperlocal stores,Industrial Products Aggregation <b>Paas (procurement as-a-service) </b>to provide best-in-class ordering cost, focusing on reducing inventory costs and optimizing supply chain efficiency, all while supporting local businesses.
         </p>
+         <p
+          data-aos="fade"
+          data-aos-delay={300}
+          className="max-w-6xl text-base sm:text-lg text-gray-600 leading-relaxed"
+        >Our model ensures the fastest delivery of industrial hardware by <b>turning local hardware shops into micro-warehouses</b> , fostering a sustainable local business ecosystem. </p>
+         <p
+          data-aos="fade"
+          data-aos-delay={300}
+          className="max-w-6xl text-base sm:text-lg text-gray-600 leading-relaxed"
+        > Additionally, we connect SMEs and large enterprises <b>to develop </b> customized and non-standard products through our <b>Manufacturing-as-a-Service (MaaS) platform.</b></p>
+       
       </section>
 
       {/* Product Section */}
@@ -134,6 +95,13 @@ export default function ClientServicePage() {
               title="Industrial Products Aggregation"
               description="Streamline your procurement. Create value. Generate savings from tail-spend."
             />
+            
+            <ServiceCard
+              href="/services/paas"
+              icon={<TbFileInvoice className="h-8 w-8" />}
+              title="Procurement as a Service (PaaS)"
+              description="Automate your Source-to-Pay process — for just *1.5% of your spend."
+            />
 
             <ServiceCard
               href="/services/HardwareStoreChain"
@@ -142,12 +110,6 @@ export default function ClientServicePage() {
               description="Building India’s First Integrated Industrial and Hardware Network for B2B and B2C."
             />
 
-            <ServiceCard
-              href="/services/paas"
-              icon={<TbFileInvoice className="h-8 w-8" />}
-              title="Procurement as a Service (PaaS)"
-              description="Automate your Source-to-Pay process — for just *1.5% of your spend."
-            />
 
             <ServiceCard
               href="/services/maas"
@@ -159,8 +121,10 @@ export default function ClientServicePage() {
         </div>
       </section>
 
+      <ManufacturingProductsSection />
+
       {/* Clients & CTA */}
-      <ClientsSection />
+      {/* <ClientsSection /> */}
       <CallToActionSection />
 
       {/* Scripts (ok in client component if they need window) */}
@@ -235,5 +199,7 @@ function ServiceCard({
         </div>
       </div>
     </Link>
+
+  
   );
 }

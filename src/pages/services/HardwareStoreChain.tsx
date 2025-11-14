@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 import Footer from "@/components/Footer";
 import Script from "next/script";
 import CallToActionSection from "@/components/CallToActionSection";
+import Image from "next/image";
 
 export default function HardwareStoreChain() {
     const [loading, setLoading] = useState(true);
@@ -44,57 +45,7 @@ export default function HardwareStoreChain() {
                 className="self-stretch px-5 lg:px-20 pt-20 pb-20 flex flex-col justify-center items-center gap-2 overflow-hidden bg-[#eff3fa]"
                 aria-labelledby="hero-title"
             >
-                <p className=" bg-[#067afe] px-4 py-1.5 rounded-full mb-4 lg:mb-0 inline-flex justify-center items-center gap-2">
-                    <span className="justify-center text-secondary-navy text-sm font-medium leading-normal">
-                        <div className="text-center space-y-2">
-                            <span
-                                data-ns-animate=""
-                                data-delay="0.1"
-                                className="hero-badge text-tagline-1 inline-block text-secondary dark:text-accent"
-                                style={{
-                                    opacity: 1,
-                                    filter: "blur(0px)",
-                                    translate: "none",
-                                    rotate: "none",
-                                    scale: "none",
-                                    transform: "translate(0px, 0px)",
-                                }}
-                            >
-                                <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
-                                    {/* Product Categories */}
-                                    <Link
-        href="/"
-        className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-      >
-        Home
-      </Link>
-                                    <span className="mx-2">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            strokeWidth={2}
-                                            stroke="currentColor"
-                                            className="w-4 h-4 inline-block align-middle"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                                            />
-                                        </svg>
-                                    </span>
-                                    <a
-                                        href="#"
-                                        className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
-                                    >
-                                        SERVICE
-                                    </a>
-                                </span>
-                            </span>
-                        </div>
-                    </span>
-                </p>
+               
                 <div className="self-stretch flex flex-col justify-center items-center gap-2 mb-4 lg:mb-0">
                     <h2
                         data-aos="fade"
@@ -108,14 +59,47 @@ export default function HardwareStoreChain() {
                         data-aos-delay={300}
                         className="text-center justify-start text-base-grey text-lg font-normal leading-tight lg:leading-relaxed max-w-[750px] aos-init"
                     >
-                        Learn what drives our team and how we turn visions into lasting
-                        structures.
+                       Building India’s First Hardware Store Chain! 
                     </p>
                 </div>
             </section>
 
+
+
             {/* HERO */}
-            <section className="py-20 px-6">
+            <section className="py-20 bg-white">
+              <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+                {/* Left: Text */}
+                <div className="md:order-1">
+                  <ul className="my-0 pb-3 list-disc pl-5 space-y-3">
+                    <li>🏪 Technology-driven chain of Hyperlocal Hardware Stores</li>
+                    <li>💰 Best Prices, Smarter Technology, Reducing unsold inventory and Higher profits</li>
+                    <li>🛍️ Great In-Store Experience</li>
+                    <li>🔗 Integrated B2B & B2C ecosystem</li>
+                    <li>🌐 Integrated B2B & B2C Ecosystem</li>
+                    <li>💳 Easy credit & EMI Facility to B2C Customer</li>
+                  </ul>
+                </div>
+            
+                {/* Right: Image */}
+                <div className="md:order-2">
+                  <Image
+                    src="/images/1.svg"
+                    alt="Industrial Products Aggregation"
+                    width={1000}
+                    height={700}
+                    quality={60}
+                    priority
+                    fetchPriority="high"
+                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 600px"
+                    className="w-full rounded-lg object-cover"
+                  />
+                </div>
+              </div>
+            </section>
+
+            {/* HERO */}
+            <section className="py-20 pt-0 px-6">
                 <div className="max-w-7xl mx-auto px-6 text-center">
                     <h2
                         className="animate-letters text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
@@ -127,22 +111,17 @@ export default function HardwareStoreChain() {
                 </div>
 
                 <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center px-10 mt-20">
-
                     {/* Left Side Content */}
                     <div className="text-center lg:text-left" data-aos="fade-right" data-aos-delay="200">
-
                         <p className="text-lg sm:text-xl text-gray-700 mb-6 text-justify">
                             Building India’s First Integrated Industrial and Hardware Network for B2B and B2C. We’re creating India’s first hardware store chain that blends online convenience with a great in-store experience.
                         </p>
-
                         <p className="text-base sm:text-lg text-gray-600 mb-6 text-justify">
                             India’s hardware market is valued at ₹1 lakh crore, yet most local hardware shops struggle as large corporate players expand. Byyizzy empowers local hardware stores with technology, strong buying power, and supply chain integration, enabling them to reduce costs, avoid dead inventory, increase profits, and tap into high-volume B2B demand, beyond just walk-in B2C customers.
                         </p>
-
                         <p className="text-base sm:text-lg text-gray-600 mb-10 text-justify">
                             Transforming local stores into Byyizzy powered hardware stores. Our mission is to unify the fragmented hardware supply chain and create a smarter, faster, and more inclusive marketplace for everyone.
                         </p>
-
                         <Link
                             href="/contact"
                             className="inline-flex items-center bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition"

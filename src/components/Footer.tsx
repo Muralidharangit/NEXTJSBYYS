@@ -51,6 +51,7 @@ const Footer = () => {
           </p>
           <p>Phone: +91 96989 03089</p>
         </div>
+       
       </div>
 
       {/* Company */}
@@ -167,28 +168,34 @@ const Footer = () => {
         {/* Right links */}
         <div className="flex items-center gap-3 mt-2 sm:mt-0 text-xs sm:text-sm text-gray-400">
           <Link
-            href="/terms"
+            href="/terms-and-conditions"
             className="hover:text-white transition-colors duration-200"
           >
             Terms
           </Link>
           <span className="text-gray-600">•</span>
           <Link
-            href="/privacy"
+            href="/privacy-policy"
             className="hover:text-white transition-colors duration-200"
           >
             Privacy
           </Link>
           <span className="text-gray-600">•</span>
           <Link
-            href="/refund"
+            href="/cookies-policy"
             className="hover:text-white transition-colors duration-200"
           >
             Cookies
           </Link>
         </div>
       </div>
-  </div>
+
+
+    </div>
+
+
+
+
 </footer>
       </div>
     </>

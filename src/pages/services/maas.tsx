@@ -54,57 +54,7 @@ export default function IndustrialProductsAggregation() {
           className="self-stretch px-5 lg:px-20 pt-20 pb-20 flex flex-col justify-center items-center gap-2 overflow-hidden bg-[#eff3fa]"
           aria-labelledby="hero-title"
         >
-          <p className=" bg-[#067afe] px-4 py-1.5 rounded-full mb-4 lg:mb-0 inline-flex justify-center items-center gap-2">
-            <span className="justify-center text-secondary-navy text-sm font-medium leading-normal">
-              <div className="text-center space-y-2">
-                <span
-                  data-ns-animate=""
-                  data-delay="0.1"
-                  className="hero-badge text-tagline-1 inline-block text-secondary dark:text-accent"
-                  style={{
-                    opacity: 1,
-                    filter: "blur(0px)",
-                    translate: "none",
-                    rotate: "none",
-                    scale: "none",
-                    transform: "translate(0px, 0px)",
-                  }}
-                >
-                  <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
-                    {/* Product Categories */}
-                    <Link
-                      href="/"
-                      className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-                    >
-                      Home
-                    </Link>
-                    <span className="mx-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                        className="w-4 h-4 inline-block align-middle"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                        />
-                      </svg>
-                    </span>
-                    <a
-                      href="#"
-                      className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
-                    >
-                      SERVICE
-                    </a>
-                  </span>
-                </span>
-              </div>
-            </span>
-          </p>
+          
           <div className="self-stretch flex flex-col justify-center items-center gap-2 mb-4 lg:mb-0">
             <h2
               data-aos="fade"
@@ -118,11 +68,47 @@ export default function IndustrialProductsAggregation() {
               data-aos-delay={300}
               className="text-center justify-start text-base-grey text-lg font-normal leading-tight lg:leading-relaxed max-w-[750px] aos-init"
             >
-              Learn what drives our team and how we turn visions into lasting
-              structures.
+              Streamline Your Customized and Non-Standard Spare Parts Supply Chain 
             </p>
           </div>
         </section>
+
+
+              {/* HERO */}
+              <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+            {/* Left: Text */}
+            <div className="md:order-1">
+              <ul className="my-0 pb-3 list-disc pl-5 space-y-3">
+                <li>Bridging SMEs and Large Clients</li>
+                <li>AI-Driven Production Management</li>
+                <li>Real-Time Visibility & Control</li>
+                <li>Global Manufacturing Network</li>
+                <li>Access to best Production Capabilities</li>
+              </ul>
+            </div>
+        
+            {/* Right: Image */}
+            <div className="md:order-2">
+              {/* <Image
+                src="/images/s1.webp"
+                alt="Industrial Products Aggregation"
+                    width={1000}
+                    height={700}
+                    quality={60}
+                    priority
+                    fetchPriority="high"
+                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 600px"
+                    className="w-full rounded-lg object-cover"
+              /> */}
+              <img
+                src="/images/s1.webp"
+                alt="MaaS Illustration"
+                className="w-full max-w-md rounded-xl"
+              />
+            </div>
+          </div>
+              </section>
 
 
 
@@ -461,7 +447,7 @@ export default function IndustrialProductsAggregation() {
                 <span className="flex-shrink-0 mt-1 text-gray-700 font-bold">
                   {idx + 1}.
                 </span>
-                <p className="text-gray-700">{step}</p>
+                <p className="text-gray-700 mb-0">{step}</p>
               </div>
             ))}
           </div>
@@ -536,7 +522,42 @@ export default function IndustrialProductsAggregation() {
         </section>
 
         {/* Contact Us */}
-        <CallToActionSection/>
+        {/* <CallToActionSection/> */}
+
+                 <section
+              className="relative bg-[#067afe] py-20 overflow-hidden"
+              data-aos="fade-up"
+            >
+              <div
+                className="container mx-auto px-4"
+                data-aos="fade-right"
+                data-aos-delay="200"
+              >
+                <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
+                  <div data-aos="fade-right">
+                    <h4 className="text-3xl md:text-4xl font-bold text-white">
+                    Partner with Us
+                    </h4>
+                    <p className="mt-3 text-lg text-white/80 mb-0">
+                     Get reliable, high-quality spare parts made on demand, with complete digital transparency.
+                    </p>
+                    <p className="mt-3 text-lg text-white/80">
+                     Focus on your operations — we’ll handle the complexity of manufacturing and sourcing.
+                    </p>
+                  </div>
+        
+                  <div data-aos="fade-left" data-aos-delay="300">
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-2 bg-white text-[#067afe] px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-200 transition"
+                    >
+                      <span>Talk to our Manufacturing Experts </span>
+                      <span className="flex items-center gap-1">➝</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </section>
 
         {/* <Footer /> */}
         <Script

@@ -12,7 +12,35 @@ import { SHOP_BY_CATEGORIES, slugify } from "data/shopBycatlog";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import EnquiryDialog from "@/components/EnquiryDialog";
+import ClientsSection from "@/components/ClientsSection";
+import brandsJson from "@/Data/Brand.json";
+// ---------- Type guards ----------
+type Brand = { id?: string | number; name?: string; logo?: string };
+type BrandsFile = Brand[] | { brands: Brand[] } | Record<string, Brand>;
 
+const isBrand = (v: unknown): v is Brand =>
+  typeof v === "object" &&
+  v !== null &&
+  ("logo" in v || "name" in v || "id" in v);
+
+const isBrandArray = (x: unknown): x is Brand[] =>
+  Array.isArray(x) && x.every(isBrand);
+
+const hasBrandsArray = (x: unknown): x is { brands: Brand[] } =>
+  typeof x === "object" &&
+  x !== null &&
+  "brands" in x &&
+  Array.isArray((x as { brands?: unknown }).brands);
+
+function normalizeBrands(data: unknown): Brand[] {
+  if (isBrandArray(data)) return data;
+  if (hasBrandsArray(data)) return data.brands;
+  if (typeof data === "object" && data !== null)
+    return Object.values(data as Record<string, unknown>).filter(
+      isBrand
+    ) as Brand[];
+  return [];
+}
 
 
 export const metadata: Metadata = {
@@ -21,6 +49,10 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+
+   const brands = normalizeBrands(brandsJson as unknown as BrandsFile);
+
+
   // UI state
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<{
@@ -53,82 +85,33 @@ export default function Home() {
         className="self-stretch px-5 lg:px-20 pt-20 pb-20 flex flex-col justify-center items-center gap-2 overflow-hidden bg-[#eff3fa]"
         aria-labelledby="hero-title"
       >
-        <p className=" bg-[#067afe] px-4 py-1.5 rounded-full mb-4 lg:mb-0 inline-flex justify-center items-center gap-2">
-          <span className="justify-center text-secondary-navy text-sm font-medium leading-normal">
-            <div className="text-center space-y-2">
-              <span
-                data-ns-animate=""
-                data-delay="0.1"
-                className="hero-badge text-tagline-1 inline-block text-secondary dark:text-accent"
-                style={{
-                  opacity: 1,
-                  filter: "blur(0px)",
-                  translate: "none",
-                  rotate: "none",
-                  scale: "none",
-                  transform: "translate(0px, 0px)",
-                }}
-              >
-                <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
-                  {/* Product Categories */}
-                  <Link
-                    href="/"
-                    className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-                  >
-                    Home
-                  </Link>
-                  <span className="mx-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                      stroke="currentColor"
-                      className="w-4 h-4 inline-block align-middle"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                      />
-                    </svg>
-                  </span>
-                  <a
-                    href="#"
-                    className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
-                  >
-                    CATEGORY
-                  </a>
-                </span>
-              </span>
-            </div>
-          </span>
-        </p>
+       
         <div className="self-stretch flex flex-col justify-center items-center gap-2 mb-4 lg:mb-0">
           <h2
             data-aos="fade"
             id="hero-title"
             className=" text-center justify-start text-secondary-navy text-4xl lg:text-[50px] font-medium leading-tight lg:leading-[50px] max-w-7xl mx-auto aos-init aos-animate w-full"
           >
-            CATEGORY
+            Shop by Category 
           </h2>
           <p
             data-aos="fade"
             data-aos-delay={300}
-            className="text-center justify-start text-base-grey text-lg font-normal leading-tight lg:leading-relaxed max-w-[750px] aos-init"
+            className="text-center justify-start text-base-grey text-lg font-normal leading-tight lg:leading-relaxed max-w-[750px] aos-init mb-0"
           >
-            Explore products and services grouped for your needs.
+           Standard and customized MRO spares, Consumables and Hardware Products
           </p>
+          <p>Source direct-from-factory || Fastest Delivery|| Best prices & trade assurance || OTIF|| Quality Assurance || Byyizzy-Powered Local Hardware Stores</p>
         </div>
       </section>
 
       {/* Categories Section */}
       <section className=" mx-auto py-16 px-6">
         {/* Section Header */}
-        <div className="mx-auto mb-12 max-w-2xl text-center" data-aos="fade-up">
-          {/* <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
+        {/* <div className="mx-auto mb-12 max-w-2xl text-center" data-aos="fade-up">
+          <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
             Product Categories
-          </span> */}
+          </span>
           <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
             Product Categories
           </span>
@@ -136,7 +119,7 @@ export default function Home() {
           <h2 className="animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]">
             Our Innovative Product
           </h2>
-        </div>
+        </div> */}
 
         {/* Category Grid */}
         <div className="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -184,7 +167,10 @@ export default function Home() {
         </div> */}
       </section>
 
-      <section
+     
+
+          <ClientsSection brands={brands} />
+ <section
         className="relative bg-[#067afe] py-20 overflow-hidden"
         data-aos="fade-up"
       >
@@ -196,11 +182,10 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
             <div data-aos="fade-right">
               <h2 className="text-4xl md:text-5xl font-bold text-white m-0">
-                Build Tomorrow, Today
+               Ready to simplify your MRO Procurement?
               </h2>
               <p className="mt-2 text-lg md:text-xl text-white/80 max-w-2xl">
-                We provide advanced manufacturing solutions with precision,
-                quality, and innovation.
+                Let Byyizzy help you save time, cut costs, and strengthen your local supply chain.
               </p>
             </div>
             <div data-aos="fade-left" data-aos-delay="300">
@@ -217,13 +202,15 @@ export default function Home() {
       </section>
 
       {/* Enquiry Dialog */}
-      <EnquiryDialog
+    <EnquiryDialog
         open={open}
-        onOpenChange={setOpen}
+        onOpenChange={(v) => {
+          if (!v) setSelected(null); // optional: clear on close
+          setOpen(v);
+        }}
         productName={selected?.name}
         productCode={selected?.code}
       />
-
       {/* <Footer /> */}
       <Script src="/assets/js/scroll-trigger.js" strategy="afterInteractive" />
       <Script src="/assets/js/smooth-scroll.js" strategy="afterInteractive" />
