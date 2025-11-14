@@ -60,8 +60,8 @@ const Footer = () => {
         <ul className="space-y-2 text-sm">
           <li><Link href="/about" className="hover:text-white transition-colors duration-200">About Us</Link></li>
           <li><Link href="/" className="hover:text-white transition-colors duration-200">Home</Link></li>
-          <li><Link href="/" className="hover:text-white transition-colors duration-200">Become a Partner</Link></li>
-          <li><Link href="/" className="hover:text-white transition-colors duration-200">Careers</Link></li>
+          <li><Link href="#" className="hover:text-white transition-colors duration-200">Become a Partner</Link></li>
+          <li><Link href="careers" className="hover:text-white transition-colors duration-200">Careers</Link></li>
         </ul>
       </div>
 
@@ -168,21 +168,21 @@ const Footer = () => {
         {/* Right links */}
         <div className="flex items-center gap-3 mt-2 sm:mt-0 text-xs sm:text-sm text-gray-400">
           <Link
-            href="/terms"
+            href="/terms-and-conditions"
             className="hover:text-white transition-colors duration-200"
           >
             Terms
           </Link>
           <span className="text-gray-600">•</span>
           <Link
-            href="/privacy"
+            href="/privacy-policy"
             className="hover:text-white transition-colors duration-200"
           >
             Privacy
           </Link>
           <span className="text-gray-600">•</span>
           <Link
-            href="/refund"
+            href="/cookies-policy"
             className="hover:text-white transition-colors duration-200"
           >
             Cookies

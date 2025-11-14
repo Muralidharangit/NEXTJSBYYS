@@ -202,13 +202,15 @@ export default function Home() {
       </section>
 
       {/* Enquiry Dialog */}
-      <EnquiryDialog
+    <EnquiryDialog
         open={open}
-        onOpenChange={setOpen}
+        onOpenChange={(v) => {
+          if (!v) setSelected(null); // optional: clear on close
+          setOpen(v);
+        }}
         productName={selected?.name}
         productCode={selected?.code}
       />
-
       {/* <Footer /> */}
       <Script src="/assets/js/scroll-trigger.js" strategy="afterInteractive" />
       <Script src="/assets/js/smooth-scroll.js" strategy="afterInteractive" />

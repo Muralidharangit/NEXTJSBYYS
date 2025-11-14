@@ -12,7 +12,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Loader from "@/components/Loader";
 import ClientsSection from "@/components/ClientsSection";
-
+import { TbPackages } from "react-icons/tb";
+import { FaEye } from "react-icons/fa";
+import { GoGoal } from "react-icons/go";
 
 
 export const metadata: Metadata = {
@@ -84,12 +86,12 @@ export default function Home() {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
       {/* Mission */}
       <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
-        <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/30 ring-1 ring-blue-100 dark:ring-blue-800 mb-4">
-          {/* icon (optional) */}
-          <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 3v18M3 12h18" stroke="currentColor" strokeWidth="1.5" />
-          </svg>
-        </div>
+        
+<div className="inline-flex h-12 w-12 items-center justify-center rounded-full
+                bg-blue-50 text-gray-600 ring-1 ring-blue-100
+                dark:bg-blue-900/30 dark:text-blue-300 dark:ring-blue-800 mb-4">
+  <GoGoal className="h-6 w-6" />
+</div>
         <h3 className="text-xl font-semibold text-gray-900 dark:text-white"> Our<span className="text-[#067afe]">  Mission</span></h3>
         <p className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">
           To provide a seamless and transparent shopping experience in the complex &
@@ -99,13 +101,15 @@ export default function Home() {
 
       {/* Vision */}
       <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
-        <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 dark:bg-purple-900/30 ring-1 ring-purple-100 dark:ring-purple-800 mb-4">
-          {/* icon (optional) */}
-          <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M3 12c4-6 14-6 18 0-4 6-14 6-18 0Z" stroke="currentColor" strokeWidth="1.5"/>
-            <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5"/>
-          </svg>
-        </div>
+       
+
+        
+<div className="inline-flex h-12 w-12 items-center justify-center rounded-full
+                bg-blue-50 text-gray-600 ring-1 ring-blue-100
+                dark:bg-blue-900/30 dark:text-blue-300 dark:ring-blue-800 mb-4">
+  <FaEye  className="h-6 w-6" />
+</div>
+       
         <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Our Vision <span className="text-[#067afe]"> Byyizzy?</span></h3>
         <p className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">
           To revolutionize the industrial and hardware supply chain by creating greater value,
@@ -347,6 +351,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
+                  
                   <h4 className="text-xl text-[#050d20] font-semibold">
                     Optimize Procurement & Supply Chain
                   </h4>
