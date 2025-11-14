@@ -474,7 +474,7 @@ export default function ProcurementService() {
                 </div>
             </section>
             {/* Section 1 */}
-            <section className="py-20 bg-white">
+            {/* <section className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-6 text-center">
                     <h2 className="animate-letters text-3xl sm:text-4xl font-bold text-gray-900 mb-14">
                         Byyizzy’s Value Proposition
@@ -489,10 +489,10 @@ export default function ProcurementService() {
                         />
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Section 2 */}
-            <section className="py-20 bg-[#f0f4fb]">
+            {/* <section className="py-20 bg-[#f0f4fb]">
                 <div className="max-w-7xl mx-auto px-6 text-center">
                     <h2 className="animate-letters text-3xl sm:text-4xl font-bold text-gray-900 mb-14">
                         Product Supply Chain
@@ -507,10 +507,10 @@ export default function ProcurementService() {
                         />
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Section 3 */}
-            <section className="py-20 bg-white">
+            {/* <section className="py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-6 text-center">
                     <h2 className="animate-letters text-3xl sm:text-4xl font-bold text-gray-900 mb-14">
                         MRO Supply Chain
@@ -525,7 +525,7 @@ export default function ProcurementService() {
                         />
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Section 4 */}
             <section className="py-20 bg-[#f0f4fb]">

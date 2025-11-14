@@ -93,7 +93,7 @@ export default function ClientsSection({ brands }: Props) {
 
   return (
     <section
-      className="py-28 bg-[#eff3fa] dark:bg-gray-900"
+      className="py-28 bg-[#eff3fa] dark:bg-gray-900 overflow-hidden"
       data-aos="fade-up"
       data-aos-duration="1200"
     >

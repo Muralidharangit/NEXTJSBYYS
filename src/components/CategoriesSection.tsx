@@ -5,7 +5,7 @@ import { SHOP_BY_CATEGORIES, slugify } from "data/shopBycatlog";
 
 export default function CategoriesSection() {
   return (
-    <section className="bg-[#eff3fa] mx-auto py-16 px-6">
+    <section className="bg-[#eff3fa] mx-auto py-16 px-6 overflow-hidden">
       {/* Section Header */}
       <div className="mx-auto mb-12 max-w-2xl text-center" data-aos="fade-up">
         {/* <span className="bg-[#067afe] text-white py-1 rounded-full mb-5"></span> */}

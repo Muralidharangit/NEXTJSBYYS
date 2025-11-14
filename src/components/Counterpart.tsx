@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Counterpart = () => {
   return (
-    <section className="py-16 px-3">
+    <section className="py-16 px-3 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         {/* Right Description */}
         <div className="space-y-8" data-aos="fade-left" data-aos-delay="200">
