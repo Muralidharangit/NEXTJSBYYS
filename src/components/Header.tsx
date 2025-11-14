@@ -170,10 +170,9 @@ export default function Header() {
           </div>
 
           {/* Right Links */}
-       <div className="flex items-center gap-4 mx-auto md:mx-0 font-bold
-                text-[11px] sm:text-sm md:text-base lg:text-[17px]">
+  <div className="flex items-center gap-4 mx-auto md:mx-0 font-bold text-[11px] sm:text-sm md:text-base lg:text-[17px]">
   <Link
-    href="/partner"
+    href="/"
     className="flex items-center gap-1 hover:text-[#4ba3ff] transition"
   >
     <Image src="/images/icons/team.png" alt="Team Icon" width={18} height={18} className="object-contain" />
@@ -181,7 +180,7 @@ export default function Header() {
   </Link>
 
   <Link
-    href="/signup"
+    href="/"
     className="flex items-center gap-1 hover:text-[#4ba3ff] transition"
   >
     <Image src="/images/icons/comment.png" alt="Quote Icon" width={18} height={18} className="object-contain" />
@@ -189,7 +188,7 @@ export default function Header() {
   </Link>
 
   <Link
-    href="/signup"  // was "/" — assuming you want Sign Up page
+    href="/" 
     className="flex items-center gap-1 hover:text-[#4ba3ff] transition"
   >
     <Image src="/images/icons/sign.png" alt="Sign Icon" width={18} height={18} className="object-contain" />
