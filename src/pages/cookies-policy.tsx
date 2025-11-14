@@ -54,65 +54,16 @@ export default function CookiesPolicy() {
           className="self-stretch px-5 lg:px-20 pt-20 pb-20 flex flex-col justify-center items-center gap-2 overflow-hidden bg-[#eff3fa]"
           aria-labelledby="hero-title"
         >
-          <p className=" bg-[#067afe] px-4 py-1.5 rounded-full mb-4 lg:mb-0 inline-flex justify-center items-center gap-2">
-            <span className="justify-center text-secondary-navy text-sm font-medium leading-normal">
-              <div className="text-center space-y-2">
-                <span
-                  data-ns-animate=""
-                  data-delay="0.1"
-                  className="hero-badge text-tagline-1 inline-block text-secondary dark:text-accent"
-                  style={{
-                    opacity: 1,
-                    filter: "blur(0px)",
-                    translate: "none",
-                    rotate: "none",
-                    scale: "none",
-                    transform: "translate(0px, 0px)",
-                  }}
-                >
-                  <span className="bg-[#067afe] text-white px-4 py-1 rounded-full mb-5">
-                    {/* Product Categories */}
-                    <Link
-                      href="/"
-                      className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
-                    >
-                      Home
-                    </Link>
-                    <span className="mx-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                        className="w-4 h-4 inline-block align-middle"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                        />
-                      </svg>
-                    </span>
-                    <a
-                      href="#"
-                      className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
-                    >
-                   Cookies Policy
-                    </a>
-                  </span>
-                </span>
-              </div>
-            </span>
-          </p>
+        
           <div className="self-stretch flex flex-col justify-center items-center gap-2 mb-4 lg:mb-0">
             <h2
               data-aos="fade"
               id="hero-title"
               className=" text-center justify-start text-secondary-navy text-4xl lg:text-[50px] font-medium leading-tight lg:leading-[50px] max-w-7xl mx-auto aos-init aos-animate w-full"
             >
-              Cookies Policy
+              Cookies Policy 
             </h2>
+            <p>for Byyizzy E-Commerce Marketplace Effective Date: 01/11/2025</p>
           </div>
         </section>
 
@@ -123,7 +74,7 @@ export default function CookiesPolicy() {
           <div className="">
             <div className="container mx-auto">
               {/* Our Solution */}
-              <div className="max-w-12xl mx-auto mb-16 p-10 mb-0">
+              {/* <div className="max-w-12xl mx-auto mb-16 p-10 mb-0">
            
                 <p
                   className="relative bg-yellow-50/80 p-6 sm:p-8 rounded-lg shadow-lg text-gray-700 text-lg sm:text-xl leading-relaxed font-sans border-l-4 border-yellow-400"
@@ -137,13 +88,13 @@ export default function CookiesPolicy() {
 Cookies Policy for Byyizzy E-Commerce Marketplace <br/>Effective Date: 01/11/2025
                 
                 </p>
-              </div>
+              </div> */}
 
 
 {/* ============================================== */}
 
 {/* Intro */}
-<div className="my-3">
+<div className="my-3 mt-20">
  
   <p className="text-gray-700 mt-2">
     At Byyizzy Business Solutions Private Limited (&quot;Byyizzy,&quot; &quot;we,&quot; &quot;us,&quot; or

@@ -98,7 +98,7 @@ export default function ContactPage() {
   aria-labelledby="hero-title"
 >
   {/* Breadcrumb (semantic, no invalid nesting) */}
-  <nav aria-label="Breadcrumb" className="mb-4 lg:mb-0" data-aos="fade-up">
+  {/* <nav aria-label="Breadcrumb" className="mb-4 lg:mb-0" data-aos="fade-up">
     <ol className="inline-flex items-center bg-[#067afe] text-white px-4 py-1.5 rounded-full gap-2">
       <li>
         <Link href="/" className="text-sm font-medium hover:opacity-90">
@@ -121,7 +121,7 @@ export default function ContactPage() {
         Contact us
       </li>
     </ol>
-  </nav>
+  </nav> */}
 
   {/* Title + Subtitle */}
   <div className="text-center space-y-3 max-w-3xl">
