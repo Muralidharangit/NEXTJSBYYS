@@ -112,13 +112,14 @@ const FEATURES = [
       >
       
         <div className="self-stretch flex flex-col justify-center items-center gap-2 mb-4 lg:mb-0">
-          <h3
-            data-aos="fade"
-            id="hero-title"
-            className=" text-center justify-start text-secondary-navy text-4xl lg:text-[50px] font-medium leading-tight lg:leading-[50px] max-w-7xl mx-auto aos-init aos-animate w-full"
-          >
+          <h2
+  data-aos="fade"
+  id="hero-title"
+  className="text-center justify-start text-secondary-navy text-4xl lg:text-[50px] font-bold leading-tight lg:leading-[50px] max-w-7xl mx-auto w-full"
+>
+
            Trusted and Value-Creating E-Commerce Marketplace Provider 
-          </h3>
+          </h2>
           <p
             data-aos="fade"
             data-aos-delay={300}
@@ -173,7 +174,7 @@ const FEATURES = [
   <FaEye  className="h-6 w-6" />
 </div>
        
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Our Vision <span className="text-[#067afe]"> Byyizzy?</span></h3>
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Our Vision </h3>
         <p className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">
           To revolutionize the industrial and hardware supply chain by creating greater value,
           enhancing profitability, and ensuring sustainable operations for all stakeholders.

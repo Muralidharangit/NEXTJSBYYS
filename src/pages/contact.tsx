@@ -125,11 +125,11 @@ export default function ContactPage() {
 
   {/* Title + Subtitle */}
   <div className="text-center space-y-3 max-w-3xl">
-    <h2
-      id="hero-title"
-      data-aos="fade"
-      className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-semibold text-[#111827] leading-tight"
-    >
+     <h2
+  data-aos="fade"
+  id="hero-title"
+  className="text-center justify-start text-secondary-navy text-4xl lg:text-[50px] font-bold leading-tight lg:leading-[50px] max-w-7xl mx-auto w-full"
+>
       CONTACT US
     </h2>
     <p

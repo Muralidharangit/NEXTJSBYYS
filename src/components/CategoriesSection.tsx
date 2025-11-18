@@ -15,9 +15,9 @@ export default function CategoriesSection() {
         {/* <span className="inline-block text-sm font-medium bg-[#067afe]/10 text-[#067afe] px-4 py-1 rounded-full">
           Shop By Product Categories
         </span> */}
-        <h5 className="animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]">
+        <h2 className="animate-letters text-3xl md:text-4xl/tight font-semibold mt-4 text-[#050d20]">
             Shop By Product Categories
-        </h5>
+        </h2>
         <p>Standard and customized MRO spares, Consumables and Hardware Products</p>
       </div>
 

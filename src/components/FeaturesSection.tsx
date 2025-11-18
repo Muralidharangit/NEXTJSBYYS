@@ -62,7 +62,7 @@ export default function FeaturesSection() {
 
   return (
     <section id="features" className="py-15 bg-[#eff3fa] overflow-hidden">
-      <div className="container">
+      <div className="container xl:max-w-full">
         <div className="grid lg:grid-cols-2 items-center gap-6">
           {/* ---------- Image ---------- */}
           <div
@@ -241,9 +241,10 @@ export default function FeaturesSection() {
                 >
                   <p className="text-base font-normal text-gray-500 mt-2">
                     Digitize the Source-to-Pay process with full transparency,
-                    improved cost control, and technology-driven tail-spend
-                    optimization
+                    improved cost control, 
                     <br />
+                    and technology-driven tail-spend
+                    optimization
                     Empowering Businesses with Smart, Sustainable Procurement and
                     SCM Solutions.
                   </p>

@@ -37,6 +37,10 @@ export default function HardwareStoreChain() {
                 <link rel="canonical" href="https://yourdomain.com/services/procurement-service" />
             </Head>
 
+
+
+            <div className="overflow-hidden">
+
             {/* <Header /> */}
             <LetterAnimation />
 
@@ -48,10 +52,10 @@ export default function HardwareStoreChain() {
                
                 <div className="self-stretch flex flex-col justify-center items-center gap-2 mb-4 lg:mb-0">
                     <h2
-                        data-aos="fade"
-                        id="hero-title"
-                        className=" text-center justify-start text-secondary-navy text-4xl lg:text-[50px] font-medium leading-tight lg:leading-[50px] max-w-7xl mx-auto aos-init aos-animate w-full"
-                    >
+  data-aos="fade"
+  id="hero-title"
+  className="text-center justify-start text-secondary-navy text-4xl lg:text-[50px] font-bold leading-tight lg:leading-[50px] max-w-7xl mx-auto w-full"
+>
                         Hardware Store Chain
                     </h2>
                     <p
@@ -428,6 +432,8 @@ export default function HardwareStoreChain() {
 
             {/* Contact Us */}
             <CallToActionSection/>
+            </div>
+
 
             {/* <Footer /> */}
             <Script src="/assets/js/scroll-trigger.js" strategy="afterInteractive" />

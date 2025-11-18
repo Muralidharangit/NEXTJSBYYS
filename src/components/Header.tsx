@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router"; // ✅ If you're on App Router, see note below
+import { useRouter } from "next/router"; 
 import {
   ChevronDownIcon,
   Bars3Icon,
@@ -17,29 +17,37 @@ import { SHOP_BY_CATEGORIES, slugify } from "data/shopBycatlog";
 type CloseMenuFn = () => void;
 
 type NavLinkProps = {
-  href: string;
-  children: React.ReactNode;
+href: string;
+children: React.ReactNode;
 };
 
 type TopLinkProps = {
-  href: string;
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  children: React.ReactNode;
+href: string;
+icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+children: React.ReactNode;
 };
 
 type ShopCategory = {
-  id: string | number;
-  title: string;
-  images: string; // path or URL
+id: string | number;
+title: string;
+images: string; // path or URL
 };
 
 const CATEGORIES = SHOP_BY_CATEGORIES as ShopCategory[];
 
 // ---------- Small components (typed) ----------
 const CategoryDropdownContent: React.FC<{ closeMenu: CloseMenuFn }> = ({ closeMenu }) => (
-  <div
-    role="menu"
-    className="absolute left-0 right-0 top-full mt-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl z-50 w-full max-w-2xl p-3 animate-fadeIn"
+<div
+ role="menu"
+ className="absolute left-0 right-0 top-full mt-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl z-50 w-full max-w-2xl p-3 animate-fadeIn"
+>
+ <ul className="flex flex-col divide-y divide-gray-100 dark:divide-gray-800">
+ {CATEGORIES.slice(0, 10).map((category: ShopCategory) => (
+  <li key={category.id}>
+  <Link
+   href={`/category`}
+   onClick={closeMenu}
+   className="flex items-center justify-between px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-[#067afe]/10 rounded-lg transition group"
   >
     <ul className="flex flex-col divide-y divide-gray-100 dark:divide-gray-800">
       {CATEGORIES.slice(0, 10).map((category: ShopCategory) => (
@@ -77,121 +85,178 @@ const CategoryDropdownContent: React.FC<{ closeMenu: CloseMenuFn }> = ({ closeMe
 );
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [categoryOpen, setCategoryOpen] = useState(false);
-  const [mobileCategoryOpen, setMobileCategoryOpen] = useState(false);
+const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const [categoryOpen, setCategoryOpen] = useState(false);
+const [mobileCategoryOpen, setMobileCategoryOpen] = useState(false);
 
-  const categoryButtonRef = useRef<HTMLButtonElement | null>(null);
-  const searchBarContainerRef = useRef<HTMLDivElement | null>(null);
+const categoryButtonRef = useRef<HTMLButtonElement | null>(null);
+const searchBarContainerRef = useRef<HTMLDivElement | null>(null);
+const leaveTimeoutRef = useRef<number | null>(null); // Ref for hover delay
 
-  const router = useRouter();
+const router = useRouter();
 
-  // Close all menus on route change (Pages Router)
-  useEffect(() => {
-    const close = () => {
-      setCategoryOpen(false);
-      setMobileCategoryOpen(false);
-      setMobileMenuOpen(false);
-    };
-    router.events.on("routeChangeStart", close);
-    router.events.on("routeChangeComplete", close);
-    router.events.on("hashChangeStart", close);
-    return () => {
-      router.events.off("routeChangeStart", close);
-      router.events.off("routeChangeComplete", close);
-      router.events.off("hashChangeStart", close);
-    };
-  }, [router.events]);
+// Close all menus on route change (Pages Router)
+useEffect(() => {
+ const close = () => {
+ setCategoryOpen(false);
+ setMobileCategoryOpen(false);
+ setMobileMenuOpen(false);
+ };
+ router.events.on("routeChangeStart", close);
+ router.events.on("routeChangeComplete", close);
+ router.events.on("hashChangeStart", close);
+ return () => {
+ router.events.off("routeChangeStart", close);
+ router.events.off("routeChangeComplete", close);
+ router.events.off("hashChangeStart", close);
+ };
+}, [router.events]);
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (
-        searchBarContainerRef.current &&
-        !searchBarContainerRef.current.contains(e.target as Node)
-      ) {
-        setCategoryOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+// Handle hover functions for desktop category menu
+const handleMouseEnter = () => {
+    // Clear any pending timeout when entering
+  if (leaveTimeoutRef.current) {
+   clearTimeout(leaveTimeoutRef.current);
+   leaveTimeoutRef.current = null;
+  }
+  setCategoryOpen(true);
+};
 
-  const closeAllMenus: CloseMenuFn = () => {
-    setCategoryOpen(false);
-    setMobileCategoryOpen(false);
-    setMobileMenuOpen(false);
-  };
+const handleMouseLeave = () => {
+    // Set a timeout to close the menu after a small delay
+  leaveTimeoutRef.current = window.setTimeout(() => {
+   setCategoryOpen(false);
+  }, 200); // 200ms delay to prevent accidental closing
+};
 
-  const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
-    <Link
-      href={href}
-      onClick={closeAllMenus}
-      className="text-base font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition whitespace-nowrap"
-    >
-      {children}
-    </Link>
-  );
 
-  const TopLink: React.FC<TopLinkProps> = ({ href, icon: Icon, children }) => (
-    <Link
-      href={href}
-      className="flex items-center gap-1 text-sm font-medium text-white hover:text-[#4ba3ff] transition"
-    >
-      <Icon className="w-4 h-4" />
-      {children}
-    </Link>
-  );
+// Close dropdown when clicking outside (kept for safety/focus state)
+useEffect(() => {
+ function handleClickOutside(e: MouseEvent) {
+ if (
+  searchBarContainerRef.current &&
+  !searchBarContainerRef.current.contains(e.target as Node)
+ ) {
+  setCategoryOpen(false);
+ }
+ }
+ document.addEventListener("mousedown", handleClickOutside);
+ return () => document.removeEventListener("mousedown", handleClickOutside);
+}, []);
 
-  return (
-    <header className="w-full sticky top-0 z-50 ">
-      {/* Top bar */}
-      <div className="w-full h-[44px] bg-[#067afe] text-white text-sm px-3 lg:px-8">
-        <div className="container flex items-center justify-between h-full">
-          {/* Contact Info */}
-          <div className="hidden md:flex items-center gap-4 text-gray-200 font-bold">
-            <a
-              href="tel:+919876543210"
-              className="flex items-center gap-1 text-sm hover:text-[#4ba3ff] transition"
-            >
-              <Image src="/images/icons/phone.png" alt="Phone Icon" width={16} height={16} className="object-contain" />
-              +91 98765 43210
-            </a>
+const closeAllMenus: CloseMenuFn = () => {
+ setCategoryOpen(false);
+ setMobileCategoryOpen(false);
+ setMobileMenuOpen(false);
+};
 
-            <a
-              href="mailto:support@byyizzy.com"
-              className="flex items-center gap-1 text-sm hover:text-[#4ba3ff] transition"
-            >
-              <Image src="/images/icons/mail.png" alt="Mail Icon" width={16} height={16} className="object-contain" />
-              support@byyizzy.com
-            </a>
-          </div>
+const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
+ <Link
+ href={href}
+ onClick={closeAllMenus}
+ className="text-base font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition whitespace-nowrap"
+ >
+ {children}
+ </Link>
+);
 
-          {/* Right Links */}
-  <div className="flex items-center gap-4 mx-auto md:mx-0 font-bold text-[11px] sm:text-sm md:text-base lg:text-[17px]">
-  <Link
-    href="/"
-    className="flex items-center gap-1 hover:text-[#4ba3ff] transition"
-  >
-    <Image src="/images/icons/team.png" alt="Team Icon" width={18} height={18} className="object-contain" />
-    Become a Partner
-  </Link>
+const TopLink: React.FC<TopLinkProps> = ({ href, icon: Icon, children }) => (
+ <Link
+ href={href}
+ className="flex items-center gap-1 text-sm font-medium text-white hover:text-[#067afe] transition" // Updated hover color
+ >
+ <Icon className="w-4 h-4" />
+ {children}
+ </Link>
+);
 
-  <Link
-    href="/"
-    className="flex items-center gap-1 hover:text-[#4ba3ff] transition"
-  >
-    <Image src="/images/icons/comment.png" alt="Quote Icon" width={18} height={18} className="object-contain" />
-    Get Quotes
-  </Link>
+return (
+ <header className="w-full sticky top-0 z-50 ">
+ {/* Top bar */}
+ <div className="w-full h-[44px] bg-[#fff] text-[#071431] text-sm px-3 lg:px-8 border-b border-[#e5e7eb]">
+<div className="container flex items-center justify-between h-full">
+ {/* Contact Info */}
+ <div className="hidden md:flex items-center gap-6 text-[#071431] font-bold">
+ <a
+  href="tel:+919876543210"
+  className="flex items-center gap-1 text-sm hover:text-[#067afe] transition"
+ >
+  <Image src="/images/icons/phone.png" alt="Phone Icon" width={16} height={16} className="object-contain" />
+  +91 98765 43210
+ </a>
 
-  <Link
-    href="/" 
-    className="flex items-center gap-1 hover:text-[#4ba3ff] transition"
-  >
-    <Image src="/images/icons/sign.png" alt="Sign Icon" width={18} height={18} className="object-contain" />
-    Sign Up
-  </Link>
+ <a
+  href="mailto:support@byyizzy.com"
+  className="flex items-center gap-1 text-sm hover:text-[#067afe] transition"
+ >
+  <Image src="/images/icons/mail.png" alt="Mail Icon" width={16} height={16} className="object-contain" />
+  support@byyizzy.com
+ </a>
+ </div>
+
+ {/* Right Links */}
+ <div className="flex items-center gap-6 mx-auto md:mx-0 font-bold text-[11px] sm:text-sm md:text-base lg:text-[17px]">
+ <Link href="/" className="flex items-center gap-1 hover:text-[#067afe] transition">
+  <Image src="/images/icons/team.png" alt="Team Icon" width={18} height={18} className="object-contain" />
+  Become a Partner
+ </Link>
+
+ <Link href="/" className="flex items-center gap-1 hover:text-[#067afe] transition">
+  <Image src="/images/icons/comment.png" alt="Quote Icon" width={18} height={18} className="object-contain" />
+  Get Quotes
+ </Link>
+
+ <Link href="/" className="flex items-center gap-1 hover:text-[#067afe] transition">
+  <Image src="/images/icons/sign.png" alt="Sign Icon" width={18} height={18} className="object-contain" />
+  Sign Up
+ </Link>
+ </div>
+</div>
+</div>
+
+
+ {/* Main Navbar */}
+ <nav className="w-full bg-white dark:bg-gray-900/80 backdrop-blur-lg shadow-md transition-all">
+<div className="container flex items-center justify-between py-3 px-3 ">
+{/* Logo (Added flex-shrink-0 to protect it from squeezing) */}
+<Link href="/" className="flex items-center gap-2 min-w-max flex-shrink-0" onClick={closeAllMenus}>
+<Image src="/images/blue.png" alt="Logo" width={160} height={40} className="object-contain" priority />
+</Link>
+
+{/* Search + Categories (ADDED HOVER LOGIC) */}
+<div 
+    className="hidden lg:block relative flex-1 lg:mx-4 xl:mx-8 max-w-sm xl:max-w-md z-50" 
+    ref={searchBarContainerRef}
+    onMouseEnter={handleMouseEnter} // <-- ADDED HOVER TO OPEN
+    onMouseLeave={handleMouseLeave} // <-- ADDED HOVER TO CLOSE (with delay)
+>
+<div className="flex w-full border border-gray-300 rounded-xl shadow-inner items-center">
+<button
+ref={categoryButtonRef}
+onClick={() => setCategoryOpen((prev) => !prev)} // Click kept for accessibility/touch devices
+className="flex items-center gap-1 px-2 py-2 font-semibold text-sm text-gray-700 bg-gray-50 rounded-l-xl hover:bg-gray-100 transition"
+aria-expanded={categoryOpen}
+aria-haspopup="true"
+>
+Categories
+<ChevronDownIcon className={`w-4 h-4 transition-transform ${categoryOpen ? "rotate-180" : ""}`} />
+</button>
+
+<input
+type="search"
+placeholder="Search products, brands..."
+// Removed onClick/onFocus that were previously used to open the menu
+disabled={false}
+readOnly
+className="flex-1 px-4 py-2 text-sm text-gray-700 focus:outline-none placeholder:text-gray-400 cursor-pointer"
+/>
+
+<div className="px-2">
+<MagnifyingGlassIcon className="w-5 h-5" />
+</div>
+</div>
+
+{categoryOpen && <CategoryDropdownContent closeMenu={() => setCategoryOpen(false)} />}
 </div>
 
         </div>
