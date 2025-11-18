@@ -66,7 +66,7 @@ const Counterpart = () => {
           {/* dgchngd */}
 
           {/* CTA Button */}
-          <Link href="/category">
+          <Link href="/contact">
           <button className="px-6 py-3 bg-[#067afeef] text-white font-semibold rounded shadow-lg transition duration-300 hover:bg-[#056ae0] hover:shadow-xl mt-6">
             JOIN THE NETWORK →
           </button>

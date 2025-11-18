@@ -100,7 +100,7 @@ const Footer = () => {
 
     {/* Instagram */}
     <a
-      href="#"
+      href="https://www.instagram.com/byyizzybusinesssolutionpvtltd/"
       aria-label="Instagram"
       className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1a2235] hover:bg-[#067afe] transition-all duration-300 hover:scale-110"
     >
@@ -133,7 +133,7 @@ const Footer = () => {
 
     {/* LinkedIn */}
     <a
-      href="#"
+      href="https://www.linkedin.com/in/byyizzybusinesssolutions-privatelimited-12a323399?original_referer="
       aria-label="LinkedIn"
       className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1a2235] hover:bg-[#067afe] transition-all duration-300 hover:scale-110"
     >
