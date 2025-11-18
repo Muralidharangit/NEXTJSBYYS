@@ -3,6 +3,7 @@ import {
   FaInstagram,
   FaTwitter,
   FaLinkedinIn,
+  FaLinkedin,
 } from "react-icons/fa";
 
 import Image from "next/image";
@@ -132,20 +133,24 @@ const Footer = () => {
     </a>
 
     {/* LinkedIn */}
-    <a
-      href="https://www.linkedin.com/in/byyizzybusinesssolutions-privatelimited-12a323399?original_referer="
-      aria-label="LinkedIn"
-      className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1a2235] hover:bg-[#067afe] transition-all duration-300 hover:scale-110"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="white"
-      viewBox="0 0 24 24"
-        className="w-6 h-6"
-      >
-        <path d="M19 3A2 2 0 0 1 21 5v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17v-7.3H5.67V17h2.67zm-1.34-8.3c.85 0 1.53-.69 1.53-1.54s-.68-1.53-1.53-1.53S5.47 6.3 5.47 7.16s.69 1.54 1.53 1.54zm9 8.3v-3.7c0-.89-.03-2.04-1.25-2.04-1.26 0-1.45.97-1.45 1.97V17h-2.67v-7.3h2.56v1h.04c.36-.68 1.25-1.4 2.57-1.4 2.75 0 3.26 1.81 3.26 4.16V17h-2.06z" />
-      </svg>
-    </a>
+  <a
+  href="https://www.linkedin.com/company/byyizzy" // ← your company page slug
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="LinkedIn"
+  title="Follow us on LinkedIn"
+  className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1a2235] hover:bg-[#067afe] transition-all duration-300 hover:scale-110"
+>
+  <FaLinkedin className="text-white"/>
+  {/* <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    className="w-6 h-6 fill-white"
+  >
+    <path d="M19 3A2 2 0 0 1 21 5v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17v-7.3H5.67V17h2.67zm-1.34-8.3c.85 0 1.53-.69 1.53-1.54s-.68-1.53-1.53-1.53S5.47 6.3 5.47 7.16s.69 1.54 1.53 1.54zm9 8.3v-3.7c0-.89-.03-2.04-1.25-2.04-1.26 0-1.45.97-1.45 1.97V17h-2.67v-7.3h2.56v1h.04c.36-.68 1.25-1.4 2.57-1.4 2.75 0 3.26 1.81 3.26 4.16V17h-2.06z" />
+  </svg> */}
+</a>
   </div>
 </div>
 

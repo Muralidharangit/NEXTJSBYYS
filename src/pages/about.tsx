@@ -38,7 +38,69 @@ export default function Home() {
   }, []);
 
   if (loading) return <Loader />;
-
+const FEATURES = [
+  {
+                title: "Expertise in Procurement",
+                desc: "Built by procurement leaders with 15–20 years of strong MRO experience, addressing real market gaps.",
+                icon: "🔎",
+                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
+              },
+              {
+                title: "AI-Driven S2P Platform",
+                desc: "Automates RFQs and repetitive procurement activities for greater efficiency.",
+                icon: "📜",
+                // gradient: "from-[#00c6ff]/10 to-[#067afe]/20",
+              },
+              {
+                title: "Efficient Sourcing",
+                desc: "Sourcing from OEMs, OPMs, and manufacturers, complemented by drop-shipping via local hardware stores for a trustworthy integrated ecosystem.",
+                icon: "🔁",
+                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
+              },
+              {
+                title: "Fastest Delivery",
+                desc: "Commitment to delivering products within 24 hours through hyperlocal stores.",
+                icon: "🔗",
+                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
+              },
+              {
+                title: "Lowest Ordering Costs",
+                desc: "Operating at a 1.5% margin for risk-free transactions, with a maximum margin capped at 7%.",
+                icon: "📈",
+                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
+              },
+              {
+                title: "Price Transparency",
+                desc: "Clear and transparent pricing, enabling informed purchasing decisions without hidden costs.",
+                icon: "🤝",
+                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
+              },
+              // 
+               {
+                title: "Byyizzy’s Supplier Network",
+                desc: "Broader market reach and supplier discovery through an extensive supplier network.",
+                icon: "🌐",
+                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
+              },
+              {
+                title: "Local Business Engagement",
+                desc: "Actively engaging with partner stores to foster community collaboration and support local economies.",
+                icon: "🏬",
+                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
+              },
+               {
+                title: "Integrated Digital Ecosystem",
+                desc: "A seamless AI-Based platform combining B2B and B2C functionalities for efficient interactions and transactions.",
+                icon: "⛓️",
+                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
+              },
+               {
+                title: "Supplier Diversity",
+                desc: "Promoting diversity in our supply chain by partnering with minority-owned and women-owned businesses, supporting diverse entrepreneurs.",
+                icon: "📦",
+                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
+              },
+];
   return (
     <div>
       {/* <Header /> */}
@@ -134,82 +196,35 @@ export default function Home() {
           </div>
 
           {/* Feature Cards */}
-          <div
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            {[
-              {
-                title: "Expertise in Procurement",
-                desc: "Built by procurement leaders with 15–20 years of strong MRO experience, addressing real market gaps.",
-                icon: "🔎",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-              {
-                title: "AI-Driven S2P Platform",
-                desc: "Automates RFQs and repetitive procurement activities for greater efficiency.",
-                icon: "📜",
-                // gradient: "from-[#00c6ff]/10 to-[#067afe]/20",
-              },
-              {
-                title: "Efficient Sourcing",
-                desc: "Sourcing from OEMs, OPMs, and manufacturers, complemented by drop-shipping via local hardware stores for a trustworthy integrated ecosystem.",
-                icon: "🔁",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-              {
-                title: "Fastest Delivery",
-                desc: "Commitment to delivering products within 24 hours through hyperlocal stores.",
-                icon: "🔗",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-              {
-                title: "Lowest Ordering Costs",
-                desc: "Operating at a 1.5% margin for risk-free transactions, with a maximum margin capped at 7%.",
-                icon: "📈",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-              {
-                title: "Price Transparency",
-                desc: "Clear and transparent pricing, enabling informed purchasing decisions without hidden costs.",
-                icon: "🤝",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-              {
-                title: "Local Business Engagement",
-                desc: "Actively engaging with partner stores to foster community collaboration and support local economies.",
-                icon: "🏬",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-               {
-                title: "Integrated Digital Ecosystem",
-                desc: "A seamless AI-Based platform combining B2B and B2C functionalities for efficient interactions and transactions.",
-                icon: "⛓️",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-               {
-                title: "Supplier Diversity",
-                desc: "Promoting diversity in our supply chain by partnering with minority-owned and women-owned businesses, supporting diverse entrepreneurs.",
-                icon: "📦",
-                // gradient: "from-[#067afe]/10 to-[#00c6ff]/20",
-              },
-            ].map((feature, i) => (
-              <div
-                key={i}
-                className={`relative group p-8 rounded-2xl border border-white/40 bg-gradient-to-br  backdrop-blur-md shadow-[0_8px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(6,122,254,0.3)] transition-all duration-500 hover:-translate-y-1`}
-              >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-lg font-semibold text-[#050d20] mb-2 group-hover:text-[#067afe] transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+         
 
-                {/* Glow line animation */}
-                <div className="absolute left-0 top-0 w-[3px] h-full bg-gradient-to-b from-[#067afe] to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-l-2xl"></div>
-              </div>
-            ))}
-          </div>
+
+
+          <div
+  className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10"
+  data-aos="fade-up"
+  data-aos-delay="200"
+>
+  {FEATURES.map((feature, i) => {
+    const isLast = i === FEATURES.length - 1; // 10th card
+    return (
+      <div
+        key={i}
+        className={`relative group p-8 rounded-2xl border border-white/40 bg-gradient-to-br backdrop-blur-md
+                    shadow-[0_8px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(6,122,254,0.3)]
+                    transition-all duration-500 hover:-translate-y-1 justify-center
+                    ${isLast ? "lg:col-start-2" : ""}`}   // 👈 center last card on 3-col grid
+      >
+        <div className="text-4xl mb-4">{feature.icon}</div>
+        <h3 className="text-lg font-semibold text-[#050d20] mb-2 group-hover:text-[#067afe] transition-colors duration-300">
+          {feature.title}
+        </h3>
+        <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+        <div className="absolute left-0 top-0 w-[3px] h-full bg-gradient-to-b from-[#067afe] to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-l-2xl"></div>
+      </div>
+    );
+  })}
+</div>
 
 
 
@@ -274,11 +289,11 @@ export default function Home() {
         >
           <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
             <div data-aos="fade-right">
-              <h2 className="text-4xl md:text-5xl font-bold text-white m-0">
+              <h3 className="text-4xl md:text-5xl font-bold text-white m-0">
                 Join Us on Our Journey
-              </h2>
+              </h3>
               <p className="mt-2 text-lg md:text-xl text-white/80 max-w-2xl">
-            Got questions? Need more information? Have feedback for us? Just drop us a line. We would love to hear from you
+           Byyizzy –Supporting Local, Saving Community Wealth!!!
               </p>
             </div>
             <div data-aos="fade-left" data-aos-delay="300">
@@ -286,7 +301,7 @@ export default function Home() {
                 href="/contact"
                 className="inline-flex items-center gap-3 bg-white text-black px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-200 transition"
               >
-                <span>Join Us on Our Journey</span>
+                <span>Let`s talk now</span>
                 <span className="flex items-center gap-1">➝ ➝</span>
               </Link>
             </div>
