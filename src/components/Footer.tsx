@@ -85,7 +85,7 @@ const Footer = () => {
   <div className="flex flex-wrap justify-start items-center gap-2">
     {/* Facebook */}
     <a
-      href="#"
+      href="https://www.facebook.com/profile.php?id=61583799277636&sk=about"
       aria-label="Facebook"
       className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1a2235] hover:bg-[#067afe] transition-all duration-300 hover:scale-110"
     >
@@ -117,7 +117,7 @@ const Footer = () => {
 
     {/* Twitter */}
     <a
-      href="#"
+      href="https://x.com/byyizzybusiness"
       aria-label="Twitter"
       className="w-10 h-10 flex items-center justify-center rounded-full bg-[#1a2235] hover:bg-[#067afe] transition-all duration-300 hover:scale-110"
     >
