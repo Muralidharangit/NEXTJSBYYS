@@ -66,7 +66,8 @@ export default function TermsPage() {
             <p>For Byyizzy E-Commerce Marketplace — Effective Date: 01/11/2025</p>
           </div>
 
-         
+        
+        </section>
 
  
 
