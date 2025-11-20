@@ -190,17 +190,17 @@ return (
 
  {/* Right Links */}
  <div className="flex items-center gap-6 mx-auto md:mx-0 font-bold text-[11px] sm:text-sm md:text-base lg:text-[17px]">
- <Link href="/" className="flex items-center gap-1 hover:text-[#067afe] transition">
+ <Link href="/contact" className="flex items-center gap-1 hover:text-[#067afe] transition">
   <Image src="/images/icons/team.png" alt="Team Icon" width={18} height={18} className="object-contain" />
   Become a Partner
  </Link>
 
- <Link href="/" className="flex items-center gap-1 hover:text-[#067afe] transition">
+ <Link href="/contact" className="flex items-center gap-1 hover:text-[#067afe] transition">
   <Image src="/images/icons/comment.png" alt="Quote Icon" width={18} height={18} className="object-contain" />
   Get Quotes
  </Link>
 
- <Link href="/" className="flex items-center gap-1 hover:text-[#067afe] transition">
+ <Link href="/contact" className="flex items-center gap-1 hover:text-[#067afe] transition">
   <Image src="/images/icons/sign.png" alt="Sign Icon" width={18} height={18} className="object-contain" />
   Sign Up
  </Link>
