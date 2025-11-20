@@ -56,15 +56,17 @@ export default function TermsPage() {
         >
        
           <div className="self-stretch flex flex-col justify-center items-center gap-2 mb-4 lg:mb-0">
-             <h2
-              data-aos="fade"
-              id="hero-title"
-              className=" text-center justify-start text-secondary-navy text-4xl lg:text-[50px] font-medium leading-tight lg:leading-[50px] max-w-7xl mx-auto aos-init aos-animate w-full"
-            >
+               <h2
+  data-aos="fade"
+  id="hero-title"
+  className="text-center justify-start text-secondary-navy text-4xl lg:text-[50px] font-bold leading-tight lg:leading-[50px] max-w-7xl mx-auto w-full aos-init aos-animate"
+>
            General Terms and Conditions
             </h2>
             <p>For Byyizzy E-Commerce Marketplace — Effective Date: 01/11/2025</p>
           </div>
+
+        
         </section>
 
  
