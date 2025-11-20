@@ -56,7 +56,7 @@ export default function TermsPage() {
         >
        
           <div className="self-stretch flex flex-col justify-center items-center gap-2 mb-4 lg:mb-0">
-            <h2
+             <h2
               data-aos="fade"
               id="hero-title"
               className=" text-center justify-start text-secondary-navy text-4xl lg:text-[50px] font-medium leading-tight lg:leading-[50px] max-w-7xl mx-auto aos-init aos-animate w-full"

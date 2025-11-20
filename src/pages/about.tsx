@@ -156,7 +156,7 @@ const FEATURES = [
                 dark:bg-blue-900/30 dark:text-blue-300 dark:ring-blue-800 mb-4">
   <GoGoal className="h-6 w-6" />
 </div>
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white"> Our<span className="text-[#067afe]">  Mission</span></h3>
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-white"> Our<span className="text-[#067afe]">  Mission </span></h3>
         <p className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">
           To provide a seamless and transparent shopping experience in the complex &
           fragmented Industrial and Hardware products.
@@ -174,7 +174,7 @@ const FEATURES = [
   <FaEye  className="h-6 w-6" />
 </div>
        
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Our Vision </h3>
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Our <span className="text-[#067afe]">Vision </span> </h3>
         <p className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">
           To revolutionize the industrial and hardware supply chain by creating greater value,
           enhancing profitability, and ensuring sustainable operations for all stakeholders.

@@ -130,7 +130,7 @@ export default function ContactPage() {
   id="hero-title"
   className="text-center justify-start text-secondary-navy text-4xl lg:text-[50px] font-bold leading-tight lg:leading-[50px] max-w-7xl mx-auto w-full"
 >
-      CONTACT US
+      Contact Us
     </h2>
     <p
       data-aos="fade"
