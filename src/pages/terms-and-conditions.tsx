@@ -74,7 +74,7 @@ export default function TermsPage() {
   {/* SOLUTION SECTION */}
         <section>
           <div className="">
-            <div className="container mx-auto">
+            <div className="container mx-auto px-3">
               {/* Our Solution */}
               {/* <div className="max-w-12xl mx-auto mb-16 p-10 mb-0">
            
