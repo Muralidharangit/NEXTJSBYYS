@@ -134,7 +134,7 @@ export default function Home() {
                   onClick={() => openEnquiry(category.title)}
                 >
                   <div className="group relative flex items-center p-4 bg-white  rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 min-h-[5rem] sm:min-h-[6rem] md:min-h-[7rem] lg:min-h-[8rem] hover:bg-[#067afe]">
-                    <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300 mr-3 sm:mr-4 flex-shrink-0 bg-white dark:bg-gray-800">
+                    <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300 mr-3 sm:mr-4 flex-shrink-0 bg-white darks:bg-gray-800">
                       <Image
                         src={category.images}
                         alt={category.title}
@@ -143,7 +143,7 @@ export default function Home() {
                         height={40}
                       />
                     </div>
-                    <p className="font-semibold text-gray-600 dark:text-gray-300 transition-colors duration-300 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] truncate w-[200px] !m-0 group-hover:text-white">
+                    <p className="font-semibold text-gray-600 darks:text-gray-300 transition-colors duration-300 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] truncate w-[200px] !m-0 group-hover:text-white">
                       {category.title}
                     </p>
                   </div>

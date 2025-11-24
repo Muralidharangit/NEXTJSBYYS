@@ -41,18 +41,18 @@ const CATEGORIES = SHOP_BY_CATEGORIES as ShopCategory[];
 const CategoryDropdownContent: React.FC<{ closeMenu: CloseMenuFn }> = ({ closeMenu }) => (
 <div
  role="menu"
- className="absolute left-0 right-0 top-full mt-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl z-50 w-full max-w-2xl p-3 animate-fadeIn"
+ className="absolute left-0 right-0 top-full mt-3 bg-white darks:bg-gray-900 border border-gray-200 darks:border-gray-700 rounded-xl shadow-2xl z-50 w-full max-w-2xl p-3 animate-fadeIn"
 >
- <ul className="flex flex-col divide-y divide-gray-100 dark:divide-gray-800">
+ <ul className="flex flex-col divide-y divide-gray-100 darks:divide-gray-800">
  {CATEGORIES.slice(0, 10).map((category: ShopCategory) => (
   <li key={category.id}>
   <Link
    href={`/category`}
    onClick={closeMenu}
-   className="flex items-center justify-between px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-[#067afe]/10 rounded-lg transition group"
+   className="flex items-center justify-between px-3 py-2 text-sm font-medium text-gray-700 darks:text-gray-200 hover:bg-[#067afe]/10 rounded-lg transition group"
   >
    <div className="flex items-center gap-3">
-   <div className="min-w-8 h-8 flex items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-full">
+   <div className="min-w-8 h-8 flex items-center justify-center bg-gray-100 darks:bg-gray-800 rounded-full">
     <Image
     src={category.images}
     alt={category.title}
@@ -71,7 +71,7 @@ const CategoryDropdownContent: React.FC<{ closeMenu: CloseMenuFn }> = ({ closeMe
  <Link
  href="/categories"
  onClick={closeMenu}
- className="block text-center text-sm font-semibold text-[#067afe] mt-3 pt-3 border-t border-gray-100 dark:border-gray-800 hover:text-[#0569dc] transition"
+ className="block text-center text-sm font-semibold text-[#067afe] mt-3 pt-3 border-t border-gray-100 darks:border-gray-800 hover:text-[#0569dc] transition"
  >
  View All Categories
  </Link>
@@ -148,7 +148,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
  <Link
  href={href}
  onClick={closeAllMenus}
- className="text-base font-semibold text-[#071431] dark:text-white hover:text-[#0569dc] transition whitespace-nowrap"
+ className="text-base font-semibold text-[#071431] darks:text-white hover:text-[#0569dc] transition whitespace-nowrap"
  >
  {children}
  </Link>
@@ -210,7 +210,8 @@ return (
 
 
  {/* Main Navbar */}
- <nav className="w-full bg-white dark:bg-gray-900/80 backdrop-blur-lg shadow-md transition-all">
+<nav className="w-full bg-white text-gray-900  darks:text-[#067afe] backdrop-blur-lg shadow-md transition-all">
+
 <div className="container flex items-center justify-between py-3 px-3 ">
 {/* Logo (Added flex-shrink-0 to protect it from squeezing) */}
 <Link href="/" className="flex items-center gap-2 min-w-max flex-shrink-0" onClick={closeAllMenus}>
@@ -270,7 +271,7 @@ className="flex-1 px-4 py-2 text-sm text-gray-700 focus:outline-none placeholder
 {/* Mobile Menu Button */}
 <button
 onClick={() => setMobileMenuOpen((v) => !v)}
-className="lg:hidden p-2 ml-4 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+className="lg:hidden p-2 ml-4 rounded-md text-gray-700 darks:text-gray-300 hover:bg-gray-100 darks:hover:bg-gray-700 transition"
 aria-label="Toggle mobile menu"
 >
 {mobileMenuOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
@@ -280,7 +281,7 @@ aria-label="Toggle mobile menu"
 
  {/* Mobile Drawer */}
  {mobileMenuOpen && (
-  <div className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-md animate-fadeIn">
+  <div className="lg:hidden bg-white darks:bg-gray-900 border-t border-gray-200 darks:border-gray-700 shadow-md animate-fadeIn">
   <div className="flex flex-col px-4 py-3 space-y-3">
    {/* Mobile Search */}
    <div className="flex w-full border border-gray-300 rounded-lg items-center px-2 py-1 shadow-inner">
@@ -304,20 +305,20 @@ aria-label="Toggle mobile menu"
    <div className="mt-3">
    <button
     onClick={() => setMobileCategoryOpen((v) => !v)}
-    className="flex items-center justify-between w-full px-2 py-2 text-base font-semibold text-gray-700 dark:text-gray-200 bg-gray-50 rounded-lg hover:bg-gray-100 transition"
+    className="flex items-center justify-between w-full px-2 py-2 text-base font-semibold text-gray-700 darks:text-gray-200 bg-gray-50 rounded-lg hover:bg-gray-100 transition"
    >
     Categories
     <ChevronDownIcon className={`w-5 h-5 transition-transform ${mobileCategoryOpen ? "rotate-180" : ""}`} />
    </button>
 
    {mobileCategoryOpen && (
-    <div className="mt-2 border border-gray-200 dark:border-gray-700 rounded-lg p-2 space-y-1 bg-white dark:bg-gray-900">
+    <div className="mt-2 border border-gray-200 darks:border-gray-700 rounded-lg p-2 space-y-1 bg-white darks:bg-gray-900">
     {CATEGORIES.slice(0, 6).map((category: ShopCategory) => (
      <Link
      key={category.id}
      href={`/products/${slugify(category.title)}`}
      onClick={closeAllMenus}
-     className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition"
+     className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-gray-700 darks:text-gray-200 hover:bg-gray-100 darks:hover:bg-gray-800 rounded-lg transition"
      >
      <Image src={category.images} alt={category.title} width={24} height={24} className="rounded-full" />
      {category.title}

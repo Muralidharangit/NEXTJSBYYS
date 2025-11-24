@@ -254,3 +254,9 @@ p {
 .mb-0 {
   margin-bottom: 0px !important;
 }
+
+.dark\:text-white {
+    @media (prefers-color-scheme: darks) {
+        color: #040d1f;
+    }
+}

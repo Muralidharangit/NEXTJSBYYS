@@ -73,7 +73,7 @@ export default function ClientsSection({ brands }: Props) {
     return (
       <div
         key={key}
-        className="flex items-center justify-center bg-white dark:bg-gray-800 w-32 h-24 rounded-xl"
+        className="flex items-center justify-center bg-white w-32 h-24 rounded-xl"
         title={item.name ?? ""}
       >
         {item?.logo ? (
@@ -93,7 +93,7 @@ export default function ClientsSection({ brands }: Props) {
 
   return (
     <section
-      className="py-28 bg-[#eff3fa] dark:bg-gray-900 overflow-hidden"
+      className="py-28 bg-[#eff3fa]  overflow-hidden"
       data-aos="fade-up"
       data-aos-duration="1200"
     >
@@ -117,7 +117,7 @@ export default function ClientsSection({ brands }: Props) {
           </h2>
           <div className="flex justify-center">
             <p
-              className="text-gray-600 dark:text-gray-300 text-center max-w-2xl"
+              className="text-gray-600 darks:text-gray-300 text-center max-w-2xl"
               data-aos="fade-up"
               data-aos-delay="400"
             >
@@ -200,14 +200,14 @@ export default function ClientsSection({ brands }: Props) {
             rgba(239, 243, 250, 0)
           );
         }
-        :global(body.dark) .fade-left {
+        :global(body.darks) .fade-left {
           background: linear-gradient(
             to right,
             rgba(17, 24, 39, 1),
             rgba(17, 24, 39, 0)
           );
         }
-        :global(body.dark) .fade-right {
+        :global(body.darks) .fade-right {
           background: linear-gradient(
             to left,
             rgba(17, 24, 39, 1),

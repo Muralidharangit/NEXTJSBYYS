@@ -692,10 +692,10 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
       },
       {
         image:
-          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWelding_Accessories%2FAuto-Darkening%20Welding%20Helmet.jpg?alt=media&token=943bd108-9b70-4f65-b33a-49d0d05b9507", // Add the image URL here
+          "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FshopByCategory%2FWelding_Accessories%2FAuto-darksening%20Welding%20Helmet.jpg?alt=media&token=943bd108-9b70-4f65-b33a-49d0d05b9507", // Add the image URL here
         popularity: "320",
         price: "1500",
-        materialName: "Auto-Darkening Welding Helmet",
+        materialName: "Auto-darksening Welding Helmet",
         materialCode: "WEL003",
         details: "viewing area: 100x50mm, response time: 1/10000 sec, adjustable shade",
         category: "Welding Helmets",

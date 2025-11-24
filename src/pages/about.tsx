@@ -145,37 +145,37 @@ const FEATURES = [
             
             </p>
 
-            <section className="py-16 bg-white dark:bg-gray-950">
+            <section className="py-16 bg-white darks:bg-gray-950">
   <div className="max-w-7xl mx-auto px-4">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
       {/* Mission */}
-      <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
+      <div className="group rounded-2xl border border-gray-200 darks:border-gray-800 bg-white darks:bg-gray-900 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
         
 <div className="inline-flex h-12 w-12 items-center justify-center rounded-full
                 bg-blue-50 text-gray-600 ring-1 ring-blue-100
-                dark:bg-blue-900/30 dark:text-blue-300 dark:ring-blue-800 mb-4">
+                darks:bg-blue-900/30 darks:text-blue-300 darks:ring-blue-800 mb-4">
   <GoGoal className="h-6 w-6" />
 </div>
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white"> Our<span className="text-[#067afe]">  Mission </span></h3>
-        <p className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">
+        <h3 className="text-xl font-semibold text-gray-900 darks:text-white"> Our<span className="text-[#067afe]">  Mission </span></h3>
+        <p className="mt-2 text-gray-600 darks:text-gray-300 leading-relaxed">
           To provide a seamless and transparent shopping experience in the complex &
           fragmented Industrial and Hardware products.
         </p>
       </div>
 
       {/* Vision */}
-      <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
+      <div className="group rounded-2xl border border-gray-200 darks:border-gray-800 bg-white darks:bg-gray-900 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
        
 
         
 <div className="inline-flex h-12 w-12 items-center justify-center rounded-full
                 bg-blue-50 text-gray-600 ring-1 ring-blue-100
-                dark:bg-blue-900/30 dark:text-blue-300 dark:ring-blue-800 mb-4">
+                darks:bg-blue-900/30 darks:text-blue-300 darks:ring-blue-800 mb-4">
   <FaEye  className="h-6 w-6" />
 </div>
        
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Our <span className="text-[#067afe]">Vision </span> </h3>
-        <p className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">
+        <h3 className="text-xl font-semibold text-gray-900 darks:text-white">Our <span className="text-[#067afe]">Vision </span> </h3>
+        <p className="mt-2 text-gray-600 darks:text-gray-300 leading-relaxed">
           To revolutionize the industrial and hardware supply chain by creating greater value,
           enhancing profitability, and ensuring sustainable operations for all stakeholders.
         </p>

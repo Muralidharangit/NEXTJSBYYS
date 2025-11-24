@@ -53,7 +53,7 @@ export default function ProcurementService() {
                             <span
                                 data-ns-animate=""
                                 data-delay="0.1"
-                                className="hero-badge text-tagline-1 inline-block text-secondary dark:text-accent"
+                                className="hero-badge text-tagline-1 inline-block text-secondary darks:text-accent"
                                 style={{
                                     opacity: 1,
                                     filter: "blur(0px)",
@@ -67,7 +67,7 @@ export default function ProcurementService() {
                                     {/* Product Categories */}
                                     <a
                                         href="../"
-                                        className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300"
+                                        className="hover:text-primary-600 darks:hover:text-primary-400 transition-colors duration-300"
                                     >
                                         Home
                                     </a>
@@ -89,7 +89,7 @@ export default function ProcurementService() {
                                     </span>
                                     <a
                                         href="#"
-                                        className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-300"
+                                        className="hover:text-primary-500 darks:hover:text-primary-400 transition-colors duration-300"
                                     >
                                         SERVICE
                                     </a>

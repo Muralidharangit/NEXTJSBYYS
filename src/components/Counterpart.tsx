@@ -142,7 +142,7 @@ const Counterpart = () => {
           ].map((card, index) => (
             <div
               key={index}
-              className="group relative flex items-start gap-5 rounded-2xl dark:bg-[#0d1117]/70 backdrop-blur-xl p-6 border bg-[#eff3fa] border-white/20 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(6,122,254,0.25)] transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+              className="group relative flex items-start gap-5 rounded-2xl  backdrop-blur-xl p-6 border bg-[#eff3fa] border-white/20 shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(6,122,254,0.25)] transition-all duration-500 hover:-translate-y-1 overflow-hidden"
               data-aos="fade-up"
               data-aos-delay={index * 150}
             >
@@ -161,7 +161,7 @@ const Counterpart = () => {
                 <h4 className="text-lg font-semibold text-[#050d20] group-hover:text-[#067afe] transition-colors duration-300">
                   {card.title}
                 </h4>
-                <p className="mt-2 text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="mt-2 text-gray-600 darks:text-gray-400 leading-relaxed">
                   {card.description}
                 </p>
               </div>

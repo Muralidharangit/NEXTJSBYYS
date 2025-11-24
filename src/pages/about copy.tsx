@@ -76,35 +76,35 @@ export default function Home() {
               Founded in 2018, we aim to revolutionize the fragmented Industrial and Hardware supply chain through Hyper-Local Stores and an E-commerce Platform powered by Proven Algorithms, AI, and Machine Learning.
             </p>
 
-            <section className="py-16 bg-white dark:bg-gray-950">
+            <section className="py-16 bg-white ">
   <div className="max-w-7xl mx-auto px-4">
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
       {/* Mission */}
-      <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
-        <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/30 ring-1 ring-blue-100 dark:ring-blue-800 mb-4">
+      <div className="group rounded-2xl border border-gray-200 darks:border-gray-800 bg-white  p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
+        <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50  ring-1 ring-blue-100 darks:ring-blue-800 mb-4">
           {/* icon (optional) */}
           <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M12 3v18M3 12h18" stroke="currentColor" strokeWidth="1.5" />
           </svg>
         </div>
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white"> Our<span className="text-[#067afe]">  Mission</span></h3>
-        <p className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">
+        <h3 className="text-xl font-semibold text-gray-900 darks:text-white"> Our<span className="text-[#067afe]">  Mission</span></h3>
+        <p className="mt-2 text-gray-600 darks:text-gray-300 leading-relaxed">
           To provide a seamless and transparent shopping experience in the complex &
           fragmented Industrial and Hardware products.
         </p>
       </div>
 
       {/* Vision */}
-      <div className="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
-        <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 dark:bg-purple-900/30 ring-1 ring-purple-100 dark:ring-purple-800 mb-4">
+      <div className="group rounded-2xl border border-gray-200 darks:border-gray-800 bg-white darks:bg-gray-900 p-6 lg:p-8 shadow-sm hover:shadow-md transition-shadow">
+        <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 darks:bg-purple-900/30 ring-1 ring-purple-100 darks:ring-purple-800 mb-4">
           {/* icon (optional) */}
           <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M3 12c4-6 14-6 18 0-4 6-14 6-18 0Z" stroke="currentColor" strokeWidth="1.5"/>
             <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.5"/>
           </svg>
         </div>
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Our Vision <span className="text-[#067afe]"> Byyizzy?</span></h3>
-        <p className="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">
+        <h3 className="text-xl font-semibold text-gray-900 darks:text-white">Our Vision <span className="text-[#067afe]"> Byyizzy?</span></h3>
+        <p className="mt-2 text-gray-600 darks:text-gray-300 leading-relaxed">
           To revolutionize the industrial and hardware supply chain by creating greater value,
           enhancing profitability, and ensuring sustainable operations for all stakeholders.
         </p>
